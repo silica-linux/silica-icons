@@ -129,6 +129,9 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `files/file-video/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/file-video/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/file-video/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/folder-generic/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/folder-generic/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/folder-generic/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/folder/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/folder/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/folder/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |

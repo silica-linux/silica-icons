@@ -1,0 +1,74 @@
+{
+  "format": 1,
+  "id": "folder-generic",
+  "name": "Folder Generic",
+  "kind": "file",
+  "layers": [
+    {
+      "role": "artwork",
+      "file": "icon.svg"
+    }
+  ],
+  "variants": {
+    "dark": {
+      "artwork": "icon-dark.svg"
+    }
+  },
+  "dynamic": {
+    "type": "folder-symbol",
+    "symbol": {
+      "box": [374, 456, 276, 276],
+      "sizes": [
+        { "min_size": 128, "weight": "light", "scale": 1 },
+        { "min_size": 64, "weight": "regular", "scale": 1 },
+        { "min_size": 32, "weight": "semibold", "scale": 1, "highlight": false },
+        { "min_size": 16, "weight": "semibold", "scale": 1.272, "highlight": false }
+      ]
+    },
+    "effect": {
+      "light": {
+        "color": "#1a64c8",
+        "opacity": 0.78,
+        "highlight": "#ffffff",
+        "highlight_opacity": 0.5,
+        "offset": 4
+      },
+      "dark": {
+        "color": "#0b3f94",
+        "opacity": 0.8,
+        "highlight": "#ffffff",
+        "highlight_opacity": 0.2,
+        "offset": 4
+      }
+    },
+    "tint": {
+      "light": { "luminance": [0.35, 0.85], "shade": 0.72, "glow": 0.5 },
+      "dark": { "luminance": [0.28, 0.75], "shade": 0.58, "glow": 0.35 },
+      "labels": {
+        "red": "#f2382e",
+        "orange": "#ff8a00",
+        "yellow": "#f5c400",
+        "green": "#2fb350",
+        "blue": "#2f7cf6",
+        "purple": "#a052e0",
+        "gray": "#8e8e93"
+      }
+    },
+    "folders": {
+      "HOME": "house",
+      "DESKTOP": "display",
+      "DOCUMENTS": "doc-text",
+      "DOWNLOAD": "arrow-down-circle",
+      "MUSIC": "music-note",
+      "PICTURES": "photo",
+      "VIDEOS": "film",
+      "TEMPLATES": "doc-plus",
+      "PUBLICSHARE": "share",
+      "APPLICATIONS": "square-grid-2x2",
+      "LIBRARY": "book",
+      "SHARED": "person-2",
+      "NETWORK": "network"
+    },
+    "fallback": "folder"
+  }
+}

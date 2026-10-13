@@ -18,13 +18,13 @@
     "type": "file-label",
     "label": {
       "font": "Inter",
-      "size": 132,
+      "size": 160,
       "weight": 900,
       "tracking": 0,
-      "box": [292, 400, 440, 160],
+      "box": [245, 376, 534, 194],
       "case": "upper",
       "max_chars": 4,
-      "max_width": 440
+      "max_width": 534
     },
     "colors": {
       "document": { "color": "#2f7cf6", "dark_color": "#5aa0ff" },

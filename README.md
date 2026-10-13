@@ -46,8 +46,9 @@ foglio di controllo.
 - `apps/`: 17 app (apps, calculator, calendar, clock, disks, fonts, help, mail, mustache,
   notes, password-manager, photo-viewer, photos, settings, store, terminal, text-editor)
   con varianti scure; calendar e clock sono dinamiche.
-- `files/`: cartella, 8 tipi di file, file generico (estensione scritta dalla shell),
-  Cestino vuoto e pieno, Stack Close.
+- `files/`: cartella, cartella generica (simbolo e tinta messi dalla shell), 8 tipi di file,
+  file generico (estensione scritta dalla shell), Cestino vuoto e pieno, Stack Close. Fogli e
+  cartelle arrivano al bordo della griglia (keyline documento 648 × 824 e cartella 824 × 648).
 - `symbols/<peso>/`: 313 simboli in 11 categorie e tre pesi (`light`, `regular`, `semibold`),
   generati da `tools/symbols/symbols.py` (`export_svg.py --check` verifica che gli SVG
   corrispondano alla sorgente). Specifica:

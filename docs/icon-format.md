@@ -25,6 +25,8 @@ Tutte le misure sono su una tela di **1024 × 1024**.
 | Keyline cerchio piccolo | Ø 424, centro (512, 512) |
 | Keyline verticale | 520 × 680 a (252, 172) |
 | Keyline orizzontale | 680 × 520 a (172, 252) |
+| Keyline documento (icone dei file) | 648 × 824 a (188, 100) |
+| Keyline cartella | 824 × 648 a (100, 188) |
 
 Il contenuto principale sta in uno dei keyline; le icone a tutta tela (un fondo disegnato,
 come Calendar o Photos) occupano il corpo intero.
@@ -45,6 +47,7 @@ di Grid Check.
 | Quadrato e cerchio 600 | grandezza base (20 u) |
 | Cerchio 424 | 600 / √2: cerchio inscritto nel quadrato inscritto nel cerchio 600 |
 | Verticale 520 × 680, orizzontale 680 × 520 | stesso perimetro del quadrato 600 (520 + 680 = 2 × 600), area 98 %; rapporto 1,31, non aureo |
+| Documento 648 × 824, cartella 824 × 648 | il lato lungo è il corpo (824), il corto 824 / √φ: le icone dei file e delle cartelle arrivano al bordo della griglia, come il corpo delle app, e a 16–32 px non sembrano più piccole delle app accanto |
 
 Restano tutte: il sistema aureo le completa, non le sostituisce.
 
@@ -67,12 +70,17 @@ testo e le posizioni dei dettagli illustrativi non sono vincolate.
 
 Eccezioni volute:
 
-- le icone dei file restano sulla keyline verticale (foglio 520 × 680); il contenuto del foglio
-  è centrato su y 480, sopra l'estensione;
+- le icone dei file stanno sulla keyline documento (foglio 648 × 824, da y 100 a 924) e le
+  cartelle sulla keyline cartella (824 × 648, da x 100 a 924, centrata su y 512): il disegno
+  di prima (foglio 520 × 680, cartella 680 × 520) è stato scalato di 824 / 680 e portato al
+  rapporto √φ allargando il foglio (le righe, le figure e le estensioni non si deformano) e
+  alzando la cartella (2,8 %, entro tolleranza); il contenuto del foglio è centrato su y 473,
+  sopra l'estensione; il pannello anteriore della cartella è 824 × 483,5 da y 352,5;
 - il Cestino è largo 584 (≈ 600) e alto 734 (h : l ≈ √φ), con la base del cestello a y 914,
   quasi sul fondo del corpo delle app (924): nel Dock poggia sulla stessa linea;
-- la piega dei fogli (132) non è sulla serie: cambiarla vuol dire ridisegnare il tracciato di
-  ogni foglio; resta finché i fogli non si ridisegnano.
+- la piega dei fogli (165 × 160: la 132 di prima scalata con il foglio) non è sulla serie: cambiarla vuol dire ridisegnare il tracciato di ogni foglio; resta finché i
+  fogli non si ridisegnano;
+- il Cestino e Stack Close non sono né fogli né cartelle e non cambiano.
 
 ### Correzioni ottiche e scostamenti dal rapporto puro
 
@@ -215,9 +223,9 @@ file senza un'icona propria (`.json`, `.docx`, `.blend`…).
 ```json
 "dynamic": {
   "type": "file-label",
-  "label": { "font": "Inter", "size": 132, "weight": 900, "tracking": 0,
-             "box": [292, 400, 440, 160], "case": "upper",
-             "max_chars": 4, "max_width": 440 },
+  "label": { "font": "Inter", "size": 160, "weight": 900, "tracking": 0,
+             "box": [245, 376, 534, 194], "case": "upper",
+             "max_chars": 4, "max_width": 534 },
   "colors": { "document": {...}, "data": {...}, "code": {...},
               "archive": {...}, "media": {...}, "other": {...} },
   "overrides": {},
@@ -226,7 +234,7 @@ file senza un'icona propria (`.json`, `.docx`, `.blend`…).
 ```
 
 - Etichetta: l'estensione senza punto, in maiuscolo, centrata nel `box` (centro ottico
-  del foglio, y 480 come le altre icone dei file).
+  del foglio, y 473 come le altre icone dei file).
 - Se l'estensione supera `max_width` il corpo scende in proporzione; oltre `max_chars`
   caratteri, o senza estensione, si usa `fallback` (il foglio con il punto di domanda).
 - Colore dalla categoria del tipo MIME (shared-mime-info): `text/*` e documenti da ufficio
@@ -236,6 +244,92 @@ file senza un'icona propria (`.json`, `.docx`, `.blend`…).
   colore (`{"json": "data"}`, `{"sketch": {"color": "#f7b500"}}`).
 - Il tipo di file con un'icona propria (PDF, testo, archivio, immagine, audio, video,
   codice) usa sempre quella.
+
+### Cartella generica
+
+`files/folder-generic` è la cartella su cui la shell (e Mustache) incide un simbolo di
+`symbols/`: le cartelle speciali (Documenti, Download, Immagini, Home…) e le cartelle con una
+tinta. I livelli sono quelli della cartella (`files/folder`), senza simbolo.
+
+```json
+"dynamic": {
+  "type": "folder-symbol",
+  "symbol": {
+    "box": [374, 456, 276, 276],
+    "sizes": [
+      { "min_size": 128, "weight": "light",    "scale": 1 },
+      { "min_size": 64,  "weight": "regular",  "scale": 1 },
+      { "min_size": 32,  "weight": "semibold", "scale": 1,     "highlight": false },
+      { "min_size": 16,  "weight": "semibold", "scale": 1.272, "highlight": false }
+    ]
+  },
+  "effect": {
+    "light": { "color": "#1a64c8", "opacity": 0.78, "highlight": "#ffffff",
+               "highlight_opacity": 0.5, "offset": 4 },
+    "dark":  { "color": "#0b3f94", "opacity": 0.8,  "highlight": "#ffffff",
+               "highlight_opacity": 0.2, "offset": 4 }
+  },
+  "tint": {
+    "light": { "luminance": [0.35, 0.85], "shade": 0.72, "glow": 0.5 },
+    "dark":  { "luminance": [0.28, 0.75], "shade": 0.58, "glow": 0.35 },
+    "labels": { "red": "#f2382e", "orange": "#ff8a00", "yellow": "#f5c400", "green": "#2fb350",
+                "blue": "#2f7cf6", "purple": "#a052e0", "gray": "#8e8e93" }
+  },
+  "folders": { "HOME": "house", "DESKTOP": "display", "DOCUMENTS": "doc-text",
+               "DOWNLOAD": "arrow-down-circle", "MUSIC": "music-note", "PICTURES": "photo",
+               "VIDEOS": "film", "TEMPLATES": "doc-plus", "PUBLICSHARE": "share",
+               "APPLICATIONS": "square-grid-2x2", "LIBRARY": "book", "SHARED": "person-2",
+               "NETWORK": "network" },
+  "fallback": "folder"
+}
+```
+
+Proporzioni (tela 1024, keyline cartella):
+
+| Misura | Valore | Da dove viene |
+| --- | --- | --- |
+| Pannello anteriore | 824 × 483,5 da (100, 352,5), centro (512, 594) | la cartella |
+| Area viva del simbolo (Ø 20 u) | 230 ≈ 229 | serie A (600 / φ²); è pannello / φ^1,5 |
+| Tela del simbolo (24 u), `box` | 276 × 276, centrata sul pannello: 1 u = 11,5 px | area viva × 24 / 20 |
+| Tratto | Light 13,6 · Regular 17,3 · Semibold 24,7 | 1,18 · 1,5 · 2,15 u: Light e Regular cadono sugli spessori 13,5 e 17 della serie |
+| Simbolo piccolo (`scale` 1,272) | tela 351, area viva 292 | × √φ, serie A |
+| Scavo (`offset`) | 4 px, almeno mezzo pixel reso | ≈ tratto Light / φ³ |
+
+- **Simbolo**: `symbols/<weight>/<nome>.svg` dello stesso repo, colorato al posto di
+  `currentColor`, centrato in `box` e scalato di `scale` attorno al centro. La fascia è la prima
+  di `sizes` con `min_size` ≤ lato dell'icona in pt (il lato del corpo, come per l'orologio);
+  sotto l'ultima (16 pt) il simbolo non si disegna. Il peso cresce mentre l'icona rimpicciolisce
+  perché il tratto reso resti fra 1 e 4 px circa: Light da 128, Regular da 64, Semibold sotto,
+  e sotto 32 anche più grande (× √φ).
+- **Effetto inciso** (`effect`, per tema): prima la copia del simbolo in `highlight` con
+  `highlight_opacity`, spostata in basso di `offset` (il bordo inferiore dello scavo prende luce),
+  poi il simbolo in `color` con `opacity`. Sotto 64 pt (`"highlight": false`) solo il simbolo:
+  il riflesso di mezzo pixel lo impasterebbe.
+- **Cartelle speciali** (`folders`): le chiavi sono quelle di `xdg-user-dirs`
+  (`XDG_<CHIAVE>_DIR` in `~/.config/user-dirs.dirs`: DESKTOP, DOCUMENTS, DOWNLOAD, MUSIC,
+  PICTURES, VIDEOS, TEMPLATES, PUBLICSHARE) più cinque chiavi di Silica: `HOME` (la cartella
+  dell'utente), `APPLICATIONS` (`~/Applications` e le cartelle `applications` dei dati XDG),
+  `LIBRARY` (`~/.local/share`, la libreria dell'utente), `SHARED` (cartella condivisa) e
+  `NETWORK` (cartella di rete). Le ultime due non hanno un percorso fisso: le dà chi conosce la
+  cartella (Mustache sa se è un mount di rete o una condivisione). Una cartella che non è fra
+  queste, o un simbolo che non esiste in `symbols/`, prende `fallback` (la cartella semplice).
+  Il Cestino ha un'icona propria. Mustache può anche passare un simbolo qualsiasi di `symbols/`.
+- **Tinta** (`tint`): un colore `#rrggbb` personalizzato o il nome di un'etichetta di `labels`.
+  La cartella composta (base e simbolo) passa per una rampa sulla luminanza: L = 0,2126 R +
+  0,7152 G + 0,0722 B (sRGB, 0–1); da `luminance[0]` a `luminance[1]` il colore va da
+  tinta × `shade` a tinta schiarita verso il bianco di `glow` (fuori dall'intervallo si ferma
+  agli estremi). È lineare, quindi è una matrice di colore 4 × 5 (`ColorFilter.matrix`): il
+  simbolo resta più scuro del pannello e il riflesso più chiaro, con lo stesso colore. Senza
+  tinta la cartella resta il disegno blu, senza rampa.
+- **Altri temi**: Clear e Tinted (Light e Dark) applicano la loro regola alla cartella già
+  composta con il simbolo (luminanza mappata, vedi Temi), quindi il simbolo resta lo scavo più
+  scuro del pannello; nei temi Clear il riflesso dello scavo si toglie (`highlight_opacity` 0),
+  perché il vetro ha già il suo bordo. La tinta personale vale solo in Default e Dark: Tinted
+  usa la tinta del tema per tutte le cartelle.
+
+`design/app-icons.sketch`: Folder Generic (pagina Icons, accanto a File Generic) con gli esempi
+Documents, Downloads e Music con tinta #e8336d, e sotto una cartella per ogni chiave di `folders`; in Grid Check i riquadri del simbolo (276 e 351)
+e l'area viva; in Showcase Files le stesse cartelle in Default e Dark.
 
 ## Icone senza livelli
 
