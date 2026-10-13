@@ -47,7 +47,8 @@ foglio di controllo.
 - `apps/`: 17 app (apps, calculator, calendar, clock, disks, fonts, help, mail, mustache,
   notes, password-manager, photo-viewer, photos, settings, store, terminal, text-editor)
   con varianti scure; calendar e clock sono dinamiche.
-- `files/`: cartella, cartella generica (simbolo e tinta messi dalla shell), 15 tipi di file,
+- `files/`: cartella, cartella generica (simbolo e tinta messi dalla shell), 15 tipi di file
+  (estensione scritta dalla shell sulla figura),
   file generico (estensione scritta dalla shell, mappa tipo → icona), 5 volumi (disco interno,
   esterno, server di rete, immagine disco montata, disco ottico), Cestino vuoto e pieno, Stack
   Close. Fogli, cartelle e volumi arrivano al bordo della griglia (keyline documento 648 × 824,

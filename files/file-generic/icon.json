@@ -160,7 +160,203 @@
         "text/x-dart": "file-code",
         "image/*": "file-image",
         "audio/*": "file-audio",
-        "video/*": "file-video"
+        "video/*": "file-video",
+        "application/json": {
+          "icon": "file-generic",
+          "category": "data"
+        },
+        "application/xml": {
+          "icon": "file-generic",
+          "category": "data"
+        },
+        "application/xml-dtd": {
+          "icon": "file-generic",
+          "category": "data"
+        },
+        "application/yaml": {
+          "icon": "file-generic",
+          "category": "data"
+        },
+        "application/toml": {
+          "icon": "file-generic",
+          "category": "data"
+        },
+        "application/sql": {
+          "icon": "file-generic",
+          "category": "data"
+        },
+        "text/calendar": {
+          "icon": "file-generic",
+          "category": "data"
+        },
+        "text/vcard": {
+          "icon": "file-generic",
+          "category": "data"
+        },
+        "application/vnd.google-earth.kmz": {
+          "icon": "file-generic",
+          "category": "data"
+        },
+        "application/vnd.oasis.opendocument.base": {
+          "icon": "file-generic",
+          "category": "data"
+        },
+        "application/x-ipynb+json": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/epub+zip": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/x-fictionbook+xml": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/vnd.comicbook+zip": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/vnd.comicbook-rar": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/postscript": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/vnd.ms-xpsdocument": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/oxps": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "text/x-tex": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "message/rfc822": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/vnd.oasis.opendocument.graphics": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/vnd.oasis.opendocument.graphics-template": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/vnd.oasis.opendocument.graphics-flat-xml": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/vnd.oasis.opendocument.chart": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/vnd.oasis.opendocument.chart-template": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/vnd.oasis.opendocument.formula": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/vnd.oasis.opendocument.formula-template": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/vnd.ms-visio.drawing.main+xml": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/vnd.oasis.opendocument.image": {
+          "icon": "file-generic",
+          "category": "media"
+        },
+        "model/3mf": {
+          "icon": "file-generic",
+          "category": "media"
+        },
+        "application/vnd.oasis.opendocument.text-flat-xml": "file-document",
+        "application/vnd.oasis.opendocument.text-master": "file-document",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.template": "file-document",
+        "application/vnd.ms-word.template.macroEnabled.12": "file-document",
+        "application/vnd.apple.pages": "file-document",
+        "application/vnd.sun.xml.writer": "file-document",
+        "application/vnd.sun.xml.writer.template": "file-document",
+        "application/vnd.sun.xml.writer.global": "file-document",
+        "application/vnd.oasis.opendocument.spreadsheet-flat-xml": "file-spreadsheet",
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.template": "file-spreadsheet",
+        "application/vnd.ms-excel.template.macroEnabled.12": "file-spreadsheet",
+        "application/vnd.apple.numbers": "file-spreadsheet",
+        "application/vnd.sun.xml.calc": "file-spreadsheet",
+        "application/vnd.sun.xml.calc.template": "file-spreadsheet",
+        "application/vnd.oasis.opendocument.presentation-flat-xml": "file-presentation",
+        "application/vnd.openxmlformats-officedocument.presentationml.slideshow": "file-presentation",
+        "application/vnd.openxmlformats-officedocument.presentationml.template": "file-presentation",
+        "application/vnd.openxmlformats-officedocument.presentationml.slide": "file-presentation",
+        "application/vnd.ms-powerpoint.slideshow.macroEnabled.12": "file-presentation",
+        "application/vnd.ms-powerpoint.template.macroEnabled.12": "file-presentation",
+        "application/vnd.ms-powerpoint.slide.macroEnabled.12": "file-presentation",
+        "application/vnd.apple.keynote": "file-presentation",
+        "application/vnd.sun.xml.impress": "file-presentation",
+        "application/vnd.sun.xml.impress.template": "file-presentation",
+        "application/typescript": "file-code",
+        "application/vnd.dart": "file-code",
+        "text/x-csharp": "file-code",
+        "text/julia": "file-code",
+        "text/x-elixir": "file-code",
+        "text/x-erlang": "file-code",
+        "text/x-haskell": "file-code",
+        "text/x-nim": "file-code",
+        "text/x-ocaml": "file-code",
+        "text/x-sass": "file-code",
+        "text/x-scala": "file-code",
+        "application/json5": {
+          "icon": "file-generic",
+          "category": "data"
+        },
+        "application/vnd.ms-visio.drawing.macroEnabled.main+xml": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/vnd.ms-visio.stencil.main+xml": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/vnd.ms-visio.stencil.macroEnabled.main+xml": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/vnd.ms-visio.template.main+xml": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/vnd.ms-visio.template.macroEnabled.main+xml": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/vnd.sun.xml.draw": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/vnd.sun.xml.draw.template": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/vnd.sun.xml.math": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/x-hwpx": {
+          "icon": "file-generic",
+          "category": "document"
+        },
+        "application/vnd.oasis.opendocument.text-master-template": "file-document"
       },
       "extensions": {
         "3gp": "file-video",
@@ -182,6 +378,7 @@
         "cjs": "file-code",
         "clj": "file-code",
         "cpp": "file-code",
+        "cs": "file-code",
         "csh": "file-executable",
         "css": "file-code",
         "csv": "file-spreadsheet",

@@ -14,5 +14,27 @@
       "artwork": "icon-dark.svg"
     }
   },
-  "dynamic": null
+  "dynamic": {
+    "type": "file-type-label",
+    "label": {
+      "font": "Inter",
+      "size": 101.79,
+      "weight": 500,
+      "tracking": 0,
+      "box": [
+        332,
+        734.16,
+        360,
+        124
+      ],
+      "case": "upper",
+      "max_chars": 4,
+      "max_width": 360,
+      "overflow": "shrink",
+      "color": "#ffffff",
+      "dark_color": "#ffffff",
+      "no_extension": "PDF",
+      "min_size": 32
+    }
+  }
 }

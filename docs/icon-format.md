@@ -263,14 +263,21 @@ file senza un'icona propria (`.json`, `.docx`, `.blend`…).
   del foglio, y 473 come le altre icone dei file).
 - Se l'estensione supera `max_width` il corpo scende in proporzione; oltre `max_chars`
   caratteri, o senza estensione, si usa `fallback` (il foglio con il punto di domanda).
-- Colore dalla categoria del tipo MIME (shared-mime-info): `text/*` e documenti da ufficio
-  → `document`; JSON, XML, YAML, CSV, database → `data`; sorgenti e script → `code`;
-  archivi e pacchetti → `archive`; `image/*`, `audio/*`, `video/*`, font → `media`;
-  il resto → `other`. `overrides` associa a una singola estensione una categoria o un
-  colore (`{"json": "data"}`, `{"sketch": {"color": "#f7b500"}}`).
+- Colore dalla categoria, nell'ordine: `overrides` dell'estensione, poi la `category` della
+  voce di `icons.mime` che ha scelto il file generico, poi la categoria del tipo MIME
+  (shared-mime-info): `text/*` e documenti da ufficio → `document`; JSON, XML, YAML, CSV,
+  database → `data`; sorgenti e script → `code`; archivi e pacchetti → `archive`; `image/*`,
+  `audio/*`, `video/*`, font → `media`; il resto → `other`. `overrides` associa a una singola
+  estensione una categoria o un colore (`{"json": "data"}`, `{"sketch": {"color": "#f7b500"}}`).
+  Categorie e `overrides` valgono **solo per il file generico**: un'icona di tipo ha il colore
+  del proprio manifest (vedi Icone dei tipi di file) e non lo prende mai da qui.
 - Il tipo di file con un'icona propria usa sempre quella. `icons` è **la** mappa del repo (tipo →
   icona); chi risolve l'icona di un file (SilicaIcon, Mustache, il Dock) non ne tiene una sua.
-  Ordine di risoluzione per un file regolare:
+  Una voce di `icons.mime` è il nome di un'icona (`"text/csv": "file-spreadsheet"`) oppure il
+  file generico con la sua categoria (`"application/json": {"icon": "file-generic",
+  "category": "data"}`). Ordine di risoluzione per un file regolare:
+  0. il tipo MIME si porta al nome canonico con gli `aliases` di shared-mime-info
+     (`text/xml` → `application/xml`, `text/x-yaml` → `application/yaml`);
   1. il tipo MIME (shared-mime-info, dal contenuto e dal nome) in `icons.mime`, esatto;
   2. lo stesso con il sottotipo `*` (`image/*`, `audio/*`, `video/*`, `font/*`);
   3. i genitori del tipo (`sub-class-of` di shared-mime-info, in ordine), ripetendo 1 e 2: un
@@ -299,10 +306,105 @@ file senza un'icona propria (`.json`, `.docx`, `.blend`…).
   | `file-archive` | zip, tar, gz, xz, zst, 7z, rar, deb, rpm… | archive |
   | `file-image`, `file-audio`, `file-video` | i formati comuni | media |
 
-  L'elenco completo è nel manifest. Il colore dell'estensione scritta nelle icone proprie è
-  quello della loro categoria (foglio di calcolo `#1f9d55`, documento `#2f7cf6`, codice ed
-  eseguibili `#ff6a00`), tranne presentazione (`#f2780c`) e font (`#e8336d`), che hanno una
-  tinta propria per distinguersi dai vicini.
+  L'elenco completo è nel manifest.
+- **Una voce esplicita vince sempre sui genitori.** Il passo 3 segue `sub-class-of`, e in
+  shared-mime-info molti formati di dati discendono da tipi di codice o di testo:
+  `application/json` è sottoclasse di `application/json5` → `application/ecmascript` →
+  `text/javascript` (prenderebbe `file-code`), `application/xml`, `application/yaml`,
+  `application/toml`, `application/sql`, `text/calendar` e `text/vcard` di `text/plain`
+  (prenderebbero `file-text`), EPUB, i documenti ODF senza icona e i formati Apple di
+  `application/zip` (prenderebbero `file-archive`). Per questi `icons.mime` ha una voce
+  esplicita, perché è deterministica: non dipende dalla versione del database né da quale
+  genitore si incontra prima, e un `"json": "data"` in `overrides` da solo non basterebbe mai,
+  perché `overrides` conta solo quando l'icona è già il file generico. Una voce esplicita copre
+  anche i figli (`application/geo+json`, `application/ld+json` passano da `application/json`;
+  i tipi `+xml` da `application/xml`). Le voci aggiunte (dal database di shared-mime-info, ramo principale, ottobre 2026):
+  - file generico `data`: `application/json`, `application/json5`, `application/xml`,
+    `application/xml-dtd`, `application/yaml`, `application/toml`, `application/sql`,
+    `text/calendar`, `text/vcard`, KMZ, database ODF;
+  - file generico `document`: notebook Jupyter (`application/x-ipynb+json`), EPUB, FictionBook,
+    fumetti CBZ/CBR, PostScript, XPS e OpenXPS, TeX, e-mail (`message/rfc822`), disegni,
+    grafici e formule ODF, Visio, Draw e Math di OpenOffice 1, HWPX;
+  - file generico `media`: immagine ODF, `model/3mf`;
+  - icone di tipo: ODF flat XML (`fodt`, `fods`, `fodp`), modelli e varianti con macro di
+    Office (`dotx`, `dotm`, `xltx`, `xltm`, `potx`, `potm`, `ppsx`, `ppsm`, `sldx`, `sldm`),
+    Pages, Numbers e Keynote, Writer, Calc e Impress di OpenOffice 1 → documento, foglio di
+    calcolo, presentazione; TypeScript (`application/typescript`, che shared-mime-info fa
+    discendere da `application/x-executable`), Dart, C#, Julia, Elixir, Erlang, Haskell, Nim,
+    OCaml, Sass e Scala → `file-code` (altrimenti `text/plain` li farebbe testo, anche se la
+    loro estensione è in `icons.extensions`).
+
+  Restano ai genitori, di proposito: i pacchetti ZIP (`appx`, `msix`, `xpi`, `oxt`, `pkpass`)
+  sono archivi; gli altri sorgenti senza voce (Fortran, Pascal, Lisp…) e i formati di testo
+  (sottotitoli, patch, unità systemd) restano `file-text`; i tipi che derivano da un'icona di
+  tipo (`pptm` da `pptx`, EXE e DLL da `application/x-executable`) ne prendono l'icona.
+
+### Icone dei tipi di file
+
+Le icone dei tipi (`file-pdf`, `file-text`, `file-image`, `file-code`…) disegnano solo la
+figura: l'estensione la scrive la shell, come sul file generico, perché la stessa icona vale per
+`.jpg` e `.png`, `.ttf` e `.otf`, `.rs` e `.py`. Il tipo è `file-type-label`, distinto da
+`file-label`: non ha la mappa (`icons`), le categorie né `overrides`, e il colore è uno solo.
+
+```json
+"dynamic": {
+  "type": "file-type-label",
+  "label": { "font": "Inter", "size": 101.79, "weight": 500, "tracking": 0,
+             "box": [292, 741.43, 440, 124], "case": "upper",
+             "max_chars": 5, "max_width": 440, "overflow": "shrink",
+             "color": "#30b0c7", "dark_color": "#30b0c7",
+             "no_extension": null, "min_size": 32 }
+}
+```
+
+| Campo | Significato |
+| --- | --- |
+| `box` | riquadro dell'etichetta, tela 1024: `[x, y, larghezza, altezza]`. L'altezza è la riga naturale di Inter (1,2102 × `size`); il testo è centrato in orizzontale e la riga centrata in verticale, quindi la linea di base cade a y + h/2 − 0,605 × corpo + 0,96875 × corpo |
+| `font`, `size`, `weight`, `tracking` | Inter (asse `opsz` 14), corpo in unità della tela, peso 500 (Medium) |
+| `case` | `upper`: l'estensione senza punto in maiuscolo |
+| `max_chars` | oltre questo numero di caratteri l'estensione non si scrive e vale `no_extension` |
+| `max_width` | larghezza massima del testo, uguale alla larghezza del `box` |
+| `overflow` | `shrink`: un'estensione entro `max_chars` più larga di `max_width` riduce il corpo in proporzione, sempre centrata nel `box`; `truncate` (non usato dalle icone del repo) taglierebbe ai primi `max_chars` caratteri |
+| `color`, `dark_color` | colore nei temi chiari e in Dark; Clear e Tinted passano l'icona composta (figura ed etichetta) per la loro mappatura, come la cartella generica |
+| `no_extension` | cosa scrivere se il file non ha estensione o l'ha più lunga di `max_chars`: `null` = niente etichetta, la figura basta (un eseguibile senza estensione, un `README`); una stringa la scrive tale e quale |
+| `min_size` | sotto questo lato del corpo in pt (come per l'orologio) l'etichetta non si disegna: a 16 pt sarebbe alta meno di 2 px |
+
+L'estensione è la stessa del passo 4 della risoluzione (l'ultima dopo il punto, in minuscolo,
+poi in maiuscolo per `case`); per i nomi `.tar.<x>` la finale (`GZ`, `XZ`). Il riquadro è misurato
+sul testo che c'era negli SVG (centro x 512, riga da y 741,43; corpo 101,79, Medium) ed è largo
+440, cioè la pagina (648) meno due margini di 104: `XHTML`, `WOFF2`, `QCOW2` ci stanno a corpo
+pieno.
+
+| Icona | `box` | `color` | `dark_color` | `no_extension` |
+| --- | --- | --- | --- | --- |
+| `file-pdf` | 332, 734,16, 360, 124 (`max_chars` 4, `max_width` 360) | `#ffffff` | `#ffffff` | `"PDF"` |
+| `file-text` | 292, 741,43, 440, 124 | `#8e8e93` | `#aeaeb2` | null |
+| `file-document` | 292, 741,43, 440, 124 | `#2f7cf6` | `#5aa0ff` | null |
+| `file-spreadsheet` | 292, 741,43, 440, 124 | `#1f9d55` | `#3fd07f` | null |
+| `file-presentation` | 292, 741,43, 440, 124 | `#f2780c` | `#ff9f40` | null |
+| `file-code` | 292, 741,43, 440, 124 | `#ff6a00` | `#ff8a3d` | null |
+| `file-executable` | 292, 741,43, 440, 124 | `#ff6a00` | `#ff8a3d` | null |
+| `file-web` | 292, 741,43, 440, 124 | `#ff6a00` | `#ff8a3d` | null |
+| `file-archive` | 292, 741,43, 440, 124 | `#8e8e93` | `#aeaeb2` | null |
+| `file-disk-image` | 292, 741,43, 440, 124 | `#8e8e93` | `#aeaeb2` | null |
+| `file-image` | 292, 741,43, 440, 124 | `#30b0c7` | `#30b0c7` | null |
+| `file-audio` | 292, 741,43, 440, 124 | `#ff2d55` | `#ff2d55` | null |
+| `file-video` | 292, 741,43, 440, 124 | `#5e5ce6` | `#7d7aff` | null |
+| `file-font` | 292, 741,43, 440, 124 | `#e8336d` | `#ff5c8a` | null |
+
+- **PDF**: anche l'etichetta del PDF è dinamica, bianca sulla pastiglia rossa (il `box` è la
+  pastiglia meno i margini). Un `.pdf` scrive `PDF`; un tipo che deriva da `application/pdf`
+  con un'altra estensione scrive la sua (`AI`); senza estensione resta `PDF`, perché la
+  pastiglia vuota sembrerebbe un errore. Così nessun SVG contiene testo.
+- I grigi (testo, archivio, immagine disco) e il viola del video si schiariscono in Dark,
+  perché sul foglio scuro avevano poco contrasto; arancio del codice e degli eseguibili come
+  la categoria `code` del file generico.
+- `file-unknown` non ha etichetta: è il foglio con il punto di domanda.
+
+`design/app-icons.sketch`: nella pagina Icons (e in Showcase Files) ogni tipo ha ancora il
+livello di testo `Extension` come esempio (`PNG`, `DOCX`…), nel colore del manifest; non va
+nell'esportazione, come `JSON` del file generico. Riferimento: `tools/compose.py`,
+`compose_file(icona, lato, scuro, estensione)`.
 
 ### Volumi
 

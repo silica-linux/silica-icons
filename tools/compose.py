@@ -4,6 +4,8 @@ e scrive un foglio di controllo. Uso: python tools/compose.py [--dark] [--size N
 La cartella generica (`folder-symbol`) si compone con `compose_folder(dir, size, dark, symbol,
 tint)`: livello base, simbolo inciso e tinta, con le stesse regole della shell.
 I badge (`badges/`) si mettono sopra un'icona già composta con `compose_badges(img, names, dark)`.
+Le icone dei tipi di file (`file-type-label`) e il file generico (`file-label`) si compongono con
+l'estensione scritta da `compose_file(dir, size, dark, ext)`.
 
 Dipendenze: pillow, resvg-py. Il font Inter va passato con --fonts se gli SVG contengono testo.
 """
@@ -122,6 +124,74 @@ def compose_folder(icon_dir: Path, size: int, dark: bool, symbol: str | None = N
         colors = dyn["tint"]["labels"]
         tint = colors.get(tint, tint)
         out = apply_tint(out, tint_matrix(tint, dyn["tint"]["dark" if dark else "light"]))
+    return out
+
+
+INTER_ASCENT, INTER_LINE = 0.96875, 1.2102  # hhea di Inter: 1984 / 2048 e (1984 + 494) / 2048
+
+
+def inter_font(fonts: list[str]) -> Path | None:
+    for d in [*fonts, str(Path.home() / "Library/Fonts"), "/usr/share/fonts"]:
+        for f in sorted(Path(d).rglob("Inter*.ttf")) if Path(d).is_dir() else []:
+            if "Italic" not in f.name:
+                return f
+    return None
+
+
+def label_text(label: dict, ext: str | None) -> str | None:
+    """Il testo dell'etichetta: l'estensione (senza punto, nel `case` del manifest) se ha da 1 a
+    `max_chars` caratteri; altrimenti `no_extension` (null: niente etichetta)."""
+    if ext and len(ext) <= label["max_chars"]:
+        return ext.upper() if label.get("case") == "upper" else ext
+    return label.get("no_extension")
+
+
+def draw_label(out: Image.Image, label: dict, text: str, color: str, fonts: list[str]) -> None:
+    """Scrive `text` centrato nel `box` (tela 1024): riga di altezza naturale (1,2102 × corpo)
+    centrata in verticale; se più largo di `max_width` il corpo scende in proporzione."""
+    from PIL import ImageFont
+    path = inter_font(fonts)
+    if path is None or not text:
+        return
+    ss = 4
+    k = out.width / 1024 * ss
+    size = label["size"]
+    font = ImageFont.truetype(str(path), max(1, round(size * k)))
+    font.set_variation_by_axes([14, label["weight"]])
+    width = font.getlength(text) / k + label.get("tracking", 0) * (len(text) - 1)
+    if width > label["max_width"]:
+        size *= label["max_width"] / width
+        font = ImageFont.truetype(str(path), max(1, round(size * k)))
+        font.set_variation_by_axes([14, label["weight"]])
+        width = font.getlength(text) / k
+    x, y, w, h = label["box"]
+    baseline = y + h / 2 - INTER_LINE * size / 2 + INTER_ASCENT * size
+    layer = Image.new("RGBA", (out.width * ss, out.height * ss), (0, 0, 0, 0))
+    ImageDraw.Draw(layer).text(((x + w / 2 - width / 2) * k, baseline * k), text, font=font,
+                               fill=color, anchor="ls")
+    out.alpha_composite(layer.resize(out.size, Image.LANCZOS))
+
+
+def compose_file(icon_dir: Path, size: int, dark: bool, ext: str | None,
+                 category: str | None = None, fonts: list[str] | None = None) -> Image.Image:
+    """Un'icona di tipo (`file-type-label`) o il file generico (`file-label`, colore da
+    `category`) con l'etichetta dell'estensione `ext`, come la scrive la shell."""
+    fonts = fonts or []
+    out = compose(icon_dir, size, dark, fonts)
+    dyn = json.loads((icon_dir / "icon.json").read_text()).get("dynamic") or {}
+    if dyn.get("type") == "file-type-label":
+        label = dyn["label"]
+        color = label["dark_color" if dark else "color"]
+    elif dyn.get("type") == "file-label":
+        label = {**dyn["label"], "no_extension": None}
+        cat = dyn["overrides"].get((ext or "").lower(), category or "other")
+        c = cat if isinstance(cat, dict) else dyn["colors"][cat]
+        color = c.get("dark_color", c["color"]) if dark else c["color"]
+    else:
+        return out
+    text = label_text(label, ext)
+    if text and size * 824 / 1024 >= label.get("min_size", 0):
+        draw_label(out, label, text, color, fonts)
     return out
 
 
