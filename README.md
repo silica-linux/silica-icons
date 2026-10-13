@@ -29,6 +29,12 @@ docs/      specifiche: formato delle icone, griglia, temi
 Il file Sketch `app-icons.sketch` è la sorgente di design; `tools/` lo esporta nei livelli
 SVG di ogni icona. I file esportati sono quelli che fanno fede per la build.
 
+## Licenza
+
+- Icone e file grafici: [CC BY-SA 4.0](LICENSE). Si possono usare e modificare, anche
+  per scopi commerciali, citando Silica e rilasciando le modifiche con la stessa licenza.
+- Codice in `tools/`: MIT OR Apache-2.0, come il repo `silica`.
+
 ## Regole
 
 Valgono le regole clean-room di `silica/AGENTS.md`: nessun asset, nome o file di sistema
