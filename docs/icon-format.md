@@ -19,7 +19,7 @@ Tutte le misure sono su una tela di **1024 × 1024**.
 | Elemento | Misura |
 | --- | --- |
 | Corpo (dove la shell ritaglia) | 824 × 824 a (100, 100) |
-| Angoli del corpo | smooth, raggio 215, smoothing 0,6 (superellisse n ≈ 2,6) |
+| Angoli del corpo | smooth, raggio 215, smoothing 0,55 |
 | Keyline quadrato | 600 × 600 a (212, 212) |
 | Keyline cerchio grande | Ø 600, centro (512, 512) |
 | Keyline cerchio piccolo | Ø 424, centro (512, 512) |
@@ -28,6 +28,62 @@ Tutte le misure sono su una tela di **1024 × 1024**.
 
 Il contenuto principale sta in uno dei keyline; le icone a tutta tela (un fondo disegnato,
 come Calendar o Photos) occupano il corpo intero.
+
+## Sistema di proporzioni (φ = 1,618)
+
+È il sistema dei simboli ([`symbol-format.md`](symbol-format.md)) scalato alla tela 1024 con
+**1 u = 30 px**: la keyline cerchio Ø 600 è il cerchio Ø 20 u dei simboli, il tratto Regular
+(1,5 u) vale 45 px. In `design/app-icons.sketch` il simbolo `Grid / Golden 1024` (azzurro) lo
+disegna sopra `Grid / Overlay` (rosa): pagina Grid e livello `Golden overlay` in ogni artboard
+di Grid Check.
+
+### Le keyline esistenti
+
+| Keyline | Da dove viene |
+| --- | --- |
+| Corpo 824 | tela − 2 × 100; raggio 215 ≈ 0,26 × lato (smoothing 0,55) |
+| Quadrato e cerchio 600 | grandezza base (20 u) |
+| Cerchio 424 | 600 / √2: cerchio inscritto nel quadrato inscritto nel cerchio 600 |
+| Verticale 520 × 680, orizzontale 680 × 520 | stesso perimetro del quadrato 600 (520 + 680 = 2 × 600), area 98 %; rapporto 1,31, non aureo |
+
+Restano tutte: il sistema aureo le completa, non le sostituisce.
+
+### Grandezze
+
+| Grandezza | Valori | Uso |
+| --- | --- | --- |
+| Serie A (dalla keyline) | **600 · 371 · 229 · 142 · 87 · 54** (600 / φⁿ); passi intermedi √φ: 472 · 292 · 180 · 112 · 69 | lati e diametri dei pezzi principali |
+| Serie B (dal corpo) | 824 · 509 · 315 · 194 | pezzi che si misurano sul corpo (lente di Photo Viewer 316, carta di Mail 508, baffo di Mustache 511) |
+| Rettangoli | aureo 600 × 371 (largo, a (212, 326,5)) e 371 × 600 (alto); √2 (424 × 300); keyline orizzontale e verticale | schede, schermi, foto, dischi |
+| Linee auree del corpo | x e y = 415 e 609 (100 + 824 / φ² e 100 + 824 / φ) | divisori, orizzonti, pezzi decentrati |
+| Spessori | 13,5 · 17 · 22 · 28 · 35 · 45 · 57 (45 × √φⁿ, come i pesi dei simboli) | righe di testo, contorni, lancette, aste, manici |
+| Luci fra pezzi ripetuti | uguale allo spessore (1 : 1) per righe fitte (Mail, Terminal, file); spessore × φ per testo arioso (Text Editor); pezzo / φ² o pezzo / φ³ fra tessere e tasti | ritmo |
+| Raggi | 215 · 169 · 133 · 104 · 82 · 64 · 51 · 40 · 31 · 25 · 19 · 15 (215 / √φⁿ); capsula = metà altezza; pezzo annidato = raggio esterno − distanza | angoli |
+| Centro | ingombro del primo piano centrato su (512, 512) | composizione |
+
+Rapporti interni ammessi: φ, √φ, √2, 1 : 1, 1 : 2. Tolleranza: una misura rispetta il
+sistema se sta entro il 3 % della grandezza o entro 4 px. Le lunghezze delle singole righe di
+testo e le posizioni dei dettagli illustrativi non sono vincolate.
+
+Eccezioni volute:
+
+- le icone dei file restano sulla keyline verticale (foglio 520 × 680); il contenuto del foglio
+  è centrato su y 480, sopra l'estensione;
+- il Cestino è largo 584 (≈ 600) e alto 734 (h : l ≈ √φ), con la base del cestello a y 914,
+  quasi sul fondo del corpo delle app (924): nel Dock poggia sulla stessa linea;
+- la piega dei fogli (132) non è sulla serie: cambiarla vuol dire ridisegnare il tracciato di
+  ogni foglio; resta finché i fogli non si ridisegnano.
+
+### Correzioni ottiche e scostamenti dal rapporto puro
+
+| Icona | Rapporto puro | Scelto | Motivo |
+| --- | --- | --- | --- |
+| Clock | quadrante sulla keyline Ø 600 | a tutto corpo (tacche fino a Ø 740) | un orologio piccolo nel corpo bianco perde leggibilità; i numeri stanno su Ø 480 ≈ 472 |
+| Fonts | blocco maiuscole centrato su y 512 | 335…655 (centro 495) | centro ottico sopra quello geometrico; in x l'ingombro dei glifi è centrato su 512 |
+| Help | punto interrogativo centrato sull'ingombro | centro x 508 | la massa del ricciolo sta a destra |
+| Calendar | disco Ø 472 | Ø 460 (entro tolleranza) | la base del disco resta sulla keyline 812 e la luce mese–disco a 54 |
+| Text Editor | composizione centrata | foglio a x 248…736, penna in diagonale fino a x 905 | la penna è il secondo soggetto; resta dentro il corpo |
+| Store, lucchetto | centro dell'ingombro sul centro | centro su 512 con il manico incluso | sacchetto e lucchetto hanno la stessa base (794) |
 
 ## Cartella di un'icona
 

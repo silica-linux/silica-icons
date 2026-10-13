@@ -2,11 +2,11 @@
 <svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>foreground-dark</title>
     <defs>
-        <path d="M924,763.64 L100,763.64 L100,231.64 L924,231.64 Z" id="path-1"></path>
+        <path d="M935,763.64 L111,763.64 L111,231.64 L935,231.64 Z" id="path-1"></path>
     </defs>
     <g id="foreground-dark" stroke="none" fill="none" xlink:href="#path-1" font-family="Inter-Regular_Medium, Inter" font-size="440" font-weight="400">
         <text id="Glyphs" fill="#F2F2F7">
-            <tspan x="247.422354" y="657.64">Aa</tspan>
+            <tspan x="258.422354" y="657.64">Aa</tspan>
         </text>
     </g>
 </svg>

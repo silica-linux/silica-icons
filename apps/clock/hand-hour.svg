@@ -3,8 +3,8 @@
     <title>hand-hour</title>
     <defs>
         <path d="M924,924 L100,924 L100,100 L924,100 Z" id="path-1"></path>
-        <rect id="path-2" x="397" y="212" width="30" height="236" rx="15"></rect>
-        <filter x="-70.0%" y="-6.4%" width="240.0%" height="117.8%" filterUnits="objectBoundingBox" id="filter-3">
+        <rect id="path-2" x="397" y="219" width="30" height="229" rx="15"></rect>
+        <filter x="-70.0%" y="-6.6%" width="240.0%" height="118.3%" filterUnits="objectBoundingBox" id="filter-3">
             <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.250980392 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
