@@ -1264,6 +1264,45 @@ def tag_moon(cx):
 add("files", "circle-stack", (S, circle(TC_X[0], C, TC_R)), (S, tag_circle(TC_X[1])), (S, tag_circle(TC_X[2])))
 add("files", "circle-stack-fill", (F, circle(TC_X[0], C, TC_R)), (F, tag_moon(TC_X[1])), (F, tag_moon(TC_X[2])))
 
+# Barra laterale del file manager (fase 5) -----------------------------------------
+# In coda alle categorie. desktop: schermo senza piede (rettangolo 18,5 × 13, inchiostro
+# 20 × 14,5, centrato) con una fascia piena in basso, la barra di menubar capovolta.
+DK = (2.75, C - 6.5, 18.5, 13.0)
+DK_B = DK[1] + DK[3] - 3.0
+
+
+def band_bottom(x, y, w, h, yb, r=2.4):
+    return (f"M{P(x, yb)}H{f(x + w)}V{f(y + h - r)}A{f(r)} {f(r)} 0 0 1 {P(x + w - r, y + h)}"
+            f"H{f(x + r)}A{f(r)} {f(r)} 0 0 1 {P(x, y + h - r)}Z")
+
+
+add("devices", "desktop", (S, rrect(*DK, 2.4)), (F, band_bottom(*DK, DK_B)))
+# photo-fill: cornice a contorno, sole e colline pieni (riempimento e tratto); le colline
+# seguono le creste di photo e scendono fino al fondo della cornice.
+PH_R = 2.4
+PH_Y1 = WN[1] + WN[3]
+add("files", "photo-fill", (S, rrect(*WN, PH_R)), (F, circle(15.75, 8.75, 1.6)),
+    (F, f"M{P(2.75, 17.0)}L{P(8.5, 11.25)}L{P(11.6, 14.35)}L{P(15.5, 13.25)}L{P(21.25, 17.0)}"
+        f"V{f(PH_Y1 - PH_R)}A{f(PH_R)} {f(PH_R)} 0 0 1 {P(21.25 - PH_R, PH_Y1)}"
+        f"H{f(2.75 + PH_R)}A{f(PH_R)} {f(PH_R)} 0 0 1 {P(2.75, PH_Y1 - PH_R)}Z"))
+# house-door: house con la porta piena e un comignolo pieno sulla falda destra; tetto, muri e
+# porta restano quelli di house, così i due simboli si scambiano. house-door-fill: corpo
+# pieno con la porta ritagliata dal contorno (tacca sul bordo in basso, nessuna sottrazione).
+ROOF = ((3.25, 11.0), (C, 3.5), (20.75, 11.0))
+
+
+def roof_y(x):
+    return 3.5 + (x - C) * (11.0 - 3.5) / (20.75 - C)
+
+
+CH = (14.75, 17.0, 4.5)
+CHIMNEY = poly((CH[0], CH[2]), (CH[1], CH[2]), (CH[1], roof_y(CH[1])), (CH[0], roof_y(CH[0])))
+DOOR = "M10 20.25V15.4A1 1 0 0 1 11 14.4H13A1 1 0 0 1 14 15.4V20.25"
+add("windows", "house-door", (S, line(*ROOF)), (S, HOUSE), (F, DOOR + "Z"), (F, CHIMNEY))
+add("windows", "house-door-fill", (S, line(*ROOF)), (F, CHIMNEY),
+    (F, "M12 3.5L18.25 8.86V17.85A2.4 2.4 0 0 1 15.85 20.25H14V15.4A1 1 0 0 0 13 14.4H11"
+        "A1 1 0 0 0 10 15.4V20.25H8.15A2.4 2.4 0 0 1 5.75 17.85V8.86Z"))
+
 CATS = [
     ("status", "Status & Connectivity"),
     ("control", "Control Center & Media"),

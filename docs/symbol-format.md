@@ -129,7 +129,7 @@ medium le icone della barra dei menu stanno fra 12 e 16 pt di altezza (osservato
 - La forma base è **outline** (tratto). Il nome senza suffisso è l'outline: `bell`, `folder`.
 - La variante piena ha suffisso `-fill`: `bell-fill`, `folder-fill`, `heart-fill`. Si
   disegna per i simboli che diventano "attivi" o selezionati (barre laterali, tab bar,
-  preferiti). Esistono per `location`, `mic`, `bolt`, `house`, `folder`, `doc`, `bookmark`,
+  preferiti). Esistono per `location`, `mic`, `bolt`, `house`, `house-door`, `folder`, `doc`, `photo`, `bookmark`,
   `trash`, `bell`, `message`, `phone`, `video`, `paperplane`, `megaphone`, `person`, `lock`,
   `shield`, `cloud`, `drop`, `umbrella`, `circle`, `square`, `triangle`, `diamond`, `star`,
   `heart`, `flag`, `lightbulb`, `puzzle`, `leaf`, `pointer`, `circle-stack`. Nella variante fill il dettaglio
@@ -204,6 +204,21 @@ pannello a destra sono `sidebar` e `sidebar-right`.
   peso, come i tagli delle barre). `circle-stack-fill`: dischi pieni, quelli dietro diventano
   lune con la stessa luce.
 
+## Barra laterale del file manager
+
+Simboli per le righe della barra laterale (fase 5 in `symbols.py`, in coda alle categorie).
+
+- `desktop` (Scrivania): schermo senza piede, rettangolo 18,5 × 13 r 2,4 (inchiostro 20 × 14,5,
+  centrato) con una fascia piena in basso alta 3 u sull'asse, la barra di `menubar` capovolta.
+  `display` resta il monitor con il piede.
+- `photo-fill` (Immagini): cornice di `photo` a contorno, sole e colline pieni (riempimento e
+  tratto). Le colline seguono le creste di `photo` e scendono fino al fondo della cornice; il
+  dettaglio non si ritaglia, si riempie.
+- `house-door`: tetto, muri e porta di `house` (stessa proporzione, si scambiano), con la porta
+  piena e un comignolo pieno sulla falda destra (x 14,75–17, sommità a y 4,5, base sulla falda).
+  `house-door-fill`: corpo pieno con la porta come tacca nel contorno in basso (nessuna
+  sottrazione: la porta tocca il bordo), comignolo pieno; la porta resta aperta 2,5 u in Regular.
+
 ## Varianti barrate e badge
 
 - `-slash`: barra da (4,25, 4,25) a (19,75, 19,75), sopra il simbolo, sempre lo stesso tratto
@@ -216,19 +231,19 @@ pannello a destra sono `sidebar` e `sidebar-right`.
 
 ## Catalogo
 
-318 simboli in 11 categorie, nell'ordine delle sezioni della pagina Symbols (12 colonne,
+322 simboli in 11 categorie, nell'ordine delle sezioni della pagina Symbols (12 colonne,
 passo 144 px; ogni categoria ha una banda di 960 px, cioè fino a 5 righe).
 
 | Categoria | Simboli |
 | --- | --- |
 | Status & Connectivity | 37 |
 | Control Center & Media | 32 |
-| Windows & Navigation | 43 |
+| Windows & Navigation | 45 |
 | Editing & Text | 37 |
-| Files & Documents | 30 |
+| Files & Documents | 31 |
 | Communication | 25 |
 | People & Security | 21 |
-| Devices | 21 |
+| Devices | 22 |
 | Weather & Time | 23 |
 | Shapes & Indicators | 29 |
 | Settings | 20 |
