@@ -70,6 +70,15 @@ tratto).
 | Regular | 1,5 | 0,088 | Inter Regular "l" 0,088 |
 | Semibold | 2,15 (1,5 × φ^¾) | 0,127 | Inter SemiBold "l" 0,127 |
 
+Sulla scala degli spessori delle icone (`icon-format.md`, 1 u = 30 px: 45 × √φⁿ) Light vale 35 e
+Regular 45; Semibold (64,6) sta fra 57 e 73 perché segue l'asta di Inter SemiBold, non la serie √φ.
+
+Il disegno è lo stesso nei tre pesi: cambia solo il tratto. I tagli delle barre e dei badge si
+ricalcolano per peso perché la luce resti 1,5 u (asse-asse = tratto + 1,5: Light 2,68, Regular 3,
+Semibold 3,65); per questo in Semibold spariscono i pezzi che stanno tutti nella fascia della barra
+(la pupilla di `eye-slash`). In `symbols.py` il peso si sceglie con `SILICA_SYMBOL_WEIGHT`
+(`light`, `regular`, `semibold`; tratto in `WSW`).
+
 Il simbolo ha lo stesso peso del testo accanto: un simbolo Regular sta con Inter Regular, un
 Semibold con Inter SemiBold. Altri pesi (Thin, Medium, Bold) si aggiungono con lo stesso
 criterio: tratto = asta di Inter di quel peso, convertita in unità della tela medium.
@@ -120,13 +129,18 @@ medium le icone della barra dei menu stanno fra 12 e 16 pt di altezza (osservato
 - La forma base è **outline** (tratto). Il nome senza suffisso è l'outline: `bell`, `folder`.
 - La variante piena ha suffisso `-fill`: `bell-fill`, `folder-fill`, `heart-fill`. Si
   disegna per i simboli che diventano "attivi" o selezionati (barre laterali, tab bar,
-  preferiti). Nella variante fill il dettaglio interno si ritaglia (sottrazione), con luce
-  minima 1,5 u.
+  preferiti). Esistono per `location`, `mic`, `bolt`, `house`, `folder`, `doc`, `bookmark`,
+  `trash`, `bell`, `message`, `phone`, `video`, `paperplane`, `megaphone`, `person`, `lock`,
+  `shield`, `cloud`, `drop`, `umbrella`, `circle`, `square`, `triangle`, `diamond`, `star`,
+  `heart`, `flag`, `lightbulb`, `puzzle`, `leaf`, `pointer`. Nella variante fill il dettaglio
+  interno si ritaglia (sottrazione), con luce minima 1,5 u.
 - Simboli pieni per natura (`play`, `pause`, `moon`, `airplane`) non hanno variante outline.
 - Finché Sketch non conserva le sottrazioni fra sottotracciati, si disegnano `-fill` solo per le
   forme senza dettaglio interno da ritagliare, oppure col dettaglio omesso (`folder-fill` senza
-  divisorio, `doc-fill` senza piega, `house-fill` senza porta); non esistono ancora
-  `envelope-fill`, `tag-fill`, `checkmark-circle-fill`.
+  divisorio, `doc-fill` senza piega, `house-fill` senza porta, `leaf-fill` senza nervatura); le parti
+  aperte (manico di `umbrella`, base di `lightbulb`, battaglio di `bell`) restano tratti. Non esistono
+  ancora `envelope-fill`, `tag-fill`, `checkmark-circle-fill`, `gear-fill`, `camera-fill`, `eye-fill`
+  (il dettaglio interno è il simbolo).
 
 ## Nomi
 
@@ -159,28 +173,31 @@ medium le icone della barra dei menu stanno fra 12 e 16 pt di altezza (osservato
 ## File nel repository
 
 ```
-symbols/<nome>.svg      viewBox 0 0 24 24, tratto 1,5, stroke-linecap/linejoin round,
-                        colore currentColor, livelli secondari con opacity 0.35
+symbols/<peso>/<nome>.svg   peso light, regular, semibold; viewBox 0 0 24 24, tratto del peso
+                            (1,18 · 1,5 · 2,15), stroke-linecap/linejoin round,
+                            colore currentColor, livelli secondari con opacity 0.35
 ```
 
 I tracciati sono descritti in `tools/symbols/symbols.py` (sorgente unica per Sketch e per gli
-SVG). `tools/symbols/export_svg.py` scrive `symbols/*.svg`; con `--check` verifica che i file
-siano allineati alla sorgente. `tools/symbols/gen2.py` genera gli script che creano gli artboard
-in `design/symbols.sketch`; `compose_sheet.py` ricompone il foglio di controllo della pagina
-Sheet dai PNG esportati da Sketch. I pesi Light e Semibold come file separati non sono ancora
-esportati: si ottengono ricalcolando il tratto (sezione Pesi).
+SVG). `tools/symbols/export_svg.py` scrive i tre pesi in `symbols/<peso>/*.svg`; con `--check`
+verifica che i file siano allineati alla sorgente. `tools/symbols/gen2.py` genera gli script che
+creano gli artboard in `design/symbols.sketch`; `compose_sheet.py` ricompone il foglio di controllo della pagina
+Sheet dai PNG esportati da Sketch; `sheet.py foglio.png 48 semibold` rende il foglio di un peso.
+In `design/symbols.sketch` i simboli sono disegnati in Regular.
 
 ## Varianti barrate e badge
 
-- `-slash`: barra da (4,25, 4,25) a (19,75, 19,75), sopra il simbolo. I tratti sotto la barra
-  si interrompono dove l'asse dista meno di 3 u dall'asse della barra (0,75 + luce 1,5 + 0,75):
-  la luce minima vale anche per gli incroci.
+- `-slash`: barra da (4,25, 4,25) a (19,75, 19,75), sopra il simbolo, sempre lo stesso tratto
+  diritto a 45° con terminali rotondi. I tratti sotto la barra si interrompono dove l'asse dista
+  meno di 3 u dall'asse della barra (0,75 + luce 1,5 + 0,75): la luce minima vale anche per gli
+  incroci. Le forme piene si tagliano allo stesso modo (`slashed_fill`: il contorno tagliato resta a
+  3 u dall'asse della barra), come l'altoparlante di `volume-slash`.
 - Badge (`bell-badge`): disco pieno; il tratto sotto si interrompe con la stessa luce.
 - I tagli si calcolano in `symbols.py` (funzioni `cut`, `slashed`, `outside_shape`), mai a mano.
 
 ## Catalogo
 
-303 simboli in 11 categorie, nell'ordine delle sezioni della pagina Symbols (12 colonne,
+313 simboli in 11 categorie, nell'ordine delle sezioni della pagina Symbols (12 colonne,
 passo 144 px; ogni categoria ha una banda di 960 px, cioè fino a 5 righe).
 
 | Categoria | Simboli |
@@ -190,12 +207,12 @@ passo 144 px; ogni categoria ha una banda di 960 px, cioè fino a 5 righe).
 | Windows & Navigation | 40 |
 | Editing & Text | 37 |
 | Files & Documents | 28 |
-| Communication | 24 |
-| People & Security | 20 |
+| Communication | 25 |
+| People & Security | 21 |
 | Devices | 21 |
-| Weather & Time | 21 |
-| Shapes & Indicators | 26 |
-| Settings | 17 |
+| Weather & Time | 23 |
+| Shapes & Indicators | 29 |
+| Settings | 20 |
 
-Elenco completo dei nomi: `symbols/` (un file per simbolo) o la pagina Sheet di
+Elenco completo dei nomi: `symbols/regular/` (un file per simbolo) o la pagina Sheet di
 `design/symbols.sketch`, ordinata per categoria.

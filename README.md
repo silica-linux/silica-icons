@@ -48,8 +48,9 @@ foglio di controllo.
   con varianti scure; calendar e clock sono dinamiche.
 - `files/`: cartella, 8 tipi di file, file generico (estensione scritta dalla shell),
   Cestino vuoto e pieno, Stack Close.
-- `symbols/`: 303 simboli in 11 categorie, generati da `tools/symbols/symbols.py`
-  (`export_svg.py --check` verifica che gli SVG corrispondano alla sorgente). Specifica:
+- `symbols/<peso>/`: 313 simboli in 11 categorie e tre pesi (`light`, `regular`, `semibold`),
+  generati da `tools/symbols/symbols.py` (`export_svg.py --check` verifica che gli SVG
+  corrispondano alla sorgente). Specifica:
   [`docs/symbol-format.md`](docs/symbol-format.md); sorgente di design `design/symbols.sketch`.
 
 ## Licenza

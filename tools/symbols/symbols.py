@@ -1,7 +1,14 @@
 import math
+import os
 
 PHI = (1 + 5 ** 0.5) / 2
 SW = 1.5
+# Pesi (docs/symbol-format.md, "Pesi"): il disegno resta lo stesso, cambia il tratto.
+# SILICA_SYMBOL_WEIGHT sceglie il peso con cui si calcolano i tagli (luce costante 1,5 u).
+WEIGHTS = {"light": SW / PHI ** 0.5, "regular": SW, "semibold": SW * PHI ** 0.75}
+WEIGHT = os.environ.get("SILICA_SYMBOL_WEIGHT", "regular")
+WSW = WEIGHTS.get(WEIGHT, SW)
+LUCE = 1.5
 GAP = SW * PHI * PHI
 C = 12.0
 
@@ -100,7 +107,8 @@ add("status", "battery-10", *battery(1 / PHI ** 3))
 add("status", "battery-charging",
     *battery(0, (FO, poly((12.9, 7.9), (8.4, 12.7), (11.5, 12.7), (10.9, 16.1), (15.4, 11.3), (12.3, 11.3)))))
 
-SPK = poly((3.25, 9.4), (6.1, 9.4), (10.1, 5.9), (10.1, 18.1), (6.1, 14.6), (3.25, 14.6))
+SPK_PTS = [(3.25, 9.4), (6.1, 9.4), (10.1, 5.9), (10.1, 18.1), (6.1, 14.6), (3.25, 14.6)]
+SPK = poly(*SPK_PTS)
 VOL_O = (9.4, 12)
 VOL_R = [4.8, 4.8 + GAP, 4.8 + 2 * GAP]
 
@@ -114,8 +122,7 @@ def volume(level):
     return els
 
 
-add("status", "volume-slash",
-    (F, SPK), (S, line((14.2, 9.2), (19.8, 14.8))), (S, line((19.8, 9.2), (14.2, 14.8))))
+add("status", "volume-slash")  # posto nel catalogo; disegno nella fase 2, con i tagli della barra
 add("status", "volume-1", *volume(1))
 add("status", "volume-2", *volume(2))
 add("status", "volume", *volume(3))
@@ -331,7 +338,7 @@ add("settings", "zoom-in",
 # lista di segmenti ("L" retta, "A" arco in senso orario, "C" cubica), così le
 # varianti -slash e i badge tagliano i tratti con la luce minima della specifica.
 # ===========================================================================
-CUT = 0.75 + 1.5 + 0.75  # asse del taglio -> asse del tratto tagliato (luce 1,5)
+CUT = WSW / 2 + LUCE + WSW / 2  # asse del taglio -> asse del tratto tagliato (Regular: 0,75 + 1,5 + 0,75)
 
 
 def pL(*pts):
@@ -517,6 +524,34 @@ def slashed(prims, a=SLASH[0], b=SLASH[1], d=CUT):
     return cut(prims, lambda x, y: seg_dist((x, y), a, b) >= d)
 
 
+def clip_half(pts, nx, ny, c):
+    """Parte del poligono dove nx*x + ny*y >= c (Sutherland-Hodgman)."""
+    out = []
+    for p, q in zip(pts, pts[1:] + pts[:1]):
+        dp, dq = nx * p[0] + ny * p[1] - c, nx * q[0] + ny * q[1] - c
+        if dp >= 0:
+            out.append(p)
+        if (dp >= 0) != (dq >= 0):
+            t = dp / (dp - dq)
+            out.append((p[0] + (q[0] - p[0]) * t, p[1] + (q[1] - p[1]) * t))
+    return out
+
+
+def area(pts):
+    return abs(sum(p[0] * q[1] - q[0] * p[1] for p, q in zip(pts, pts[1:] + pts[:1]))) / 2
+
+
+def slashed_fill(pts, a=SLASH[0], b=SLASH[1], d=CUT, min_area=0.5):
+    """Forma piena (riempimento e tratto) tagliata dalla barra: l'asse del contorno resta a d dall'asse
+    della barra, come per i tratti. Vale per forme che stanno entro la lunghezza della barra."""
+    ux, uy = (b[0] - a[0]), (b[1] - a[1])
+    n = math.hypot(ux, uy)
+    nx, ny = -uy / n, ux / n
+    c0 = nx * a[0] + ny * a[1]
+    pieces = [clip_half(pts, nx, ny, c0 + d), clip_half(pts, -nx, -ny, -c0 + d)]
+    return [q for q in pieces if len(q) >= 3 and area(q) >= min_area]
+
+
 def sample(prims, n=48):
     pts = []
     for pr in prims:
@@ -627,6 +662,9 @@ def wifi_prims():
 add("status", "wifi-slash",
     (F, dot(WIFI_O[0], WIFI_O[1], 1.0)), *E(S, slashed(wifi_prims())), (S, line(*SLASH)))
 BT = [(6.8, 7.6), (16.6, 16.4), (12, 20.6), (12, 3.4), (16.6, 7.6), (6.8, 16.4)]
+SYM["volume-slash"] = [*[(F, poly(*q)) for q in slashed_fill(SPK_PTS)],
+                       *E(S, slashed([pA(VOL_O[0], VOL_O[1], r, -a, a) for r, a in zip(VOL_R, (38, 44, 47))])),
+                       (S, line(*SLASH))]
 add("status", "bluetooth-slash", *E(S, slashed([pL(*BT)])), (S, line(*SLASH)))
 add("status", "battery-0", *battery(0))
 add("status", "volume-0", *volume(0))
@@ -909,7 +947,7 @@ add("communication", "bell-fill", (F, BELL), (S, "M9.6 19.9A2.5 2.5 0 0 0 14.4 1
 add("communication", "bell-slash", *E(S, slashed(BELL_P + [pA(C, 19.2, 2.5, 16.26, 163.74)])), (S, line(*SLASH)))
 BADGE = (18.5, 5.0, 2.6)
 add("communication", "bell-badge",
-    *E(S, cut(BELL_P, lambda x, y: math.dist((x, y), BADGE[:2]) >= BADGE[2] + 1.5 + 0.75)),
+    *E(S, cut(BELL_P, lambda x, y: math.dist((x, y), BADGE[:2]) >= BADGE[2] + LUCE + WSW / 2)),
     (S, "M9.6 19.9A2.5 2.5 0 0 0 14.4 19.9"), (FO, circle(*BADGE)))
 add("communication", "envelope", (S, rrect(2.75, 5.25, 18.5, 13.5, 2.4)), (S, line((3.75, 6.75), (C, 12.75), (20.25, 6.75))))
 add("communication", "envelope-open",
@@ -1156,6 +1194,21 @@ add("settings", "arrow-down-circle", (S, circle(C, C, 9.25)), (S, line((C, 7.0),
 add("settings", "bug", (S, rrect(7.5, 7.25, 9.0, 12.5, 4.5)), (S, arc(C, 7.25, 3.0, 180, 360)), (S, line((C, 11.75), (C, 19.75))),
     *[(S, line(a, b)) for a, b in (((7.5, 11.75), (4.0, 10.25)), ((16.5, 11.75), (20.0, 10.25)), ((7.5, 15.75), (4.0, 17.25)), ((16.5, 15.75), (20.0, 17.25)))])
 add("settings", "pointer", (S, poly((6.0, 3.25), (6.0, 18.5), (9.9, 14.9), (12.5, 20.6), (15.1, 19.4), (12.5, 13.8), (17.75, 13.5))))
+
+# Varianti -fill (fase 3) -------------------------------------------------------
+# In coda alle categorie, così le posizioni degli artboard esistenti non cambiano. Stesse
+# regole dei -fill esistenti: riempimento e tratto (F) sul contorno dell'outline, dettaglio
+# interno omesso (leaf-fill senza nervatura), parti aperte (manici, basi) restano tratti.
+add("communication", "megaphone-fill", (F, SYM["megaphone"][0][1]), *SYM["megaphone"][1:])
+add("people", "shield-fill", (F, SHIELD))
+add("weather", "drop-fill", (F, SYM["drop"][0][1]))
+add("weather", "umbrella-fill", (F, SYM["umbrella"][0][1] + "Z"), SYM["umbrella"][1])
+add("shapes", "triangle-fill", (F, SYM["triangle"][0][1]))
+add("shapes", "diamond-fill", (F, SYM["diamond"][0][1]))
+add("shapes", "lightbulb-fill", (F, SYM["lightbulb"][0][1]), SYM["lightbulb"][1])
+add("settings", "puzzle-fill", (F, SYM["puzzle"][0][1]))
+add("settings", "leaf-fill", (F, SYM["leaf"][0][1]))
+add("settings", "pointer-fill", (F, SYM["pointer"][0][1]))
 
 CATS = [
     ("status", "Status & Connectivity"),

@@ -1,4 +1,7 @@
-import sys, io, resvg_py
+import os, sys, io, resvg_py
+# Uso: python sheet.py foglio.png [px] [light|regular|semibold]
+if len(sys.argv) > 3:
+    os.environ['SILICA_SYMBOL_WEIGHT'] = sys.argv[3]
 from PIL import Image, ImageDraw, ImageFont
 sys.path.insert(0,'.')
 import importlib, symbols as S
@@ -10,7 +13,8 @@ def _inter():
     found += glob.glob(os.path.expanduser('~/.pub-cache/git/silica-ui-*/fonts/Inter-Regular.ttf'))
     return next((p for p in found if p and os.path.exists(p)), None)
 FONT = _inter()
-def render(name, px, sw=S.SW, color='#000'):
+def render(name, px, sw=None, color='#000'):
+    sw = S.WSW if sw is None else sw
     png = resvg_py.svg_to_bytes(svg_string=S.svg(name, sw=sw, color=color, size=px))
     return Image.open(io.BytesIO(bytes(png))).convert('RGBA')
 def sheet(out, px=72, dark=False, cols=10):
