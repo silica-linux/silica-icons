@@ -3,7 +3,7 @@
   "id": "mustache",
   "name": "Mustache",
   "kind": "app",
-  "keyline": "portrait",
+  "keyline": "landscape",
   "layers": [
     {
       "role": "background",
