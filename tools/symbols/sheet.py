@@ -2,7 +2,14 @@ import sys, io, resvg_py
 from PIL import Image, ImageDraw, ImageFont
 sys.path.insert(0,'.')
 import importlib, symbols as S
-FONT='/Users/emanuelefrascella/Progetti/silica/packages/silica_ui/fonts/Inter-Regular.ttf'
+def _inter():
+    import glob, os
+    found = [os.environ.get('INTER_FONT', '')]
+    here = os.path.dirname(os.path.abspath(__file__))
+    found += glob.glob(os.path.join(here, '../../../silica-ui/fonts/Inter-Regular.ttf'))
+    found += glob.glob(os.path.expanduser('~/.pub-cache/git/silica-ui-*/fonts/Inter-Regular.ttf'))
+    return next((p for p in found if p and os.path.exists(p)), None)
+FONT = _inter()
 def render(name, px, sw=S.SW, color='#000'):
     png = resvg_py.svg_to_bytes(svg_string=S.svg(name, sw=sw, color=color, size=px))
     return Image.open(io.BytesIO(bytes(png))).convert('RGBA')

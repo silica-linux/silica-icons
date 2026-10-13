@@ -1,7 +1,14 @@
 import sys
 from PIL import Image, ImageDraw, ImageFont
 import symbols as S
-FONT='/Users/emanuelefrascella/Progetti/silica/packages/silica_ui/fonts/Inter-Regular.ttf'
+def _inter():
+    import glob, os
+    found = [os.environ.get('INTER_FONT', '')]
+    here = os.path.dirname(os.path.abspath(__file__))
+    found += glob.glob(os.path.join(here, '../../../silica-ui/fonts/Inter-Regular.ttf'))
+    found += glob.glob(os.path.expanduser('~/.pub-cache/git/silica-ui-*/fonts/Inter-Regular.ttf'))
+    return next((p for p in found if p and os.path.exists(p)), None)
+FONT = _inter()
 names=[n for c, _ in S.CATS for n in S.SYM if S.CAT[n] == c]
 def load(n,k):
     im=Image.open(f'export/png/{n}@{"0.2x" if k==1 else "0.4x"}.png').convert('RGBA')
