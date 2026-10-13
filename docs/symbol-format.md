@@ -132,7 +132,7 @@ medium le icone della barra dei menu stanno fra 12 e 16 pt di altezza (osservato
   preferiti). Esistono per `location`, `mic`, `bolt`, `house`, `folder`, `doc`, `bookmark`,
   `trash`, `bell`, `message`, `phone`, `video`, `paperplane`, `megaphone`, `person`, `lock`,
   `shield`, `cloud`, `drop`, `umbrella`, `circle`, `square`, `triangle`, `diamond`, `star`,
-  `heart`, `flag`, `lightbulb`, `puzzle`, `leaf`, `pointer`. Nella variante fill il dettaglio
+  `heart`, `flag`, `lightbulb`, `puzzle`, `leaf`, `pointer`, `circle-stack`. Nella variante fill il dettaglio
   interno si ritaglia (sottrazione), con luce minima 1,5 u.
 - Simboli pieni per natura (`play`, `pause`, `moon`, `airplane`) non hanno variante outline.
 - Finché Sketch non conserva le sottrazioni fra sottotracciati, si disegnano `-fill` solo per le
@@ -185,6 +185,25 @@ creano gli artboard in `design/symbols.sketch`; `compose_sheet.py` ricompone il 
 Sheet dai PNG esportati da Sketch; `sheet.py foglio.png 48 semibold` rende il foglio di un peso.
 In `design/symbols.sketch` i simboli sono disegnati in Regular.
 
+## Viste e pile
+
+Simboli delle barre degli strumenti del file manager (fase 4 in `symbols.py`, in coda alle
+categorie). Le viste a icone e a elenco sono `square-grid-2x2` e `list-bullet`; barra laterale e
+pannello a destra sono `sidebar` e `sidebar-right`.
+
+- `window-split-3` (vista a colonne): contenitore WN di `window-split` diviso in tre colonne
+  uguali.
+- `gallery` (vista galleria): riquadro 18,5 × 9,5 r 2,4 e una fila di tre miniature piene
+  (riempimento e tratto, come la finestrella di `pip`) larghe quanto il riquadro; luce 2 u in
+  Regular, 1,35 in Semibold.
+- `square-stack` (raggruppa): tre quadrati r 2,4 sfalsati di 3,35 u verso l'alto a destra,
+  inchiostro nella keyline quadrato; dei quadrati dietro restano solo i lati scoperti, come
+  `window-stack`.
+- `circle-stack` (tag): tre cerchi r 4,25 in fila, quello a sinistra davanti; gli altri si
+  interrompono dove l'asse dista meno di tratto + luce dal cerchio davanti (ricalcolato per
+  peso, come i tagli delle barre). `circle-stack-fill`: dischi pieni, quelli dietro diventano
+  lune con la stessa luce.
+
 ## Varianti barrate e badge
 
 - `-slash`: barra da (4,25, 4,25) a (19,75, 19,75), sopra il simbolo, sempre lo stesso tratto
@@ -197,16 +216,16 @@ In `design/symbols.sketch` i simboli sono disegnati in Regular.
 
 ## Catalogo
 
-313 simboli in 11 categorie, nell'ordine delle sezioni della pagina Symbols (12 colonne,
+318 simboli in 11 categorie, nell'ordine delle sezioni della pagina Symbols (12 colonne,
 passo 144 px; ogni categoria ha una banda di 960 px, cioè fino a 5 righe).
 
 | Categoria | Simboli |
 | --- | --- |
 | Status & Connectivity | 37 |
 | Control Center & Media | 32 |
-| Windows & Navigation | 40 |
+| Windows & Navigation | 43 |
 | Editing & Text | 37 |
-| Files & Documents | 28 |
+| Files & Documents | 30 |
 | Communication | 25 |
 | People & Security | 21 |
 | Devices | 21 |

@@ -200,6 +200,8 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `symbols/light/circle-dot.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/circle-fill.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/circle-grid-3x3.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/light/circle-stack-fill.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/light/circle-stack.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/circle.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/clipboard.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/clock.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
@@ -261,6 +263,7 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `symbols/light/folder.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/forward.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/fullscreen.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/light/gallery.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/gamecontroller.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/gauge.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/gear.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
@@ -395,6 +398,7 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `symbols/light/speaker.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/square-fill.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/square-grid-2x2.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/light/square-stack.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/square.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/star-fill.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/star.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
@@ -452,6 +456,7 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `symbols/light/wifi-slash.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/wifi.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/wind.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/light/window-split-3.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/window-split.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/window-stack.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/window.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
@@ -513,6 +518,8 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `symbols/regular/circle-dot.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/circle-fill.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/circle-grid-3x3.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/regular/circle-stack-fill.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/regular/circle-stack.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/circle.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/clipboard.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/clock.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
@@ -574,6 +581,7 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `symbols/regular/folder.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/forward.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/fullscreen.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/regular/gallery.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/gamecontroller.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/gauge.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/gear.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
@@ -708,6 +716,7 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `symbols/regular/speaker.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/square-fill.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/square-grid-2x2.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/regular/square-stack.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/square.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/star-fill.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/star.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
@@ -765,6 +774,7 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `symbols/regular/wifi-slash.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/wifi.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/wind.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/regular/window-split-3.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/window-split.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/window-stack.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/window.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
@@ -826,6 +836,8 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `symbols/semibold/circle-dot.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/circle-fill.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/circle-grid-3x3.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/semibold/circle-stack-fill.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/semibold/circle-stack.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/circle.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/clipboard.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/clock.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
@@ -887,6 +899,7 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `symbols/semibold/folder.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/forward.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/fullscreen.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/semibold/gallery.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/gamecontroller.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/gauge.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/gear.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
@@ -1021,6 +1034,7 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `symbols/semibold/speaker.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/square-fill.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/square-grid-2x2.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/semibold/square-stack.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/square.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/star-fill.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/star.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
@@ -1078,6 +1092,7 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `symbols/semibold/wifi-slash.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/wifi.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/wind.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/semibold/window-split-3.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/window-split.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/window-stack.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/window.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |

@@ -1210,6 +1210,60 @@ add("settings", "puzzle-fill", (F, SYM["puzzle"][0][1]))
 add("settings", "leaf-fill", (F, SYM["leaf"][0][1]))
 add("settings", "pointer-fill", (F, SYM["pointer"][0][1]))
 
+# Viste e raggruppamento del file manager (fase 4) -------------------------------
+# In coda alle categorie come i -fill. Contenitori su WN (come window-split e photo), r 2,4;
+# le pile sfalsano le copie di 3,35 u asse-asse (luce 1,85 in Regular, 1,2 in Semibold).
+add("windows", "window-split-3", (S, rrect(*WN, 2.4)),
+    *[(S, line((x, 4.25), (x, 19.75))) for x in (2.75 + 18.5 / 3, 2.75 + 18.5 * 2 / 3)])
+# Galleria: riquadro grande e una fila di tre miniature piene (riempimento e tratto, come la
+# finestrella di pip), larghe quanto il riquadro; luce 2 u in Regular, 1,35 in Semibold.
+GW = (18.5 - 2 * 3.5) / 3
+add("windows", "gallery", (S, rrect(2.75, 3.75, 18.5, 9.5, 2.4)),
+    *[(F, rrect(2.75 + i * (GW + 3.5), 16.75, GW, 3.0, 1.0)) for i in range(3)])
+STK = 3.35
+STK_S = 16.5 - 2 * STK
+
+
+def stack_back(o):
+    # quadrato sfalsato di o verso l'alto a destra: solo i lati non coperti da quello davanti
+    x0, y0, x1, y1 = 3.75 + o, 3.75 + 2 * STK - o, 3.75 + o + STK_S, 3.75 + 2 * STK - o + STK_S
+    r = 2.4
+    return (f"M{P(x0, y0 + STK)}V{f(y0 + r)}A{f(r)} {f(r)} 0 0 1 {P(x0 + r, y0)}H{f(x1 - r)}"
+            f"A{f(r)} {f(r)} 0 0 1 {P(x1, y0 + r)}V{f(y1 - r)}A{f(r)} {f(r)} 0 0 1 {P(x1 - r, y1)}H{f(x1 - STK)}")
+
+
+add("windows", "square-stack", (S, rrect(3.75, 3.75 + 2 * STK, STK_S, STK_S, 2.4)),
+    (S, stack_back(STK)), (S, stack_back(2 * STK)))
+# Cerchi dei tag: tre cerchi sovrapposti, quello a sinistra davanti. Gli altri si
+# interrompono dove l'asse dista meno di tratto + luce dal cerchio davanti (si ricalcola per
+# peso). Nel -fill i dischi dietro diventano lune: disco meno il cerchio davanti allargato.
+TC_R = 4.25
+TC_D = (18.5 - 2 * TC_R) / 2
+TC_X = [2.75 + TC_R + i * TC_D for i in range(3)]
+
+
+def tag_cut():
+    k = TC_R + WSW + LUCE
+    c = (k * k - TC_D ** 2 - TC_R ** 2) / (2 * TC_D * TC_R)
+    return k, math.degrees(math.acos(max(-1.0, min(1.0, c))))
+
+
+def tag_circle(cx):
+    a = tag_cut()[1]
+    return arc(cx, C, TC_R, -a, a)
+
+
+def tag_moon(cx):
+    k, a = tag_cut()
+    p0 = (cx + TC_R * math.cos(math.radians(-a)), C + TC_R * math.sin(math.radians(-a)))
+    p1 = (cx + TC_R * math.cos(math.radians(a)), C + TC_R * math.sin(math.radians(a)))
+    return (f"M{P(*p0)}A{f(TC_R)} {f(TC_R)} 0 {1 if 2 * a > 180 else 0} 1 {P(*p1)}"
+            f"A{f(k)} {f(k)} 0 0 0 {P(*p0)}Z")
+
+
+add("files", "circle-stack", (S, circle(TC_X[0], C, TC_R)), (S, tag_circle(TC_X[1])), (S, tag_circle(TC_X[2])))
+add("files", "circle-stack-fill", (F, circle(TC_X[0], C, TC_R)), (F, tag_moon(TC_X[1])), (F, tag_moon(TC_X[2])))
+
 CATS = [
     ("status", "Status & Connectivity"),
     ("control", "Control Center & Media"),

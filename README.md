@@ -49,7 +49,7 @@ foglio di controllo.
 - `files/`: cartella, cartella generica (simbolo e tinta messi dalla shell), 8 tipi di file,
   file generico (estensione scritta dalla shell), Cestino vuoto e pieno, Stack Close. Fogli e
   cartelle arrivano al bordo della griglia (keyline documento 648 × 824 e cartella 824 × 648).
-- `symbols/<peso>/`: 313 simboli in 11 categorie e tre pesi (`light`, `regular`, `semibold`),
+- `symbols/<peso>/`: 318 simboli in 11 categorie e tre pesi (`light`, `regular`, `semibold`),
   generati da `tools/symbols/symbols.py` (`export_svg.py --check` verifica che gli SVG
   corrispondano alla sorgente). Specifica:
   [`docs/symbol-format.md`](docs/symbol-format.md); sorgente di design `design/symbols.sketch`.
