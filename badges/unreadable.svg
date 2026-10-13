@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FF6B5F" offset="0%"></stop>
+            <stop stop-color="#E0281F" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="icon" stroke="none" fill="none" fill-rule="evenodd">
+        <path d="M913,512 C913,733.424868 733.424868,913 512,913 C290.575132,913 111,733.424868 111,512 C111,290.575132 290.575132,111 512,111 C733.424868,111 913,290.575132 913,512 Z" id="Disc" stroke="#FFFFFF" stroke-width="22" fill="url(#linearGradient-1)"></path>
+        <path d="M332,456 L692,456 C722.9,456 748,481.1 748,512 L748,512 C748,542.9 722.9,568 692,568 L332,568 C301.1,568 276,542.9 276,512 L276,512 C276,481.1 301.1,456 332,456 Z" id="Bar" fill="#FFFFFF"></path>
+    </g>
+</svg>

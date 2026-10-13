@@ -1,0 +1,19 @@
+{
+  "format": 1,
+  "id": "volume-disk-image",
+  "name": "Mounted Disk Image",
+  "kind": "file",
+  "keyline": "volume",
+  "layers": [
+    {
+      "role": "artwork",
+      "file": "icon.svg"
+    }
+  ],
+  "variants": {
+    "dark": {
+      "artwork": "icon-dark.svg"
+    }
+  },
+  "dynamic": null
+}

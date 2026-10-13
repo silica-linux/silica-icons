@@ -100,6 +100,14 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `apps/text-editor/foreground-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `apps/text-editor/foreground.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `apps/text-editor/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `badges/alias-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `badges/alias.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `badges/cloud-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `badges/cloud.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `badges/locked-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `badges/locked.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `badges/unreadable-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `badges/unreadable.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `design/app-icons.sketch` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `design/symbols.sketch` | Progetto Silica | CC BY-SA 4.0 | originale, sorgente di design dei simboli di sistema |
 | `files/file-archive/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
@@ -111,6 +119,18 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `files/file-code/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/file-code/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/file-code/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/file-disk-image/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/file-disk-image/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/file-disk-image/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/file-document/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/file-document/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/file-document/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/file-executable/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/file-executable/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/file-executable/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/file-font/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch`; "Aa" sono tracciati di Inter SemiBold (OFL 1.1, rsms/inter) |
+| `files/file-font/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch`; "Aa" sono tracciati di Inter SemiBold (OFL 1.1, rsms/inter) |
+| `files/file-font/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch`; "Aa" sono tracciati di Inter SemiBold (OFL 1.1, rsms/inter) |
 | `files/file-generic/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/file-generic/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/file-generic/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
@@ -120,6 +140,12 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `files/file-pdf/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/file-pdf/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/file-pdf/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/file-presentation/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/file-presentation/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/file-presentation/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/file-spreadsheet/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/file-spreadsheet/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/file-spreadsheet/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/file-text/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/file-text/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/file-text/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
@@ -129,6 +155,9 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `files/file-video/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/file-video/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/file-video/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/file-web/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/file-web/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/file-web/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/folder-generic/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/folder-generic/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/folder-generic/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
@@ -146,6 +175,21 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `files/trash-full/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/trash-full/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/trash-full/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/volume-disk-image/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/volume-disk-image/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/volume-disk-image/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/volume-external/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/volume-external/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/volume-external/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/volume-internal/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/volume-internal/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/volume-internal/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/volume-network/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/volume-network/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/volume-network/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/volume-optical/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/volume-optical/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/volume-optical/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `symbols/light/accessibility.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/airplane.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/alarm.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |

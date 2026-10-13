@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-dark</title>
+    <g id="icon-dark" stroke="none" fill="none">
+        <path d="M913,512 C913,733.424868 733.424868,913 512,913 C290.575132,913 111,733.424868 111,512 C111,290.575132 290.575132,111 512,111 C733.424868,111 913,290.575132 913,512 Z" id="Disc" stroke-opacity="0.2" stroke="#FFFFFF" stroke-width="22" fill="#3A3A3C" fill-rule="evenodd"></path>
+        <path d="M398,452 C451,452 494,495 494,548 C494,601 451,644 398,644 C345,644 302,601 302,548 C302,495 345,452 398,452 Z" id="Cloud-1" fill="#5AA0FF" fill-rule="evenodd"></path>
+        <path d="M530,332 C606.2,332 668,393.8 668,470 C668,546.2 606.2,608 530,608 C453.8,608 392,546.2 392,470 C392,393.8 453.8,332 530,332 Z" id="Cloud-2" fill="#5AA0FF" fill-rule="evenodd"></path>
+        <path d="M642,468 C690.6,468 730,507.4 730,556 C730,604.6 690.6,644 642,644 C593.4,644 554,604.6 554,556 C554,507.4 593.4,468 642,468 Z" id="Cloud-3" fill="#5AA0FF" fill-rule="evenodd"></path>
+        <path d="M350,548 L682,548 C708.5,548 730,569.5 730,596 L730,596 C730,622.5 708.5,644 682,644 L350,644 C323.5,644 302,622.5 302,596 L302,596 C302,569.5 323.5,548 350,548 Z" id="Cloud-4" fill="#5AA0FF" fill-rule="evenodd"></path>
+        <path d="M512,452 L512,612 M448,552 L512,616 L576,552" id="Arrow" stroke="#3A3A3C" stroke-width="45" stroke-linecap="round" stroke-linejoin="round"></path>
+    </g>
+</svg>

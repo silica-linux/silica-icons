@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#EEF1F5" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#FFB340" offset="0%"></stop>
+            <stop stop-color="#F2780C" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="5.25244593%" x2="100%" y2="94.7475541%" id="linearGradient-3">
+            <stop stop-color="#E9ECF1" offset="0%"></stop>
+            <stop stop-color="#C6CCD6" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="icon" stroke="none" fill="none">
+        <path d="M670.908602,101.21 L834.689999,260.511056 L834.69,861 C834.69,902.323988 813.639245,922.79 771.1,922.79 L252.7,922.79 C210.160755,922.79 189.11,902.323988 189.11,861 L189.11,163 C189.11,121.676012 210.160755,101.21 252.7,101.21 Z" id="Page" stroke-opacity="0.0784313725" stroke="#000000" stroke-width="2.42" fill="url(#linearGradient-1)" fill-rule="evenodd"></path>
+        <path d="M312.5,330.5 L711.5,330.5 C728.6,330.5 742.5,344.4 742.5,361.5 L742.5,584.5 C742.5,601.6 728.6,615.5 711.5,615.5 L312.5,615.5 C295.4,615.5 281.5,601.6 281.5,584.5 L281.5,361.5 C281.5,344.4 295.4,330.5 312.5,330.5 Z" id="Slide" fill="url(#linearGradient-2)" fill-rule="evenodd"></path>
+        <path d="M417.5,473 L417.5,386 C465.5,386 504.5,425 504.5,473 C504.5,521 465.5,560 417.5,560 C369.5,560 330.5,521 330.5,473 L417.5,473 Z" id="Pie" fill-opacity="0.901960784" fill="#FFFFFF" fill-rule="evenodd"></path>
+        <path d="M426.5,464 L426.5,377 C474.5,377 513.5,416 513.5,464 L426.5,464 Z" id="Wedge" fill="#FFFFFF" fill-rule="evenodd"></path>
+        <path d="M557.5,464 L576.5,464 C580.9,464 584.5,467.6 584.5,472 L584.5,552 C584.5,556.4 580.9,560 576.5,560 L557.5,560 C553.1,560 549.5,556.4 549.5,552 L549.5,472 C549.5,467.6 553.1,464 557.5,464 Z M614.5,418 L633.5,418 C637.9,418 641.5,421.6 641.5,426 L641.5,552 C641.5,556.4 637.9,560 633.5,560 L614.5,560 C610.1,560 606.5,556.4 606.5,552 L606.5,426 C606.5,421.6 610.1,418 614.5,418 Z M671.5,388 L690.5,388 C694.9,388 698.5,391.6 698.5,396 L698.5,552 C698.5,556.4 694.9,560 690.5,560 L671.5,560 C667.1,560 663.5,556.4 663.5,552 L663.5,396 C663.5,391.6 667.1,388 671.5,388 Z" id="Bars" fill="#FFFFFF" fill-rule="evenodd"></path>
+        <text id="Extension" font-family="Inter-Regular_Medium, Inter" font-size="101.788235" font-weight="400" fill="#F2780C">
+            <tspan x="384.301571" y="840.43">PPTX</tspan>
+        </text>
+        <path d="M671.4,100 L835.9,260 L721.3,260 C688.1,260 671.4,243.8 671.4,211.5 L671.4,100 Z" id="Corner" fill="url(#linearGradient-3)" fill-rule="evenodd"></path>
+    </g>
+</svg>

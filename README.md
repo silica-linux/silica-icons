@@ -8,6 +8,7 @@ per il progetto.
 ```
 apps/      icone delle app, a livelli: la shell applica forma, ombre, vetro e temi
 files/     cartelle, tipi di file, Cestino, controlli del Dock: a livelli, forma libera
+badges/    badge sovrapposti alle icone dei file (alias, bloccato, non leggibile, cloud)
 symbols/   glifi di sistema (Centro di controllo, barra dei menu, impostazioni, barre
            degli strumenti): monocromi, vettoriali, più pesi, colorati dal tema
 tools/     esportazione dal file di design e build dei pacchetti
@@ -46,9 +47,13 @@ foglio di controllo.
 - `apps/`: 17 app (apps, calculator, calendar, clock, disks, fonts, help, mail, mustache,
   notes, password-manager, photo-viewer, photos, settings, store, terminal, text-editor)
   con varianti scure; calendar e clock sono dinamiche.
-- `files/`: cartella, cartella generica (simbolo e tinta messi dalla shell), 8 tipi di file,
-  file generico (estensione scritta dalla shell), Cestino vuoto e pieno, Stack Close. Fogli e
-  cartelle arrivano al bordo della griglia (keyline documento 648 × 824 e cartella 824 × 648).
+- `files/`: cartella, cartella generica (simbolo e tinta messi dalla shell), 15 tipi di file,
+  file generico (estensione scritta dalla shell, mappa tipo → icona), 5 volumi (disco interno,
+  esterno, server di rete, immagine disco montata, disco ottico), Cestino vuoto e pieno, Stack
+  Close. Fogli, cartelle e volumi arrivano al bordo della griglia (keyline documento 648 × 824,
+  cartella 824 × 648, volume 824 × 509).
+- `badges/`: alias, bloccato, non leggibile e cloud, in chiaro e scuro, con le regole di
+  composizione in `badges.json`.
 - `symbols/<peso>/`: 322 simboli in 11 categorie e tre pesi (`light`, `regular`, `semibold`),
   generati da `tools/symbols/symbols.py` (`export_svg.py --check` verifica che gli SVG
   corrispondano alla sorgente). Specifica:

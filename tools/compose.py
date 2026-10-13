@@ -3,6 +3,7 @@ e scrive un foglio di controllo. Uso: python tools/compose.py [--dark] [--size N
 
 La cartella generica (`folder-symbol`) si compone con `compose_folder(dir, size, dark, symbol,
 tint)`: livello base, simbolo inciso e tinta, con le stesse regole della shell.
+I badge (`badges/`) si mettono sopra un'icona già composta con `compose_badges(img, names, dark)`.
 
 Dipendenze: pillow, resvg-py. Il font Inter va passato con --fonts se gli SVG contengono testo.
 """
@@ -121,6 +122,40 @@ def compose_folder(icon_dir: Path, size: int, dark: bool, symbol: str | None = N
         colors = dyn["tint"]["labels"]
         tint = colors.get(tint, tint)
         out = apply_tint(out, tint_matrix(tint, dyn["tint"]["dark" if dark else "light"]))
+    return out
+
+
+def compose_badges(icon: Image.Image, names: list[str], dark: bool,
+                   fonts: list[str] | None = None) -> Image.Image:
+    """I badge `names` (alias, locked, unreadable, cloud) sopra l'icona composta `icon` (tela
+    quadrata): uno per angolo, scelto per priorità; lato del badge dalla fascia di `sizes`
+    (lato del corpo in pt = tela × 824 / 1024); nella fascia `single` uno solo, il primo di
+    `order`; niente badge sotto l'ultima fascia."""
+    spec = json.loads((ROOT / "badges" / "badges.json").read_text())
+    size = icon.width
+    side = size * 824 / 1024
+    band = next((b for b in sorted(spec["sizes"], key=lambda b: -b["min_size"]) if side >= b["min_size"]), None)
+    out = icon.copy()
+    if band is None:
+        return out
+    if band.get("single"):
+        names = [n for n in spec["order"] if n in names][:1]
+    chosen: dict[str, tuple[int, str]] = {}
+    for name in names:
+        b = spec["badges"].get(name)
+        if b and (b["corner"] not in chosen or b["priority"] < chosen[b["corner"]][0]):
+            chosen[b["corner"]] = (b["priority"], name)
+    bx, by, bw, bh = spec["body"]
+    for corner, (_, name) in chosen.items():
+        b = spec["badges"][name]
+        side_c = bw * band["fraction"]
+        ax, ay = spec["corners"][corner]
+        x0 = ax if ax <= bx else ax - side_c
+        y0 = ay if ay <= by else ay - side_c
+        k = side_c / bw
+        px = size / 1024
+        layer = render(ROOT / "badges" / (b["dark"] if dark else b["file"]), max(1, round(1024 * k * px)), fonts or [])
+        out.alpha_composite(layer, (round((x0 - bx * k) * px), round((y0 - by * k) * px)))
     return out
 
 

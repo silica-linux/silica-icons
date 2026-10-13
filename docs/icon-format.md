@@ -1,6 +1,6 @@
 # Formato delle icone
 
-Versione 1. Vale per `apps/` e `files/`. I simboli di sistema (`symbols/`) avranno una
+Versione 1. Vale per `apps/`, `files/` e `badges/`. I simboli di sistema (`symbols/`) avranno una
 specifica a parte.
 
 ## Principio
@@ -27,6 +27,8 @@ Tutte le misure sono su una tela di **1024 × 1024**.
 | Keyline orizzontale | 680 × 520 a (172, 252) |
 | Keyline documento (icone dei file) | 648 × 824 a (188, 100) |
 | Keyline cartella | 824 × 648 a (100, 188) |
+| Keyline volume (dischi e server) | 824 × 509 a (100, 257,5) |
+| Badge | disco Ø 824 centrato sulla propria tela 1024 (vedi Badge) |
 
 Il contenuto principale sta in uno dei keyline; le icone a tutta tela (un fondo disegnato,
 come Calendar o Photos) occupano il corpo intero.
@@ -48,6 +50,9 @@ di Grid Check.
 | Cerchio 424 | 600 / √2: cerchio inscritto nel quadrato inscritto nel cerchio 600 |
 | Verticale 520 × 680, orizzontale 680 × 520 | stesso perimetro del quadrato 600 (520 + 680 = 2 × 600), area 98 %; rapporto 1,31, non aureo |
 | Documento 648 × 824, cartella 824 × 648 | il lato lungo è il corpo (824), il corto 824 / √φ: le icone dei file e delle cartelle arrivano al bordo della griglia, come il corpo delle app, e a 16–32 px non sembrano più piccole delle app accanto |
+| Volume 824 × 509 | il lato lungo è il corpo, il corto 824 / φ (serie B): un disco è una lastra, più bassa di una cartella; la fascia frontale è 509 / φ² = 194,5 (serie B 194), da y 572 |
+| Disco ottico Ø 824 | il corpo: tocca il bordo come gli altri volumi; zona di fermo Ø 315 (corpo / φ², serie B), anello interno Ø 230 (serie A 229), foro Ø 112 (serie A) |
+| Badge 315 e 509 | corpo / φ² e corpo / φ: il riquadro del badge va dal bordo del corpo alla linea aurea (x e y 415 e 609) |
 
 Restano tutte: il sistema aureo le completa, non le sostituisce.
 
@@ -80,7 +85,15 @@ Eccezioni volute:
   quasi sul fondo del corpo delle app (924): nel Dock poggia sulla stessa linea;
 - la piega dei fogli (165 × 160: la 132 di prima scalata con il foglio) non è sulla serie: cambiarla vuol dire ridisegnare il tracciato di ogni foglio; resta finché i
   fogli non si ridisegnano;
-- il Cestino e Stack Close non sono né fogli né cartelle e non cambiano.
+- il Cestino e Stack Close non sono né fogli né cartelle e non cambiano;
+- i tipi di file aggiunti per Mustache (foglio di calcolo, presentazione, font, immagine disco,
+  eseguibile, documento, pagina web) hanno la figura nel riquadro 461 × 292 centrato su
+  (512, 473), come Code e Image (la larghezza delle righe di testo dei fogli, 461 ≈ 472 entro
+  tolleranza; 292 serie A); la tabella del foglio di calcolo ha luci di 13,5, la diapositiva è
+  461 × 285 (rapporto φ), il globo Ø 292 con meridiani di 13,5, "Aa" è Inter SemiBold in
+  tracciati con la maiuscola alta 292, il disco dell'immagine disco è 461 × 229 (serie A);
+- i volumi sono lastre 824 × 509 (keyline volume) con raggio 64; il server è tre unità alte
+  155 con luci di 22.
 
 ### Correzioni ottiche e scostamenti dal rapporto puro
 
@@ -121,6 +134,12 @@ La shell li aggiunge da sé; se ci sono, il risultato raddoppia:
 Le ombre e le sfumature **interne** al disegno (fra due parti del primo piano) fanno parte
 dell'illustrazione e restano.
 
+Vale anche per le icone `file`: i tipi di file, i volumi e i badge aggiunti per Mustache sono
+**piatti** (solo riempimenti, sfumature interne e un filo di contorno del foglio o della
+lastra), senza ombra a terra né ombre esterne o interne fatte con i filtri: l'ombra del
+contesto la mette la shell (IC-01). I fogli e le cartelle disegnati prima hanno ancora l'ombra
+a terra e le ombre dei pezzi; vanno appiattiti allo stesso modo.
+
 ### Testo
 
 Il testo negli SVG usa solo Inter (fornito dalla shell). Meglio convertirlo in tracciati
@@ -149,7 +168,7 @@ quando non deve cambiare.
 | Campo | Valori |
 | --- | --- |
 | `kind` | `app` (forma imposta dalla shell) o `file` (forma libera) |
-| `keyline` | `square`, `circle`, `circle-small`, `portrait`, `landscape`, `full` |
+| `keyline` | `square`, `circle`, `circle-small`, `portrait`, `landscape`, `full`; per i volumi `volume` (solo documentazione: la shell non ritaglia le icone `file`) |
 | `layers` | dal basso verso l'alto: un `background` e da 1 a 4 livelli di primo piano |
 | `shadow` | ombra che la shell disegna sotto il livello: `neutral`, `chromatic` (presa dal colore del livello) o `none` |
 | `variants.dark` | livelli sostitutivi per Dark, Clear Dark e Tinted Dark |
@@ -228,7 +247,12 @@ file senza un'icona propria (`.json`, `.docx`, `.blend`…).
              "max_chars": 4, "max_width": 534 },
   "colors": { "document": {...}, "data": {...}, "code": {...},
               "archive": {...}, "media": {...}, "other": {...} },
-  "overrides": {},
+  "overrides": { "json": "data", "epub": "document", "blend": "media", ... },
+  "icons": {
+    "mime": { "application/pdf": "file-pdf", "text/csv": "file-spreadsheet",
+              "font/*": "file-font", "image/*": "file-image", ... },
+    "extensions": { "pdf": "file-pdf", "xlsx": "file-spreadsheet", "sh": "file-executable", ... }
+  },
   "fallback": "file-unknown"
 }
 ```
@@ -242,8 +266,106 @@ file senza un'icona propria (`.json`, `.docx`, `.blend`…).
   archivi e pacchetti → `archive`; `image/*`, `audio/*`, `video/*`, font → `media`;
   il resto → `other`. `overrides` associa a una singola estensione una categoria o un
   colore (`{"json": "data"}`, `{"sketch": {"color": "#f7b500"}}`).
-- Il tipo di file con un'icona propria (PDF, testo, archivio, immagine, audio, video,
-  codice) usa sempre quella.
+- Il tipo di file con un'icona propria usa sempre quella. `icons` è **la** mappa del repo (tipo →
+  icona); chi risolve l'icona di un file (SilicaIcon, Mustache, il Dock) non ne tiene una sua.
+  Ordine di risoluzione per un file regolare:
+  1. il tipo MIME (shared-mime-info, dal contenuto e dal nome) in `icons.mime`, esatto;
+  2. lo stesso con il sottotipo `*` (`image/*`, `audio/*`, `video/*`, `font/*`);
+  3. i genitori del tipo (`sub-class-of` di shared-mime-info, in ordine), ripetendo 1 e 2: un
+     tipo `text/x-…` senza voce resta così testo e non codice solo se nessun genitore è in mappa;
+  4. l'estensione in minuscolo in `icons.extensions` (l'ultima dopo il punto; per i nomi
+     `.tar.<x>` vale l'estensione finale, che è già in mappa come archivio);
+  5. altrimenti `file-generic` con l'etichetta e il colore di categoria; senza estensione o
+     oltre `max_chars`, `fallback`.
+  Un eseguibile senza estensione (bit `x` e tipo `application/x-executable`,
+  `application/x-pie-executable`, `application/x-shellscript`) prende `file-executable` al
+  passo 1; un file con bit `x` ma di un altro tipo (un `.py`) tiene l'icona del suo tipo.
+- Icone dei tipi e categoria della loro estensione nel file generico:
+
+  | Icona | Estensioni (sintesi) | Categoria |
+  | --- | --- | --- |
+  | `file-pdf` | pdf | document |
+  | `file-text` | txt, md, log, rst | document |
+  | `file-document` | rtf, odt, doc, docx, pages | document |
+  | `file-spreadsheet` | xlsx, xls, ods, numbers, csv, tsv | document |
+  | `file-presentation` | pptx, ppt, odp, key | document |
+  | `file-font` | ttf, otf, ttc, woff, woff2 | media |
+  | `file-disk-image` | iso, img, dmg, qcow2, vdi, vmdk | archive |
+  | `file-executable` | sh, bash, zsh, fish, run, bin, appimage | code |
+  | `file-web` | html, htm, xhtml, mhtml | code |
+  | `file-code` | rs, dart, py, js, ts, c, go, java, css… | code |
+  | `file-archive` | zip, tar, gz, xz, zst, 7z, rar, deb, rpm… | archive |
+  | `file-image`, `file-audio`, `file-video` | i formati comuni | media |
+
+  L'elenco completo è nel manifest. Il colore dell'estensione scritta nelle icone proprie è
+  quello della loro categoria (foglio di calcolo `#1f9d55`, documento `#2f7cf6`, codice ed
+  eseguibili `#ff6a00`), tranne presentazione (`#f2780c`) e font (`#e8336d`), che hanno una
+  tinta propria per distinguersi dai vicini.
+
+### Volumi
+
+`files/volume-*` sono i dischi e i server montati, sulla keyline volume (824 × 509). Non hanno
+contenuto dinamico: chi mostra un volume (barra laterale e finestre di Mustache, Scrivania,
+Dock) sceglie l'icona così, dal primo caso che vale:
+
+| Icona | Quando |
+| --- | --- |
+| `volume-network` | mount di rete: tipo di file system `nfs`, `nfs4`, `cifs`, `smb3`, `9p`, `fuse.sshfs`, `fuse.rclone`, `davfs`; oppure un mount GVfs con schema `smb`, `sftp`, `ftp`, `ftps`, `dav`, `davs`, `nfs`, `afp`; vale anche per un server nella barra laterale non ancora montato |
+| `volume-disk-image` | dispositivo loop con un file dietro (`/dev/loop*`, interfaccia `org.freedesktop.UDisks2.Loop` con `BackingFile`): un'immagine montata, anche se è un ISO |
+| `volume-optical` | unità ottica: `Drive.Optical` vero in UDisks2, oppure supporto `optical_*` in `Drive.MediaCompatibility` o dispositivo `/dev/sr*` |
+| `volume-external` | unità rimovibile o esterna: `Drive.Removable` o `Drive.MediaRemovable` veri, oppure `Drive.ConnectionBus` `usb`, `sdio` o `ieee1394`; schede SD e chiavette comprese |
+| `volume-internal` | tutto il resto: la radice `/`, le altre partizioni dei dischi interni (`ConnectionBus` vuoto, NVMe e SATA) e un volume di cui non si sa niente |
+
+Senza UDisks2 (o per un mount che UDisks2 non conosce) si usano `/proc/self/mountinfo` (tipo di
+file system e dispositivo) e `/sys/block/<disco>/removable`. Il nome è quello del volume
+(`IdLabel`), non l'icona. La cartella `NETWORK` della cartella generica resta per le *cartelle*
+di rete dentro un volume; il volume stesso è `volume-network`.
+
+### Badge
+
+`badges/` contiene i badge che la shell sovrappone a un'icona di file o di cartella già
+composta. Non sono icone con un manifest: ogni badge è un SVG chiaro e uno scuro
+(`alias.svg`, `alias-dark.svg`…) sulla tela 1024, disegnato come un disco Ø 824 centrato
+(il corpo) con il simbolo nelle keyline 600 e 424. `badges/badges.json` riassume le regole sotto
+per chi le implementa.
+
+| Badge | Disegno | Angolo | Quando |
+| --- | --- | --- | --- |
+| `alias` | freccia curva su disco bianco (grafite in scuro) | basso a sinistra | il file è un collegamento simbolico (`lstat`); un collegamento rotto prende in più `unreadable` |
+| `unreadable` | divieto (barra bianca su disco rosso) | basso a destra | l'utente non può leggerlo: `access(R_OK)` falso, per le cartelle `R_OK` o `X_OK` falso |
+| `locked` | lucchetto su disco bianco (grafite in scuro) | basso a destra | il file è bloccato: attributo immutabile o solo aggiunta (`STATX_ATTR_IMMUTABLE`, `STATX_ATTR_APPEND`, `chattr +i`/`+a`); non basta che manchi il permesso di scrittura, sennò mezzo sistema avrebbe il lucchetto |
+| `cloud` | nuvola blu con freccia in giù | basso a destra | il contenuto non è sul disco: lo dice chi elenca i file (un fornitore di sincronizzazione, un mount GVfs o rclone con file solo in rete). Non c'è uno standard freedesktop: Mustache lo mostra solo quando la sorgente lo riporta |
+
+Posizione e dimensione (tela 1024 dell'icona; lato del corpo in pt come per l'orologio e la
+cartella generica):
+
+| Lato del corpo | Lato del badge | Riquadro, basso a sinistra | Riquadro, basso a destra | Quanti |
+| --- | --- | --- | --- | --- |
+| da 32 pt | 315 = 824 / φ² | x 100…415, y 609…924 | x 609…924, y 609…924 | uno per angolo |
+| 16–31 pt | 509 = 824 / φ | x 100…609, y 415…924 | x 415…924, y 415…924 | uno solo |
+| sotto 16 pt | — | — | — | nessuno |
+
+- Il riquadro va dal bordo del corpo alla linea aurea: il badge è appoggiato all'angolo del
+  corpo, non al disegno (un foglio è più stretto del corpo, quindi il badge ne esce un poco a
+  sinistra; con le cartelle e i volumi tocca l'angolo del disegno).
+- Composizione: la tela 1024 del badge si scala di k = lato / 824 e si sposta perché il suo
+  corpo (100, 100, 824, 824) coincida con il riquadro: origine della tela del badge =
+  (x₀ − 100 k, y₀ − 100 k). Si disegna dopo l'icona, dopo la tinta della cartella e dopo la
+  mappatura del tema: il badge non si tinge e non passa per Clear o Tinted.
+- Varianti: `-dark` nei temi Dark, Clear Dark e Tinted Dark; la chiara negli altri.
+- Precedenze: in basso a destra vince `unreadable`, poi `locked`, poi `cloud` (gli altri non
+  si mostrano). Sotto 32 pt resta un solo badge, il primo di `order`: `unreadable`, `alias`,
+  `locked`, `cloud`.
+- Nessuna ombra né bordo luminoso dalla shell: il disco ha già il suo filo di contorno (nero
+  15 % in chiaro, bianco 20 % in scuro, bianco pieno attorno al divieto).
+- Il badge segue lo stato dell'icona (selezione, trascinamento, ombra della cella): fa parte
+  dell'icona composta. Nel Dock e in Faro non si mostra.
+
+Riferimento: `tools/compose.py`, `compose_badges(icona, nomi, scuro)`.
+
+`design/app-icons.sketch`: i tipi di file, i volumi e i badge sono nella pagina Icons (righe da
+y 15280: file, volumi, badge), in Grid Check con le griglie e in Showcase Files in chiaro e
+scuro (da y 19200, una riga per icona).
 
 ### Cartella generica
 

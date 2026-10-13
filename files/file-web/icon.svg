@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#EEF1F5" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#64D2FF" offset="0%"></stop>
+            <stop stop-color="#0A7AFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="5.25244593%" x2="100%" y2="94.7475541%" id="linearGradient-3">
+            <stop stop-color="#E9ECF1" offset="0%"></stop>
+            <stop stop-color="#C6CCD6" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="icon" stroke="none" fill="none">
+        <path d="M670.908602,101.21 L834.689999,260.511056 L834.69,861 C834.69,902.323988 813.639245,922.79 771.1,922.79 L252.7,922.79 C210.160755,922.79 189.11,902.323988 189.11,861 L189.11,163 C189.11,121.676012 210.160755,101.21 252.7,101.21 Z" id="Page" stroke-opacity="0.0784313725" stroke="#000000" stroke-width="2.42" fill="url(#linearGradient-1)" fill-rule="evenodd"></path>
+        <path d="M512,327 C592.6,327 658,392.4 658,473 C658,553.6 592.6,619 512,619 C431.4,619 366,553.6 366,473 C366,392.4 431.4,327 512,327 Z" id="Globe" fill="url(#linearGradient-2)" fill-rule="evenodd"></path>
+        <path d="M512,333.8 C551.2,333.8 582.9,396.1 582.9,473 C582.9,549.9 551.2,612.2 512,612.2 C472.8,612.2 441.1,549.9 441.1,473 C441.1,396.1 472.8,333.8 512,333.8 Z" id="Meridian" stroke-opacity="0.850980392" stroke="#FFFFFF" stroke-width="13.5"></path>
+        <path d="M512,333.8 L512,612.2 M374.1,473 L649.9,473 M397.7,400 L626.3,400 M397.7,546 L626.3,546" id="Grid" stroke-opacity="0.850980392" stroke="#FFFFFF" stroke-width="13.5"></path>
+        <text id="Extension" font-family="Inter-Regular_Medium, Inter" font-size="101.788235" font-weight="400" fill="#FF6A00">
+            <tspan x="372.454755" y="840.43">HTML</tspan>
+        </text>
+        <path d="M671.4,100 L835.9,260 L721.3,260 C688.1,260 671.4,243.8 671.4,211.5 L671.4,100 Z" id="Corner" fill="url(#linearGradient-3)" fill-rule="evenodd"></path>
+    </g>
+</svg>

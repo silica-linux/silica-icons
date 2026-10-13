@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#EEF1F5" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#BFE0FF" offset="0%"></stop>
+            <stop stop-color="#7DB8FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#C9CED7" offset="0%"></stop>
+            <stop stop-color="#B8BEC9" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="5.25244593%" x2="100%" y2="94.7475541%" id="linearGradient-4">
+            <stop stop-color="#E9ECF1" offset="0%"></stop>
+            <stop stop-color="#C6CCD6" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="icon" stroke="none" fill="none">
+        <path d="M670.908602,101.21 L834.689999,260.511056 L834.69,861 C834.69,902.323988 813.639245,922.79 771.1,922.79 L252.7,922.79 C210.160755,922.79 189.11,902.323988 189.11,861 L189.11,163 C189.11,121.676012 210.160755,101.21 252.7,101.21 Z" id="Page" stroke-opacity="0.0784313725" stroke="#000000" stroke-width="2.42" fill="url(#linearGradient-1)" fill-rule="evenodd"></path>
+        <path d="M304,268 L551,268 C563.4,268 573.5,278.1 573.5,290.5 L573.5,290.5 C573.5,302.9 563.4,313 551,313 L304,313 C291.6,313 281.5,302.9 281.5,290.5 L281.5,290.5 C281.5,278.1 291.6,268 304,268 Z" id="Title" fill="#2F7CF6" fill-rule="evenodd"></path>
+        <path d="M300.5,351 L442.5,351 C453,351 461.5,359.5 461.5,370 L461.5,474 C461.5,484.5 453,493 442.5,493 L300.5,493 C290,493 281.5,484.5 281.5,474 L281.5,370 C281.5,359.5 290,351 300.5,351 Z" id="Picture" fill="url(#linearGradient-2)" fill-rule="evenodd"></path>
+        <path d="M281.5,453 C321.5,411 361.5,421 393.5,455 C416.5,439 441.5,437 461.5,451 L461.5,474 C461.5,493 461.5,493 442.5,493 L300.5,493 C281.5,493 281.5,493 281.5,474 L281.5,453 Z" id="Hill" fill="#2F7CF6" fill-rule="evenodd"></path>
+        <path d="M413.5,374 C422.9,374 430.5,381.6 430.5,391 C430.5,400.4 422.9,408 413.5,408 C404.1,408 396.5,400.4 396.5,391 C396.5,381.6 404.1,374 413.5,374 Z" id="Sun" fill="#FFFFFF" fill-rule="evenodd"></path>
+        <path d="M502.8,355 L729.2,355 C736.5,355 742.5,361 742.5,368.3 L742.5,368.3 C742.5,375.7 736.5,381.7 729.2,381.7 L502.8,381.7 C495.5,381.7 489.5,375.7 489.5,368.3 L489.5,368.3 C489.5,361 495.5,355 502.8,355 Z M502.8,408.3 L689.2,408.3 C696.5,408.3 702.5,414.3 702.5,421.7 L702.5,421.7 C702.5,429 696.5,435 689.2,435 L502.8,435 C495.5,435 489.5,429 489.5,421.7 L489.5,421.7 C489.5,414.3 495.5,408.3 502.8,408.3 Z M502.8,461.7 L729.2,461.7 C736.5,461.7 742.5,467.6 742.5,475 L742.5,475 C742.5,482.4 736.5,488.3 729.2,488.3 L502.8,488.3 C495.5,488.3 489.5,482.4 489.5,475 L489.5,475 C489.5,467.6 495.5,461.7 502.8,461.7 Z M294.8,531 L729.2,531 C736.5,531 742.5,537 742.5,544.3 L742.5,544.3 C742.5,551.7 736.5,557.7 729.2,557.7 L294.8,557.7 C287.5,557.7 281.5,551.7 281.5,544.3 L281.5,544.3 C281.5,537 287.5,531 294.8,531 Z M294.8,584.3 L633.2,584.3 C640.5,584.3 646.5,590.3 646.5,597.7 L646.5,597.7 C646.5,605 640.5,611 633.2,611 L294.8,611 C287.5,611 281.5,605 281.5,597.7 L281.5,597.7 C281.5,590.3 287.5,584.3 294.8,584.3 Z" id="Text" fill="url(#linearGradient-3)" fill-rule="evenodd"></path>
+        <text id="Extension" font-family="Inter-Regular_Medium, Inter" font-size="101.788235" font-weight="400" fill="#2F7CF6">
+            <tspan x="368.499502" y="840.43">DOCX</tspan>
+        </text>
+        <path d="M671.4,100 L835.9,260 L721.3,260 C688.1,260 671.4,243.8 671.4,211.5 L671.4,100 Z" id="Corner" fill="url(#linearGradient-4)" fill-rule="evenodd"></path>
+    </g>
+</svg>

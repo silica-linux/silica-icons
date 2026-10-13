@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-dark</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#3A3A3E" offset="0%"></stop>
+            <stop stop-color="#28282C" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#48484C" offset="0%"></stop>
+            <stop stop-color="#1E1E21" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="5.25244593%" x2="100%" y2="94.7475541%" id="linearGradient-3">
+            <stop stop-color="#4A4A50" offset="0%"></stop>
+            <stop stop-color="#2C2C30" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="icon-dark" stroke="none" fill="none">
+        <path d="M670.908602,101.21 L834.689999,260.511056 L834.69,861 C834.69,902.323988 813.639245,922.79 771.1,922.79 L252.7,922.79 C210.160755,922.79 189.11,902.323988 189.11,861 L189.11,163 C189.11,121.676012 210.160755,101.21 252.7,101.21 Z" id="Page" stroke-opacity="0.121568627" stroke="#FFFFFF" stroke-width="2.42" fill="url(#linearGradient-1)" fill-rule="evenodd"></path>
+        <path d="M741.29,367 L741.29,579 C741.29,600.431735 723.931735,617.79 702.5,617.79 L321.5,617.79 C300.068265,617.79 282.71,600.431735 282.71,579 L282.71,367 C282.71,345.568265 300.068265,328.21 321.5,328.21 L702.5,328.21 C723.931735,328.21 741.29,345.568265 741.29,367 Z" id="Window" stroke-opacity="0.180392157" stroke="#FFFFFF" stroke-width="2.42" fill="url(#linearGradient-2)" fill-rule="evenodd"></path>
+        <polyline id="Prompt" stroke="#32D74B" stroke-width="35" stroke-linecap="round" stroke-linejoin="round" points="351.5 415 419.5 473 351.5 531"></polyline>
+        <path d="M477.5,515.5 L603.5,515.5 C607.9,515.5 611.5,519.1 611.5,523.5 L611.5,542.5 C611.5,546.9 607.9,550.5 603.5,550.5 L477.5,550.5 C473.1,550.5 469.5,546.9 469.5,542.5 L469.5,523.5 C469.5,519.1 473.1,515.5 477.5,515.5 Z" id="Cursor" fill="#F2F2F7" fill-rule="evenodd"></path>
+        <text id="Extension" font-family="Inter-Regular_Medium, Inter" font-size="101.788235" font-weight="400" fill="#FF8A3D">
+            <tspan x="443.885911" y="840.43">SH</tspan>
+        </text>
+        <path d="M671.4,100 L835.9,260 L721.3,260 C688.1,260 671.4,243.8 671.4,211.5 L671.4,100 Z" id="Corner" fill="url(#linearGradient-3)" fill-rule="evenodd"></path>
+    </g>
+</svg>
