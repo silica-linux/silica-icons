@@ -22,12 +22,31 @@ docs/      specifiche: formato delle icone, griglia, temi
   Default, Dark, Clear Light, Clear Dark, Tinted Light, Tinted Dark.
 - Le icone senza livelli (tema freedesktop esistente) vengono ridotte al keyline 600 e
   appoggiate su una base neutra.
-- Specifica del formato: `docs/icon-format.md` (da scrivere).
+- Specifica del formato: [`docs/icon-format.md`](docs/icon-format.md).
 
 ## Sorgente di design
 
-Il file Sketch `app-icons.sketch` è la sorgente di design; `tools/` lo esporta nei livelli
-SVG di ogni icona. I file esportati sono quelli che fanno fede per la build.
+`design/app-icons.sketch` è la sorgente di design (pagine Grid, Icons, Grid Check,
+Showcase, Showcase Files, Showcase Desktop, Dynamic Icons). Da lì si esportano i livelli
+SVG di ogni icona; i file esportati sono quelli che fanno fede per la build.
+
+## Strumenti
+
+```
+python3 -m venv venv && venv/bin/pip install pillow resvg-py
+venv/bin/python tools/compose.py --fonts <cartella con Inter> --out build/sheet-light.png
+venv/bin/python tools/compose.py --dark --fonts <cartella con Inter> --out build/sheet-dark.png
+```
+
+`compose.py` ricompone ogni icona dai suoi livelli come farebbe la shell e scrive un
+foglio di controllo.
+
+## Contenuto
+
+- `apps/`: 17 app (apps, calculator, calendar, clock, disks, fonts, help, mail, mustache,
+  notes, password-manager, photo-viewer, photos, settings, store, terminal, text-editor)
+  con varianti scure; calendar e clock sono dinamiche.
+- `files/`: cartella, 8 tipi di file, Cestino vuoto e pieno, Stack Close.
 
 ## Licenza
 

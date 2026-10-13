@@ -1,0 +1,18 @@
+{
+  "format": 1,
+  "id": "file-image",
+  "name": "File Image",
+  "kind": "file",
+  "layers": [
+    {
+      "role": "artwork",
+      "file": "icon.svg"
+    }
+  ],
+  "variants": {
+    "dark": {
+      "artwork": "icon-dark.svg"
+    }
+  },
+  "dynamic": null
+}
