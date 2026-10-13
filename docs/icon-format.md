@@ -134,11 +134,13 @@ La shell li aggiunge da sé; se ci sono, il risultato raddoppia:
 Le ombre e le sfumature **interne** al disegno (fra due parti del primo piano) fanno parte
 dell'illustrazione e restano.
 
-Vale anche per le icone `file`: i tipi di file, i volumi e i badge aggiunti per Mustache sono
-**piatti** (solo riempimenti, sfumature interne e un filo di contorno del foglio o della
-lastra), senza ombra a terra né ombre esterne o interne fatte con i filtri: l'ombra del
-contesto la mette la shell (IC-01). I fogli e le cartelle disegnati prima hanno ancora l'ombra
-a terra e le ombre dei pezzi; vanno appiattiti allo stesso modo.
+Vale anche per le icone `file`: tutte (fogli, cartelle, Cestino, volumi e badge) sono
+**piatte**, solo riempimenti, sfumature interne e un filo di contorno del foglio o della
+lastra, senza ombra a terra né ombre esterne o interne fatte con i filtri: l'ombra del
+contesto la mette la shell (IC-01). Negli SVG di `files/` non c'è nessun `filter`. I fogli, le
+cartelle e il Cestino disegnati prima dei tipi di file per Mustache avevano l'ombra a terra e le
+ombre dei pezzi: sono stati appiattiti con la stessa regola, senza cambiare forma, colori o
+proporzioni.
 
 ### Testo
 
