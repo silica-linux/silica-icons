@@ -246,7 +246,7 @@ file senza un'icona propria (`.json`, `.docx`, `.blend`…).
   "type": "file-label",
   "label": { "font": "Inter", "size": 160, "weight": 900, "tracking": 0,
              "box": [245, 376, 534, 194], "case": "upper",
-             "max_chars": 4, "max_width": 534 },
+             "max_chars": 5, "max_width": 534, "overflow": "shrink" },
   "colors": { "document": {...}, "data": {...}, "code": {...},
               "archive": {...}, "media": {...}, "other": {...} },
   "overrides": { "json": "data", "epub": "document", "blend": "media", ... },
@@ -278,6 +278,10 @@ file senza un'icona propria (`.json`, `.docx`, `.blend`…).
   "category": "data"}`). Ordine di risoluzione per un file regolare:
   0. il tipo MIME si porta al nome canonico con gli `aliases` di shared-mime-info
      (`text/xml` → `application/xml`, `text/x-yaml` → `application/yaml`);
+  0b. se il tipo viene solo dal nome e `globs2` dà per quell'estensione più tipi con lo stesso
+     peso (nome ambiguo: `.ts` è TypeScript, Qt Linguist o MPEG-TS a seconda del sistema), il
+     passo 4 (`icons.extensions`) vale prima dei passi 1–3; se il contenuto decide il tipo
+     (magic), resta l'ordine normale;
   1. il tipo MIME (shared-mime-info, dal contenuto e dal nome) in `icons.mime`, esatto;
   2. lo stesso con il sottotipo `*` (`image/*`, `audio/*`, `video/*`, `font/*`);
   3. i genitori del tipo (`sub-class-of` di shared-mime-info, in ordine), ripetendo 1 e 2: un
