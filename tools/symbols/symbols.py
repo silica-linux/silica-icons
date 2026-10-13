@@ -1303,6 +1303,50 @@ add("windows", "house-door-fill", (S, line(*ROOF)), (F, CHIMNEY),
     (F, "M12 3.5L18.25 8.86V17.85A2.4 2.4 0 0 1 15.85 20.25H14V15.4A1 1 0 0 0 13 14.4H11"
         "A1 1 0 0 0 10 15.4V20.25H8.15A2.4 2.4 0 0 1 5.75 17.85V8.86Z"))
 
+# Libreria (fase 6) ------------------------------------------------------------------
+# In coda alle categorie. books-vertical: due libri diritti e uno inclinato su uno scaffale
+# (linea da 2,75 a 21,25 su y 20,25). I libri diritti poggiano sullo scaffale (tracciato
+# aperto in basso), luce fra i due 3,35 u asse-asse (1,85 in Regular, 1,2 in Semibold); il
+# terzo, inclinato di 18°, poggia sullo spigolo in basso a sinistra e tocca il fianco del
+# secondo. Larghezze 4 · 3,5 · 3, altezze 15,5 · 13 · 12; fascette sul dorso del primo.
+# books-vertical-fill: libri pieni (riempimento e tratto), fascette omesse.
+BK_Y = 20.25
+BK_R = 1.0
+BK = [(3.35, 7.35, 4.75), (10.7, 14.2, 7.25)]
+BK_T = math.radians(18)
+BK_W, BK_L = 3.0, 12.0
+
+
+def book_up(x0, x1, top, closed=False):
+    r = BK_R
+    d = (f"M{P(x0, BK_Y)}V{f(top + r)}A{f(r)} {f(r)} 0 0 1 {P(x0 + r, top)}H{f(x1 - r)}"
+         f"A{f(r)} {f(r)} 0 0 1 {P(x1, top + r)}V{f(BK_Y)}")
+    return d + "Z" if closed else d
+
+
+def book_lean():
+    up = (-math.sin(BK_T), -math.cos(BK_T))
+    rt = (math.cos(BK_T), -math.sin(BK_T))
+    bl = (BK[1][1] - BK_L * up[0], BK_Y)
+    tl = (bl[0] + BK_L * up[0], bl[1] + BK_L * up[1])
+    tr = (tl[0] + BK_W * rt[0], tl[1] + BK_W * rt[1])
+    br = (bl[0] + BK_W * rt[0], bl[1] + BK_W * rt[1])
+    pts = [bl, tl, tr, br]
+    out = ""
+    for i, p in enumerate(pts):
+        a, b = pts[i - 1], pts[(i + 1) % 4]
+        la, lb = math.dist(p, a), math.dist(p, b)
+        p0 = (p[0] + (a[0] - p[0]) * BK_R / la, p[1] + (a[1] - p[1]) * BK_R / la)
+        p1 = (p[0] + (b[0] - p[0]) * BK_R / lb, p[1] + (b[1] - p[1]) * BK_R / lb)
+        out += ("M" if i == 0 else "L") + P(*p0) + f"A{f(BK_R)} {f(BK_R)} 0 0 1 {P(*p1)}"
+    return out + "Z"
+
+
+BK_SHELF = line((2.75, BK_Y), (21.25, BK_Y))
+add("files", "books-vertical", (S, BK_SHELF), *[(S, book_up(*b)) for b in BK], (S, book_lean()),
+    *[(S, line((BK[0][0], y), (BK[0][1], y))) for y in (8.25, 16.75)])
+add("files", "books-vertical-fill", (S, BK_SHELF), *[(F, book_up(*b, closed=True)) for b in BK], (F, book_lean()))
+
 CATS = [
     ("status", "Status & Connectivity"),
     ("control", "Control Center & Media"),

@@ -54,7 +54,7 @@ foglio di controllo.
   cartella 824 × 648, volume 824 × 509).
 - `badges/`: alias, bloccato, non leggibile e cloud, in chiaro e scuro, con le regole di
   composizione in `badges.json`.
-- `symbols/<peso>/`: 322 simboli in 11 categorie e tre pesi (`light`, `regular`, `semibold`),
+- `symbols/<peso>/`: 324 simboli in 11 categorie e tre pesi (`light`, `regular`, `semibold`),
   generati da `tools/symbols/symbols.py` (`export_svg.py --check` verifica che gli SVG
   corrispondano alla sorgente). Specifica:
   [`docs/symbol-format.md`](docs/symbol-format.md); sorgente di design `design/symbols.sketch`.

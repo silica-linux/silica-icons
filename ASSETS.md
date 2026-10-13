@@ -226,6 +226,8 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `symbols/light/book.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/bookmark-fill.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/bookmark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/light/books-vertical-fill.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/light/books-vertical.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/bug.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/calendar.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/light/camera.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
@@ -548,6 +550,8 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `symbols/regular/book.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/bookmark-fill.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/bookmark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/regular/books-vertical-fill.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/regular/books-vertical.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/bug.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/calendar.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/regular/camera.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
@@ -870,6 +874,8 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `symbols/semibold/book.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/bookmark-fill.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/bookmark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/semibold/books-vertical-fill.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
+| `symbols/semibold/books-vertical.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/bug.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/calendar.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/camera.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |

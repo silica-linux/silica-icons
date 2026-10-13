@@ -402,7 +402,7 @@ tinta. I livelli sono quelli della cartella (`files/folder`), senza simbolo.
   "folders": { "HOME": "house", "DESKTOP": "display", "DOCUMENTS": "doc-text",
                "DOWNLOAD": "arrow-down-circle", "MUSIC": "music-note", "PICTURES": "photo",
                "VIDEOS": "film", "TEMPLATES": "doc-plus", "PUBLICSHARE": "share",
-               "APPLICATIONS": "square-grid-2x2", "LIBRARY": "book", "SHARED": "person-2",
+               "APPLICATIONS": "square-grid-2x2", "LIBRARY": "books-vertical", "SHARED": "person-2",
                "NETWORK": "network" },
   "fallback": "folder"
 }

@@ -132,7 +132,8 @@ medium le icone della barra dei menu stanno fra 12 e 16 pt di altezza (osservato
   preferiti). Esistono per `location`, `mic`, `bolt`, `house`, `house-door`, `folder`, `doc`, `photo`, `bookmark`,
   `trash`, `bell`, `message`, `phone`, `video`, `paperplane`, `megaphone`, `person`, `lock`,
   `shield`, `cloud`, `drop`, `umbrella`, `circle`, `square`, `triangle`, `diamond`, `star`,
-  `heart`, `flag`, `lightbulb`, `puzzle`, `leaf`, `pointer`, `circle-stack`. Nella variante fill il dettaglio
+  `heart`, `flag`, `lightbulb`, `puzzle`, `leaf`, `pointer`, `circle-stack`,
+  `books-vertical`. Nella variante fill il dettaglio
   interno si ritaglia (sottrazione), con luce minima 1,5 u.
 - Simboli pieni per natura (`play`, `pause`, `moon`, `airplane`) non hanno variante outline.
 - Finché Sketch non conserva le sottrazioni fra sottotracciati, si disegnano `-fill` solo per le
@@ -219,6 +220,18 @@ Simboli per le righe della barra laterale (fase 5 in `symbols.py`, in coda alle 
   `house-door-fill`: corpo pieno con la porta come tacca nel contorno in basso (nessuna
   sottrazione: la porta tocca il bordo), comignolo pieno; la porta resta aperta 2,5 u in Regular.
 
+## Libreria
+
+Simbolo della cartella Libreria (`LIBRARY` della cartella generica; fase 6 in `symbols.py`, in coda
+alle categorie).
+
+- `books-vertical`: due libri diritti e uno inclinato su uno scaffale (linea da x 2,75 a 21,25 su
+  y 20,25). I libri diritti sono larghi 4 e 3,5 u sull'asse, alti 15,5 e 13 u, r 1, aperti in basso
+  sullo scaffale; fra loro 3,35 u asse-asse (luce 1,85 in Regular, 1,2 in Semibold). Il terzo
+  (3 × 12, r 1) è inclinato di 18°, poggia sullo spigolo in basso a sinistra e tocca il fianco del
+  secondo; il primo ha due fascette sul dorso (y 8,25 e 16,75). Inchiostro da x 2,6 a 21,5.
+- `books-vertical-fill`: libri pieni (riempimento e tratto), scaffale a tratto, fascette omesse.
+
 ## Varianti barrate e badge
 
 - `-slash`: barra da (4,25, 4,25) a (19,75, 19,75), sopra il simbolo, sempre lo stesso tratto
@@ -231,7 +244,7 @@ Simboli per le righe della barra laterale (fase 5 in `symbols.py`, in coda alle 
 
 ## Catalogo
 
-322 simboli in 11 categorie, nell'ordine delle sezioni della pagina Symbols (12 colonne,
+324 simboli in 11 categorie, nell'ordine delle sezioni della pagina Symbols (12 colonne,
 passo 144 px; ogni categoria ha una banda di 960 px, cioè fino a 5 righe).
 
 | Categoria | Simboli |
@@ -240,7 +253,7 @@ passo 144 px; ogni categoria ha una banda di 960 px, cioè fino a 5 righe).
 | Control Center & Media | 32 |
 | Windows & Navigation | 45 |
 | Editing & Text | 37 |
-| Files & Documents | 31 |
+| Files & Documents | 33 |
 | Communication | 25 |
 | People & Security | 21 |
 | Devices | 22 |

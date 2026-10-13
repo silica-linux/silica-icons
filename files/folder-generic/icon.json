@@ -65,7 +65,7 @@
       "TEMPLATES": "doc-plus",
       "PUBLICSHARE": "share",
       "APPLICATIONS": "square-grid-2x2",
-      "LIBRARY": "book",
+      "LIBRARY": "books-vertical",
       "SHARED": "person-2",
       "NETWORK": "network"
     },
