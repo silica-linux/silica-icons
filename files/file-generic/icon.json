@@ -1,0 +1,40 @@
+{
+  "format": 1,
+  "id": "file-generic",
+  "name": "File Generic",
+  "kind": "file",
+  "layers": [
+    {
+      "role": "artwork",
+      "file": "icon.svg"
+    }
+  ],
+  "variants": {
+    "dark": {
+      "artwork": "icon-dark.svg"
+    }
+  },
+  "dynamic": {
+    "type": "file-label",
+    "label": {
+      "font": "Inter",
+      "size": 132,
+      "weight": 900,
+      "tracking": 0,
+      "box": [292, 400, 440, 160],
+      "case": "upper",
+      "max_chars": 4,
+      "max_width": 440
+    },
+    "colors": {
+      "document": { "color": "#2f7cf6", "dark_color": "#5aa0ff" },
+      "data": { "color": "#1f9d55", "dark_color": "#3fd07f" },
+      "code": { "color": "#ff6a00", "dark_color": "#ff8a3d" },
+      "archive": { "color": "#8e8e93", "dark_color": "#aeaeb2" },
+      "media": { "color": "#e8336d", "dark_color": "#ff5c8a" },
+      "other": { "color": "#636366", "dark_color": "#c7c7cc" }
+    },
+    "overrides": {},
+    "fallback": "file-unknown"
+  }
+}

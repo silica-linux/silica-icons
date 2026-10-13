@@ -206,6 +206,36 @@ Mese per intero, localizzato; se supera `max_width` il corpo scende in proporzio
 linea di base di 0,6 × la riduzione. Giorno senza zero iniziale. Aggiornamento a
 mezzanotte locale e al cambio di data o fuso.
 
+### File generico
+
+`files/file-generic` è il foglio vuoto su cui la shell scrive l'estensione, per i tipi di
+file senza un'icona propria (`.json`, `.docx`, `.blend`…).
+
+```json
+"dynamic": {
+  "type": "file-label",
+  "label": { "font": "Inter", "size": 132, "weight": 900, "tracking": 0,
+             "box": [292, 400, 440, 160], "case": "upper",
+             "max_chars": 4, "max_width": 440 },
+  "colors": { "document": {...}, "data": {...}, "code": {...},
+              "archive": {...}, "media": {...}, "other": {...} },
+  "overrides": {},
+  "fallback": "file-unknown"
+}
+```
+
+- Etichetta: l'estensione senza punto, in maiuscolo, centrata nel `box` (centro ottico
+  del foglio, y 480 come le altre icone dei file).
+- Se l'estensione supera `max_width` il corpo scende in proporzione; oltre `max_chars`
+  caratteri, o senza estensione, si usa `fallback` (il foglio con il punto di domanda).
+- Colore dalla categoria del tipo MIME (shared-mime-info): `text/*` e documenti da ufficio
+  → `document`; JSON, XML, YAML, CSV, database → `data`; sorgenti e script → `code`;
+  archivi e pacchetti → `archive`; `image/*`, `audio/*`, `video/*`, font → `media`;
+  il resto → `other`. `overrides` associa a una singola estensione una categoria o un
+  colore (`{"json": "data"}`, `{"sketch": {"color": "#f7b500"}}`).
+- Il tipo di file con un'icona propria (PDF, testo, archivio, immagine, audio, video,
+  codice) usa sempre quella.
+
 ## Icone senza livelli
 
 Un'app che ha solo un'icona freedesktop (PNG o SVG già composto) viene ridotta al keyline
