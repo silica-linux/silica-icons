@@ -85,7 +85,14 @@ Eccezioni volute:
   quasi sul fondo del corpo delle app (924): nel Dock poggia sulla stessa linea;
 - la piega dei fogli (165 × 160: la 132 di prima scalata con il foglio) non è sulla serie: cambiarla vuol dire ridisegnare il tracciato di ogni foglio; resta finché i
   fogli non si ridisegnano;
-- il Cestino e Stack Close non sono né fogli né cartelle e non cambiano;
+- il Cestino non è né foglio né cartella e non cambia;
+- Stack Close (il pulsante che prende il posto della cartella nel Dock a pila aperta) è un'icona
+  `file` a forma libera, misurata su una cattura a 1×: quadrato arrotondato di 52 pt contro 49 pt
+  del corpo delle app (874 su tela 1024, a 16,8 px/pt), angoli 11 pt (185), centro a (512, 470),
+  cioè 2,5 pt sopra il centro delle icone vicine; fondo bianco traslucido da 0,35 (alto) a 0,08
+  (basso) sul Dock (129, 130, 137), che dà 173 in alto e 139 in basso; chevron in giù #1B1B1D
+  largo 19 pt e alto 10, tratto 2,5 pt (42) con estremi tondi, centrato sul pulsante. Il tema
+  scuro non è misurato: fondo bianco da 0,24 a 0,07 e chevron #F5F5F7 chiaro;
 - i tipi di file aggiunti per Mustache (foglio di calcolo, presentazione, font, immagine disco,
   eseguibile, documento, pagina web) hanno la figura nel riquadro 461 × 292 centrato su
   (512, 473), come Code e Image (la larghezza delle righe di testo dei fogli, 461 ≈ 472 entro

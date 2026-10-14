@@ -164,11 +164,9 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `files/folder/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/folder/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/folder/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
-| `files/stack-close/background-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
-| `files/stack-close/background.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
-| `files/stack-close/foreground-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
-| `files/stack-close/foreground.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/stack-close/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
+| `files/stack-close/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, misurato da catture |
+| `files/stack-close/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, misurato da catture |
 | `files/trash-empty/icon-dark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/trash-empty/icon.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |
 | `files/trash-empty/preview.png` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/app-icons.sketch` |

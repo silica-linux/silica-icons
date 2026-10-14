@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>icon-dark</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="fill">
+            <stop stop-color="#FFFFFF" stop-opacity="0.24" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.07" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="icon-dark" stroke="none" fill="none" fill-rule="evenodd">
+        <rect id="Button" fill="url(#fill)" x="75" y="33" width="874" height="874" rx="185" ry="185"></rect>
+        <path id="Chevron" d="M373.5,407 L512,533 L650.5,407" stroke="#F5F5F7" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"></path>
+    </g>
+</svg>
