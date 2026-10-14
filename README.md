@@ -1,6 +1,21 @@
-![silica-icons](.github/banner.png)
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/silica-logo-dark.svg">
+    <img alt="Silica" src=".github/silica-logo-light.svg" width="200">
+  </picture>
+</p>
 
-# silica-icons
+<h1 align="center">silica-icons</h1>
+
+<p align="center">
+  <b>The icons of Silica.</b><br>
+  App icons, folders and file types, and system symbols, all original.
+</p>
+
+<p align="center">
+  <img alt="license: CC BY-SA 4.0" src="https://img.shields.io/badge/license-CC%20BY--SA%204.0-3a3a3a?style=flat-square">
+</p>
+
 
 Icone di Silica: app, cartelle e file, simboli di sistema. Tutte originali, disegnate
 per il progetto.

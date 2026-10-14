@@ -1160,4 +1160,5 @@ per asset di terzi: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `symbols/semibold/xmark.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/zoom-in.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
 | `symbols/semibold/zoom-out.svg` | Progetto Silica | CC BY-SA 4.0 | originale, disegnato in `design/symbols.sketch`, generato da `tools/symbols/export_svg.py` |
-| `.github/banner.png` | Progetto Silica | marchio del progetto, licenza da decidere (`silica-brand`) | originale, da `silica-brand/exports/banners/` (generato da `tools/build.py`; testo in Inter, OFL 1.1, convertito in tracciati) |
+| `.github/silica-logo-light.svg` | Silica project | project trademark, license to be decided (`silica-brand`) | original, `silica-brand/exports/logotype/silica-logotype-horizontal-light.svg` |
+| `.github/silica-logo-dark.svg` | Silica project | project trademark, license to be decided (`silica-brand`) | original, `silica-brand/exports/logotype/silica-logotype-horizontal-dark.svg` |
