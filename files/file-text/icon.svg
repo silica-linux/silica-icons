@@ -5,7 +5,7 @@
         <path d="M835.941176,259.952941 L835.941176,860.988235 C835.941176,902.996078 814.341176,924 771.141176,924 L252.741176,924 C209.541176,924 187.941176,902.996078 187.941176,860.988235 L187.941176,163.011765 C187.941176,121.003922 209.541176,100 252.741176,100 L671.448869,100 Z" id="path-1"></path>
         <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
             <stop stop-color="#FFFFFF" offset="0%"></stop>
-            <stop stop-color="#EEF1F5" offset="100%"></stop>
+            <stop stop-color="#F8F9FB" offset="100%"></stop>
         </linearGradient>
         <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
             <stop stop-color="#C9CED7" offset="0%"></stop>

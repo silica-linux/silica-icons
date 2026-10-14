@@ -26,7 +26,7 @@ Tutte le misure sono su una tela di **1024 × 1024**.
 | Keyline verticale | 520 × 680 a (252, 172) |
 | Keyline orizzontale | 680 × 520 a (172, 252) |
 | Keyline documento (icone dei file) | 648 × 824 a (188, 100) |
-| Keyline cartella | 824 × 648 a (100, 188) |
+| Keyline cartella | 824 × 663 a (100, 180,5) |
 | Keyline volume (dischi e server) | 824 × 509 a (100, 257,5) |
 | Badge | disco Ø 824 centrato sulla propria tela 1024 (vedi Badge) |
 
@@ -49,7 +49,7 @@ di Grid Check.
 | Quadrato e cerchio 600 | grandezza base (20 u) |
 | Cerchio 424 | 600 / √2: cerchio inscritto nel quadrato inscritto nel cerchio 600 |
 | Verticale 520 × 680, orizzontale 680 × 520 | stesso perimetro del quadrato 600 (520 + 680 = 2 × 600), area 98 %; rapporto 1,31, non aureo |
-| Documento 648 × 824, cartella 824 × 648 | il lato lungo è il corpo (824), il corto 824 / √φ: le icone dei file e delle cartelle arrivano al bordo della griglia, come il corpo delle app, e a 16–32 px non sembrano più piccole delle app accanto |
+| Documento 648 × 824, cartella 824 × 663 | il lato lungo è il corpo (824); il corto del documento è 824 / √φ, quello della cartella è misurato (824 / 1,243, entro la tolleranza di √φ): le icone dei file e delle cartelle arrivano al bordo della griglia, come il corpo delle app, e a 16–32 px non sembrano più piccole delle app accanto |
 | Volume 824 × 509 | il lato lungo è il corpo, il corto 824 / φ (serie B): un disco è una lastra, più bassa di una cartella; la fascia frontale è 509 / φ² = 194,5 (serie B 194), da y 572 |
 | Disco ottico Ø 824 | il corpo: tocca il bordo come gli altri volumi; zona di fermo Ø 315 (corpo / φ², serie B), anello interno Ø 230 (serie A 229), foro Ø 112 (serie A) |
 | Badge 315 e 509 | corpo / φ² e corpo / φ: il riquadro del badge va dal bordo del corpo alla linea aurea (x e y 415 e 609) |
@@ -76,11 +76,11 @@ testo e le posizioni dei dettagli illustrativi non sono vincolate.
 Eccezioni volute:
 
 - le icone dei file stanno sulla keyline documento (foglio 648 × 824, da y 100 a 924) e le
-  cartelle sulla keyline cartella (824 × 648, da x 100 a 924, centrata su y 512): il disegno
+  cartelle sulla keyline cartella (824 × 663, da x 100 a 924, da y 180,5 a 843,5, centrata su y 512): il disegno
   di prima (foglio 520 × 680, cartella 680 × 520) è stato scalato di 824 / 680 e portato al
   rapporto √φ allargando il foglio (le righe, le figure e le estensioni non si deformano) e
-  alzando la cartella (2,8 %, entro tolleranza); il contenuto del foglio è centrato su y 473,
-  sopra l'estensione; il pannello anteriore della cartella è 824 × 483,5 da y 352,5;
+  alzando la cartella (2,8 %, entro tolleranza), poi alzata ancora a 663 (rapporto 1,243 misurato sulla cartella di riferimento a icone grandi, 470 × 378: +2,3 % su 648, entro tolleranza); il contenuto del foglio è centrato su y 473,
+  sopra l'estensione; il pannello anteriore della cartella è 824 × 540 da y 303,5 (0,815 dell'altezza; nel riferimento 0,82);
 - il Cestino è largo 584 (≈ 600) e alto 734 (h : l ≈ √φ), con la base del cestello a y 914,
   quasi sul fondo del corpo delle app (924): nel Dock poggia sulla stessa linea;
 - la piega dei fogli (165 × 160: la 132 di prima scalata con il foglio) non è sulla serie: cambiarla vuol dire ridisegnare il tracciato di ogni foglio; resta finché i
@@ -141,6 +141,15 @@ contesto la mette la shell (IC-01). Negli SVG di `files/` non c'è nessun `filte
 cartelle e il Cestino disegnati prima dei tipi di file per Mustache avevano l'ombra a terra e le
 ombre dei pezzi: sono stati appiattiti con la stessa regola, senza cambiare forma, colori o
 proporzioni.
+
+Sfumatura verticale dei fogli e delle cartelle: misurata sul Finder a icone grandi (luminanza
+Rec. 709 fra il 10 % e il 90 % dell'altezza del pannello anteriore, lontano da bordi e
+simboli), la cartella cala di circa 27 su 255 (RGB 127 200 243 in alto, 96 174 225 in basso) e
+il foglio senza anteprima non cala (245 uniforme). I fogli vanno quindi da `#FFFFFF` a
+`#F8F9FB` (scuro `#3A3A3E` a `#333337`, calo ≈ 4 e ≈ 5) e le cartelle hanno due soli passi
+(pannello `#8FCDFF` a `#5AA7F8`, scuro `#7DBBF6` a `#4D93E6`, calo ≈ 31; dietro `#4A9EFB` a
+`#2F84EE`, scuro `#3786E6` a `#1F68CC`), contro un calo di ≈ 64 delle cartelle e ≈ 12 dei fogli
+di prima.
 
 ### Testo
 
@@ -518,8 +527,8 @@ Proporzioni (tela 1024, keyline cartella):
 
 | Misura | Valore | Da dove viene |
 | --- | --- | --- |
-| Pannello anteriore | 824 × 483,5 da (100, 352,5), centro (512, 594) | la cartella |
-| Area viva del simbolo (Ø 20 u) | 230 ≈ 229 | serie A (600 / φ²); è pannello / φ^1,5 |
+| Pannello anteriore | 824 × 540 da (100, 303,5), centro (512, 573,5) | la cartella: 0,815 dell'altezza 663 |
+| Area viva del simbolo (Ø 20 u) | 230 ≈ 229 | serie A (600 / φ²) |
 | Tela del simbolo (24 u), `box` | 276 × 276, centrata sul pannello: 1 u = 11,5 px | area viva × 24 / 20 |
 | Tratto | Light 13,6 · Regular 17,3 · Semibold 24,7 | 1,18 · 1,5 · 2,15 u: Light e Regular cadono sugli spessori 13,5 e 17 della serie |
 | Simbolo piccolo (`scale` 1,272) | tela 351, area viva 292 | × √φ, serie A |

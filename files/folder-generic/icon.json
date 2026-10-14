@@ -17,7 +17,7 @@
   "dynamic": {
     "type": "folder-symbol",
     "symbol": {
-      "box": [374, 456, 276, 276],
+      "box": [374, 435.5, 276, 276],
       "sizes": [
         { "min_size": 128, "weight": "light", "scale": 1 },
         { "min_size": 64, "weight": "regular", "scale": 1 },
