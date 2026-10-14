@@ -25,6 +25,7 @@
             <stop stop-color="#E9ECF1" offset="0%"></stop>
             <stop stop-color="#C6CCD6" offset="100%"></stop>
         </linearGradient>
+        <clipPath id="pageClip"><path d="M637.788235,160.46483 L637.788235,760.988235 C637.788235,802.319133 616.738232,822.788235 574.2,822.788235 L55.8,822.788235 C13.2617677,822.788235 -7.78823529,802.319133 -7.78823529,760.988235 L-7.78823529,63.0117647 C-7.78823529,21.6808671 13.2617677,1.21176471 55.8,1.21176471 L474.015664,1.21176486 Z" transform="matrix(0.962144, 0, 0, 1, 11.927005, 0)"></path></clipPath>
     </defs>
     <g id="icon" transform="matrix(1.097087, 0, 0, 1.097087, -49.708738, -49.708738)" stroke="none" fill="none" xlink:href="#path-1" fill-rule="evenodd" stroke-width="1">
         <g id="Glyph" transform="translate(196.9412, 100)">
@@ -37,6 +38,7 @@
                 <circle id="Sun" fill="url(#linearGradient-6)" mask="url(#mask-5)" cx="782.8" cy="479.858824" r="41.2"></circle>
                 <path d="M339.294118,702.823529 C436.235294,622.039216 533.176471,605.882353 630.117647,654.352941 C710.901961,694.745098 801.380392,678.588235 901.552941,605.882353 L901.552941,799.764706 L339.294118,799.764706 L339.294118,702.823529 Z" id="Hill" fill="url(#linearGradient-7)" mask="url(#mask-5)"></path>
             </g>
+            <g id="Fold-shadow" clip-path="url(#pageClip)"><path d="M474.507692,0 L639,159.952941 L524.353846,159.952941 C491.123077,159.952941 474.507692,143.796078 474.507692,111.482353 L474.507692,0 Z" transform="matrix(0.962144, 0, 0, 1, 11.927005, 0)" stroke="#000000" stroke-opacity="0.03" stroke-width="84" stroke-linejoin="round"></path><path d="M474.507692,0 L639,159.952941 L524.353846,159.952941 C491.123077,159.952941 474.507692,143.796078 474.507692,111.482353 L474.507692,0 Z" transform="matrix(0.962144, 0, 0, 1, 11.927005, 0)" stroke="#000000" stroke-opacity="0.03" stroke-width="64" stroke-linejoin="round"></path><path d="M474.507692,0 L639,159.952941 L524.353846,159.952941 C491.123077,159.952941 474.507692,143.796078 474.507692,111.482353 L474.507692,0 Z" transform="matrix(0.962144, 0, 0, 1, 11.927005, 0)" stroke="#000000" stroke-opacity="0.03" stroke-width="46" stroke-linejoin="round"></path><path d="M474.507692,0 L639,159.952941 L524.353846,159.952941 C491.123077,159.952941 474.507692,143.796078 474.507692,111.482353 L474.507692,0 Z" transform="matrix(0.962144, 0, 0, 1, 11.927005, 0)" stroke="#000000" stroke-opacity="0.03" stroke-width="30" stroke-linejoin="round"></path><path d="M474.507692,0 L639,159.952941 L524.353846,159.952941 C491.123077,159.952941 474.507692,143.796078 474.507692,111.482353 L474.507692,0 Z" transform="matrix(0.962144, 0, 0, 1, 11.927005, 0)" stroke="#000000" stroke-opacity="0.03" stroke-width="16" stroke-linejoin="round"></path></g>
             <path d="M474.507692,0 L639,159.952941 L524.353846,159.952941 C491.123077,159.952941 474.507692,143.796078 474.507692,111.482353 L474.507692,0 Z" id="Corner" transform="matrix(0.962144, 0, 0, 1, 11.927005, 0)" fill="url(#linearGradient-8)"></path>
         </g>
     </g>

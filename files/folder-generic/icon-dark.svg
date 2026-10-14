@@ -4,12 +4,12 @@
     <defs>
         <path d="M462.3614,218.1744 C484.6988,243.2907 499.5904,255.8488 539.3012,255.8488 L854.5060,255.8488 C900.8353,255.8488 924,279.2907 924,326.1744 L924,773.1744 C924,820.0581 900.8353,843.5000 854.5060,843.5000 L826.3100,843.4998 C825.2827,843.5000 824.2399,843.5000 823.1812,843.5000 L200.8188,843.5000 C199.7601,843.5000 198.7173,843.5000 197.6900,843.4998 L169.4940,843.5000 C123.1647,843.5000 100,820.0581 100,773.1744 L100,250.8256 C100,203.9419 123.1647,180.5000 169.4940,180.5000 L385.4217,180.5000 C422.6506,180.5000 440.0241,193.0581 462.3614,218.1744 Z" id="path-1"></path>
         <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
-            <stop stop-color="#3786E6" offset="0%"></stop>
-            <stop stop-color="#1F68CC" offset="100%"></stop>
+            <stop stop-color="#317FDF" offset="0%"></stop>
+            <stop stop-color="#2570D2" offset="100%"></stop>
         </linearGradient>
         <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
-            <stop stop-color="#7DBBF6" offset="0%"></stop>
-            <stop stop-color="#4D93E6" offset="100%"></stop>
+            <stop stop-color="#71B1F2" offset="0%"></stop>
+            <stop stop-color="#599DEA" offset="100%"></stop>
         </linearGradient>
     </defs>
     <g id="icon-dark" transform="matrix(1.145631, 0, 0, 1.145631, -74.563107, -74.563107)" stroke="none" fill="none" xlink:href="#path-1" fill-rule="evenodd" stroke-width="1">

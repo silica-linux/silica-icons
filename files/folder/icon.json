@@ -12,6 +12,12 @@
   "variants": {
     "dark": {
       "artwork": "icon-dark.svg"
+    },
+    "full": {
+      "artwork": "icon-full.svg"
+    },
+    "full-dark": {
+      "artwork": "icon-full-dark.svg"
     }
   },
   "dynamic": null

@@ -177,9 +177,25 @@ luminance between 10 % and 90 % of the front panel height, away from edges and s
 folder drops by about 27 out of 255 (RGB 127 200 243 at the top, 96 174 225 at the bottom) and
 the sheet without a preview does not drop (245 uniform). The sheets therefore go from `#FFFFFF`
 to `#F8F9FB` (dark `#3A3A3E` to `#333337`, drop ≈ 4 and ≈ 5) and the folders have only two
-steps (panel `#8FCDFF` to `#5AA7F8`, dark `#7DBBF6` to `#4D93E6`, drop ≈ 31; back `#4A9EFB` to
-`#2F84EE`, dark `#3786E6` to `#1F68CC`), against a drop of ≈ 64 for folders and ≈ 12 for
-sheets before.
+steps, with half the measured drop by design choice (panel `#82C4FD` to `#68B0FA`, dark `#71B1F2`
+to `#599DEA`, drop ≈ 16; back `#4497F8` to `#3589F1`, dark `#317FDF` to `#2570D2`), against
+≈ 31 when they followed the measure and ≈ 64 for folders and ≈ 12 for sheets before.
+
+**Fold shadow.** Under the folded corner of every sheet a soft shadow falls on the page: five
+strokes of the corner outline (widths 84, 64, 46, 30, 16, round joins, black at 3 % each, dark
+7 %), stacked so the shadow fades outwards, clipped to the page (`Fold-shadow` group). No filter.
+
+**Full folders.** `folder` and `folder-generic` have the variants `full` and `full-dark`
+(`icon-full.svg`, `icon-full-dark.svg`): a sheet (688 × 560 at (168, 258) in the folder's
+drawing, radius 18, white to `#F3F5F8`, dark `#E9EBEF` to `#D9DCE2`, 1 px outline) peeks between
+the back and the front panel. The shell uses them for a folder that contains at least one
+item; the symbol and the tint are applied on top as for the empty folder, and the variants
+with a symbol are not drawn.
+
+**Trash.** A square bin seen slightly from above: the opening, the inner back wall and a
+translucent front (white 62 % → 46 %, dark `#4A4A52` 62 % → 50 %), flat, with no ribs. In
+the full Trash the contents stick out sharp above the rim and show inside only as an
+impression: radial gradients in their colours (no filter), as if seen through frosted glass.
 
 ### Text
 
@@ -213,6 +229,7 @@ when it does not need to change.
 | `layers` | bottom to top: one `background` and 1 to 4 foreground layers |
 | `shadow` | shadow the shell draws under the layer: `neutral`, `chromatic` (taken from the layer color) or `none` |
 | `variants.dark` | replacement layers for Dark, Clear Dark and Tinted Dark |
+| `variants.full`, `variants.full-dark` | folders only: the folder with something inside (light and dark) |
 | `dynamic` | content updated at runtime, see below |
 
 `file` icons have a single `artwork` layer (`icon.svg`, `icon-dark.svg`) and no
