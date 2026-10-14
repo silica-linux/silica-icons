@@ -55,8 +55,8 @@ every Grid Check artboard.
 | Square and circle 600 | base quantity (20 u) |
 | Circle 424 | 600 / √2: circle inscribed in the square inscribed in the 600 circle |
 | Vertical 520 × 680, horizontal 680 × 520 | same perimeter as the 600 square (520 + 680 = 2 × 600), area 98 %; ratio 1.31, not golden |
-| Document 684 × 904, folder 944 × 760 | measured on Finder at large icons (1× capture, 128 pt icons): sheet body 86 × 114 (0.668 × 0.883 of the canvas, without the ≈ 5 pt per side shadow that the shell adds; 96 × 124 with the shadow), folder 118 × 94 (0.922 × 0.734); at 64 pt 42 × 56 and 59 × 47, same ratios. The sheet is the earlier drawing (648 × 824) scaled by 904 / 824 = 1.0971 around the center and narrowed in width to 684 (measured ratio 1.32, no longer √φ): lines, figures and extensions scale by 1.0971 without distortion, only the outline and the fold follow the width. The folder is the earlier one (824 × 663) scaled by 944 / 824 = 1.1456 around the center: 944 × 760 against 944 × 752 measured (1 %, within tolerance). In the Dock the folder measures 1.13 times the body of the neighboring apps (54 against 48 px at 2×), that is 0.905 of the canvas: matches 944 / 1024 |
-| Volume 944 × 583 | the earlier slab (824 × 509: long side the body, short side 824 / φ, front band 509 / φ² from y 572) scaled by 1.1456 around the center like the folder: the Finder volume is an upright box (0.71 × 0.86 of the canvas on the Desktop), a different shape from the slab, so it is not measured directly; front band 222.8 from y 580.7 |
+| Document 684 × 904, folder 944 × 760 | measured in the reference file manager at large icons (1× capture, 128 pt icons): sheet body 86 × 114 (0.668 × 0.883 of the canvas, without the ≈ 5 pt per side shadow that the shell adds; 96 × 124 with the shadow), folder 118 × 94 (0.922 × 0.734); at 64 pt 42 × 56 and 59 × 47, same ratios. The sheet is the earlier drawing (648 × 824) scaled by 904 / 824 = 1.0971 around the center and narrowed in width to 684 (measured ratio 1.32, no longer √φ): lines, figures and extensions scale by 1.0971 without distortion, only the outline and the fold follow the width. The folder is the earlier one (824 × 663) scaled by 944 / 824 = 1.1456 around the center: 944 × 760 against 944 × 752 measured (1 %, within tolerance). In the Dock the folder measures 1.13 times the body of the neighboring apps (54 against 48 px at 2×), that is 0.905 of the canvas: matches 944 / 1024 |
+| Volume 944 × 583 | the earlier slab (824 × 509: long side the body, short side 824 / φ, front band 509 / φ² from y 572) scaled by 1.1456 around the center like the folder: the reference volume icon is an upright box (0.71 × 0.86 of the canvas on the Desktop), a different shape from the slab, so it is not measured directly; front band 222.8 from y 580.7 |
 | Optical disc Ø 944 | Ø 824 scaled like the folder; stop zone Ø 361, inner ring Ø 264, hole Ø 128 (the earlier measures × 1.1456) |
 | Trash 656 × 824 | measured in the Dock (2× capture): the bin is as tall as the app body (49 against 48 px) and rests on the same base, 0.86 of the body wide; with the sheets inside it is 1.10 of the body tall. The earlier drawing (584 × 734, base at 914) is scaled by 824 / 734 = 1.1226 and the base moved to 924: bin 656 × 824 (rim 667), with the sheets 913 (1.11 of the body); it stays narrower than the reference (0.81 of the body) because the shape is our own |
 | Badge 315 and 509 | body / φ² and body / φ: the badge box goes from the edge of the body to the golden line (x and y 415 and 609) |
@@ -86,7 +86,7 @@ Deliberate exceptions:
   reference (see The existing keylines): sheet 684 × 904 from (170, 60), folder 944 × 760 from
   (40, 132), both centered on (512, 512). History: the starting drawing (sheet 520 × 680,
   folder 680 × 520) was brought to the 824 body (sheet 648 × 824 at the √φ ratio, folder
-  824 × 663), then to the full canvas with the Finder measures (v0.2.0). The sheet content is
+  824 × 663), then to the full canvas with the file manager measures (v0.2.0). The sheet content is
   centered on y 469 (473 before), above the extension; the front panel of the folder is
   944 × 619 from y 273.1 (0.815 of the height; in the reference 0.82);
 - the Trash is 656 wide (rim 667) and 824 tall, with the bin base at y 924, on the bottom of the
@@ -172,7 +172,7 @@ and Trash drawn before the file types for Mustache had the ground shadow and the
 the pieces: they were flattened with the same rule, without changing shape, colors or
 proportions.
 
-Vertical gradient of sheets and folders: measured on Finder at large icons (Rec. 709
+Vertical gradient of sheets and folders: measured in the reference file manager at large icons (Rec. 709
 luminance between 10 % and 90 % of the front panel height, away from edges and symbols), the
 folder drops by about 27 out of 255 (RGB 127 200 243 at the top, 96 174 225 at the bottom) and
 the sheet without a preview does not drop (245 uniform). The sheets therefore go from `#FFFFFF`
@@ -501,7 +501,7 @@ generic folder and the label, see Principle):
   than the body, so the badge sticks out a little to the left and sits above the bottom of the
   sheet; folders (x 40…984) and volumes are wider than the body, so the badge sits inside the
   drawing.
-- To be verified with the new side rule: in Finder at 128 pt icons the alias badge measures
+- To be verified with the new side rule: in the reference file manager at 128 pt icons the alias badge measures
   Ø ≈ 34 (0.27 of the canvas, from x ≈ 0.08 and up to ≈ 1 pt from the bottom of the canvas),
   here Ø 315 / 1024 = 0.31. Before, Mustache drew file icons at 92 %, so the rendered badge was
   0.28; the geometry has not changed in this version.
