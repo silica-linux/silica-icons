@@ -192,10 +192,12 @@ the back and the front panel. The shell uses them for a folder that contains at 
 item; the symbol and the tint are applied on top as for the empty folder, by the shell (the
 design file has only Folder / Full and Folder Generic / Full).
 
-**Trash.** A square bin seen slightly from above: the opening, the inner back wall and a
-translucent front (white 62 % → 46 %, dark `#4A4A52` 62 % → 50 %), flat, with no ribs. In
-the full Trash the contents stick out sharp above the rim and show inside only as an
-impression: radial gradients in their colours (no filter), as if seen through frosted glass.
+**Trash.** A square bin seen slightly from above, flat, with no ribs: inner back wall and side
+walls, floor, opening with its back lip, a translucent front (white 60 % → 44 %, dark `#4A4A52`
+58 % → 46 %) with a wide soft sheen and a darker foot, and a rim lip on top. In the full Trash
+the contents stick out sharp above the rim and show through the front only as blurred shapes
+of their colours: ellipses with a Gaussian radial falloff (8 stops, ending at 0, no filter), so
+the blur has no hard edge in any renderer.
 
 ### Text
 
