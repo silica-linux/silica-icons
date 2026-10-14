@@ -170,9 +170,13 @@ for third-party assets: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `files/file-web/icon.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
 | `files/file-web/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
 | `files/folder-generic/icon-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
+| `files/folder-generic/icon-full-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
+| `files/folder-generic/icon-full.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
 | `files/folder-generic/icon.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
 | `files/folder-generic/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
 | `files/folder/icon-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
+| `files/folder/icon-full-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
+| `files/folder/icon-full.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
 | `files/folder/icon.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
 | `files/folder/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
 | `files/stack-close/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
