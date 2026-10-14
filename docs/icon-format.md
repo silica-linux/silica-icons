@@ -101,7 +101,10 @@ Eccezioni volute:
   cioè 2,5 pt sopra il centro delle icone vicine; fondo bianco traslucido da 0,35 (alto) a 0,08
   (basso) sul Dock (129, 130, 137), che dà 173 in alto e 139 in basso; chevron in giù #1B1B1D
   largo 19 pt e alto 10, tratto 2,5 pt (42) con estremi tondi, centrato sul pulsante. Il tema
-  scuro non è misurato: fondo bianco da 0,24 a 0,07 e chevron #F5F5F7 chiaro;
+  scuro è misurato (sessione M6, `dock-stacks.md`): stesso quadrato 51 × 52 pt, ma **più scuro**
+  del Dock (104, 105, 110): fondo **nero traslucido** da 0,12 (alto, dà 92) a 0,56 (basso, dà 48),
+  coerente sui tre canali entro ±0,02 (a differenza di un opaco, segue il Dock); chevron
+  **bianco #FFFFFF**, stessa geometria;
 - i tipi di file aggiunti per Mustache (foglio di calcolo, presentazione, font, immagine disco,
   eseguibile, documento, pagina web) hanno la figura nel riquadro 461 × 292 centrato su
   (512, 473), come Code e Image (la larghezza delle righe di testo dei fogli, 461 ≈ 472 entro
