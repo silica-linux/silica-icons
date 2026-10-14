@@ -25,10 +25,10 @@ def heap(dark, dy, deep=True):
               ('photo', 130, 560, -12), ('folder', 250, 520, 10), ('doc', 500, 470, 8), ('photo', 330, 420, -20),
               ('doc', 90, 380, -8), ('folder', 460, 330, -12), ('doc', 260, 300, 16)] if deep else []
     place = lambda p, dx, dy_, r: f'<g transform="translate({dx},{dy_}) rotate({r} 292 300) translate(292 300) scale(1.0) translate(-292 -300)">{p}</g>'
-    top = place(doc, 4, 26, -13) + place(photo, -10, 28, 13) + place(folder, 0, 0, 0)
+    top = place(doc, 30, 22, -10) + place(photo, -38, 24, 10) + place(folder, 0, 0, 0)
     inner = ''.join(place(Pm[k], tx - C[k][0], ty - C[k][1], r) for k, tx, ty, r in layout) + top
-    return defs, f'<g transform="translate(512,{dy}) scale(0.8) translate(-512,0)"><g transform="{M}"><g transform="translate(220,96.6083)">{inner}</g></g></g>'
-def full_svg(dark, dy=-10, blur=32, op=0.3):
+    return defs, f'<g transform="translate(512,{dy}) scale(0.9) translate(-512,0)"><g transform="{M}"><g transform="translate(220,96.6083)">{inner}</g></g></g>'
+def full_svg(dark, dy=12, blur=32, op=0.3):
     _, _, g = build(dark)
     P, front, xi, yi, wall = g['P'], g['front'], g['xi'], g['yi'], g['wall']
     arc = [P(xi[i], yi[i], H) for i in front]
