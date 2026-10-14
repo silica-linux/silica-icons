@@ -192,8 +192,10 @@ the back and the front panel. The shell uses them for a folder that contains at 
 item; the symbol and the tint are applied on top as for the empty folder, by the shell (the
 design file has only Folder / Full and Folder Generic / Full).
 
-**Trash.** A rounded-square bin (superellipse, exponent 4.6) that narrows toward the base,
-modelled in 3D and projected from 13° above (`tools/trash/`): the outer wall, the inner back
+**Trash.** A rounded-square bin (superellipse, exponent 4.6) that narrows toward the base
+(base 0.86 of the rim), modelled in 3D and projected from 13° above (`tools/trash/`), on the
+Trash keyline: the generator solves the height so that the rim is 667 wide, the wall 656 and the
+bin 824 tall from y 100 to the base at y 924. It has the outer wall, the inner back
 wall, the floor and a rim with its own thickness. The wall is a single shape whose horizontal
 gradient is sampled from the model (diffuse light from the upper left, a soft specular and a
 Fresnel edge), translucent frosted glass (light) or graphite (dark); no filters. In the full

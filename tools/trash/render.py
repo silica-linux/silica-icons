@@ -41,6 +41,7 @@ def build(dark=False):
     fit = Fit()
     P = lambda x, y, z: fit(*project(x, y, z))
     t, xo, yo = ring(TOP); _, xb, yb = ring(BOT)
+    _, xr, yr = ring(TOP * LIP)
     _, xi, yi = ring(TOP - WALL); _, xf, yf = ring(BOT - WALL)
     nx, ny = normals(xo, yo)
     slope = (TOP - BOT) / H
@@ -71,7 +72,7 @@ def build(dark=False):
     ring_d = lambda xs_, ys_: 'M' + ' L'.join(f'{P(xs_[i], ys_[i], H)[0]:.1f},{P(xs_[i], ys_[i], H)[1]:.1f}' for i in range(n)) + ' Z'
     ry0, ry1 = P(0, TOP, H)[1], P(0, -TOP, H)[1]
     defs.append(f'<linearGradient id="rim" gradientUnits="userSpaceOnUse" x1="0" y1="{ry0:.1f}" x2="0" y2="{ry1:.1f}"><stop offset="0" stop-color="{C["rim_lo"]}"/><stop offset="1" stop-color="{C["rim_hi"]}"/></linearGradient>')
-    out.append(f'<path d="{ring_d(xo, yo)} {ring_d(xi, yi)}" fill="url(#rim)" fill-rule="evenodd"/>')
+    out.append(f'<path d="{ring_d(xr, yr)} {ring_d(xi, yi)}" fill="url(#rim)" fill-rule="evenodd"/>')
     out.append('<!--CONTENTS-->')
     # outer wall: silhouette = hull of top and bottom rings, shaded from the model
     sil = hull([P(xo[i], yo[i], H) for i in range(n)] + [P(xb[i], yb[i], 0) for i in range(n)])
@@ -92,11 +93,11 @@ def build(dark=False):
     out.append(poly(wall, fill='url(#foot)'))
     out.append(poly(wall, fill='none', stroke=C['edge'], stroke_opacity=C['eop'], stroke_width='2'))
     # rim front half on top, with a light top face and a bright outer edge
-    rimf = [P(xo[i], yo[i], H) for i in front] + [P(xi[i], yi[i], H) for i in reversed(front)]
+    rimf = [P(xr[i], yr[i], H) for i in front] + [P(xi[i], yi[i], H) for i in reversed(front)]
     out.append(poly(rimf, fill='url(#rim)'))
-    edge = [P(xo[i], yo[i], H) for i in front]
+    edge = [P(xr[i], yr[i], H) for i in front]
     out.append('<path d="M' + ' L'.join(f'{x:.1f},{y:.1f}' for x, y in edge) + f'" fill="none" stroke="#ffffff" stroke-opacity="{C["hl"]}" stroke-width="3" stroke-linecap="round"/>')
-    out.append(f'<path d="{ring_d(xo, yo)}" fill="none" stroke="{C["edge"]}" stroke-opacity="{C["eop"]}" stroke-width="1.5"/>')
+    out.append(f'<path d="{ring_d(xr, yr)}" fill="none" stroke="{C["edge"]}" stroke-opacity="{C["eop"]}" stroke-width="1.5"/>')
     return ''.join(defs), '\n'.join(out), dict(fit=fit, P=P, front=front, xi=xi, yi=yi, xo=xo, yo=yo, wall=wall)
 
 def svg(dark=False, contents='', extra_defs=''):
