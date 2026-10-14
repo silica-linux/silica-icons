@@ -192,15 +192,15 @@ the back and the front panel. The shell uses them for a folder that contains at 
 item; the symbol and the tint are applied on top as for the empty folder, by the shell (the
 design file has only Folder / Full and Folder Generic / Full).
 
-**Trash.** A square bin seen slightly from above, flat, with no ribs: inner back wall and side
-walls, floor, opening with its back lip, a translucent front (white 60 % → 44 %, dark `#4A4A52`
-58 % → 46 %) with a wide soft sheen and a darker foot, and a rim lip on top. In the full Trash
-the contents stick out sharp above the rim and, below it, the real pile (documents, photos,
-folders drawn like the pieces above) shows through the front, blurred. The blur is baked: the
-pile is rendered, blurred (Gaussian, radius 30 on the 1024 canvas) and embedded as a small PNG
-(`<image id="Contents-blurred">`, 328 × 356 px for 656 × 712, data URI) clipped to the front.
-It is the only raster in `files/`: a blur has no detail to lose, and SVG filters are not applied
-by the shell.
+**Trash.** A rounded-square bin (superellipse, exponent 4.6) that narrows toward the base,
+modelled in 3D and projected from 13° above (`tools/trash/`): the outer wall, the inner back
+wall, the floor and a rim with its own thickness. The wall is a single shape whose horizontal
+gradient is sampled from the model (diffuse light from the upper left, a soft specular and a
+Fresnel edge), translucent frosted glass (light) or graphite (dark); no filters. In the full
+Trash the documents, photo and folder of the set stick out of the opening, clipped so they
+never cross the sides, and the same pile shows through the wall blurred and faint: rendered,
+Gaussian-blurred and embedded as a small PNG (`<image>`, data URI) clipped to the wall, the
+only raster in `files/`, because the shell does not apply SVG filters.
 
 ### Text
 
