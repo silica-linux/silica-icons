@@ -16,11 +16,11 @@
             <stop stop-color="#2C2C30" offset="100%"></stop>
         </linearGradient>
     </defs>
-    <g id="icon-dark" stroke="none" fill="none" xlink:href="#path-1">
-        <path d="M670.908602,101.21 L834.689999,260.511056 L834.69,861 C834.69,902.323988 813.639245,922.79 771.1,922.79 L252.7,922.79 C210.160755,922.79 189.11,902.323988 189.11,861 L189.11,163 C189.11,121.676012 210.160755,101.21 252.7,101.21 Z" id="Page" stroke-opacity="0.121568627" stroke="#FFFFFF" stroke-width="2.42" fill="url(#linearGradient-2)" fill-rule="evenodd"></path>
+    <g id="icon-dark" transform="matrix(1.097087, 0, 0, 1.097087, -49.708738, -49.708738)" stroke="none" fill="none" xlink:href="#path-1">
+        <path d="M670.908602,101.21 L834.689999,260.511056 L834.69,861 C834.69,902.323988 813.639245,922.79 771.1,922.79 L252.7,922.79 C210.160755,922.79 189.11,902.323988 189.11,861 L189.11,163 C189.11,121.676012 210.160755,101.21 252.7,101.21 Z" id="Page" transform="matrix(0.962144, 0, 0, 1, 19.382498, 0)" stroke-opacity="0.121568627" stroke="#FFFFFF" stroke-width="2.42" fill="url(#linearGradient-2)" fill-rule="evenodd"></path>
         <path d="M512,327 C592.6,327 658,392.4 658,473 C658,553.6 592.6,619 512,619 C431.4,619 366,553.6 366,473 C366,392.4 431.4,327 512,327 Z" id="Globe" fill="url(#linearGradient-3)" fill-rule="evenodd"></path>
         <path d="M512,333.8 C551.2,333.8 582.9,396.1 582.9,473 C582.9,549.9 551.2,612.2 512,612.2 C472.8,612.2 441.1,549.9 441.1,473 C441.1,396.1 472.8,333.8 512,333.8 Z" id="Meridian" stroke-opacity="0.850980392" stroke="#FFFFFF" stroke-width="13.5"></path>
         <path d="M512,333.8 L512,612.2 M374.1,473 L649.9,473 M397.7,400 L626.3,400 M397.7,546 L626.3,546" id="Grid" stroke-opacity="0.850980392" stroke="#FFFFFF" stroke-width="13.5"></path>
-        <path d="M671.4,100 L835.9,260 L721.3,260 C688.1,260 671.4,243.8 671.4,211.5 L671.4,100 Z" id="Corner" fill="url(#linearGradient-4)" fill-rule="evenodd"></path>
+        <path d="M671.4,100 L835.9,260 L721.3,260 C688.1,260 671.4,243.8 671.4,211.5 L671.4,100 Z" id="Corner" transform="matrix(0.962144, 0, 0, 1, 19.382498, 0)" fill="url(#linearGradient-4)" fill-rule="evenodd"></path>
     </g>
 </svg>

@@ -16,11 +16,11 @@
             <stop stop-color="#C6CCD6" offset="100%"></stop>
         </linearGradient>
     </defs>
-    <g id="icon" stroke="none" fill="none" xlink:href="#path-1">
-        <path d="M670.908602,101.21 L834.689999,260.511056 L834.69,861 C834.69,902.323988 813.639245,922.79 771.1,922.79 L252.7,922.79 C210.160755,922.79 189.11,902.323988 189.11,861 L189.11,163 C189.11,121.676012 210.160755,101.21 252.7,101.21 Z" id="Page" stroke-opacity="0.0784313725" stroke="#000000" stroke-width="2.42" fill="url(#linearGradient-2)" fill-rule="evenodd"></path>
+    <g id="icon" transform="matrix(1.097087, 0, 0, 1.097087, -49.708738, -49.708738)" stroke="none" fill="none" xlink:href="#path-1">
+        <path d="M670.908602,101.21 L834.689999,260.511056 L834.69,861 C834.69,902.323988 813.639245,922.79 771.1,922.79 L252.7,922.79 C210.160755,922.79 189.11,902.323988 189.11,861 L189.11,163 C189.11,121.676012 210.160755,101.21 252.7,101.21 Z" id="Page" transform="matrix(0.962144, 0, 0, 1, 19.382498, 0)" stroke-opacity="0.0784313725" stroke="#000000" stroke-width="2.42" fill="url(#linearGradient-2)" fill-rule="evenodd"></path>
         <path d="M321.5,327 L702.5,327 C724.6,327 742.5,344.9 742.5,367 L742.5,579 C742.5,601.1 724.6,619 702.5,619 L321.5,619 C299.4,619 281.5,601.1 281.5,579 L281.5,367 C281.5,344.9 299.4,327 321.5,327 Z" id="Window" fill="url(#linearGradient-3)" fill-rule="evenodd"></path>
         <polyline id="Prompt" stroke="#32D74B" stroke-width="35" stroke-linecap="round" stroke-linejoin="round" points="351.5 415 419.5 473 351.5 531"></polyline>
         <path d="M477.5,515.5 L603.5,515.5 C607.9,515.5 611.5,519.1 611.5,523.5 L611.5,542.5 C611.5,546.9 607.9,550.5 603.5,550.5 L477.5,550.5 C473.1,550.5 469.5,546.9 469.5,542.5 L469.5,523.5 C469.5,519.1 473.1,515.5 477.5,515.5 Z" id="Cursor" fill="#F2F2F7" fill-rule="evenodd"></path>
-        <path d="M671.4,100 L835.9,260 L721.3,260 C688.1,260 671.4,243.8 671.4,211.5 L671.4,100 Z" id="Corner" fill="url(#linearGradient-4)" fill-rule="evenodd"></path>
+        <path d="M671.4,100 L835.9,260 L721.3,260 C688.1,260 671.4,243.8 671.4,211.5 L671.4,100 Z" id="Corner" transform="matrix(0.962144, 0, 0, 1, 19.382498, 0)" fill="url(#linearGradient-4)" fill-rule="evenodd"></path>
     </g>
 </svg>

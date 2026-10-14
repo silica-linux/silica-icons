@@ -51,8 +51,9 @@ foglio di controllo.
   (estensione scritta dalla shell sulla figura),
   file generico (estensione scritta dalla shell, mappa tipo → icona), 5 volumi (disco interno,
   esterno, server di rete, immagine disco montata, disco ottico), Cestino vuoto e pieno, Stack
-  Close. Fogli, cartelle e volumi arrivano al bordo della griglia (keyline documento 648 × 824,
-  cartella 824 × 648, volume 824 × 509).
+  Close. Per le icone dei file il lato è la tela intera: fogli, cartelle, volumi e Cestino la
+  occupano quasi tutta, come nel riferimento (keyline documento 684 × 904, cartella 944 × 760,
+  volume 944 × 583, Cestino 656 × 824).
 - `badges/`: alias, bloccato, non leggibile e cloud, in chiaro e scuro, con le regole di
   composizione in `badges.json`.
 - `symbols/<peso>/`: 324 simboli in 11 categorie e tre pesi (`light`, `regular`, `semibold`),

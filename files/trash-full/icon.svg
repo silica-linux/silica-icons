@@ -52,7 +52,7 @@
             <stop stop-color="#8D94A0" stop-opacity="0.239215686" offset="100%"></stop>
         </linearGradient>
     </defs>
-    <g id="icon" stroke="none" fill="none" xlink:href="#path-1" fill-rule="evenodd" stroke-width="1">
+    <g id="icon" transform="matrix(1.122616, 0, 0, 1.122616, -62.779292, -102.070845)" stroke="none" fill="none" xlink:href="#path-1" fill-rule="evenodd" stroke-width="1">
         <g id="Glyph" transform="translate(220, 96.6083)">
             <ellipse id="Inside" fill="url(#linearGradient-2)" cx="292" cy="168.391722" rx="292" ry="85"></ellipse>
             <path d="M0,168.391722 C0,121.447518 130.732853,83.3917221 292,83.3917221 C453.267147,83.3917221 584,121.447518 584,168.391722" id="Rim-back" stroke="#FFFFFF" stroke-width="10"></path>

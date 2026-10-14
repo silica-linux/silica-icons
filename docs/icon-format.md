@@ -10,7 +10,12 @@ fornisce il fondo e il primo piano; la shell applica la forma, il bordo, le ombr
 e i temi. Così ogni icona del Dock ha la stessa forma e reagisce agli stessi temi.
 
 Le icone dei file (`files/`) sono invece oggetti a forma libera (cartelle, documenti,
-Cestino): la shell non applica maschera né corpo, solo l'ombra del contesto.
+Cestino): la shell non applica maschera né corpo, solo l'ombra del contesto. Per le icone dei
+file **il lato è la tela intera**: un'icona di file da 64 pt è la tela 1024 disegnata a 64 pt,
+senza riduzioni (niente corpo 824, niente fattori come il 92 % di prima); le fasce che
+dipendono dal lato (`min_size` del simbolo della cartella, dell'etichetta e dei badge) si
+confrontano con questo lato. Nel Dock un luogo (cartella, Cestino) usa la tela delle app
+accanto, quella che sborda di 100/824 dal corpo.
 
 ## Tela e griglia
 
@@ -25,9 +30,10 @@ Tutte le misure sono su una tela di **1024 × 1024**.
 | Keyline cerchio piccolo | Ø 424, centro (512, 512) |
 | Keyline verticale | 520 × 680 a (252, 172) |
 | Keyline orizzontale | 680 × 520 a (172, 252) |
-| Keyline documento (icone dei file) | 648 × 824 a (188, 100) |
-| Keyline cartella | 824 × 663 a (100, 180,5) |
-| Keyline volume (dischi e server) | 824 × 509 a (100, 257,5) |
+| Keyline documento (icone dei file) | 684 × 904 a (170, 60) |
+| Keyline cartella | 944 × 760 a (40, 132) |
+| Keyline volume (dischi e server) | 944 × 583 a (40, 220,4) |
+| Keyline Cestino | 656 × 824 a (184, 100): cestello con la base a y 924, bordo 667 |
 | Badge | disco Ø 824 centrato sulla propria tela 1024 (vedi Badge) |
 
 Il contenuto principale sta in uno dei keyline; le icone a tutta tela (un fondo disegnato,
@@ -49,9 +55,10 @@ di Grid Check.
 | Quadrato e cerchio 600 | grandezza base (20 u) |
 | Cerchio 424 | 600 / √2: cerchio inscritto nel quadrato inscritto nel cerchio 600 |
 | Verticale 520 × 680, orizzontale 680 × 520 | stesso perimetro del quadrato 600 (520 + 680 = 2 × 600), area 98 %; rapporto 1,31, non aureo |
-| Documento 648 × 824, cartella 824 × 663 | il lato lungo è il corpo (824); il corto del documento è 824 / √φ, quello della cartella è misurato (824 / 1,243, entro la tolleranza di √φ): le icone dei file e delle cartelle arrivano al bordo della griglia, come il corpo delle app, e a 16–32 px non sembrano più piccole delle app accanto |
-| Volume 824 × 509 | il lato lungo è il corpo, il corto 824 / φ (serie B): un disco è una lastra, più bassa di una cartella; la fascia frontale è 509 / φ² = 194,5 (serie B 194), da y 572 |
-| Disco ottico Ø 824 | il corpo: tocca il bordo come gli altri volumi; zona di fermo Ø 315 (corpo / φ², serie B), anello interno Ø 230 (serie A 229), foro Ø 112 (serie A) |
+| Documento 684 × 904, cartella 944 × 760 | misurate sul Finder a icone grandi (cattura a 1×, icone da 128 pt): corpo del foglio 86 × 114 (0,668 × 0,883 della tela, senza l'ombra di ≈ 5 pt per lato che mette la shell; 96 × 124 con l'ombra), cartella 118 × 94 (0,922 × 0,734); a 64 pt 42 × 56 e 59 × 47, stessi rapporti. Il foglio è il disegno di prima (648 × 824) scalato di 904 / 824 = 1,0971 attorno al centro e ristretto in larghezza a 684 (rapporto 1,32 misurato, non più √φ): le righe, le figure e le estensioni scalano di 1,0971 senza deformarsi, solo il contorno e la piega seguono la larghezza. La cartella è quella di prima (824 × 663) scalata di 944 / 824 = 1,1456 attorno al centro: 944 × 760 contro 944 × 752 misurato (1 %, entro tolleranza). Nel Dock la cartella misura 1,13 volte il corpo delle app accanto (54 contro 48 px a 2×), cioè 0,905 della tela: torna con 944 / 1024 |
+| Volume 944 × 583 | la lastra di prima (824 × 509: lato lungo il corpo, corto 824 / φ, fascia frontale 509 / φ² da y 572) scalata di 1,1456 attorno al centro come la cartella: il volume del Finder è una scatola verticale (0,71 × 0,86 della tela sulla Scrivania), una forma diversa dalla lastra, quindi non si misura direttamente; fascia frontale 222,8 da y 580,7 |
+| Disco ottico Ø 944 | Ø 824 scalato come la cartella; zona di fermo Ø 361, anello interno Ø 264, foro Ø 128 (le misure di prima × 1,1456) |
+| Cestino 656 × 824 | misurato nel Dock (cattura a 2×): il cestello è alto quanto il corpo delle app (49 contro 48 px) e poggia sulla stessa base, largo 0,86 del corpo; con i fogli dentro è alto 1,10 del corpo. Il disegno di prima (584 × 734, base a 914) è scalato di 824 / 734 = 1,1226 e la base portata a 924: cestello 656 × 824 (bordo 667), con i fogli 913 (1,11 del corpo); resta più stretto del riferimento (0,81 del corpo) perché la forma è nostra |
 | Badge 315 e 509 | corpo / φ² e corpo / φ: il riquadro del badge va dal bordo del corpo alla linea aurea (x e y 415 e 609) |
 
 Restano tutte: il sistema aureo le completa, non le sostituisce.
@@ -75,17 +82,19 @@ testo e le posizioni dei dettagli illustrativi non sono vincolate.
 
 Eccezioni volute:
 
-- le icone dei file stanno sulla keyline documento (foglio 648 × 824, da y 100 a 924) e le
-  cartelle sulla keyline cartella (824 × 663, da x 100 a 924, da y 180,5 a 843,5, centrata su y 512): il disegno
-  di prima (foglio 520 × 680, cartella 680 × 520) è stato scalato di 824 / 680 e portato al
-  rapporto √φ allargando il foglio (le righe, le figure e le estensioni non si deformano) e
-  alzando la cartella (2,8 %, entro tolleranza), poi alzata ancora a 663 (rapporto 1,243 misurato sulla cartella di riferimento a icone grandi, 470 × 378: +2,3 % su 648, entro tolleranza); il contenuto del foglio è centrato su y 473,
-  sopra l'estensione; il pannello anteriore della cartella è 824 × 540 da y 303,5 (0,815 dell'altezza; nel riferimento 0,82);
-- il Cestino è largo 584 (≈ 600) e alto 734 (h : l ≈ √φ), con la base del cestello a y 914,
-  quasi sul fondo del corpo delle app (924): nel Dock poggia sulla stessa linea;
-- la piega dei fogli (165 × 160: la 132 di prima scalata con il foglio) non è sulla serie: cambiarla vuol dire ridisegnare il tracciato di ogni foglio; resta finché i
-  fogli non si ridisegnano;
-- il Cestino non è né foglio né cartella e non cambia;
+- le icone dei file escono dal corpo delle app e occupano quasi tutta la tela, come nel
+  riferimento (vedi Le keyline esistenti): foglio 684 × 904 da (170, 60), cartella 944 × 760 da
+  (40, 132), entrambi centrati su (512, 512). Storia: il disegno di partenza (foglio 520 × 680,
+  cartella 680 × 520) era stato portato al corpo 824 (foglio 648 × 824 al rapporto √φ, cartella
+  824 × 663), poi alla tela intera con le misure del Finder (v0.2.0). Il contenuto del foglio è
+  centrato su y 469 (473 prima), sopra l'estensione; il pannello anteriore della cartella è
+  944 × 619 da y 273,1 (0,815 dell'altezza; nel riferimento 0,82);
+- il Cestino è largo 656 (bordo 667) e alto 824, con la base del cestello a y 924, sul fondo del
+  corpo delle app: nel Dock poggia sulla stessa linea e ha la stessa altezza;
+- la piega dei fogli (174 × 176: la 165 × 160 di prima, scalata in larghezza di 684 / 648 e in
+  altezza di 904 / 824) non è sulla serie: cambiarla vuol dire ridisegnare il tracciato di ogni
+  foglio; resta finché i fogli non si ridisegnano;
+- il Cestino non è né foglio né cartella: ha la sua keyline, misurata nel Dock;
 - Stack Close (il pulsante che prende il posto della cartella nel Dock a pila aperta) è un'icona
   `file` a forma libera, misurata su una cattura a 1×: quadrato arrotondato di 52 pt contro 49 pt
   del corpo delle app (874 su tela 1024, a 16,8 px/pt), angoli 11 pt (185), centro a (512, 470),
@@ -98,9 +107,16 @@ Eccezioni volute:
   (512, 473), come Code e Image (la larghezza delle righe di testo dei fogli, 461 ≈ 472 entro
   tolleranza; 292 serie A); la tabella del foglio di calcolo ha luci di 13,5, la diapositiva è
   461 × 285 (rapporto φ), il globo Ø 292 con meridiani di 13,5, "Aa" è Inter SemiBold in
-  tracciati con la maiuscola alta 292, il disco dell'immagine disco è 461 × 229 (serie A);
-- i volumi sono lastre 824 × 509 (keyline volume) con raggio 64; il server è tre unità alte
-  155 con luci di 22.
+  tracciati con la maiuscola alta 292, il disco dell'immagine disco è 461 × 229 (serie A).
+  Queste misure sono sul foglio da 824 e negli SVG scalano tutte di 1,0971 attorno a (512, 512)
+  (riquadro 506 × 320 centrato su (512, 469));
+- i volumi sono lastre 824 × 509 con raggio 64 e il server è tre unità alte 155 con luci di 22,
+  sul disegno da 824; negli SVG scalano di 1,1456 attorno al centro (lastra 944 × 583, raggio 73).
+
+Negli SVG la scala sta in un solo attributo: `transform` sul gruppo `icon` (`icon-dark`) per
+cartelle, volumi e Cestino; per i fogli il gruppo scala il tutto di 1,0971 e il contorno
+(`Page`) e la piega (`Corner`) hanno in più una riduzione orizzontale di 684 / 711 attorno
+all'asse del foglio. I tracciati restano quelli del disegno da 824.
 
 ### Correzioni ottiche e scostamenti dal rapporto puro
 
@@ -260,9 +276,9 @@ file senza un'icona propria (`.json`, `.docx`, `.blend`…).
 ```json
 "dynamic": {
   "type": "file-label",
-  "label": { "font": "Inter", "size": 160, "weight": 900, "tracking": 0,
-             "box": [245, 376, 534, 194], "case": "upper",
-             "max_chars": 5, "max_width": 534, "overflow": "shrink" },
+  "label": { "font": "Inter", "size": 175.53, "weight": 900, "tracking": 0,
+             "box": [219.08, 362.8, 585.84, 212.83], "case": "upper",
+             "max_chars": 5, "max_width": 585.84, "overflow": "shrink" },
   "colors": { "document": {...}, "data": {...}, "code": {...},
               "archive": {...}, "media": {...}, "other": {...} },
   "overrides": { "json": "data", "epub": "document", "blend": "media", ... },
@@ -276,7 +292,7 @@ file senza un'icona propria (`.json`, `.docx`, `.blend`…).
 ```
 
 - Etichetta: l'estensione senza punto, in maiuscolo, centrata nel `box` (centro ottico
-  del foglio, y 473 come le altre icone dei file).
+  del foglio, y 469 come le altre icone dei file).
 - Se l'estensione supera `max_width` il corpo scende in proporzione; oltre `max_chars`
   caratteri, o senza estensione, si usa `fallback` (il foglio con il punto di domanda).
 - Colore dalla categoria, nell'ordine: `overrides` dell'estensione, poi la `category` della
@@ -369,9 +385,9 @@ figura: l'estensione la scrive la shell, come sul file generico, perché la stes
 ```json
 "dynamic": {
   "type": "file-type-label",
-  "label": { "font": "Inter", "size": 101.79, "weight": 500, "tracking": 0,
-             "box": [292, 741.43, 440, 124], "case": "upper",
-             "max_chars": 5, "max_width": 440, "overflow": "shrink",
+  "label": { "font": "Inter", "size": 111.67, "weight": 500, "tracking": 0,
+             "box": [270.64, 763.7, 482.72, 136.04], "case": "upper",
+             "max_chars": 5, "max_width": 482.72, "overflow": "shrink",
              "color": "#30b0c7", "dark_color": "#30b0c7",
              "no_extension": null, "min_size": 32 }
 }
@@ -387,30 +403,31 @@ figura: l'estensione la scrive la shell, come sul file generico, perché la stes
 | `overflow` | `shrink`: un'estensione entro `max_chars` più larga di `max_width` riduce il corpo in proporzione, sempre centrata nel `box`; `truncate` (non usato dalle icone del repo) taglierebbe ai primi `max_chars` caratteri |
 | `color`, `dark_color` | colore nei temi chiari e in Dark; Clear e Tinted passano l'icona composta (figura ed etichetta) per la loro mappatura, come la cartella generica |
 | `no_extension` | cosa scrivere se il file non ha estensione o l'ha più lunga di `max_chars`: `null` = niente etichetta, la figura basta (un eseguibile senza estensione, un `README`); una stringa la scrive tale e quale |
-| `min_size` | sotto questo lato del corpo in pt (come per l'orologio) l'etichetta non si disegna: a 16 pt sarebbe alta meno di 2 px |
+| `min_size` | sotto questo lato dell'icona in pt (la tela intera, vedi Principio) l'etichetta non si disegna: a 16 pt sarebbe alta meno di 2 px |
 
 L'estensione è la stessa del passo 4 della risoluzione (l'ultima dopo il punto, in minuscolo,
 poi in maiuscolo per `case`); per i nomi `.tar.<x>` la finale (`GZ`, `XZ`). Il riquadro è misurato
-sul testo che c'era negli SVG (centro x 512, riga da y 741,43; corpo 101,79, Medium) ed è largo
-440, cioè la pagina (648) meno due margini di 104: `XHTML`, `WOFF2`, `QCOW2` ci stanno a corpo
-pieno.
+sul testo che c'era negli SVG (centro x 512, riga da y 741,43; corpo 101,79, Medium; largo 440,
+la pagina da 648 meno due margini di 104) e scalato con il contenuto del foglio (× 1,0971 attorno
+a (512, 512)): riga da y 763,7, corpo 111,67, largo 482,72 su una pagina di 684 (margini 100).
+`XHTML`, `WOFF2`, `QCOW2` ci stanno a corpo pieno.
 
 | Icona | `box` | `color` | `dark_color` | `no_extension` |
 | --- | --- | --- | --- | --- |
-| `file-pdf` | 332, 734,16, 360, 124 (`max_chars` 4, `max_width` 360) | `#ffffff` | `#ffffff` | `"PDF"` |
-| `file-text` | 292, 741,43, 440, 124 | `#8e8e93` | `#aeaeb2` | null |
-| `file-document` | 292, 741,43, 440, 124 | `#2f7cf6` | `#5aa0ff` | null |
-| `file-spreadsheet` | 292, 741,43, 440, 124 | `#1f9d55` | `#3fd07f` | null |
-| `file-presentation` | 292, 741,43, 440, 124 | `#f2780c` | `#ff9f40` | null |
-| `file-code` | 292, 741,43, 440, 124 | `#ff6a00` | `#ff8a3d` | null |
-| `file-executable` | 292, 741,43, 440, 124 | `#ff6a00` | `#ff8a3d` | null |
-| `file-web` | 292, 741,43, 440, 124 | `#ff6a00` | `#ff8a3d` | null |
-| `file-archive` | 292, 741,43, 440, 124 | `#8e8e93` | `#aeaeb2` | null |
-| `file-disk-image` | 292, 741,43, 440, 124 | `#8e8e93` | `#aeaeb2` | null |
-| `file-image` | 292, 741,43, 440, 124 | `#30b0c7` | `#30b0c7` | null |
-| `file-audio` | 292, 741,43, 440, 124 | `#ff2d55` | `#ff2d55` | null |
-| `file-video` | 292, 741,43, 440, 124 | `#5e5ce6` | `#7d7aff` | null |
-| `file-font` | 292, 741,43, 440, 124 | `#e8336d` | `#ff5c8a` | null |
+| `file-pdf` | 314,52, 755,73, 394,95, 136,04 (`max_chars` 4, `max_width` 394,95) | `#ffffff` | `#ffffff` | `"PDF"` |
+| `file-text` | 270,64, 763,7, 482,72, 136,04 | `#8e8e93` | `#aeaeb2` | null |
+| `file-document` | 270,64, 763,7, 482,72, 136,04 | `#2f7cf6` | `#5aa0ff` | null |
+| `file-spreadsheet` | 270,64, 763,7, 482,72, 136,04 | `#1f9d55` | `#3fd07f` | null |
+| `file-presentation` | 270,64, 763,7, 482,72, 136,04 | `#f2780c` | `#ff9f40` | null |
+| `file-code` | 270,64, 763,7, 482,72, 136,04 | `#ff6a00` | `#ff8a3d` | null |
+| `file-executable` | 270,64, 763,7, 482,72, 136,04 | `#ff6a00` | `#ff8a3d` | null |
+| `file-web` | 270,64, 763,7, 482,72, 136,04 | `#ff6a00` | `#ff8a3d` | null |
+| `file-archive` | 270,64, 763,7, 482,72, 136,04 | `#8e8e93` | `#aeaeb2` | null |
+| `file-disk-image` | 270,64, 763,7, 482,72, 136,04 | `#8e8e93` | `#aeaeb2` | null |
+| `file-image` | 270,64, 763,7, 482,72, 136,04 | `#30b0c7` | `#30b0c7` | null |
+| `file-audio` | 270,64, 763,7, 482,72, 136,04 | `#ff2d55` | `#ff2d55` | null |
+| `file-video` | 270,64, 763,7, 482,72, 136,04 | `#5e5ce6` | `#7d7aff` | null |
+| `file-font` | 270,64, 763,7, 482,72, 136,04 | `#e8336d` | `#ff5c8a` | null |
 
 - **PDF**: anche l'etichetta del PDF è dinamica, bianca sulla pastiglia rossa (il `box` è la
   pastiglia meno i margini). Un `.pdf` scrive `PDF`; un tipo che deriva da `application/pdf`
@@ -428,7 +445,7 @@ nell'esportazione, come `JSON` del file generico. Riferimento: `tools/compose.py
 
 ### Volumi
 
-`files/volume-*` sono i dischi e i server montati, sulla keyline volume (824 × 509). Non hanno
+`files/volume-*` sono i dischi e i server montati, sulla keyline volume (944 × 583). Non hanno
 contenuto dinamico: chi mostra un volume (barra laterale e finestre di Mustache, Scrivania,
 Dock) sceglie l'icona così, dal primo caso che vale:
 
@@ -460,18 +477,23 @@ per chi le implementa.
 | `locked` | lucchetto su disco bianco (grafite in scuro) | basso a destra | il file è bloccato: attributo immutabile o solo aggiunta (`STATX_ATTR_IMMUTABLE`, `STATX_ATTR_APPEND`, `chattr +i`/`+a`); non basta che manchi il permesso di scrittura, sennò mezzo sistema avrebbe il lucchetto |
 | `cloud` | nuvola blu con freccia in giù | basso a destra | il contenuto non è sul disco: lo dice chi elenca i file (un fornitore di sincronizzazione, un mount GVfs o rclone con file solo in rete). Non c'è uno standard freedesktop: Mustache lo mostra solo quando la sorgente lo riporta |
 
-Posizione e dimensione (tela 1024 dell'icona; lato del corpo in pt come per l'orologio e la
-cartella generica):
+Posizione e dimensione (tela 1024 dell'icona; lato dell'icona in pt, cioè la tela intera come
+per la cartella generica e l'etichetta, vedi Principio):
 
-| Lato del corpo | Lato del badge | Riquadro, basso a sinistra | Riquadro, basso a destra | Quanti |
+| Lato dell'icona | Lato del badge | Riquadro, basso a sinistra | Riquadro, basso a destra | Quanti |
 | --- | --- | --- | --- | --- |
 | da 32 pt | 315 = 824 / φ² | x 100…415, y 609…924 | x 609…924, y 609…924 | uno per angolo |
 | 16–31 pt | 509 = 824 / φ | x 100…609, y 415…924 | x 415…924, y 415…924 | uno solo |
 | sotto 16 pt | — | — | — | nessuno |
 
-- Il riquadro va dal bordo del corpo alla linea aurea: il badge è appoggiato all'angolo del
-  corpo, non al disegno (un foglio è più stretto del corpo, quindi il badge ne esce un poco a
-  sinistra; con le cartelle e i volumi tocca l'angolo del disegno).
+- Il riquadro va dal bordo del corpo delle app (100…924) alla linea aurea: il badge è appoggiato
+  a quell'angolo, non al disegno. Il foglio (x 170…854, y 60…964) è più stretto e più alto del
+  corpo, quindi il badge ne esce un poco a sinistra e sta sopra il fondo del foglio; cartelle
+  (x 40…984) e volumi sono più larghi del corpo, quindi il badge sta dentro il disegno.
+- Da verificare con la nuova regola del lato: nel Finder a icone da 128 pt il badge dell'alias
+  misura Ø ≈ 34 (0,27 della tela, da x ≈ 0,08 e fino a ≈ 1 pt dal fondo della tela), qui Ø 315 /
+  1024 = 0,31. Prima Mustache disegnava le icone dei file al 92 %, quindi il badge resa era 0,28;
+  la geometria non è cambiata in questa versione.
 - Composizione: la tela 1024 del badge si scala di k = lato / 824 e si sposta perché il suo
   corpo (100, 100, 824, 824) coincida con il riquadro: origine della tela del badge =
   (x₀ − 100 k, y₀ − 100 k). Si disegna dopo l'icona, dopo la tinta della cartella e dopo la
@@ -501,7 +523,7 @@ tinta. I livelli sono quelli della cartella (`files/folder`), senza simbolo.
 "dynamic": {
   "type": "folder-symbol",
   "symbol": {
-    "box": [374, 456, 276, 276],
+    "box": [353.9, 424.36, 316.19, 316.19],
     "sizes": [
       { "min_size": 128, "weight": "light",    "scale": 1 },
       { "min_size": 64,  "weight": "regular",  "scale": 1 },
@@ -534,16 +556,16 @@ Proporzioni (tela 1024, keyline cartella):
 
 | Misura | Valore | Da dove viene |
 | --- | --- | --- |
-| Pannello anteriore | 824 × 540 da (100, 303,5), centro (512, 573,5) | la cartella: 0,815 dell'altezza 663 |
-| Area viva del simbolo (Ø 20 u) | 230 ≈ 229 | serie A (600 / φ²) |
-| Tela del simbolo (24 u), `box` | 276 × 276, centrata sul pannello: 1 u = 11,5 px | area viva × 24 / 20 |
-| Tratto | Light 13,6 · Regular 17,3 · Semibold 24,7 | 1,18 · 1,5 · 2,15 u: Light e Regular cadono sugli spessori 13,5 e 17 della serie |
-| Simbolo piccolo (`scale` 1,272) | tela 351, area viva 292 | × √φ, serie A |
+| Pannello anteriore | 944 × 619 da (40, 273,1), centro (512, 582,5) | la cartella: 0,815 dell'altezza 760 |
+| Area viva del simbolo (Ø 20 u) | 263,5 | 230 (serie A, 600 / φ²) sulla cartella da 824, × 1,1456 |
+| Tela del simbolo (24 u), `box` | 316,2 × 316,2 a (353,9, 424,4), centrata sul pannello: 1 u = 13,2 px | area viva × 24 / 20 |
+| Tratto | Light 15,6 · Regular 19,8 · Semibold 28,3 | 1,18 · 1,5 · 2,15 u: sulla cartella da 824 erano 13,6 · 17,3 · 24,7, gli spessori 13,5 e 17 della serie |
+| Simbolo piccolo (`scale` 1,272) | tela 402, area viva 335 | × √φ |
 | Scavo (`offset`) | 4 px, almeno mezzo pixel reso | ≈ tratto Light / φ³ |
 
 - **Simbolo**: `symbols/<weight>/<nome>.svg` dello stesso repo, colorato al posto di
   `currentColor`, centrato in `box` e scalato di `scale` attorno al centro. La fascia è la prima
-  di `sizes` con `min_size` ≤ lato dell'icona in pt (il lato del corpo, come per l'orologio);
+  di `sizes` con `min_size` ≤ lato dell'icona in pt (la tela intera, vedi Principio);
   sotto l'ultima (16 pt) il simbolo non si disegna. Il peso cresce mentre l'icona rimpicciolisce
   perché il tratto reso resti fra 1 e 4 px circa: Light da 128, Regular da 64, Semibold sotto,
   e sotto 32 anche più grande (× √φ).

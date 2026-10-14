@@ -18,18 +18,18 @@
     "type": "file-type-label",
     "label": {
       "font": "Inter",
-      "size": 101.79,
+      "size": 111.67,
       "weight": 500,
       "tracking": 0,
       "box": [
-        292,
-        741.43,
-        440,
-        124
+        270.64,
+        763.7,
+        482.72,
+        136.04
       ],
       "case": "upper",
       "max_chars": 5,
-      "max_width": 440,
+      "max_width": 482.72,
       "overflow": "shrink",
       "color": "#ff2d55",
       "dark_color": "#ff2d55",

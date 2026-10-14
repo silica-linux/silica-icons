@@ -96,12 +96,12 @@ def apply_tint(img: Image.Image, m: np.ndarray) -> Image.Image:
 def compose_folder(icon_dir: Path, size: int, dark: bool, symbol: str | None = None,
                    tint: str | None = None, fonts: list[str] | None = None) -> Image.Image:
     """La cartella generica a `size` px di tela: base, simbolo inciso (fascia scelta sul lato
-    del corpo, size × 824 / 1024) e tinta. `tint` è un colore #rrggbb o il nome di un'etichetta."""
+    dell'icona, che per le icone dei file è la tela intera) e tinta. `tint` è un colore #rrggbb o il nome di un'etichetta."""
     fonts = fonts or []
     manifest = json.loads((icon_dir / "icon.json").read_text())
     dyn = manifest["dynamic"]
     out = render(layer_file(icon_dir, manifest["layers"][0]["file"], dark), size, fonts)
-    band = folder_band(dyn, size * 824 / 1024)
+    band = folder_band(dyn, size)
     sym_file = ROOT / "symbols" / (band or {}).get("weight", "regular") / f"{symbol}.svg"
     if symbol and band and sym_file.exists():
         fx = dyn["effect"]["dark" if dark else "light"]
@@ -190,7 +190,7 @@ def compose_file(icon_dir: Path, size: int, dark: bool, ext: str | None,
     else:
         return out
     text = label_text(label, ext)
-    if text and size * 824 / 1024 >= label.get("min_size", 0):
+    if text and size >= label.get("min_size", 0):
         draw_label(out, label, text, color, fonts)
     return out
 
@@ -199,11 +199,11 @@ def compose_badges(icon: Image.Image, names: list[str], dark: bool,
                    fonts: list[str] | None = None) -> Image.Image:
     """I badge `names` (alias, locked, unreadable, cloud) sopra l'icona composta `icon` (tela
     quadrata): uno per angolo, scelto per priorità; lato del badge dalla fascia di `sizes`
-    (lato del corpo in pt = tela × 824 / 1024); nella fascia `single` uno solo, il primo di
+    (lato dell'icona in pt: per le icone dei file la tela intera); nella fascia `single` uno solo, il primo di
     `order`; niente badge sotto l'ultima fascia."""
     spec = json.loads((ROOT / "badges" / "badges.json").read_text())
     size = icon.width
-    side = size * 824 / 1024
+    side = size
     band = next((b for b in sorted(spec["sizes"], key=lambda b: -b["min_size"]) if side >= b["min_size"]), None)
     out = icon.copy()
     if band is None:
