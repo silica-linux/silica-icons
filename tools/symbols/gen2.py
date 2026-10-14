@@ -1,12 +1,12 @@
-"""Genera lo script per Sketch MCP (run_code) che crea gli artboard dei simboli.
+"""Generates the Sketch MCP script (run_code) that creates the symbol artboards.
 
-Uso (dalla cartella tools/symbols, con un venv che abbia pillow e resvg-py):
+Usage (from the tools/symbols folder, with a venv that has pillow and resvg-py):
     python gen2.py wifi,bluetooth > /tmp/batch.js
-Il contenuto va passato a mcp__sketch__run_code. Posizioni da gen.positions():
-x = colonna * 144, y = indice_categoria * 960 + 96 + riga * 160 (12 colonne).
-L'id del documento è in tpl.js: aggiornarlo se cambia (cambia dopo un "Salva con nome").
-sheet.py rende un foglio di controllo locale; compose_sheet.py ricompone i PNG esportati
-da Sketch (cartella export/png) accanto a Inter.
+The content must be passed to mcp__sketch__run_code. Positions from gen.positions():
+x = column * 144, y = category_index * 960 + 96 + row * 160 (12 columns).
+The document id is in tpl.js: update it if it changes (it changes after a "Save As").
+sheet.py renders a local check sheet; compose_sheet.py recomposes the PNGs exported
+from Sketch (export/png folder) next to Inter.
 """
 import json, sys
 import symbols as S, gen

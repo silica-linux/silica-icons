@@ -1,14 +1,14 @@
-"""Esporta un SVG per simbolo e per peso in symbols/<peso>/<nome>.svg a partire da symbols.py.
+"""Exports one SVG per symbol and per weight to symbols/<weight>/<name>.svg from symbols.py.
 
-Uso (dalla cartella tools/symbols):
-    python export_svg.py            # scrive ../../symbols/{light,regular,semibold}/*.svg
-    python export_svg.py --check    # verifica che i file su disco siano aggiornati
+Usage (from the tools/symbols folder):
+    python export_svg.py            # writes ../../symbols/{light,regular,semibold}/*.svg
+    python export_svg.py --check    # verifies that the files on disk are up to date
 
-Formato (docs/symbol-format.md, "File nel repository"): viewBox 0 0 24 24, tratto del peso
-(Light 1,18 · Regular 1,5 · Semibold 2,15), terminali e giunzioni rotondi, colore currentColor,
-livelli secondari con opacity 0.35. Un elemento <path> per sottotracciato, nello stesso ordine
-dei livelli in Sketch. Per ogni peso symbols.py si ricarica con SILICA_SYMBOL_WEIGHT: il disegno
-non cambia, i tagli delle barre e dei badge si ricalcolano perché la luce resti 1,5 u.
+Format (docs/symbol-format.md, "Files in the repository"): viewBox 0 0 24 24, stroke of the weight
+(Light 1.18 · Regular 1.5 · Semibold 2.15), round terminals and joins, color currentColor,
+secondary layers with opacity 0.35. One <path> element per subpath, in the same order
+as the layers in Sketch. For each weight symbols.py is reloaded with SILICA_SYMBOL_WEIGHT: the
+drawing does not change, the cuts of bars and badges are recomputed so the gap stays 1.5 u.
 """
 import importlib
 import os
@@ -52,11 +52,11 @@ def main():
     os.environ.pop("SILICA_SYMBOL_WEIGHT", None)
     loose = sorted(f for f in os.listdir(OUT) if f.endswith(".svg"))
     if loose:
-        print("file fuori dalle cartelle dei pesi:", " ".join(loose))
+        print("files outside the weight folders:", " ".join(loose))
         bad = True
     if bad:
         sys.exit(1)
-    print(f"{'ok' if CHECK else 'scritti'}: {total} file")
+    print(f"{'ok' if CHECK else 'written'}: {total} files")
 
 
 CHECK = "--check" in sys.argv
@@ -80,14 +80,14 @@ def export(out):
             with open(path, "w") as fh:
                 fh.write(data)
     extra = sorted(f[:-4] for f in os.listdir(out) if f.endswith(".svg") and f[:-4] not in S.SYM)
-    tag = f"{S.WEIGHT} (tratto {S.f(S.WSW)})"
+    tag = f"{S.WEIGHT} (stroke {S.f(S.WSW)})"
     if check and (stale or extra):
-        print(f"{tag}: non aggiornati:", " ".join(stale), "| senza sorgente:", " ".join(extra))
+        print(f"{tag}: out of date:", " ".join(stale), "| without source:", " ".join(extra))
         return len(S.SYM), False
     if extra:
-        print(f"{tag}: senza sorgente:", " ".join(extra))
+        print(f"{tag}: without source:", " ".join(extra))
         return len(S.SYM), False
-    print(f"{tag}: {len(S.SYM)} simboli in {os.path.normpath(out)}")
+    print(f"{tag}: {len(S.SYM)} symbols in {os.path.normpath(out)}")
     return len(S.SYM), True
 
 

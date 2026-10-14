@@ -3,8 +3,8 @@ import os
 
 PHI = (1 + 5 ** 0.5) / 2
 SW = 1.5
-# Pesi (docs/symbol-format.md, "Pesi"): il disegno resta lo stesso, cambia il tratto.
-# SILICA_SYMBOL_WEIGHT sceglie il peso con cui si calcolano i tagli (luce costante 1,5 u).
+# Weights (docs/symbol-format.md, "Weights"): the drawing stays the same, the stroke changes.
+# SILICA_SYMBOL_WEIGHT chooses the weight used to compute the cuts (constant gap 1.5 u).
 WEIGHTS = {"light": SW / PHI ** 0.5, "regular": SW, "semibold": SW * PHI ** 0.75}
 WEIGHT = os.environ.get("SILICA_SYMBOL_WEIGHT", "regular")
 WSW = WEIGHTS.get(WEIGHT, SW)
@@ -122,7 +122,7 @@ def volume(level):
     return els
 
 
-add("status", "volume-slash")  # posto nel catalogo; disegno nella fase 2, con i tagli della barra
+add("status", "volume-slash")  # slot in the catalog; drawn in phase 2, with the bar cuts
 add("status", "volume-1", *volume(1))
 add("status", "volume-2", *volume(2))
 add("status", "volume", *volume(3))
@@ -334,11 +334,11 @@ add("settings", "zoom-in",
     (S, line((10.2, 7.4), (10.2, 13.0))), (S, line((7.4, 10.2), (13.0, 10.2))))
 
 # ===========================================================================
-# Fase 2. Primitive per tagli e rotazioni: un tracciato si descrive come
-# lista di segmenti ("L" retta, "A" arco in senso orario, "C" cubica), così le
-# varianti -slash e i badge tagliano i tratti con la luce minima della specifica.
+# Phase 2. Primitives for cuts and rotations: a path is described as
+# a list of segments ("L" line, "A" clockwise arc, "C" cubic), so the
+# -slash variants and the badges cut the strokes with the minimum gap from the spec.
 # ===========================================================================
-CUT = WSW / 2 + LUCE + WSW / 2  # asse del taglio -> asse del tratto tagliato (Regular: 0,75 + 1,5 + 0,75)
+CUT = WSW / 2 + LUCE + WSW / 2  # cut axis -> axis of the cut stroke (Regular: 0.75 + 1.5 + 0.75)
 
 
 def pL(*pts):
@@ -352,7 +352,7 @@ def pA(cx, cy, r, a0, a1):
 
 
 def pAr(cx, cy, r, a0, a1):
-    """Arco in senso antiorario da a0 ad a1 (viene invertito)."""
+    """Counterclockwise arc from a0 to a1 (it is reversed)."""
     p = pA(cx, cy, r, a1, a0)
     return ("R",) + p[1:]
 
@@ -460,7 +460,7 @@ def _end(pr):
 
 
 def paths(prims):
-    """Unisce i segmenti contigui e restituisce un tracciato per sottotracciato."""
+    """Joins contiguous segments and returns one path per subpath."""
     subs, cur, first, last = [], "", None, None
     for pr in prims:
         s, e = ppt(pr, 0), ppt(pr, 1)
@@ -525,7 +525,7 @@ def slashed(prims, a=SLASH[0], b=SLASH[1], d=CUT):
 
 
 def clip_half(pts, nx, ny, c):
-    """Parte del poligono dove nx*x + ny*y >= c (Sutherland-Hodgman)."""
+    """Part of the polygon where nx*x + ny*y >= c (Sutherland-Hodgman)."""
     out = []
     for p, q in zip(pts, pts[1:] + pts[:1]):
         dp, dq = nx * p[0] + ny * p[1] - c, nx * q[0] + ny * q[1] - c
@@ -542,8 +542,8 @@ def area(pts):
 
 
 def slashed_fill(pts, a=SLASH[0], b=SLASH[1], d=CUT, min_area=0.5):
-    """Forma piena (riempimento e tratto) tagliata dalla barra: l'asse del contorno resta a d dall'asse
-    della barra, come per i tratti. Vale per forme che stanno entro la lunghezza della barra."""
+    """Filled shape (fill and stroke) cut by the bar: the outline axis stays at d from the bar
+    axis, as for strokes. Valid for shapes that fit within the bar length."""
     ux, uy = (b[0] - a[0]), (b[1] - a[1])
     n = math.hypot(ux, uy)
     nx, ny = -uy / n, ux / n
@@ -654,7 +654,7 @@ def crescent_prims(cx, cy, r1, oc, r2):
     return [pAr(cx, cy, r1, ang((cx, cy), p1), ang((cx, cy), p2)), pA(*oc, r2, ang(oc, p2), ang(oc, p1))]
 
 
-# Status & Connectivity (fase 2) ----------------------------------------------
+# Status & Connectivity (phase 2) ----------------------------------------------
 def wifi_prims():
     return [pA(WIFI_O[0], WIFI_O[1], r, -135, -45) for r in WIFI_R]
 
@@ -715,7 +715,7 @@ add("status", "screen-share",
 
 RA = 8.25
 
-# Control Center & Media (fase 2) ---------------------------------------------
+# Control Center & Media (phase 2) ---------------------------------------------
 add("control", "stop", (F, rrect(6.0, 6.0, 12.0, 12.0, 1.2)))
 add("control", "record", (F, circle(C, C, 6.5)))
 add("control", "record-circle", (S, circle(C, C, 9.25)), (F, circle(C, C, 10 / PHI ** 2 / 2 * 2 - 0.75)))
@@ -756,7 +756,7 @@ add("control", "rotation-lock",
     (S, arc(C, C, RA, 20, 330)), (S, arc_head(C, C, RA, 330, cw=True)),
     (S, rrect(8.5, 11.0, 7.0, 5.0, 1.4)), (S, "M10 11V9.6A2 2 0 0 1 14 9.6V11"))
 
-# Windows & Navigation (fase 2) -----------------------------------------------
+# Windows & Navigation (phase 2) -----------------------------------------------
 add("windows", "arrow-up", *arrow((C, 20.0), (C, 4.0)))
 add("windows", "arrow-down", *arrow((C, 4.0), (C, 20.0)))
 add("windows", "arrow-left", *arrow((20.0, C), (4.0, C)))
@@ -809,7 +809,7 @@ add("windows", "line-3", *[(S, line((4.0, y), (20.0, y))) for y in (6.0, 12.0, 1
 add("windows", "compass", (S, circle(C, C, 9.25)),
     (S, poly((16.0, 8.0), (13.4, 13.4), (8.0, 16.0), (10.6, 10.6))), (F, poly((16.0, 8.0), (13.4, 13.4), (10.6, 10.6))))
 
-# Editing & Text (fase 2) -------------------------------------------------------
+# Editing & Text (phase 2) -------------------------------------------------------
 
 
 def pencil(L0=10.5, L1=8.25, w=2.6, cone=5.0, band=3.75, ang=-45, c=(C, C), dx=0.0, dy=0.0, r=1.2):
@@ -901,7 +901,7 @@ add("editing", "delete-left",
     (S, line((11.75, 9.75), (16.25, 14.25))), (S, line((16.25, 9.75), (11.75, 14.25))))
 add("editing", "shift", (S, poly((C, 3.75), (20.25, 12.25), (15.75, 12.25), (15.75, 19.75), (8.25, 19.75), (8.25, 12.25), (3.75, 12.25))))
 
-# Files & Documents (fase 2) ----------------------------------------------------
+# Files & Documents (phase 2) ----------------------------------------------------
 FOLDER = SYM["folder"][0][1]
 DOC = SYM["doc"][0][1]
 add("files", "folder-fill", (F, FOLDER))
@@ -940,7 +940,7 @@ add("files", "terminal", (S, rrect(*WN, 2.4)), (S, line((6.75, 9.0), (9.75, 12.0
 add("files", "chart-bar", (S, rrect(3.75, 12.25, 3.5, 8.0, 1.0)), (S, rrect(10.25, 3.75, 3.5, 16.5, 1.0)), (S, rrect(16.75, 8.75, 3.5, 11.5, 1.0)))
 add("files", "chart-pie", (S, circle(C, C, 9.25)), (S, line((C, 2.75), (C, C), (C + 6.54, C + 6.54))))
 
-# Communication (fase 2) ----------------------------------------------------------
+# Communication (phase 2) ----------------------------------------------------------
 BELL = "M12 3.4A6.1 6.1 0 0 0 5.9 9.5V14.6L4.1 17.1H19.9L18.1 14.6V9.5A6.1 6.1 0 0 0 12 3.4Z"
 BELL_P = [pA(C, 9.5, 6.1, 180, 360), pL((18.1, 9.5), (18.1, 14.6), (19.9, 17.1), (4.1, 17.1), (5.9, 14.6), (5.9, 9.5))]
 add("communication", "bell-fill", (F, BELL), (S, "M9.6 19.9A2.5 2.5 0 0 0 14.4 19.9"))
@@ -986,7 +986,7 @@ add("communication", "reply-all", (S, "M8.25 10.75H13A7 7 0 0 1 20 17.75"), (S, 
 add("communication", "voicemail", (S, circle(6.75, C, 3.5)), (S, circle(17.25, C, 3.5)), (S, line((6.75, 15.5), (17.25, 15.5))))
 add("communication", "feed", (F, dot(6.0, 18.0, 1.0)), (S, arc(4.5, 19.5, 8.0, -90, 0)), (S, arc(4.5, 19.5, 15.0, -90, 0)))
 
-# People & Security (fase 2) --------------------------------------------------
+# People & Security (phase 2) --------------------------------------------------
 HEAD_R = 10 / PHI ** 2 + 0.2
 BODY = "M4.6 20.6C4.6 16.6 7.9 13.9 12 13.9C16.1 13.9 19.4 16.6 19.4 20.6Z"
 add("people", "person-fill", (F, circle(C, 7.8, HEAD_R)), (F, BODY))
@@ -1023,7 +1023,7 @@ add("people", "logout", (S, "M10.5 3.75H6.15A2.4 2.4 0 0 0 3.75 6.15V17.85A2.4 2
 add("people", "login", (S, "M13.5 3.75H17.85A2.4 2.4 0 0 1 20.25 6.15V17.85A2.4 2.4 0 0 1 17.85 20.25H13.5"),
     *arrow((3.75, C), (14.75, C), 5.3))
 
-# Devices (fase 2) ----------------------------------------------------------------
+# Devices (phase 2) ----------------------------------------------------------------
 add("devices", "laptop", (S, rrect(4.25, 4.75, 15.5, 10.5, 2.0)), (S, line((2.75, 18.75), (21.25, 18.75))))
 DSP = (2.75, 3.75, 18.5, 12.5)
 add("devices", "display", (S, rrect(*DSP, 2.4)), (S, line((C, 16.25), (C, 20.25))), (S, line((8.25, 20.25), (15.75, 20.25))))
@@ -1063,7 +1063,7 @@ add("devices", "router", (S, rrect(2.75, 12.75, 18.5, 7.0, 2.0)), (S, line((6.75
 add("devices", "disc", (S, circle(C, C, 9.25)), (S, circle(C, C, 2.4)))
 add("devices", "webcam", (S, circle(C, 9.0, 6.25)), (S, circle(C, 9.0, 2.4)), (S, line((C, 15.25), (C, 20.25))), (S, line((7.75, 20.25), (16.25, 20.25))))
 
-# Weather & Time (fase 2) ---------------------------------------------------------
+# Weather & Time (phase 2) ---------------------------------------------------------
 CLW = cloud_prims(1.0, -0.15, 0.3)
 add("weather", "cloud", *E(S, CLW))
 add("weather", "cloud-fill", *E(F, CLW))
@@ -1137,7 +1137,7 @@ def sparkle(cx, cy, r, k=0.16):
 
 add("weather", "moon-stars", *E(S, crescent_prims(10.5, 13.25, 7.6, (16.6, 7.4), 5.6)), (F, sparkle(18.0, 5.5, 2.5)), (F, dot(20.25, 11.5, 0.55)))
 
-# Shapes & Indicators (fase 2) -----------------------------------------------------
+# Shapes & Indicators (phase 2) -----------------------------------------------------
 add("shapes", "circle", (S, circle(C, C, 9.25)))
 add("shapes", "circle-fill", (F, circle(C, C, 9.25)))
 add("shapes", "square", (S, rrect(3.75, 3.75, 16.5, 16.5, 3.0)))
@@ -1171,7 +1171,7 @@ for i in range(16):
     SEAL.append((C + r * math.cos(a), C + r * math.sin(a)))
 add("shapes", "seal-check", (S, poly(*SEAL)), (S, line((8.4, 12.2), (10.9, 14.7), (15.6, 9.6))))
 
-# Settings (fase 2) ---------------------------------------------------------------
+# Settings (phase 2) ---------------------------------------------------------------
 add("settings", "sliders", *[(S, line((3.75, y), (20.25, y))) for y in (6.0, 12.0, 18.0)],
     *[(F, circle(x, y, 1.75)) for x, y in ((15.0, 6.0), (8.0, 12.0), (13.5, 18.0))])
 SW_R = (2.75, 6.25, 18.5, 11.5, 5.75)
@@ -1195,10 +1195,10 @@ add("settings", "bug", (S, rrect(7.5, 7.25, 9.0, 12.5, 4.5)), (S, arc(C, 7.25, 3
     *[(S, line(a, b)) for a, b in (((7.5, 11.75), (4.0, 10.25)), ((16.5, 11.75), (20.0, 10.25)), ((7.5, 15.75), (4.0, 17.25)), ((16.5, 15.75), (20.0, 17.25)))])
 add("settings", "pointer", (S, poly((6.0, 3.25), (6.0, 18.5), (9.9, 14.9), (12.5, 20.6), (15.1, 19.4), (12.5, 13.8), (17.75, 13.5))))
 
-# Varianti -fill (fase 3) -------------------------------------------------------
-# In coda alle categorie, così le posizioni degli artboard esistenti non cambiano. Stesse
-# regole dei -fill esistenti: riempimento e tratto (F) sul contorno dell'outline, dettaglio
-# interno omesso (leaf-fill senza nervatura), parti aperte (manici, basi) restano tratti.
+# Varianti -fill (phase 3) -------------------------------------------------------
+# At the end of the categories, so the positions of the existing artboards do not change. Same
+# rules as the existing -fill: fill and stroke (F) on the outline contour, inner detail
+# omitted (leaf-fill without vein), open parts (handles, bases) stay strokes.
 add("communication", "megaphone-fill", (F, SYM["megaphone"][0][1]), *SYM["megaphone"][1:])
 add("people", "shield-fill", (F, SHIELD))
 add("weather", "drop-fill", (F, SYM["drop"][0][1]))
@@ -1210,13 +1210,13 @@ add("settings", "puzzle-fill", (F, SYM["puzzle"][0][1]))
 add("settings", "leaf-fill", (F, SYM["leaf"][0][1]))
 add("settings", "pointer-fill", (F, SYM["pointer"][0][1]))
 
-# Viste e raggruppamento del file manager (fase 4) -------------------------------
-# In coda alle categorie come i -fill. Contenitori su WN (come window-split e photo), r 2,4;
-# le pile sfalsano le copie di 3,35 u asse-asse (luce 1,85 in Regular, 1,2 in Semibold).
+# File manager views and grouping (phase 4) -------------------------------
+# At the end of the categories like the -fill. Containers on WN (like window-split and photo), r 2.4;
+# the stacks offset the copies by 3.35 u axis to axis (gap 1.85 in Regular, 1.2 in Semibold).
 add("windows", "window-split-3", (S, rrect(*WN, 2.4)),
     *[(S, line((x, 4.25), (x, 19.75))) for x in (2.75 + 18.5 / 3, 2.75 + 18.5 * 2 / 3)])
-# Galleria: riquadro grande e una fila di tre miniature piene (riempimento e tratto, come la
-# finestrella di pip), larghe quanto il riquadro; luce 2 u in Regular, 1,35 in Semibold.
+# Gallery: large frame and a row of three filled thumbnails (fill and stroke, like the
+# small window of pip), as wide as the frame; gap 2 u in Regular, 1.35 in Semibold.
 GW = (18.5 - 2 * 3.5) / 3
 add("windows", "gallery", (S, rrect(2.75, 3.75, 18.5, 9.5, 2.4)),
     *[(F, rrect(2.75 + i * (GW + 3.5), 16.75, GW, 3.0, 1.0)) for i in range(3)])
@@ -1225,7 +1225,7 @@ STK_S = 16.5 - 2 * STK
 
 
 def stack_back(o):
-    # quadrato sfalsato di o verso l'alto a destra: solo i lati non coperti da quello davanti
+    # square offset by o toward the top right: only the sides not covered by the front one
     x0, y0, x1, y1 = 3.75 + o, 3.75 + 2 * STK - o, 3.75 + o + STK_S, 3.75 + 2 * STK - o + STK_S
     r = 2.4
     return (f"M{P(x0, y0 + STK)}V{f(y0 + r)}A{f(r)} {f(r)} 0 0 1 {P(x0 + r, y0)}H{f(x1 - r)}"
@@ -1234,9 +1234,9 @@ def stack_back(o):
 
 add("windows", "square-stack", (S, rrect(3.75, 3.75 + 2 * STK, STK_S, STK_S, 2.4)),
     (S, stack_back(STK)), (S, stack_back(2 * STK)))
-# Cerchi dei tag: tre cerchi sovrapposti, quello a sinistra davanti. Gli altri si
-# interrompono dove l'asse dista meno di tratto + luce dal cerchio davanti (si ricalcola per
-# peso). Nel -fill i dischi dietro diventano lune: disco meno il cerchio davanti allargato.
+# Tag circles: three overlapping circles, the left one in front. The others
+# break where the axis is less than stroke + gap from the front circle (recomputed per
+# weight). In -fill the discs behind become crescents: disc minus the enlarged front circle.
 TC_R = 4.25
 TC_D = (18.5 - 2 * TC_R) / 2
 TC_X = [2.75 + TC_R + i * TC_D for i in range(3)]
@@ -1264,9 +1264,9 @@ def tag_moon(cx):
 add("files", "circle-stack", (S, circle(TC_X[0], C, TC_R)), (S, tag_circle(TC_X[1])), (S, tag_circle(TC_X[2])))
 add("files", "circle-stack-fill", (F, circle(TC_X[0], C, TC_R)), (F, tag_moon(TC_X[1])), (F, tag_moon(TC_X[2])))
 
-# Barra laterale del file manager (fase 5) -----------------------------------------
-# In coda alle categorie. desktop: schermo senza piede (rettangolo 18,5 × 13, inchiostro
-# 20 × 14,5, centrato) con una fascia piena in basso, la barra di menubar capovolta.
+# File manager sidebar (phase 5) --------------------------------------------------
+# At the end of the categories. desktop: screen without a stand (18.5 × 13 rectangle, ink
+# 20 × 14.5, centered) with a filled band at the bottom, the bar of menubar flipped.
 DK = (2.75, C - 6.5, 18.5, 13.0)
 DK_B = DK[1] + DK[3] - 3.0
 
@@ -1277,17 +1277,17 @@ def band_bottom(x, y, w, h, yb, r=2.4):
 
 
 add("devices", "desktop", (S, rrect(*DK, 2.4)), (F, band_bottom(*DK, DK_B)))
-# photo-fill: cornice a contorno, sole e colline pieni (riempimento e tratto); le colline
-# seguono le creste di photo e scendono fino al fondo della cornice.
+# photo-fill: outlined frame, filled sun and hills (fill and stroke); the hills
+# follow the ridges of photo and go down to the bottom of the frame.
 PH_R = 2.4
 PH_Y1 = WN[1] + WN[3]
 add("files", "photo-fill", (S, rrect(*WN, PH_R)), (F, circle(15.75, 8.75, 1.6)),
     (F, f"M{P(2.75, 17.0)}L{P(8.5, 11.25)}L{P(11.6, 14.35)}L{P(15.5, 13.25)}L{P(21.25, 17.0)}"
         f"V{f(PH_Y1 - PH_R)}A{f(PH_R)} {f(PH_R)} 0 0 1 {P(21.25 - PH_R, PH_Y1)}"
         f"H{f(2.75 + PH_R)}A{f(PH_R)} {f(PH_R)} 0 0 1 {P(2.75, PH_Y1 - PH_R)}Z"))
-# house-door: house con la porta piena e un comignolo pieno sulla falda destra; tetto, muri e
-# porta restano quelli di house, così i due simboli si scambiano. house-door-fill: corpo
-# pieno con la porta ritagliata dal contorno (tacca sul bordo in basso, nessuna sottrazione).
+# house-door: house with a filled door and a filled chimney on the right slope; roof, walls and
+# door stay those of house, so the two symbols swap. house-door-fill: filled body
+# with the door cut out of the outline (notch on the bottom edge, no subtraction).
 ROOF = ((3.25, 11.0), (C, 3.5), (20.75, 11.0))
 
 
@@ -1303,13 +1303,13 @@ add("windows", "house-door-fill", (S, line(*ROOF)), (F, CHIMNEY),
     (F, "M12 3.5L18.25 8.86V17.85A2.4 2.4 0 0 1 15.85 20.25H14V15.4A1 1 0 0 0 13 14.4H11"
         "A1 1 0 0 0 10 15.4V20.25H8.15A2.4 2.4 0 0 1 5.75 17.85V8.86Z"))
 
-# Libreria (fase 6) ------------------------------------------------------------------
-# In coda alle categorie. books-vertical: due libri diritti e uno inclinato su uno scaffale
-# (linea da 2,75 a 21,25 su y 20,25). I libri diritti poggiano sullo scaffale (tracciato
-# aperto in basso), luce fra i due 3,35 u asse-asse (1,85 in Regular, 1,2 in Semibold); il
-# terzo, inclinato di 18°, poggia sullo spigolo in basso a sinistra e tocca il fianco del
-# secondo. Larghezze 4 · 3,5 · 3, altezze 15,5 · 13 · 12; fascette sul dorso del primo.
-# books-vertical-fill: libri pieni (riempimento e tratto), fascette omesse.
+# Library (phase 6) ------------------------------------------------------------
+# At the end of the categories. books-vertical: two upright books and a tilted one on a shelf
+# (line from 2.75 to 21.25 on y 20.25). The upright books rest on the shelf (path
+# open at the bottom), gap between the two 3.35 u axis to axis (1.85 in Regular, 1.2 in Semibold); the
+# third, tilted by 18°, rests on the bottom left corner and touches the side of the
+# second. Widths 4 · 3.5 · 3, heights 15.5 · 13 · 12; bands on the spine of the first.
+# books-vertical-fill: filled books (fill and stroke), bands omitted.
 BK_Y = 20.25
 BK_R = 1.0
 BK = [(3.35, 7.35, 4.75), (10.7, 14.2, 7.25)]

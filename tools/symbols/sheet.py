@@ -1,5 +1,5 @@
 import os, sys, io, resvg_py
-# Uso: python sheet.py foglio.png [px] [light|regular|semibold]
+# Usage: python sheet.py sheet.png [px] [light|regular|semibold]
 if len(sys.argv) > 3:
     os.environ['SILICA_SYMBOL_WEIGHT'] = sys.argv[3]
 from PIL import Image, ImageDraw, ImageFont

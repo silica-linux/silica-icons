@@ -1,13 +1,13 @@
-"""Compone le icone a livelli come farebbe la shell (maschera del corpo, ordine dei livelli)
-e scrive un foglio di controllo. Uso: python tools/compose.py [--dark] [--size N] [--out file.png]
+"""Composes layered icons as the shell would (body mask, layer order)
+and writes a check sheet. Usage: python tools/compose.py [--dark] [--size N] [--out file.png]
 
-La cartella generica (`folder-symbol`) si compone con `compose_folder(dir, size, dark, symbol,
-tint)`: livello base, simbolo inciso e tinta, con le stesse regole della shell.
-I badge (`badges/`) si mettono sopra un'icona già composta con `compose_badges(img, names, dark)`.
-Le icone dei tipi di file (`file-type-label`) e il file generico (`file-label`) si compongono con
-l'estensione scritta da `compose_file(dir, size, dark, ext)`.
+The generic folder (`folder-symbol`) is composed with `compose_folder(dir, size, dark, symbol,
+tint)`: base layer, engraved symbol and tint, with the same rules as the shell.
+Badges (`badges/`) are placed on top of an already composed icon with `compose_badges(img, names, dark)`.
+File type icons (`file-type-label`) and the generic file (`file-label`) are composed with
+the extension written by `compose_file(dir, size, dark, ext)`.
 
-Dipendenze: pillow, resvg-py. Il font Inter va passato con --fonts se gli SVG contengono testo.
+Dependencies: pillow, resvg-py. The Inter font must be passed with --fonts if the SVGs contain text.
 """
 import argparse
 import io
@@ -29,7 +29,7 @@ def render(path: Path, size: int, fonts: list[str]) -> Image.Image:
 
 
 def body_mask(size: int) -> Image.Image:
-    # Approssimazione con rettangolo arrotondato; la shell usa la superellisse della specifica.
+    # Approximation with a rounded rectangle; the shell uses the superellipse from the spec.
     m = Image.new("L", (size, size), 0)
     s = size / 1024
     ImageDraw.Draw(m).rounded_rectangle((100 * s, 100 * s, 924 * s, 924 * s), radius=215 * s, fill=255)
@@ -66,8 +66,8 @@ def render_string(svg: str, size: int, fonts: list[str]) -> Image.Image:
 
 
 def folder_band(dyn: dict, side: float) -> dict | None:
-    """La fascia di `symbol.sizes` per un'icona di lato `side` (corpo, in pt): la prima con
-    `min_size` <= side; None sotto l'ultima (niente simbolo)."""
+    """The `symbol.sizes` band for an icon of side `side` (body, in pt): the first with
+    `min_size` <= side; None below the last one (no symbol)."""
     for band in sorted(dyn["symbol"]["sizes"], key=lambda b: -b["min_size"]):
         if side >= band["min_size"]:
             return band
@@ -75,8 +75,8 @@ def folder_band(dyn: dict, side: float) -> dict | None:
 
 
 def tint_matrix(tint: str, ramp: dict) -> np.ndarray:
-    """Matrice 3 × 4 (RGB → RGB + scostamento, valori 0–1): la luminanza del disegno va da
-    tinta × shade (a luminance[0]) a tinta schiarita verso il bianco di glow (a luminance[1])."""
+    """3 × 4 matrix (RGB → RGB + offset, values 0–1): the drawing's luminance goes from
+    tint × shade (at luminance[0]) to the tint lightened toward white by glow (at luminance[1])."""
     t = np.array([int(tint[i:i + 2], 16) / 255 for i in (1, 3, 5)])
     shade = t * ramp["shade"]
     glow = t + (1 - t) * ramp["glow"]
@@ -95,8 +95,8 @@ def apply_tint(img: Image.Image, m: np.ndarray) -> Image.Image:
 
 def compose_folder(icon_dir: Path, size: int, dark: bool, symbol: str | None = None,
                    tint: str | None = None, fonts: list[str] | None = None) -> Image.Image:
-    """La cartella generica a `size` px di tela: base, simbolo inciso (fascia scelta sul lato
-    dell'icona, che per le icone dei file è la tela intera) e tinta. `tint` è un colore #rrggbb o il nome di un'etichetta."""
+    """The generic folder at `size` px of canvas: base, engraved symbol (band chosen on the icon
+    side, which for file icons is the full canvas) and tint. `tint` is a #rrggbb color or a label name."""
     fonts = fonts or []
     manifest = json.loads((icon_dir / "icon.json").read_text())
     dyn = manifest["dynamic"]
@@ -127,7 +127,7 @@ def compose_folder(icon_dir: Path, size: int, dark: bool, symbol: str | None = N
     return out
 
 
-INTER_ASCENT, INTER_LINE = 0.96875, 1.2102  # hhea di Inter: 1984 / 2048 e (1984 + 494) / 2048
+INTER_ASCENT, INTER_LINE = 0.96875, 1.2102  # Inter hhea: 1984 / 2048 and (1984 + 494) / 2048
 
 
 def inter_font(fonts: list[str]) -> Path | None:
@@ -139,16 +139,16 @@ def inter_font(fonts: list[str]) -> Path | None:
 
 
 def label_text(label: dict, ext: str | None) -> str | None:
-    """Il testo dell'etichetta: l'estensione (senza punto, nel `case` del manifest) se ha da 1 a
-    `max_chars` caratteri; altrimenti `no_extension` (null: niente etichetta)."""
+    """The label text: the extension (without the dot, in the manifest's `case`) if it has 1 to
+    `max_chars` characters; otherwise `no_extension` (null: no label)."""
     if ext and len(ext) <= label["max_chars"]:
         return ext.upper() if label.get("case") == "upper" else ext
     return label.get("no_extension")
 
 
 def draw_label(out: Image.Image, label: dict, text: str, color: str, fonts: list[str]) -> None:
-    """Scrive `text` centrato nel `box` (tela 1024): riga di altezza naturale (1,2102 × corpo)
-    centrata in verticale; se più largo di `max_width` il corpo scende in proporzione."""
+    """Writes `text` centered in the `box` (1024 canvas): a line of natural height (1.2102 × size)
+    centered vertically; if wider than `max_width` the size shrinks proportionally."""
     from PIL import ImageFont
     path = inter_font(fonts)
     if path is None or not text:
@@ -174,8 +174,8 @@ def draw_label(out: Image.Image, label: dict, text: str, color: str, fonts: list
 
 def compose_file(icon_dir: Path, size: int, dark: bool, ext: str | None,
                  category: str | None = None, fonts: list[str] | None = None) -> Image.Image:
-    """Un'icona di tipo (`file-type-label`) o il file generico (`file-label`, colore da
-    `category`) con l'etichetta dell'estensione `ext`, come la scrive la shell."""
+    """A type icon (`file-type-label`) or the generic file (`file-label`, color from
+    `category`) with the label of extension `ext`, as the shell writes it."""
     fonts = fonts or []
     out = compose(icon_dir, size, dark, fonts)
     dyn = json.loads((icon_dir / "icon.json").read_text()).get("dynamic") or {}
@@ -197,10 +197,10 @@ def compose_file(icon_dir: Path, size: int, dark: bool, ext: str | None,
 
 def compose_badges(icon: Image.Image, names: list[str], dark: bool,
                    fonts: list[str] | None = None) -> Image.Image:
-    """I badge `names` (alias, locked, unreadable, cloud) sopra l'icona composta `icon` (tela
-    quadrata): uno per angolo, scelto per priorità; lato del badge dalla fascia di `sizes`
-    (lato dell'icona in pt: per le icone dei file la tela intera); nella fascia `single` uno solo, il primo di
-    `order`; niente badge sotto l'ultima fascia."""
+    """The badges `names` (alias, locked, unreadable, cloud) on top of the composed icon `icon`
+    (square canvas): one per corner, chosen by priority; badge side from the `sizes` band
+    (icon side in pt: for file icons the full canvas); in the `single` band only one, the first of
+    `order`; no badge below the last band."""
     spec = json.loads((ROOT / "badges" / "badges.json").read_text())
     size = icon.width
     side = size

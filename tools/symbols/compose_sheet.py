@@ -21,7 +21,7 @@ def section(k,dark):
     W=cols*cw+40*k; H=(len(names)+cols-1)//cols*rh+60*k
     im=Image.new('RGB',(W,H),bg); d=ImageDraw.Draw(im)
     font=ImageFont.truetype(FONT,fs)
-    d.text((20*k,14*k),f'{k}× · Inter {fs}px · simboli medium (tela {13*1.4126*k:.1f}px) esportati da Sketch',fill=(140,140,145),font=font)
+    d.text((20*k,14*k),f'{k}× · Inter {fs}px · medium symbols (canvas {13*1.4126*k:.1f}px) exported from Sketch',fill=(140,140,145),font=font)
     asc=font.getmetrics()[0]
     for i,n in enumerate(names):
         x=20*k+(i%cols)*cw; y=50*k+(i//cols)*rh

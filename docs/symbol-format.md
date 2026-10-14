@@ -1,253 +1,256 @@
-# Formato dei simboli
+# Symbol format
 
-Versione 1. Vale per `symbols/`: i glifi monocromi di sistema (barra dei menu, Centro di
-controllo, menu, barre degli strumenti, impostazioni). Le icone delle app e dei file seguono
+Version 1. Applies to `symbols/`: the monochrome system glyphs (menu bar, Control Center,
+menus, toolbars, settings). App and file icons follow
 [`icon-format.md`](icon-format.md).
 
-Sorgente di design: `design/symbols.sketch` (pagine Grid, Symbols, Weights, Check, Sheet).
-Tutti i simboli sono disegnati da zero: niente ricalchi, misure o file di altri set di
-simboli (vedi le regole clean-room di `silica/AGENTS.md`).
+Design source: `design/symbols.sketch` (pages Grid, Symbols, Weights, Check, Sheet).
+All symbols are drawn from scratch: no tracing, measurements or files from other symbol
+sets (see the clean-room rules in `silica/AGENTS.md`).
 
-## Tela e unità
+## Canvas and units
 
-| Elemento | Misura |
+| Element | Measure |
 | --- | --- |
-| Tela | 24 × 24 u, disegnata a 4× su artboard 96 × 96 px (1 u = 4 px) |
-| Area viva | 20 × 20 u, margine 2 u; nessun inchiostro fuori, salvo terminali di 0,5 u al massimo |
-| Centro | (12, 12) = centro delle maiuscole di Inter |
-| Keyline cerchio | Ø 20 (inchiostro esterno) |
-| Keyline quadrato | 18 × 18 (≈ Ø 20 × √π/2: stessa area del cerchio, correzione ottica) |
-| Keyline largo | 20 × 12,36 (1 : φ) |
-| Keyline alto | 12,36 × 20 (φ : 1) |
+| Canvas | 24 × 24 u, drawn at 4× on a 96 × 96 px artboard (1 u = 4 px) |
+| Live area | 20 × 20 u, 2 u margin; no ink outside, except terminals of 0.5 u at most |
+| Center | (12, 12) = center of Inter's capital letters |
+| Circle keyline | Ø 20 (outer ink) |
+| Square keyline | 18 × 18 (≈ Ø 20 × √π/2: same area as the circle, optical correction) |
+| Wide keyline | 20 × 12.36 (1 : φ) |
+| Tall keyline | 12.36 × 20 (φ : 1) |
 
-Le keyline si misurano sul bordo esterno dell'inchiostro, non sull'asse del tratto: un cerchio
-Regular sulla keyline Ø 20 ha il tracciato con raggio 9,25 (10 − 0,75).
+Keylines are measured on the outer edge of the ink, not on the stroke axis: a Regular circle
+on the Ø 20 keyline has a path with radius 9.25 (10 − 0.75).
 
-## Sistema di proporzioni (φ = 1,618)
+## Proportion system (φ = 1.618)
 
-Tutte le misure derivano da due grandezze: l'area viva (20 u) e il tratto Regular (1,5 u).
+All measures derive from two quantities: the live area (20 u) and the Regular stroke (1.5 u).
 
-| Grandezza | Valore | Dove si usa |
+| Quantity | Value | Where it is used |
 | --- | --- | --- |
-| Cerchi aurei | Ø 20 · 12,36 · 7,64 · 4,72 (20 / φⁿ) | lente di `search` (Ø 12,36), anelli di `share-nearby` (Ø 12,36), nucleo di `sun` e testa di `person` (≈ Ø 7,64), foro di `gear` |
-| Rettangolo aureo | 1 : φ | `keyboard`, `sidebar`, `battery` (corpo 18 × 11,12), `lock` (corpo), `folder` (≈), `doc` (≈ φ : 1) |
-| Sezione aurea | 1/φ² e 1/φ della larghezza | divisorio di `sidebar` (1/φ²), piega di `doc` (larghezza / φ² + 1) |
-| Passo concentrico | tratto × φ² = 3,93 u (asse-asse) | archi di `wifi`, onde di `volume`, onde di `hotspot` |
-| Luce fra tratti | tratto × φ = 2,43 u | conseguenza del passo: spazio libero fra due tratti paralleli |
-| Livelli | 1 · 1/φ · 1/φ³ | riempimento di `battery`, `battery-50`, `battery-10` |
-| Pentagramma | raggio interno = esterno / φ² | `star` (vale per ogni stella regolare a 5 punte) |
-| Lancette | raggio / φ (minuti), raggio / φ² (ore) | `clock` |
-| Scale | rapporto √φ = 1,272 | small, medium, large |
-| Pesi | ×φ^½ e ×φ^¾ dal Regular | Light, Semibold |
+| Golden circles | Ø 20 · 12.36 · 7.64 · 4.72 (20 / φⁿ) | lens of `search` (Ø 12.36), rings of `share-nearby` (Ø 12.36), core of `sun` and head of `person` (≈ Ø 7.64), hole of `gear` |
+| Golden rectangle | 1 : φ | `keyboard`, `sidebar`, `battery` (body 18 × 11.12), `lock` (body), `folder` (≈), `doc` (≈ φ : 1) |
+| Golden section | 1/φ² and 1/φ of the width | divider of `sidebar` (1/φ²), fold of `doc` (width / φ² + 1) |
+| Concentric step | stroke × φ² = 3.93 u (axis to axis) | arcs of `wifi`, waves of `volume`, waves of `hotspot` |
+| Gap between strokes | stroke × φ = 2.43 u | consequence of the step: free space between two parallel strokes |
+| Levels | 1 · 1/φ · 1/φ³ | fill of `battery`, `battery-50`, `battery-10` |
+| Pentagram | inner radius = outer / φ² | `star` (holds for any regular 5-point star) |
+| Clock hands | radius / φ (minutes), radius / φ² (hours) | `clock` |
+| Scales | ratio √φ = 1.272 | small, medium, large |
+| Weights | ×φ^½ and ×φ^¾ from Regular | Light, Semibold |
 
-Coincidenza utile: l'altezza delle maiuscole di Inter (0,7275 em) vale 12,36 u alla scala
-medium. Il rettangolo aureo largo 20 × 12,36 coincide quindi con la fascia fra altezza delle
-maiuscole e linea di base: un simbolo largo (tastiera, barra laterale) ha la stessa altezza
-delle maiuscole del testo accanto.
+Useful coincidence: Inter's cap height (0.7275 em) equals 12.36 u at the medium scale. The
+wide golden rectangle 20 × 12.36 therefore matches the band between cap height and baseline:
+a wide symbol (keyboard, sidebar) has the same height as the capital letters of the text next
+to it.
 
-### Correzioni ottiche rispetto al rapporto puro
+### Optical corrections to the pure ratio
 
-| Simbolo | Rapporto puro | Scelto | Motivo |
+| Symbol | Pure ratio | Chosen | Reason |
 | --- | --- | --- | --- |
-| Quadrato | 20 | 18 | stessa area del cerchio Ø 20, altrimenti il quadrato pesa di più |
-| `wifi`, `volume` | raggi in progressione φ (r, rφ, rφ²) | passo costante 3,93 u (= tratto × φ²) | con raggi in progressione φ la luce fra il primo e il secondo arco scende sotto 1 u e si chiude in Semibold |
-| `sun` | nucleo Ø 7,64 | Ø 8,04 (+0,4) | i raggi corti alleggeriscono il disegno; il nucleo cresce per compensare |
-| `gear` | foro Ø 7,64 | asse Ø 7,24 (−0,4) | l'anello interno a Ø 7,64 si avvicinava troppo alle radici dei denti |
-| `doc` | 12,36 × 20 | 13,96 × 20 | il foglio stretto sembra più piccolo degli altri simboli alti |
-| `folder` | 20 × 12,36 | 20 × 12,93 | la linguetta toglie peso al corpo; il corpo cresce di 0,6 u |
-| `star` | centro (12, 12) | centro (12, 12,85) | centratura ottica: la stella ha più massa in basso |
-| `play` | riquadro centrato (x 6,5–17,5) | baricentro quasi al centro (x 8–19, baricentro 11,67) | centrato sul riquadro il triangolo sembra spostato a sinistra |
-| `share-nearby` | — | due cerchi Ø 12,36 con centri a ±3,82 | inviluppo esattamente Ø 20 |
+| Square | 20 | 18 | same area as the Ø 20 circle, otherwise the square looks heavier |
+| `wifi`, `volume` | radii in φ progression (r, rφ, rφ²) | constant step 3.93 u (= stroke × φ²) | with radii in φ progression the gap between the first and second arc drops below 1 u and closes in Semibold |
+| `sun` | core Ø 7.64 | Ø 8.04 (+0.4) | the short rays lighten the drawing; the core grows to compensate |
+| `gear` | hole Ø 7.64 | axis Ø 7.24 (−0.4) | the inner ring at Ø 7.64 came too close to the tooth roots |
+| `doc` | 12.36 × 20 | 13.96 × 20 | the narrow sheet looks smaller than the other tall symbols |
+| `folder` | 20 × 12.36 | 20 × 12.93 | the tab takes weight away from the body; the body grows by 0.6 u |
+| `star` | center (12, 12) | center (12, 12.85) | optical centering: the star has more mass at the bottom |
+| `play` | centered box (x 6.5–17.5) | centroid near the center (x 8–19, centroid 11.67) | centered on the box, the triangle looks shifted to the left |
+| `share-nearby` | — | two Ø 12.36 circles with centers at ±3.82 | envelope exactly Ø 20 |
 
-## Pesi
+## Weights
 
-Tratto centrato sul tracciato, terminali e giunzioni rotondi (raggio del terminale = metà del
-tratto).
+Stroke centered on the path, round terminals and joins (terminal radius = half the stroke).
 
-| Peso | Tratto (u) | em alla scala medium | Asta di Inter corrispondente |
+| Weight | Stroke (u) | em at medium scale | Matching Inter stem |
 | --- | --- | --- | --- |
-| Light | 1,18 (1,5 / φ^½) | 0,069 | da verificare quando il pacchetto includerà Inter Light |
-| Regular | 1,5 | 0,088 | Inter Regular "l" 0,088 |
-| Semibold | 2,15 (1,5 × φ^¾) | 0,127 | Inter SemiBold "l" 0,127 |
+| Light | 1.18 (1.5 / φ^½) | 0.069 | to be verified when the package includes Inter Light |
+| Regular | 1.5 | 0.088 | Inter Regular "l" 0.088 |
+| Semibold | 2.15 (1.5 × φ^¾) | 0.127 | Inter SemiBold "l" 0.127 |
 
-Sulla scala degli spessori delle icone (`icon-format.md`, 1 u = 30 px: 45 × √φⁿ) Light vale 35 e
-Regular 45; Semibold (64,6) sta fra 57 e 73 perché segue l'asta di Inter SemiBold, non la serie √φ.
+On the icon stroke scale (`icon-format.md`, 1 u = 30 px: 45 × √φⁿ) Light is 35 and Regular
+45; Semibold (64.6) falls between 57 and 73 because it follows the stem of Inter SemiBold, not
+the √φ series.
 
-Il disegno è lo stesso nei tre pesi: cambia solo il tratto. I tagli delle barre e dei badge si
-ricalcolano per peso perché la luce resti 1,5 u (asse-asse = tratto + 1,5: Light 2,68, Regular 3,
-Semibold 3,65); per questo in Semibold spariscono i pezzi che stanno tutti nella fascia della barra
-(la pupilla di `eye-slash`). In `symbols.py` il peso si sceglie con `SILICA_SYMBOL_WEIGHT`
-(`light`, `regular`, `semibold`; tratto in `WSW`).
+The drawing is the same in all three weights: only the stroke changes. Bar and badge cuts are
+recomputed per weight so that the gap stays 1.5 u (axis to axis = stroke + 1.5: Light 2.68,
+Regular 3, Semibold 3.65); for this reason, in Semibold the pieces that sit entirely within
+the bar band disappear (the pupil of `eye-slash`). In `symbols.py` the weight is chosen with
+`SILICA_SYMBOL_WEIGHT` (`light`, `regular`, `semibold`; stroke in `WSW`).
 
-Il simbolo ha lo stesso peso del testo accanto: un simbolo Regular sta con Inter Regular, un
-Semibold con Inter SemiBold. Altri pesi (Thin, Medium, Bold) si aggiungono con lo stesso
-criterio: tratto = asta di Inter di quel peso, convertita in unità della tela medium.
+A symbol has the same weight as the text next to it: a Regular symbol goes with Inter
+Regular, a Semibold one with Inter SemiBold. Other weights (Thin, Medium, Bold) are added
+with the same criterion: stroke = Inter stem of that weight, converted to medium-canvas units.
 
-Le forme piene (`play`, `pause`, `moon`, `airplane`, punti) hanno riempimento **e** tratto
-dello stesso colore: crescono con il peso come le linee e hanno gli angoli arrotondati dal
-tratto. I riempimenti interni che non devono crescere (livello della batteria, fulmine) sono
-solo riempimento.
+Filled shapes (`play`, `pause`, `moon`, `airplane`, dots) have fill **and** stroke of the
+same color: they grow with the weight like lines and have their corners rounded by the stroke.
+Inner fills that must not grow (battery level, bolt) are fill only.
 
-## Scale
+## Scales
 
-Tre scale con rapporto √φ. La tela si misura in em del testo accanto:
+Three scales with ratio √φ. The canvas is measured in em of the text next to it:
 
-| Scala | Tela | A 13 pt | Keyline quadrato a 13 pt | Uso |
+| Scale | Canvas | At 13 pt | Square keyline at 13 pt | Use |
 | --- | --- | --- | --- | --- |
-| small | 1,111 em | 14,4 pt | 10,8 pt | voci di menu con icona, scorciatoie, etichette piccole |
-| medium | 1,4126 em | 18,4 pt | 13,8 pt | barra dei menu, menu, barre degli strumenti |
-| large | 1,797 em | 23,4 pt | 17,5 pt | Centro di controllo (dischi da 36 pt), pulsanti grandi |
+| small | 1.111 em | 14.4 pt | 10.8 pt | menu items with icon, shortcuts, small labels |
+| medium | 1.4126 em | 18.4 pt | 13.8 pt | menu bar, menus, toolbars |
+| large | 1.797 em | 23.4 pt | 17.5 pt | Control Center (36 pt discs), large buttons |
 
-Il tratto in punti resta quello del peso a ogni scala: in unità della tela small = tratto ×
-√φ, large = tratto / √φ (Regular: small 1,91 u, medium 1,5 u, large 1,18 u). Chi esporta
-una scala diversa da medium ricalcola il tratto, non lo scala con il disegno.
+The stroke in points stays that of the weight at every scale: in small-canvas units = stroke
+× √φ, large = stroke / √φ (Regular: small 1.91 u, medium 1.5 u, large 1.18 u). Whoever exports
+a scale other than medium recomputes the stroke instead of scaling it with the drawing.
 
-Verifica con le misure di riferimento (note in `silica/plan/reference/`): alla scala large a
-13 pt `wifi` misura 19,9 × 15,5 pt (Centro di controllo osservato: 20 × 15); alla scala
-medium le icone della barra dei menu stanno fra 12 e 16 pt di altezza (osservato: 12–18).
+Check against the reference measurements (notes in `silica/plan/reference/`): at the large
+scale at 13 pt `wifi` measures 19.9 × 15.5 pt (observed Control Center: 20 × 15); at the
+medium scale the menu bar icons are between 12 and 16 pt tall (observed: 12–18).
 
-## Allineamento al testo
+## Alignment to text
 
-- Il centro della tela sta sul centro delle maiuscole: linea di base + 0,3638 em.
-- Alla scala medium: altezza delle maiuscole a y 5,82 u, linea di base a y 18,18 u.
-- Il simbolo si posiziona come un glifo: `y_tela = linea_di_base − 0,3638 em − tela / 2`.
-- Spaziatura orizzontale fra simbolo e testo: decisa dal componente, non dal simbolo (la
-  tela ha già 2 u di margine).
+- The canvas center sits on the center of the capital letters: baseline + 0.3638 em.
+- At the medium scale: cap height at y 5.82 u, baseline at y 18.18 u.
+- The symbol is positioned like a glyph: `y_canvas = baseline − 0.3638 em − canvas / 2`.
+- Horizontal spacing between symbol and text: decided by the component, not the symbol (the
+  canvas already has a 2 u margin).
 
-## Colore
+## Color
 
-- Monocromi: un solo colore, preso dal tema (`currentColor` negli SVG). Mai colori fissi
-  nel simbolo.
-- Parti secondarie (archi non attivi di `wifi-1`, onde di `volume-1`): livello di nome
-  `secondary`, opacità 35 % del colore del simbolo. La shell può sostituirla con un colore
-  secondario del tema.
-- Nessuna ombra, sfumatura o vetro nel simbolo: li aggiunge il contesto (disco del Centro di
-  controllo, pulsante).
+- Monochrome: a single color, taken from the theme (`currentColor` in the SVGs). Never fixed
+  colors in the symbol.
+- Secondary parts (inactive arcs of `wifi-1`, waves of `volume-1`): layer named
+  `secondary`, opacity 35 % of the symbol color. The shell may replace it with a secondary
+  theme color.
+- No shadow, gradient or glass in the symbol: the context adds them (Control Center disc,
+  button).
 
-## Varianti outline e fill
+## Outline and fill variants
 
-- La forma base è **outline** (tratto). Il nome senza suffisso è l'outline: `bell`, `folder`.
-- La variante piena ha suffisso `-fill`: `bell-fill`, `folder-fill`, `heart-fill`. Si
-  disegna per i simboli che diventano "attivi" o selezionati (barre laterali, tab bar,
-  preferiti). Esistono per `location`, `mic`, `bolt`, `house`, `house-door`, `folder`, `doc`, `photo`, `bookmark`,
+- The base shape is **outline** (stroke). The name without suffix is the outline: `bell`,
+  `folder`.
+- The filled variant has the suffix `-fill`: `bell-fill`, `folder-fill`, `heart-fill`. It is
+  drawn for symbols that become "active" or selected (sidebars, tab bars, favorites). They
+  exist for `location`, `mic`, `bolt`, `house`, `house-door`, `folder`, `doc`, `photo`, `bookmark`,
   `trash`, `bell`, `message`, `phone`, `video`, `paperplane`, `megaphone`, `person`, `lock`,
   `shield`, `cloud`, `drop`, `umbrella`, `circle`, `square`, `triangle`, `diamond`, `star`,
   `heart`, `flag`, `lightbulb`, `puzzle`, `leaf`, `pointer`, `circle-stack`,
-  `books-vertical`. Nella variante fill il dettaglio
-  interno si ritaglia (sottrazione), con luce minima 1,5 u.
-- Simboli pieni per natura (`play`, `pause`, `moon`, `airplane`) non hanno variante outline.
-- Finché Sketch non conserva le sottrazioni fra sottotracciati, si disegnano `-fill` solo per le
-  forme senza dettaglio interno da ritagliare, oppure col dettaglio omesso (`folder-fill` senza
-  divisorio, `doc-fill` senza piega, `house-fill` senza porta, `leaf-fill` senza nervatura); le parti
-  aperte (manico di `umbrella`, base di `lightbulb`, battaglio di `bell`) restano tratti. Non esistono
-  ancora `envelope-fill`, `tag-fill`, `checkmark-circle-fill`, `gear-fill`, `camera-fill`, `eye-fill`
-  (il dettaglio interno è il simbolo).
+  `books-vertical`. In the fill variant the inner detail
+  is cut out (subtraction), with a minimum gap of 1.5 u.
+- Inherently filled symbols (`play`, `pause`, `moon`, `airplane`) have no outline variant.
+- Until Sketch preserves subtractions between subpaths, `-fill` is drawn only for shapes
+  with no inner detail to cut out, or with the detail omitted (`folder-fill` without
+  divider, `doc-fill` without fold, `house-fill` without door, `leaf-fill` without vein); open
+  parts (handle of `umbrella`, base of `lightbulb`, clapper of `bell`) remain strokes. There
+  are still no `envelope-fill`, `tag-fill`, `checkmark-circle-fill`, `gear-fill`, `camera-fill`,
+  `eye-fill` (the inner detail is the symbol).
 
-## Nomi
+## Names
 
-- kebab-case inglese, dal generale al particolare: `chevron-left`, `lock-open`,
+- English kebab-case, from general to specific: `chevron-left`, `lock-open`,
   `battery-charging`.
-- Varianti come suffisso, in quest'ordine: stato o livello, poi `-fill`.
-  - livelli: `wifi-0`, `wifi-1`, `wifi-2`, `wifi` (pieno); `volume-1`, `volume-2`, `volume`;
-    `battery-10`, `battery-50`, `battery` (carica).
-  - barrato o disattivo: `-slash` (`wifi-slash`, `volume-slash`, `bell-slash`).
-  - stati: `-open`, `-charging`; riempimento: `-fill`.
-- Nomi descrittivi della forma o della funzione di sistema, mai nomi di prodotti Apple:
-  `share-nearby` (non "airdrop"), `screen-cast` (non "airplay"), `airplane` per la modalità
-  aereo, `moon` per la concentrazione.
+- Variants as a suffix, in this order: state or level, then `-fill`.
+  - levels: `wifi-0`, `wifi-1`, `wifi-2`, `wifi` (full); `volume-1`, `volume-2`, `volume`;
+    `battery-10`, `battery-50`, `battery` (charge).
+  - slashed or disabled: `-slash` (`wifi-slash`, `volume-slash`, `bell-slash`).
+  - states: `-open`, `-charging`; fill: `-fill`.
+- Names that describe the shape or the system function, never Apple product names:
+  `share-nearby` (not "airdrop"), `screen-cast` (not "airplay"), `airplane` for airplane
+  mode, `moon` for focus.
 
-## Regole di disegno
+## Drawing rules
 
-1. Partire dalla keyline giusta (cerchio, quadrato, largo, alto) e dalle grandezze auree della
-   tabella; documentare nella pagina Check ogni correzione ottica.
-2. Un solo spessore di tratto per simbolo; niente tratti dimezzati per i dettagli.
-3. Luce minima fra tratti: 1,5 u in Regular (resta ≥ 1,2 u in Semibold).
-4. Terminali rotondi; angoli interni dei contenitori r 2,4 u (≈ tratto × φ), capsule con
-   raggio = metà altezza.
-5. Coordinate preferibilmente su multipli di 0,25 u per i tratti orizzontali e verticali
-   (a 1× medium 1 u ≈ 0,77 px: nessun allineamento al pixel è possibile, conta la coerenza).
-6. Ogni sottotracciato è un livello separato (`primary` o `secondary`), così Sketch non unisce
-   né sottrae i tracciati.
-7. Prima di chiudere: Check (griglia sovrapposta), Weights (tre pesi e tre scale), foglio di
-   controllo a 1× e 2× su chiaro e scuro accanto a Inter.
+1. Start from the right keyline (circle, square, wide, tall) and from the golden quantities in
+   the table; document every optical correction on the Check page.
+2. One stroke width per symbol; no halved strokes for details.
+3. Minimum gap between strokes: 1.5 u in Regular (stays ≥ 1.2 u in Semibold).
+4. Round terminals; inner corners of containers r 2.4 u (≈ stroke × φ), capsules with
+   radius = half the height.
+5. Coordinates preferably on multiples of 0.25 u for horizontal and vertical strokes
+   (at 1× medium 1 u ≈ 0.77 px: no pixel alignment is possible, consistency is what counts).
+6. Every subpath is a separate layer (`primary` or `secondary`), so Sketch does not merge
+   or subtract the paths.
+7. Before closing: Check (overlaid grid), Weights (three weights and three scales), check
+   sheet at 1× and 2× on light and dark next to Inter.
 
-## File nel repository
+## Files in the repository
 
 ```
-symbols/<peso>/<nome>.svg   peso light, regular, semibold; viewBox 0 0 24 24, tratto del peso
-                            (1,18 · 1,5 · 2,15), stroke-linecap/linejoin round,
-                            colore currentColor, livelli secondari con opacity 0.35
+symbols/<weight>/<name>.svg   weight light, regular, semibold; viewBox 0 0 24 24, stroke of the weight
+                              (1.18 · 1.5 · 2.15), stroke-linecap/linejoin round,
+                              color currentColor, secondary layers with opacity 0.35
 ```
 
-I tracciati sono descritti in `tools/symbols/symbols.py` (sorgente unica per Sketch e per gli
-SVG). `tools/symbols/export_svg.py` scrive i tre pesi in `symbols/<peso>/*.svg`; con `--check`
-verifica che i file siano allineati alla sorgente. `tools/symbols/gen2.py` genera gli script che
-creano gli artboard in `design/symbols.sketch`; `compose_sheet.py` ricompone il foglio di controllo della pagina
-Sheet dai PNG esportati da Sketch; `sheet.py foglio.png 48 semibold` rende il foglio di un peso.
-In `design/symbols.sketch` i simboli sono disegnati in Regular.
+The paths are described in `tools/symbols/symbols.py` (single source for Sketch and for the
+SVGs). `tools/symbols/export_svg.py` writes the three weights to `symbols/<weight>/*.svg`; with
+`--check` it verifies that the files match the source. `tools/symbols/gen2.py` generates the
+scripts that create the artboards in `design/symbols.sketch`; `compose_sheet.py` recomposes
+the check sheet of the Sheet page from the PNGs exported by Sketch; `sheet.py sheet.png 48
+semibold` renders the sheet of one weight. In `design/symbols.sketch` the symbols are drawn in
+Regular.
 
-## Viste e pile
+## Views and stacks
 
-Simboli delle barre degli strumenti del file manager (fase 4 in `symbols.py`, in coda alle
-categorie). Le viste a icone e a elenco sono `square-grid-2x2` e `list-bullet`; barra laterale e
-pannello a destra sono `sidebar` e `sidebar-right`.
+File manager toolbar symbols (phase 4 in `symbols.py`, after the categories). The icon and
+list views are `square-grid-2x2` and `list-bullet`; sidebar and right panel are `sidebar` and
+`sidebar-right`.
 
-- `window-split-3` (vista a colonne): contenitore WN di `window-split` diviso in tre colonne
-  uguali.
-- `gallery` (vista galleria): riquadro 18,5 × 9,5 r 2,4 e una fila di tre miniature piene
-  (riempimento e tratto, come la finestrella di `pip`) larghe quanto il riquadro; luce 2 u in
-  Regular, 1,35 in Semibold.
-- `square-stack` (raggruppa): tre quadrati r 2,4 sfalsati di 3,35 u verso l'alto a destra,
-  inchiostro nella keyline quadrato; dei quadrati dietro restano solo i lati scoperti, come
+- `window-split-3` (column view): WN container of `window-split` divided into three equal
+  columns.
+- `gallery` (gallery view): 18.5 × 9.5 r 2.4 frame and a row of three filled thumbnails
+  (fill and stroke, like the small window of `pip`) as wide as the frame; gap 2 u in
+  Regular, 1.35 in Semibold.
+- `square-stack` (group): three r 2.4 squares offset by 3.35 u toward the top right, ink
+  within the square keyline; of the squares behind only the uncovered sides remain, like
   `window-stack`.
-- `circle-stack` (tag): tre cerchi r 4,25 in fila, quello a sinistra davanti; gli altri si
-  interrompono dove l'asse dista meno di tratto + luce dal cerchio davanti (ricalcolato per
-  peso, come i tagli delle barre). `circle-stack-fill`: dischi pieni, quelli dietro diventano
-  lune con la stessa luce.
+- `circle-stack` (tag): three r 4.25 circles in a row, the left one in front; the others
+  break where the axis is less than stroke + gap from the front circle (recomputed per
+  weight, like the bar cuts). `circle-stack-fill`: filled discs, the ones behind become
+  crescents with the same gap.
 
-## Barra laterale del file manager
+## File manager sidebar
 
-Simboli per le righe della barra laterale (fase 5 in `symbols.py`, in coda alle categorie).
+Symbols for the sidebar rows (phase 5 in `symbols.py`, after the categories).
 
-- `desktop` (Scrivania): schermo senza piede, rettangolo 18,5 × 13 r 2,4 (inchiostro 20 × 14,5,
-  centrato) con una fascia piena in basso alta 3 u sull'asse, la barra di `menubar` capovolta.
-  `display` resta il monitor con il piede.
-- `photo-fill` (Immagini): cornice di `photo` a contorno, sole e colline pieni (riempimento e
-  tratto). Le colline seguono le creste di `photo` e scendono fino al fondo della cornice; il
-  dettaglio non si ritaglia, si riempie.
-- `house-door`: tetto, muri e porta di `house` (stessa proporzione, si scambiano), con la porta
-  piena e un comignolo pieno sulla falda destra (x 14,75–17, sommità a y 4,5, base sulla falda).
-  `house-door-fill`: corpo pieno con la porta come tacca nel contorno in basso (nessuna
-  sottrazione: la porta tocca il bordo), comignolo pieno; la porta resta aperta 2,5 u in Regular.
+- `desktop` (Desktop): screen without a stand, 18.5 × 13 r 2.4 rectangle (20 × 14.5 ink,
+  centered) with a filled band at the bottom 3 u tall on the axis, the bar of `menubar`
+  flipped. `display` remains the monitor with the stand.
+- `photo-fill` (Pictures): outlined frame of `photo`, filled sun and hills (fill and
+  stroke). The hills follow the ridges of `photo` and go down to the bottom of the frame; the
+  detail is not cut out, it is filled.
+- `house-door`: roof, walls and door of `house` (same proportion, swapped), with the door
+  filled and a filled chimney on the right slope (x 14.75–17, top at y 4.5, base on the slope).
+  `house-door-fill`: filled body with the door as a notch in the bottom outline (no
+  subtraction: the door touches the edge), filled chimney; the door stays open 2.5 u in Regular.
 
-## Libreria
+## Library
 
-Simbolo della cartella Libreria (`LIBRARY` della cartella generica; fase 6 in `symbols.py`, in coda
-alle categorie).
+Symbol of the Library folder (`LIBRARY` of the generic folder; phase 6 in `symbols.py`, after
+the categories).
 
-- `books-vertical`: due libri diritti e uno inclinato su uno scaffale (linea da x 2,75 a 21,25 su
-  y 20,25). I libri diritti sono larghi 4 e 3,5 u sull'asse, alti 15,5 e 13 u, r 1, aperti in basso
-  sullo scaffale; fra loro 3,35 u asse-asse (luce 1,85 in Regular, 1,2 in Semibold). Il terzo
-  (3 × 12, r 1) è inclinato di 18°, poggia sullo spigolo in basso a sinistra e tocca il fianco del
-  secondo; il primo ha due fascette sul dorso (y 8,25 e 16,75). Inchiostro da x 2,6 a 21,5.
-- `books-vertical-fill`: libri pieni (riempimento e tratto), scaffale a tratto, fascette omesse.
+- `books-vertical`: two upright books and a tilted one on a shelf (line from x 2.75 to 21.25
+  on y 20.25). The upright books are 4 and 3.5 u wide on the axis, 15.5 and 13 u tall, r 1,
+  open at the bottom on the shelf; 3.35 u axis to axis between them (gap 1.85 in Regular, 1.2
+  in Semibold). The third (3 × 12, r 1) is tilted by 18°, rests on the bottom left corner and
+  touches the side of the second; the first has two bands on the spine (y 8.25 and 16.75).
+  Ink from x 2.6 to 21.5.
+- `books-vertical-fill`: filled books (fill and stroke), stroked shelf, bands omitted.
 
-## Varianti barrate e badge
+## Slashed variants and badges
 
-- `-slash`: barra da (4,25, 4,25) a (19,75, 19,75), sopra il simbolo, sempre lo stesso tratto
-  diritto a 45° con terminali rotondi. I tratti sotto la barra si interrompono dove l'asse dista
-  meno di 3 u dall'asse della barra (0,75 + luce 1,5 + 0,75): la luce minima vale anche per gli
-  incroci. Le forme piene si tagliano allo stesso modo (`slashed_fill`: il contorno tagliato resta a
-  3 u dall'asse della barra), come l'altoparlante di `volume-slash`.
-- Badge (`bell-badge`): disco pieno; il tratto sotto si interrompe con la stessa luce.
-- I tagli si calcolano in `symbols.py` (funzioni `cut`, `slashed`, `outside_shape`), mai a mano.
+- `-slash`: bar from (4.25, 4.25) to (19.75, 19.75), above the symbol, always the same
+  straight 45° stroke with round terminals. Strokes under the bar break where the axis is
+  less than 3 u from the bar axis (0.75 + gap 1.5 + 0.75): the minimum gap also applies to
+  crossings. Filled shapes are cut the same way (`slashed_fill`: the cut outline stays 3 u
+  from the bar axis), like the speaker of `volume-slash`.
+- Badge (`bell-badge`): filled disc; the stroke underneath breaks with the same gap.
+- The cuts are computed in `symbols.py` (functions `cut`, `slashed`, `outside_shape`), never
+  by hand.
 
-## Catalogo
+## Catalog
 
-324 simboli in 11 categorie, nell'ordine delle sezioni della pagina Symbols (12 colonne,
-passo 144 px; ogni categoria ha una banda di 960 px, cioè fino a 5 righe).
+324 symbols in 11 categories, in the order of the sections of the Symbols page (12 columns,
+144 px step; each category has a 960 px band, i.e. up to 5 rows).
 
-| Categoria | Simboli |
+| Category | Symbols |
 | --- | --- |
 | Status & Connectivity | 37 |
 | Control Center & Media | 32 |
@@ -261,5 +264,5 @@ passo 144 px; ogni categoria ha una banda di 960 px, cioè fino a 5 righe).
 | Shapes & Indicators | 29 |
 | Settings | 20 |
 
-Elenco completo dei nomi: `symbols/regular/` (un file per simbolo) o la pagina Sheet di
-`design/symbols.sketch`, ordinata per categoria.
+Full list of names: `symbols/regular/` (one file per symbol) or the Sheet page of
+`design/symbols.sketch`, ordered by category.

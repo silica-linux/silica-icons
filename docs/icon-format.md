@@ -1,191 +1,192 @@
-# Formato delle icone
+# Icon format
 
-Versione 1. Vale per `apps/`, `files/` e `badges/`. I simboli di sistema (`symbols/`) avranno una
-specifica a parte.
+Version 1. Applies to `apps/`, `files/` and `badges/`. System symbols (`symbols/`) have a
+separate specification.
 
-## Principio
+## Principle
 
-L'icona di un'app è **contenuto a livelli**, non un'immagine finita. Lo sviluppatore
-fornisce il fondo e il primo piano; la shell applica la forma, il bordo, le ombre, il vetro
-e i temi. Così ogni icona del Dock ha la stessa forma e reagisce agli stessi temi.
+An app icon is **layered content**, not a finished image. The developer supplies the
+background and the foreground; the shell applies the shape, border, shadows, glass and
+themes. This way every Dock icon has the same shape and reacts to the same themes.
 
-Le icone dei file (`files/`) sono invece oggetti a forma libera (cartelle, documenti,
-Cestino): la shell non applica maschera né corpo, solo l'ombra del contesto. Per le icone dei
-file **il lato è la tela intera**: un'icona di file da 64 pt è la tela 1024 disegnata a 64 pt,
-senza riduzioni (niente corpo 824, niente fattori come il 92 % di prima); le fasce che
-dipendono dal lato (`min_size` del simbolo della cartella, dell'etichetta e dei badge) si
-confrontano con questo lato. Nel Dock un luogo (cartella, Cestino) usa la tela delle app
-accanto, quella che sborda di 100/824 dal corpo.
+File icons (`files/`), instead, are free-form objects (folders, documents, Trash): the shell
+applies no mask or body, only the shadow of the context. For file icons **the side is the
+full canvas**: a 64 pt file icon is the 1024 canvas drawn at 64 pt, with no reductions (no
+824 body, no factors like the former 92 %); the bands that depend on the side (`min_size` of
+the folder symbol, of the label and of the badges) are compared with this side. In the Dock a
+place (folder, Trash) uses the canvas of the neighboring apps, the one that overflows the body
+by 100/824.
 
-## Tela e griglia
+## Canvas and grid
 
-Tutte le misure sono su una tela di **1024 × 1024**.
+All measures are on a **1024 × 1024** canvas.
 
-| Elemento | Misura |
+| Element | Measure |
 | --- | --- |
-| Corpo (dove la shell ritaglia) | 824 × 824 a (100, 100) |
-| Angoli del corpo | smooth, raggio 215, smoothing 0,55 |
-| Keyline quadrato | 600 × 600 a (212, 212) |
-| Keyline cerchio grande | Ø 600, centro (512, 512) |
-| Keyline cerchio piccolo | Ø 424, centro (512, 512) |
-| Keyline verticale | 520 × 680 a (252, 172) |
-| Keyline orizzontale | 680 × 520 a (172, 252) |
-| Keyline documento (icone dei file) | 684 × 904 a (170, 60) |
-| Keyline cartella | 944 × 760 a (40, 132) |
-| Keyline volume (dischi e server) | 944 × 583 a (40, 220,4) |
-| Keyline Cestino | 656 × 824 a (184, 100): cestello con la base a y 924, bordo 667 |
-| Badge | disco Ø 824 centrato sulla propria tela 1024 (vedi Badge) |
+| Body (where the shell clips) | 824 × 824 at (100, 100) |
+| Body corners | smooth, radius 215, smoothing 0.55 |
+| Square keyline | 600 × 600 at (212, 212) |
+| Large circle keyline | Ø 600, center (512, 512) |
+| Small circle keyline | Ø 424, center (512, 512) |
+| Vertical keyline | 520 × 680 at (252, 172) |
+| Horizontal keyline | 680 × 520 at (172, 252) |
+| Document keyline (file icons) | 684 × 904 at (170, 60) |
+| Folder keyline | 944 × 760 at (40, 132) |
+| Volume keyline (disks and servers) | 944 × 583 at (40, 220.4) |
+| Trash keyline | 656 × 824 at (184, 100): bin with the base at y 924, rim 667 |
+| Badge | Ø 824 disc centered on its own 1024 canvas (see Badges) |
 
-Il contenuto principale sta in uno dei keyline; le icone a tutta tela (un fondo disegnato,
-come Calendar o Photos) occupano il corpo intero.
+The main content sits in one of the keylines; full-canvas icons (a drawn background, like
+Calendar or Photos) fill the whole body.
 
-## Sistema di proporzioni (φ = 1,618)
+## Proportion system (φ = 1.618)
 
-È il sistema dei simboli ([`symbol-format.md`](symbol-format.md)) scalato alla tela 1024 con
-**1 u = 30 px**: la keyline cerchio Ø 600 è il cerchio Ø 20 u dei simboli, il tratto Regular
-(1,5 u) vale 45 px. In `design/app-icons.sketch` il simbolo `Grid / Golden 1024` (azzurro) lo
-disegna sopra `Grid / Overlay` (rosa): pagina Grid e livello `Golden overlay` in ogni artboard
-di Grid Check.
+It is the symbol system ([`symbol-format.md`](symbol-format.md)) scaled to the 1024 canvas
+with **1 u = 30 px**: the Ø 600 circle keyline is the Ø 20 u circle of the symbols, the
+Regular stroke (1.5 u) is 45 px. In `design/app-icons.sketch` the symbol `Grid / Golden 1024`
+(light blue) draws it over `Grid / Overlay` (pink): Grid page and `Golden overlay` layer in
+every Grid Check artboard.
 
-### Le keyline esistenti
+### The existing keylines
 
-| Keyline | Da dove viene |
+| Keyline | Where it comes from |
 | --- | --- |
-| Corpo 824 | tela − 2 × 100; raggio 215 ≈ 0,26 × lato (smoothing 0,55) |
-| Quadrato e cerchio 600 | grandezza base (20 u) |
-| Cerchio 424 | 600 / √2: cerchio inscritto nel quadrato inscritto nel cerchio 600 |
-| Verticale 520 × 680, orizzontale 680 × 520 | stesso perimetro del quadrato 600 (520 + 680 = 2 × 600), area 98 %; rapporto 1,31, non aureo |
-| Documento 684 × 904, cartella 944 × 760 | misurate sul Finder a icone grandi (cattura a 1×, icone da 128 pt): corpo del foglio 86 × 114 (0,668 × 0,883 della tela, senza l'ombra di ≈ 5 pt per lato che mette la shell; 96 × 124 con l'ombra), cartella 118 × 94 (0,922 × 0,734); a 64 pt 42 × 56 e 59 × 47, stessi rapporti. Il foglio è il disegno di prima (648 × 824) scalato di 904 / 824 = 1,0971 attorno al centro e ristretto in larghezza a 684 (rapporto 1,32 misurato, non più √φ): le righe, le figure e le estensioni scalano di 1,0971 senza deformarsi, solo il contorno e la piega seguono la larghezza. La cartella è quella di prima (824 × 663) scalata di 944 / 824 = 1,1456 attorno al centro: 944 × 760 contro 944 × 752 misurato (1 %, entro tolleranza). Nel Dock la cartella misura 1,13 volte il corpo delle app accanto (54 contro 48 px a 2×), cioè 0,905 della tela: torna con 944 / 1024 |
-| Volume 944 × 583 | la lastra di prima (824 × 509: lato lungo il corpo, corto 824 / φ, fascia frontale 509 / φ² da y 572) scalata di 1,1456 attorno al centro come la cartella: il volume del Finder è una scatola verticale (0,71 × 0,86 della tela sulla Scrivania), una forma diversa dalla lastra, quindi non si misura direttamente; fascia frontale 222,8 da y 580,7 |
-| Disco ottico Ø 944 | Ø 824 scalato come la cartella; zona di fermo Ø 361, anello interno Ø 264, foro Ø 128 (le misure di prima × 1,1456) |
-| Cestino 656 × 824 | misurato nel Dock (cattura a 2×): il cestello è alto quanto il corpo delle app (49 contro 48 px) e poggia sulla stessa base, largo 0,86 del corpo; con i fogli dentro è alto 1,10 del corpo. Il disegno di prima (584 × 734, base a 914) è scalato di 824 / 734 = 1,1226 e la base portata a 924: cestello 656 × 824 (bordo 667), con i fogli 913 (1,11 del corpo); resta più stretto del riferimento (0,81 del corpo) perché la forma è nostra |
-| Badge 315 e 509 | corpo / φ² e corpo / φ: il riquadro del badge va dal bordo del corpo alla linea aurea (x e y 415 e 609) |
+| Body 824 | canvas − 2 × 100; radius 215 ≈ 0.26 × side (smoothing 0.55) |
+| Square and circle 600 | base quantity (20 u) |
+| Circle 424 | 600 / √2: circle inscribed in the square inscribed in the 600 circle |
+| Vertical 520 × 680, horizontal 680 × 520 | same perimeter as the 600 square (520 + 680 = 2 × 600), area 98 %; ratio 1.31, not golden |
+| Document 684 × 904, folder 944 × 760 | measured on Finder at large icons (1× capture, 128 pt icons): sheet body 86 × 114 (0.668 × 0.883 of the canvas, without the ≈ 5 pt per side shadow that the shell adds; 96 × 124 with the shadow), folder 118 × 94 (0.922 × 0.734); at 64 pt 42 × 56 and 59 × 47, same ratios. The sheet is the earlier drawing (648 × 824) scaled by 904 / 824 = 1.0971 around the center and narrowed in width to 684 (measured ratio 1.32, no longer √φ): lines, figures and extensions scale by 1.0971 without distortion, only the outline and the fold follow the width. The folder is the earlier one (824 × 663) scaled by 944 / 824 = 1.1456 around the center: 944 × 760 against 944 × 752 measured (1 %, within tolerance). In the Dock the folder measures 1.13 times the body of the neighboring apps (54 against 48 px at 2×), that is 0.905 of the canvas: matches 944 / 1024 |
+| Volume 944 × 583 | the earlier slab (824 × 509: long side the body, short side 824 / φ, front band 509 / φ² from y 572) scaled by 1.1456 around the center like the folder: the Finder volume is an upright box (0.71 × 0.86 of the canvas on the Desktop), a different shape from the slab, so it is not measured directly; front band 222.8 from y 580.7 |
+| Optical disc Ø 944 | Ø 824 scaled like the folder; stop zone Ø 361, inner ring Ø 264, hole Ø 128 (the earlier measures × 1.1456) |
+| Trash 656 × 824 | measured in the Dock (2× capture): the bin is as tall as the app body (49 against 48 px) and rests on the same base, 0.86 of the body wide; with the sheets inside it is 1.10 of the body tall. The earlier drawing (584 × 734, base at 914) is scaled by 824 / 734 = 1.1226 and the base moved to 924: bin 656 × 824 (rim 667), with the sheets 913 (1.11 of the body); it stays narrower than the reference (0.81 of the body) because the shape is our own |
+| Badge 315 and 509 | body / φ² and body / φ: the badge box goes from the edge of the body to the golden line (x and y 415 and 609) |
 
-Restano tutte: il sistema aureo le completa, non le sostituisce.
+All of them remain: the golden system completes them, it does not replace them.
 
-### Grandezze
+### Quantities
 
-| Grandezza | Valori | Uso |
+| Quantity | Values | Use |
 | --- | --- | --- |
-| Serie A (dalla keyline) | **600 · 371 · 229 · 142 · 87 · 54** (600 / φⁿ); passi intermedi √φ: 472 · 292 · 180 · 112 · 69 | lati e diametri dei pezzi principali |
-| Serie B (dal corpo) | 824 · 509 · 315 · 194 | pezzi che si misurano sul corpo (lente di Photo Viewer 316, carta di Mail 508, baffo di Mustache 522 entro tolleranza) |
-| Rettangoli | aureo 600 × 371 (largo, a (212, 326,5)) e 371 × 600 (alto); √2 (424 × 300); keyline orizzontale e verticale | schede, schermi, foto, dischi |
-| Linee auree del corpo | x e y = 415 e 609 (100 + 824 / φ² e 100 + 824 / φ) | divisori, orizzonti, pezzi decentrati |
-| Spessori | 13,5 · 17 · 22 · 28 · 35 · 45 · 57 (45 × √φⁿ, come i pesi dei simboli) | righe di testo, contorni, lancette, aste, manici |
-| Luci fra pezzi ripetuti | uguale allo spessore (1 : 1) per righe fitte (Mail, Terminal, file); spessore × φ per testo arioso (Text Editor); pezzo / φ² o pezzo / φ³ fra tessere e tasti | ritmo |
-| Raggi | 215 · 169 · 133 · 104 · 82 · 64 · 51 · 40 · 31 · 25 · 19 · 15 (215 / √φⁿ); capsula = metà altezza; pezzo annidato = raggio esterno − distanza | angoli |
-| Centro | ingombro del primo piano centrato su (512, 512) | composizione |
+| Series A (from the keyline) | **600 · 371 · 229 · 142 · 87 · 54** (600 / φⁿ); intermediate √φ steps: 472 · 292 · 180 · 112 · 69 | sides and diameters of the main pieces |
+| Series B (from the body) | 824 · 509 · 315 · 194 | pieces measured on the body (Photo Viewer lens 316, Mail paper 508, Mustache mustache 522 within tolerance) |
+| Rectangles | golden 600 × 371 (wide, at (212, 326.5)) and 371 × 600 (tall); √2 (424 × 300); horizontal and vertical keylines | cards, screens, photos, disks |
+| Golden lines of the body | x and y = 415 and 609 (100 + 824 / φ² and 100 + 824 / φ) | dividers, horizons, off-center pieces |
+| Thicknesses | 13.5 · 17 · 22 · 28 · 35 · 45 · 57 (45 × √φⁿ, like the symbol weights) | text lines, outlines, hands, stems, handles |
+| Gaps between repeated pieces | equal to the thickness (1 : 1) for dense lines (Mail, Terminal, files); thickness × φ for airy text (Text Editor); piece / φ² or piece / φ³ between tiles and keys | rhythm |
+| Radii | 215 · 169 · 133 · 104 · 82 · 64 · 51 · 40 · 31 · 25 · 19 · 15 (215 / √φⁿ); capsule = half the height; nested piece = outer radius − distance | corners |
+| Center | footprint of the foreground centered on (512, 512) | composition |
 
-Rapporti interni ammessi: φ, √φ, √2, 1 : 1, 1 : 2. Tolleranza: una misura rispetta il
-sistema se sta entro il 3 % della grandezza o entro 4 px. Le lunghezze delle singole righe di
-testo e le posizioni dei dettagli illustrativi non sono vincolate.
+Allowed internal ratios: φ, √φ, √2, 1 : 1, 1 : 2. Tolerance: a measure complies with the
+system if it is within 3 % of the quantity or within 4 px. The lengths of individual text
+lines and the positions of illustrative details are not constrained.
 
-Eccezioni volute:
+Deliberate exceptions:
 
-- le icone dei file escono dal corpo delle app e occupano quasi tutta la tela, come nel
-  riferimento (vedi Le keyline esistenti): foglio 684 × 904 da (170, 60), cartella 944 × 760 da
-  (40, 132), entrambi centrati su (512, 512). Storia: il disegno di partenza (foglio 520 × 680,
-  cartella 680 × 520) era stato portato al corpo 824 (foglio 648 × 824 al rapporto √φ, cartella
-  824 × 663), poi alla tela intera con le misure del Finder (v0.2.0). Il contenuto del foglio è
-  centrato su y 469 (473 prima), sopra l'estensione; il pannello anteriore della cartella è
-  944 × 619 da y 273,1 (0,815 dell'altezza; nel riferimento 0,82);
-- il Cestino è largo 656 (bordo 667) e alto 824, con la base del cestello a y 924, sul fondo del
-  corpo delle app: nel Dock poggia sulla stessa linea e ha la stessa altezza;
-- la piega dei fogli (174 × 176: la 165 × 160 di prima, scalata in larghezza di 684 / 648 e in
-  altezza di 904 / 824) non è sulla serie: cambiarla vuol dire ridisegnare il tracciato di ogni
-  foglio; resta finché i fogli non si ridisegnano;
-- il Cestino non è né foglio né cartella: ha la sua keyline, misurata nel Dock;
-- Stack Close (il pulsante che prende il posto della cartella nel Dock a pila aperta) è un'icona
-  `file` a forma libera che segue la **griglia delle app**: quadrato arrotondato 824 × 824 a
-  (100, 100), centro (512, 512), angoli 174,42. Nella cattura a 1× il pulsante è 52 pt contro
-  49 pt del corpo delle app, con il centro 2,5 pt più in alto; per scelta di progetto sta nella
-  griglia come le icone vicine, e la geometria misurata (874, angoli 185, centro a 470) è scalata
-  di 824/874 e ricentrata. Fondo bianco traslucido da 0,35 (alto) a 0,08
-  (basso) sul Dock (129, 130, 137), che dà 173 in alto e 139 in basso; chevron in giù #1B1B1D
-  largo 19 pt e alto 10, tratto 2,5 pt (39,6 dopo la scala) con estremi tondi, centrato sul
-  pulsante (punti (381,42, 452,6), (512, 571,4), (642,58, 452,6)). Il tema
-  scuro è misurato (sessione M6, `dock-stacks.md`): stesso quadrato 51 × 52 pt, ma **più scuro**
-  del Dock (104, 105, 110): fondo **nero traslucido** da 0,12 (alto, dà 92) a 0,56 (basso, dà 48),
-  coerente sui tre canali entro ±0,02 (a differenza di un opaco, segue il Dock); chevron
-  **bianco #FFFFFF**, stessa geometria;
-- i tipi di file aggiunti per Mustache (foglio di calcolo, presentazione, font, immagine disco,
-  eseguibile, documento, pagina web) hanno la figura nel riquadro 461 × 292 centrato su
-  (512, 473), come Code e Image (la larghezza delle righe di testo dei fogli, 461 ≈ 472 entro
-  tolleranza; 292 serie A); la tabella del foglio di calcolo ha luci di 13,5, la diapositiva è
-  461 × 285 (rapporto φ), il globo Ø 292 con meridiani di 13,5, "Aa" è Inter SemiBold in
-  tracciati con la maiuscola alta 292, il disco dell'immagine disco è 461 × 229 (serie A).
-  Queste misure sono sul foglio da 824 e negli SVG scalano tutte di 1,0971 attorno a (512, 512)
-  (riquadro 506 × 320 centrato su (512, 469));
-- i volumi sono lastre 824 × 509 con raggio 64 e il server è tre unità alte 155 con luci di 22,
-  sul disegno da 824; negli SVG scalano di 1,1456 attorno al centro (lastra 944 × 583, raggio 73).
+- file icons come out of the app body and fill almost the whole canvas, as in the
+  reference (see The existing keylines): sheet 684 × 904 from (170, 60), folder 944 × 760 from
+  (40, 132), both centered on (512, 512). History: the starting drawing (sheet 520 × 680,
+  folder 680 × 520) was brought to the 824 body (sheet 648 × 824 at the √φ ratio, folder
+  824 × 663), then to the full canvas with the Finder measures (v0.2.0). The sheet content is
+  centered on y 469 (473 before), above the extension; the front panel of the folder is
+  944 × 619 from y 273.1 (0.815 of the height; in the reference 0.82);
+- the Trash is 656 wide (rim 667) and 824 tall, with the bin base at y 924, on the bottom of the
+  app body: in the Dock it rests on the same line and has the same height;
+- the fold of the sheets (174 × 176: the earlier 165 × 160, scaled in width by 684 / 648 and in
+  height by 904 / 824) is not on the series: changing it means redrawing the path of every
+  sheet; it stays until the sheets are redrawn;
+- the Trash is neither sheet nor folder: it has its own keyline, measured in the Dock;
+- Stack Close (the button that takes the place of the folder in the Dock when the stack is open)
+  is a free-form `file` icon that follows the **app grid**: rounded square 824 × 824 at
+  (100, 100), center (512, 512), corners 174.42. In the 1× capture the button is 52 pt against
+  49 pt for the app body, with the center 2.5 pt higher; by design choice it sits in the grid
+  like the neighboring icons, and the measured geometry (874, corners 185, center at 470) is
+  scaled by 824/874 and recentered. Translucent white background from 0.35 (top) to 0.08
+  (bottom) over the Dock (129, 130, 137), giving 173 at the top and 139 at the bottom; downward
+  chevron #1B1B1D 19 pt wide and 10 tall, stroke 2.5 pt (39.6 after scaling) with round ends,
+  centered on the button (points (381.42, 452.6), (512, 571.4), (642.58, 452.6)). The dark
+  theme is measured (session M6, `dock-stacks.md`): same 51 × 52 pt square, but **darker**
+  than the Dock (104, 105, 110): **translucent black** background from 0.12 (top, gives 92) to
+  0.56 (bottom, gives 48), consistent on the three channels within ±0.02 (unlike an opaque
+  one, it follows the Dock); **white #FFFFFF** chevron, same geometry;
+- the file types added for Mustache (spreadsheet, presentation, font, disk image, executable,
+  document, web page) have the figure in the 461 × 292 box centered on
+  (512, 473), like Code and Image (the width of the text lines of the sheets, 461 ≈ 472 within
+  tolerance; 292 series A); the spreadsheet table has gaps of 13.5, the slide is
+  461 × 285 (ratio φ), the globe Ø 292 with meridians of 13.5, "Aa" is Inter SemiBold in
+  outlines with capital height 292, the disk of the disk image is 461 × 229 (series A).
+  These measures are on the 824 sheet and in the SVGs they all scale by 1.0971 around (512, 512)
+  (box 506 × 320 centered on (512, 469));
+- volumes are 824 × 509 slabs with radius 64 and the server is three units 155 tall with gaps
+  of 22, on the 824 drawing; in the SVGs they scale by 1.1456 around the center (slab 944 × 583,
+  radius 73).
 
-Negli SVG la scala sta in un solo attributo: `transform` sul gruppo `icon` (`icon-dark`) per
-cartelle, volumi e Cestino; per i fogli il gruppo scala il tutto di 1,0971 e il contorno
-(`Page`) e la piega (`Corner`) hanno in più una riduzione orizzontale di 684 / 711 attorno
-all'asse del foglio. I tracciati restano quelli del disegno da 824.
+In the SVGs the scale is in a single attribute: `transform` on the `icon` group (`icon-dark`)
+for folders, volumes and Trash; for the sheets the group scales everything by 1.0971 and the
+outline (`Page`) and the fold (`Corner`) additionally have a horizontal reduction of 684 / 711
+around the axis of the sheet. The paths stay those of the 824 drawing.
 
-### Correzioni ottiche e scostamenti dal rapporto puro
+### Optical corrections and deviations from the pure ratio
 
-| Icona | Rapporto puro | Scelto | Motivo |
+| Icon | Pure ratio | Chosen | Reason |
 | --- | --- | --- | --- |
-| Clock | quadrante sulla keyline Ø 600 | a tutto corpo (tacche fino a Ø 740) | un orologio piccolo nel corpo bianco perde leggibilità; i numeri stanno su Ø 480 ≈ 472 |
-| Fonts | blocco maiuscole centrato su y 512 | 335…655 (centro 495) | centro ottico sopra quello geometrico; in x l'ingombro dei glifi è centrato su 512 |
-| Help | punto interrogativo centrato sull'ingombro | centro x 508 | la massa del ricciolo sta a destra |
-| Calendar | disco Ø 472 | Ø 460 (entro tolleranza) | la base del disco resta sulla keyline 812 e la luce mese–disco a 54 |
-| Text Editor | composizione centrata | foglio a x 248…736, penna in diagonale fino a x 905 | la penna è il secondo soggetto; resta dentro il corpo |
-| Store, lucchetto | centro dell'ingombro sul centro | centro su 512 con il manico incluso | sacchetto e lucchetto hanno la stessa base (794) |
-| Mustache | primo piano in una keyline | profilo a filo del corpo (margine 64), occhiali da x 182 a 842, lenti Ø 229 (tratto 22) centrate sulla linea aurea y 415, baffo largo 522 | ritratto a tutta tela: il profilo segue gli angoli del corpo |
+| Clock | dial on the Ø 600 keyline | full body (ticks up to Ø 740) | a small clock in the white body loses legibility; the numbers sit on Ø 480 ≈ 472 |
+| Fonts | capitals block centered on y 512 | 335…655 (center 495) | optical center above the geometric one; in x the glyph footprint is centered on 512 |
+| Help | question mark centered on its footprint | center x 508 | the mass of the curl is on the right |
+| Calendar | disc Ø 472 | Ø 460 (within tolerance) | the base of the disc stays on the 812 keyline and the month–disc gap at 54 |
+| Text Editor | centered composition | sheet at x 248…736, pen diagonal up to x 905 | the pen is the second subject; it stays inside the body |
+| Store, padlock | center of the footprint on the center | center on 512 with the handle included | bag and padlock have the same base (794) |
+| Mustache | foreground in a keyline | profile flush with the body (margin 64), glasses from x 182 to 842, lenses Ø 229 (stroke 22) centered on the golden line y 415, mustache 522 wide | full-canvas portrait: the profile follows the corners of the body |
 
-## Cartella di un'icona
+## Folder of an icon
 
 ```
 apps/<id>/
   icon.json              manifest
-  background.svg         fondo (tela 1024, riempie almeno il corpo)
-  foreground.svg         primo piano (tela 1024)
-  background-dark.svg    facoltativo: fondo per i temi scuri
-  foreground-dark.svg    facoltativo: primo piano per i temi scuri
-  preview.png            anteprima 256 px del tema Default, composta (solo documentazione)
+  background.svg         background (1024 canvas, fills at least the body)
+  foreground.svg         foreground (1024 canvas)
+  background-dark.svg    optional: background for dark themes
+  foreground-dark.svg    optional: foreground for dark themes
+  preview.png            256 px preview of the Default theme, composed (documentation only)
 ```
 
-`<id>` è in minuscolo con trattini (`text-editor`). Tutti gli SVG hanno
-`viewBox="0 0 1024 1024"`; le coordinate sono quelle della tela, quindi i livelli si
-sovrappongono senza spostamenti.
+`<id>` is lowercase with hyphens (`text-editor`). All SVGs have
+`viewBox="0 0 1024 1024"`; coordinates are those of the canvas, so the layers
+overlap without offsets.
 
-### Cosa NON va nei livelli
+### What does NOT go in the layers
 
-La shell li aggiunge da sé; se ci sono, il risultato raddoppia:
+The shell adds these by itself; if they are present, the result doubles:
 
-- la maschera del corpo e il suo bordo luminoso (il "Rim");
-- l'ombra del primo piano sul fondo e l'ombra dell'icona sul Dock;
-- la sfocatura del vetro e il riflesso dei temi Clear.
+- the body mask and its luminous border (the "Rim");
+- the shadow of the foreground on the background and the shadow of the icon on the Dock;
+- the glass blur and the reflection of the Clear themes.
 
-Le ombre e le sfumature **interne** al disegno (fra due parti del primo piano) fanno parte
-dell'illustrazione e restano.
+Shadows and gradients **internal** to the drawing (between two parts of the foreground) are
+part of the illustration and stay.
 
-Vale anche per le icone `file`: tutte (fogli, cartelle, Cestino, volumi e badge) sono
-**piatte**, solo riempimenti, sfumature interne e un filo di contorno del foglio o della
-lastra, senza ombra a terra né ombre esterne o interne fatte con i filtri: l'ombra del
-contesto la mette la shell (IC-01). Negli SVG di `files/` non c'è nessun `filter`. I fogli, le
-cartelle e il Cestino disegnati prima dei tipi di file per Mustache avevano l'ombra a terra e le
-ombre dei pezzi: sono stati appiattiti con la stessa regola, senza cambiare forma, colori o
-proporzioni.
+This also holds for `file` icons: all of them (sheets, folders, Trash, volumes and badges) are
+**flat**, only fills, internal gradients and a thin outline of the sheet or slab, with no
+ground shadow and no external or internal shadows made with filters: the context shadow is
+added by the shell (IC-01). There is no `filter` in the SVGs of `files/`. The sheets, folders
+and Trash drawn before the file types for Mustache had the ground shadow and the shadows of
+the pieces: they were flattened with the same rule, without changing shape, colors or
+proportions.
 
-Sfumatura verticale dei fogli e delle cartelle: misurata sul Finder a icone grandi (luminanza
-Rec. 709 fra il 10 % e il 90 % dell'altezza del pannello anteriore, lontano da bordi e
-simboli), la cartella cala di circa 27 su 255 (RGB 127 200 243 in alto, 96 174 225 in basso) e
-il foglio senza anteprima non cala (245 uniforme). I fogli vanno quindi da `#FFFFFF` a
-`#F8F9FB` (scuro `#3A3A3E` a `#333337`, calo ≈ 4 e ≈ 5) e le cartelle hanno due soli passi
-(pannello `#8FCDFF` a `#5AA7F8`, scuro `#7DBBF6` a `#4D93E6`, calo ≈ 31; dietro `#4A9EFB` a
-`#2F84EE`, scuro `#3786E6` a `#1F68CC`), contro un calo di ≈ 64 delle cartelle e ≈ 12 dei fogli
-di prima.
+Vertical gradient of sheets and folders: measured on Finder at large icons (Rec. 709
+luminance between 10 % and 90 % of the front panel height, away from edges and symbols), the
+folder drops by about 27 out of 255 (RGB 127 200 243 at the top, 96 174 225 at the bottom) and
+the sheet without a preview does not drop (245 uniform). The sheets therefore go from `#FFFFFF`
+to `#F8F9FB` (dark `#3A3A3E` to `#333337`, drop ≈ 4 and ≈ 5) and the folders have only two
+steps (panel `#8FCDFF` to `#5AA7F8`, dark `#7DBBF6` to `#4D93E6`, drop ≈ 31; back `#4A9EFB` to
+`#2F84EE`, dark `#3786E6` to `#1F68CC`), against a drop of ≈ 64 for folders and ≈ 12 for
+sheets before.
 
-### Testo
+### Text
 
-Il testo negli SVG usa solo Inter (fornito dalla shell). Meglio convertirlo in tracciati
-quando non deve cambiare.
+Text in SVGs uses only Inter (provided by the shell). It is better to convert it to outlines
+when it does not need to change.
 
-## Manifest `icon.json`
+## `icon.json` manifest
 
 ```json
 {
@@ -205,39 +206,39 @@ quando non deve cambiare.
 }
 ```
 
-| Campo | Valori |
+| Field | Values |
 | --- | --- |
-| `kind` | `app` (forma imposta dalla shell) o `file` (forma libera) |
-| `keyline` | `square`, `circle`, `circle-small`, `portrait`, `landscape`, `full`; per i volumi `volume` (solo documentazione: la shell non ritaglia le icone `file`) |
-| `layers` | dal basso verso l'alto: un `background` e da 1 a 4 livelli di primo piano |
-| `shadow` | ombra che la shell disegna sotto il livello: `neutral`, `chromatic` (presa dal colore del livello) o `none` |
-| `variants.dark` | livelli sostitutivi per Dark, Clear Dark e Tinted Dark |
-| `dynamic` | contenuto aggiornato a runtime, vedi sotto |
+| `kind` | `app` (shape imposed by the shell) or `file` (free-form) |
+| `keyline` | `square`, `circle`, `circle-small`, `portrait`, `landscape`, `full`; for volumes `volume` (documentation only: the shell does not clip `file` icons) |
+| `layers` | bottom to top: one `background` and 1 to 4 foreground layers |
+| `shadow` | shadow the shell draws under the layer: `neutral`, `chromatic` (taken from the layer color) or `none` |
+| `variants.dark` | replacement layers for Dark, Clear Dark and Tinted Dark |
+| `dynamic` | content updated at runtime, see below |
 
-Le icone `file` hanno un solo livello `artwork` (`icon.svg`, `icon-dark.svg`) e nessun
-fondo.
+`file` icons have a single `artwork` layer (`icon.svg`, `icon-dark.svg`) and no
+background.
 
-## Temi
+## Themes
 
-La shell genera sei temi dai livelli:
+The shell generates six themes from the layers:
 
-| Tema | Fondo | Primo piano |
+| Theme | Background | Foreground |
 | --- | --- | --- |
 | Default | `background` | `foreground` |
-| Dark | `background-dark`, altrimenti grafite `#3a3a3c → #161618` | `foreground-dark`, altrimenti `foreground` |
-| Clear Light | vetro chiaro (bianco 50 % → 25 % sopra lo sfondo sfocato) | `foreground` in scala di grigi, luminanza mappata su 105–255 |
-| Clear Dark | vetro scuro (grafite 50 % → nero 55 %) | come sopra, mappata su 150–255 |
-| Tinted Light | tinta schiarita al 90 % → 76 % | luminanza mappata sulla tinta (scura → tinta → bianco) |
-| Tinted Dark | tinta scurita al 62 % → 84 % | luminanza mappata da tinta scura a tinta chiara |
+| Dark | `background-dark`, otherwise graphite `#3a3a3c → #161618` | `foreground-dark`, otherwise `foreground` |
+| Clear Light | light glass (white 50 % → 25 % over the blurred backdrop) | `foreground` in grayscale, luminance mapped to 105–255 |
+| Clear Dark | dark glass (graphite 50 % → black 55 %) | as above, mapped to 150–255 |
+| Tinted Light | tint lightened to 90 % → 76 % | luminance mapped to the tint (dark → tint → white) |
+| Tinted Dark | tint darkened to 62 % → 84 % | luminance mapped from dark tint to light tint |
 
-Nei temi scuri il fondo è neutro e il colore resta sul primo piano (Mail, Store, Help):
-è la regola del set.
+In the dark themes the background is neutral and the color stays on the foreground (Mail,
+Store, Help): it is the rule of the set.
 
-## Contenuto dinamico
+## Dynamic content
 
-`dynamic` descrive i livelli che la shell aggiorna a runtime.
+`dynamic` describes the layers that the shell updates at runtime.
 
-### Orologio
+### Clock
 
 ```json
 "dynamic": {
@@ -251,13 +252,13 @@ Nei temi scuri il fondo è neutro e il colore resta sul primo piano (Mail, Store
 }
 ```
 
-Ogni lancetta è disegnata verso le 12 e ruota attorno a (512, 512):
-ore = (h mod 12 + m/60 + s/3600) × 30°, minuti = (m + s/60) × 6°, secondi = s × 6°.
-`cap` (mozzo e perno) va sopra le lancette. La lancetta dei secondi si mostra solo da
-`min_size` pt in su; aggiornamento ogni secondo se visibile, altrimenti ogni minuto, mai
-con l'icona fuori schermo.
+Each hand is drawn pointing to 12 and rotates around (512, 512):
+hours = (h mod 12 + m/60 + s/3600) × 30°, minutes = (m + s/60) × 6°, seconds = s × 6°.
+`cap` (hub and pin) goes above the hands. The second hand is shown only from
+`min_size` pt up; it updates every second if visible, otherwise every minute, never
+while the icon is off screen.
 
-### Calendario
+### Calendar
 
 ```json
 "dynamic": {
@@ -270,14 +271,14 @@ con l'icona fuori schermo.
 }
 ```
 
-Mese per intero, localizzato; se supera `max_width` il corpo scende in proporzione e la
-linea di base di 0,6 × la riduzione. Giorno senza zero iniziale. Aggiornamento a
-mezzanotte locale e al cambio di data o fuso.
+Full month name, localized; if it exceeds `max_width` the size shrinks proportionally and the
+baseline by 0.6 × the reduction. Day without a leading zero. Updates at local midnight and on
+date or time zone change.
 
-### File generico
+### Generic file
 
-`files/file-generic` è il foglio vuoto su cui la shell scrive l'estensione, per i tipi di
-file senza un'icona propria (`.json`, `.docx`, `.blend`…).
+`files/file-generic` is the blank sheet on which the shell writes the extension, for file
+types without an icon of their own (`.json`, `.docx`, `.blend`…).
 
 ```json
 "dynamic": {
@@ -297,43 +298,44 @@ file senza un'icona propria (`.json`, `.docx`, `.blend`…).
 }
 ```
 
-- Etichetta: l'estensione senza punto, in maiuscolo, centrata nel `box` (centro ottico
-  del foglio, y 469 come le altre icone dei file).
-- Se l'estensione supera `max_width` il corpo scende in proporzione; oltre `max_chars`
-  caratteri, o senza estensione, si usa `fallback` (il foglio con il punto di domanda).
-- Colore dalla categoria, nell'ordine: `overrides` dell'estensione, poi la `category` della
-  voce di `icons.mime` che ha scelto il file generico, poi la categoria del tipo MIME
-  (shared-mime-info): `text/*` e documenti da ufficio → `document`; JSON, XML, YAML, CSV,
-  database → `data`; sorgenti e script → `code`; archivi e pacchetti → `archive`; `image/*`,
-  `audio/*`, `video/*`, font → `media`; il resto → `other`. `overrides` associa a una singola
-  estensione una categoria o un colore (`{"json": "data"}`, `{"sketch": {"color": "#f7b500"}}`).
-  Categorie e `overrides` valgono **solo per il file generico**: un'icona di tipo ha il colore
-  del proprio manifest (vedi Icone dei tipi di file) e non lo prende mai da qui.
-- Il tipo di file con un'icona propria usa sempre quella. `icons` è **la** mappa del repo (tipo →
-  icona); chi risolve l'icona di un file (SilicaIcon, Mustache, il Dock) non ne tiene una sua.
-  Una voce di `icons.mime` è il nome di un'icona (`"text/csv": "file-spreadsheet"`) oppure il
-  file generico con la sua categoria (`"application/json": {"icon": "file-generic",
-  "category": "data"}`). Ordine di risoluzione per un file regolare:
-  0. il tipo MIME si porta al nome canonico con gli `aliases` di shared-mime-info
+- Label: the extension without the dot, uppercase, centered in the `box` (optical center of
+  the sheet, y 469 like the other file icons).
+- If the extension exceeds `max_width` the size shrinks proportionally; beyond `max_chars`
+  characters, or without an extension, `fallback` is used (the sheet with the question mark).
+- Color from the category, in order: the extension's `overrides`, then the `category` of the
+  `icons.mime` entry that chose the generic file, then the category of the MIME type
+  (shared-mime-info): `text/*` and office documents → `document`; JSON, XML, YAML, CSV,
+  databases → `data`; sources and scripts → `code`; archives and packages → `archive`;
+  `image/*`, `audio/*`, `video/*`, fonts → `media`; everything else → `other`. `overrides`
+  maps a single extension to a category or a color (`{"json": "data"}`,
+  `{"sketch": {"color": "#f7b500"}}`). Categories and `overrides` apply **only to the generic
+  file**: a type icon has the color of its own manifest (see File type icons) and never takes
+  it from here.
+- A file type with an icon of its own always uses that. `icons` is **the** map of the repo
+  (type → icon); whoever resolves a file's icon (SilicaIcon, Mustache, the Dock) keeps no map
+  of its own. An `icons.mime` entry is the name of an icon (`"text/csv": "file-spreadsheet"`)
+  or the generic file with its category (`"application/json": {"icon": "file-generic",
+  "category": "data"}`). Resolution order for a regular file:
+  0. the MIME type is brought to its canonical name with the shared-mime-info `aliases`
      (`text/xml` → `application/xml`, `text/x-yaml` → `application/yaml`);
-  0b. se il tipo viene solo dal nome e `globs2` dà per quell'estensione più tipi con lo stesso
-     peso (nome ambiguo: `.ts` è TypeScript, Qt Linguist o MPEG-TS a seconda del sistema), il
-     passo 4 (`icons.extensions`) vale prima dei passi 1–3; se il contenuto decide il tipo
-     (magic), resta l'ordine normale;
-  1. il tipo MIME (shared-mime-info, dal contenuto e dal nome) in `icons.mime`, esatto;
-  2. lo stesso con il sottotipo `*` (`image/*`, `audio/*`, `video/*`, `font/*`);
-  3. i genitori del tipo (`sub-class-of` di shared-mime-info, in ordine), ripetendo 1 e 2: un
-     tipo `text/x-…` senza voce resta così testo e non codice solo se nessun genitore è in mappa;
-  4. l'estensione in minuscolo in `icons.extensions` (l'ultima dopo il punto; per i nomi
-     `.tar.<x>` vale l'estensione finale, che è già in mappa come archivio);
-  5. altrimenti `file-generic` con l'etichetta e il colore di categoria; senza estensione o
-     oltre `max_chars`, `fallback`.
-  Un eseguibile senza estensione (bit `x` e tipo `application/x-executable`,
-  `application/x-pie-executable`, `application/x-shellscript`) prende `file-executable` al
-  passo 1; un file con bit `x` ma di un altro tipo (un `.py`) tiene l'icona del suo tipo.
-- Icone dei tipi e categoria della loro estensione nel file generico:
+  0b. if the type comes only from the name and `globs2` gives several types of the same
+     weight for that extension (ambiguous name: `.ts` is TypeScript, Qt Linguist or MPEG-TS
+     depending on the system), step 4 (`icons.extensions`) applies before steps 1–3; if the
+     content decides the type (magic), the normal order stays;
+  1. the MIME type (shared-mime-info, from content and name) in `icons.mime`, exact;
+  2. the same with the subtype `*` (`image/*`, `audio/*`, `video/*`, `font/*`);
+  3. the parents of the type (`sub-class-of` of shared-mime-info, in order), repeating 1 and 2:
+     a `text/x-…` type without an entry stays text and not code only if no parent is in the map;
+  4. the lowercase extension in `icons.extensions` (the last one after the dot; for `.tar.<x>`
+     names the final extension applies, which is already in the map as an archive);
+  5. otherwise `file-generic` with the label and the category color; without an extension or
+     beyond `max_chars`, `fallback`.
+  An executable without an extension (`x` bit and type `application/x-executable`,
+  `application/x-pie-executable`, `application/x-shellscript`) gets `file-executable` at
+  step 1; a file with the `x` bit but of another type (a `.py`) keeps the icon of its type.
+- Type icons and the category of their extension in the generic file:
 
-  | Icona | Estensioni (sintesi) | Categoria |
+  | Icon | Extensions (summary) | Category |
   | --- | --- | --- |
   | `file-pdf` | pdf | document |
   | `file-text` | txt, md, log, rst | document |
@@ -346,47 +348,49 @@ file senza un'icona propria (`.json`, `.docx`, `.blend`…).
   | `file-web` | html, htm, xhtml, mhtml | code |
   | `file-code` | rs, dart, py, js, ts, c, go, java, css… | code |
   | `file-archive` | zip, tar, gz, xz, zst, 7z, rar, deb, rpm… | archive |
-  | `file-image`, `file-audio`, `file-video` | i formati comuni | media |
+  | `file-image`, `file-audio`, `file-video` | the common formats | media |
 
-  L'elenco completo è nel manifest.
-- **Una voce esplicita vince sempre sui genitori.** Il passo 3 segue `sub-class-of`, e in
-  shared-mime-info molti formati di dati discendono da tipi di codice o di testo:
-  `application/json` è sottoclasse di `application/json5` → `application/ecmascript` →
-  `text/javascript` (prenderebbe `file-code`), `application/xml`, `application/yaml`,
-  `application/toml`, `application/sql`, `text/calendar` e `text/vcard` di `text/plain`
-  (prenderebbero `file-text`), EPUB, i documenti ODF senza icona e i formati Apple di
-  `application/zip` (prenderebbero `file-archive`). Per questi `icons.mime` ha una voce
-  esplicita, perché è deterministica: non dipende dalla versione del database né da quale
-  genitore si incontra prima, e un `"json": "data"` in `overrides` da solo non basterebbe mai,
-  perché `overrides` conta solo quando l'icona è già il file generico. Una voce esplicita copre
-  anche i figli (`application/geo+json`, `application/ld+json` passano da `application/json`;
-  i tipi `+xml` da `application/xml`). Le voci aggiunte (dal database di shared-mime-info, ramo principale, ottobre 2026):
-  - file generico `data`: `application/json`, `application/json5`, `application/xml`,
+  The full list is in the manifest.
+- **An explicit entry always wins over the parents.** Step 3 follows `sub-class-of`, and in
+  shared-mime-info many data formats descend from code or text types:
+  `application/json` is a subclass of `application/json5` → `application/ecmascript` →
+  `text/javascript` (it would get `file-code`), `application/xml`, `application/yaml`,
+  `application/toml`, `application/sql`, `text/calendar` and `text/vcard` of `text/plain`
+  (they would get `file-text`), EPUB, ODF documents without an icon and the Apple formats of
+  `application/zip` (they would get `file-archive`). For these `icons.mime` has an explicit
+  entry, because it is deterministic: it does not depend on the database version or on which
+  parent is met first, and a `"json": "data"` in `overrides` alone would never be enough,
+  because `overrides` counts only when the icon is already the generic file. An explicit entry
+  also covers the children (`application/geo+json`, `application/ld+json` go through
+  `application/json`; the `+xml` types through `application/xml`). The added entries (from the
+  shared-mime-info database, main branch, October 2026):
+  - generic file `data`: `application/json`, `application/json5`, `application/xml`,
     `application/xml-dtd`, `application/yaml`, `application/toml`, `application/sql`,
-    `text/calendar`, `text/vcard`, KMZ, database ODF;
-  - file generico `document`: notebook Jupyter (`application/x-ipynb+json`), EPUB, FictionBook,
-    fumetti CBZ/CBR, PostScript, XPS e OpenXPS, TeX, e-mail (`message/rfc822`), disegni,
-    grafici e formule ODF, Visio, Draw e Math di OpenOffice 1, HWPX;
-  - file generico `media`: immagine ODF, `model/3mf`;
-  - icone di tipo: ODF flat XML (`fodt`, `fods`, `fodp`), modelli e varianti con macro di
-    Office (`dotx`, `dotm`, `xltx`, `xltm`, `potx`, `potm`, `ppsx`, `ppsm`, `sldx`, `sldm`),
-    Pages, Numbers e Keynote, Writer, Calc e Impress di OpenOffice 1 → documento, foglio di
-    calcolo, presentazione; TypeScript (`application/typescript`, che shared-mime-info fa
-    discendere da `application/x-executable`), Dart, C#, Julia, Elixir, Erlang, Haskell, Nim,
-    OCaml, Sass e Scala → `file-code` (altrimenti `text/plain` li farebbe testo, anche se la
-    loro estensione è in `icons.extensions`).
+    `text/calendar`, `text/vcard`, KMZ, ODF databases;
+  - generic file `document`: Jupyter notebooks (`application/x-ipynb+json`), EPUB, FictionBook,
+    CBZ/CBR comics, PostScript, XPS and OpenXPS, TeX, e-mail (`message/rfc822`), ODF drawings,
+    charts and formulas, Visio, OpenOffice 1 Draw and Math, HWPX;
+  - generic file `media`: ODF image, `model/3mf`;
+  - type icons: ODF flat XML (`fodt`, `fods`, `fodp`), Office templates and macro-enabled
+    variants (`dotx`, `dotm`, `xltx`, `xltm`, `potx`, `potm`, `ppsx`, `ppsm`, `sldx`, `sldm`),
+    Pages, Numbers and Keynote, OpenOffice 1 Writer, Calc and Impress → document, spreadsheet,
+    presentation; TypeScript (`application/typescript`, which shared-mime-info makes descend
+    from `application/x-executable`), Dart, C#, Julia, Elixir, Erlang, Haskell, Nim,
+    OCaml, Sass and Scala → `file-code` (otherwise `text/plain` would make them text, even
+    though their extension is in `icons.extensions`).
 
-  Restano ai genitori, di proposito: i pacchetti ZIP (`appx`, `msix`, `xpi`, `oxt`, `pkpass`)
-  sono archivi; gli altri sorgenti senza voce (Fortran, Pascal, Lisp…) e i formati di testo
-  (sottotitoli, patch, unità systemd) restano `file-text`; i tipi che derivano da un'icona di
-  tipo (`pptm` da `pptx`, EXE e DLL da `application/x-executable`) ne prendono l'icona.
+  Left to the parents, on purpose: ZIP packages (`appx`, `msix`, `xpi`, `oxt`, `pkpass`)
+  are archives; the other sources without an entry (Fortran, Pascal, Lisp…) and the text
+  formats (subtitles, patches, systemd units) stay `file-text`; the types that derive from a
+  type icon (`pptm` from `pptx`, EXE and DLL from `application/x-executable`) take its icon.
 
-### Icone dei tipi di file
+### File type icons
 
-Le icone dei tipi (`file-pdf`, `file-text`, `file-image`, `file-code`…) disegnano solo la
-figura: l'estensione la scrive la shell, come sul file generico, perché la stessa icona vale per
-`.jpg` e `.png`, `.ttf` e `.otf`, `.rs` e `.py`. Il tipo è `file-type-label`, distinto da
-`file-label`: non ha la mappa (`icons`), le categorie né `overrides`, e il colore è uno solo.
+Type icons (`file-pdf`, `file-text`, `file-image`, `file-code`…) draw only the figure: the
+extension is written by the shell, as on the generic file, because the same icon serves
+`.jpg` and `.png`, `.ttf` and `.otf`, `.rs` and `.py`. The type is `file-type-label`, distinct
+from `file-label`: it has no map (`icons`), no categories and no `overrides`, and the color is
+a single one.
 
 ```json
 "dynamic": {
@@ -399,131 +403,132 @@ figura: l'estensione la scrive la shell, come sul file generico, perché la stes
 }
 ```
 
-| Campo | Significato |
+| Field | Meaning |
 | --- | --- |
-| `box` | riquadro dell'etichetta, tela 1024: `[x, y, larghezza, altezza]`. L'altezza è la riga naturale di Inter (1,2102 × `size`); il testo è centrato in orizzontale e la riga centrata in verticale, quindi la linea di base cade a y + h/2 − 0,605 × corpo + 0,96875 × corpo |
-| `font`, `size`, `weight`, `tracking` | Inter (asse `opsz` 14), corpo in unità della tela, peso 500 (Medium) |
-| `case` | `upper`: l'estensione senza punto in maiuscolo |
-| `max_chars` | oltre questo numero di caratteri l'estensione non si scrive e vale `no_extension` |
-| `max_width` | larghezza massima del testo, uguale alla larghezza del `box` |
-| `overflow` | `shrink`: un'estensione entro `max_chars` più larga di `max_width` riduce il corpo in proporzione, sempre centrata nel `box`; `truncate` (non usato dalle icone del repo) taglierebbe ai primi `max_chars` caratteri |
-| `color`, `dark_color` | colore nei temi chiari e in Dark; Clear e Tinted passano l'icona composta (figura ed etichetta) per la loro mappatura, come la cartella generica |
-| `no_extension` | cosa scrivere se il file non ha estensione o l'ha più lunga di `max_chars`: `null` = niente etichetta, la figura basta (un eseguibile senza estensione, un `README`); una stringa la scrive tale e quale |
-| `min_size` | sotto questo lato dell'icona in pt (la tela intera, vedi Principio) l'etichetta non si disegna: a 16 pt sarebbe alta meno di 2 px |
+| `box` | label box, 1024 canvas: `[x, y, width, height]`. The height is Inter's natural line (1.2102 × `size`); the text is centered horizontally and the line centered vertically, so the baseline falls at y + h/2 − 0.605 × size + 0.96875 × size |
+| `font`, `size`, `weight`, `tracking` | Inter (`opsz` axis 14), size in canvas units, weight 500 (Medium) |
+| `case` | `upper`: the extension without the dot in uppercase |
+| `max_chars` | beyond this number of characters the extension is not written and `no_extension` applies |
+| `max_width` | maximum text width, equal to the width of the `box` |
+| `overflow` | `shrink`: an extension within `max_chars` wider than `max_width` reduces the size proportionally, always centered in the `box`; `truncate` (not used by the icons in the repo) would cut to the first `max_chars` characters |
+| `color`, `dark_color` | color in the light themes and in Dark; Clear and Tinted pass the composed icon (figure and label) through their mapping, like the generic folder |
+| `no_extension` | what to write if the file has no extension or one longer than `max_chars`: `null` = no label, the figure is enough (an executable without an extension, a `README`); a string is written as is |
+| `min_size` | below this icon side in pt (the full canvas, see Principle) the label is not drawn: at 16 pt it would be less than 2 px tall |
 
-L'estensione è la stessa del passo 4 della risoluzione (l'ultima dopo il punto, in minuscolo,
-poi in maiuscolo per `case`); per i nomi `.tar.<x>` la finale (`GZ`, `XZ`). Il riquadro è misurato
-sul testo che c'era negli SVG (centro x 512, riga da y 741,43; corpo 101,79, Medium; largo 440,
-la pagina da 648 meno due margini di 104) e scalato con il contenuto del foglio (× 1,0971 attorno
-a (512, 512)): riga da y 763,7, corpo 111,67, largo 482,72 su una pagina di 684 (margini 100).
-`XHTML`, `WOFF2`, `QCOW2` ci stanno a corpo pieno.
+The extension is the same as in step 4 of the resolution (the last one after the dot, lowercase,
+then uppercase through `case`); for `.tar.<x>` names the final one (`GZ`, `XZ`). The box is
+measured on the text that was in the SVGs (center x 512, line from y 741.43; size 101.79,
+Medium; 440 wide, the 648 page minus two margins of 104) and scaled with the sheet content
+(× 1.0971 around (512, 512)): line from y 763.7, size 111.67, 482.72 wide on a 684 page
+(margins 100). `XHTML`, `WOFF2`, `QCOW2` fit at full size.
 
-| Icona | `box` | `color` | `dark_color` | `no_extension` |
+| Icon | `box` | `color` | `dark_color` | `no_extension` |
 | --- | --- | --- | --- | --- |
-| `file-pdf` | 314,52, 755,73, 394,95, 136,04 (`max_chars` 4, `max_width` 394,95) | `#ffffff` | `#ffffff` | `"PDF"` |
-| `file-text` | 270,64, 763,7, 482,72, 136,04 | `#8e8e93` | `#aeaeb2` | null |
-| `file-document` | 270,64, 763,7, 482,72, 136,04 | `#2f7cf6` | `#5aa0ff` | null |
-| `file-spreadsheet` | 270,64, 763,7, 482,72, 136,04 | `#1f9d55` | `#3fd07f` | null |
-| `file-presentation` | 270,64, 763,7, 482,72, 136,04 | `#f2780c` | `#ff9f40` | null |
-| `file-code` | 270,64, 763,7, 482,72, 136,04 | `#ff6a00` | `#ff8a3d` | null |
-| `file-executable` | 270,64, 763,7, 482,72, 136,04 | `#ff6a00` | `#ff8a3d` | null |
-| `file-web` | 270,64, 763,7, 482,72, 136,04 | `#ff6a00` | `#ff8a3d` | null |
-| `file-archive` | 270,64, 763,7, 482,72, 136,04 | `#8e8e93` | `#aeaeb2` | null |
-| `file-disk-image` | 270,64, 763,7, 482,72, 136,04 | `#8e8e93` | `#aeaeb2` | null |
-| `file-image` | 270,64, 763,7, 482,72, 136,04 | `#30b0c7` | `#30b0c7` | null |
-| `file-audio` | 270,64, 763,7, 482,72, 136,04 | `#ff2d55` | `#ff2d55` | null |
-| `file-video` | 270,64, 763,7, 482,72, 136,04 | `#5e5ce6` | `#7d7aff` | null |
-| `file-font` | 270,64, 763,7, 482,72, 136,04 | `#e8336d` | `#ff5c8a` | null |
+| `file-pdf` | 314.52, 755.73, 394.95, 136.04 (`max_chars` 4, `max_width` 394.95) | `#ffffff` | `#ffffff` | `"PDF"` |
+| `file-text` | 270.64, 763.7, 482.72, 136.04 | `#8e8e93` | `#aeaeb2` | null |
+| `file-document` | 270.64, 763.7, 482.72, 136.04 | `#2f7cf6` | `#5aa0ff` | null |
+| `file-spreadsheet` | 270.64, 763.7, 482.72, 136.04 | `#1f9d55` | `#3fd07f` | null |
+| `file-presentation` | 270.64, 763.7, 482.72, 136.04 | `#f2780c` | `#ff9f40` | null |
+| `file-code` | 270.64, 763.7, 482.72, 136.04 | `#ff6a00` | `#ff8a3d` | null |
+| `file-executable` | 270.64, 763.7, 482.72, 136.04 | `#ff6a00` | `#ff8a3d` | null |
+| `file-web` | 270.64, 763.7, 482.72, 136.04 | `#ff6a00` | `#ff8a3d` | null |
+| `file-archive` | 270.64, 763.7, 482.72, 136.04 | `#8e8e93` | `#aeaeb2` | null |
+| `file-disk-image` | 270.64, 763.7, 482.72, 136.04 | `#8e8e93` | `#aeaeb2` | null |
+| `file-image` | 270.64, 763.7, 482.72, 136.04 | `#30b0c7` | `#30b0c7` | null |
+| `file-audio` | 270.64, 763.7, 482.72, 136.04 | `#ff2d55` | `#ff2d55` | null |
+| `file-video` | 270.64, 763.7, 482.72, 136.04 | `#5e5ce6` | `#7d7aff` | null |
+| `file-font` | 270.64, 763.7, 482.72, 136.04 | `#e8336d` | `#ff5c8a` | null |
 
-- **PDF**: anche l'etichetta del PDF è dinamica, bianca sulla pastiglia rossa (il `box` è la
-  pastiglia meno i margini). Un `.pdf` scrive `PDF`; un tipo che deriva da `application/pdf`
-  con un'altra estensione scrive la sua (`AI`); senza estensione resta `PDF`, perché la
-  pastiglia vuota sembrerebbe un errore. Così nessun SVG contiene testo.
-- I grigi (testo, archivio, immagine disco) e il viola del video si schiariscono in Dark,
-  perché sul foglio scuro avevano poco contrasto; arancio del codice e degli eseguibili come
-  la categoria `code` del file generico.
-- `file-unknown` non ha etichetta: è il foglio con il punto di domanda.
+- **PDF**: the PDF label is also dynamic, white on the red pill (the `box` is the pill minus
+  the margins). A `.pdf` writes `PDF`; a type that derives from `application/pdf` with another
+  extension writes its own (`AI`); without an extension it stays `PDF`, because the empty pill
+  would look like an error. This way no SVG contains text.
+- The grays (text, archive, disk image) and the purple of video lighten in Dark, because on the
+  dark sheet they had little contrast; orange for code and executables like the `code` category
+  of the generic file.
+- `file-unknown` has no label: it is the sheet with the question mark.
 
-`design/app-icons.sketch`: nella pagina Icons (e in Showcase Files) ogni tipo ha ancora il
-livello di testo `Extension` come esempio (`PNG`, `DOCX`…), nel colore del manifest; non va
-nell'esportazione, come `JSON` del file generico. Riferimento: `tools/compose.py`,
-`compose_file(icona, lato, scuro, estensione)`.
+`design/app-icons.sketch`: in the Icons page (and in Showcase Files) every type still has the
+`Extension` text layer as an example (`PNG`, `DOCX`…), in the manifest color; it does not go
+in the export, like `JSON` of the generic file. Reference: `tools/compose.py`,
+`compose_file(icon, side, dark, extension)`.
 
-### Volumi
+### Volumes
 
-`files/volume-*` sono i dischi e i server montati, sulla keyline volume (944 × 583). Non hanno
-contenuto dinamico: chi mostra un volume (barra laterale e finestre di Mustache, Scrivania,
-Dock) sceglie l'icona così, dal primo caso che vale:
+`files/volume-*` are the mounted disks and servers, on the volume keyline (944 × 583). They
+have no dynamic content: whoever shows a volume (sidebar and windows of Mustache, Desktop,
+Dock) chooses the icon like this, from the first case that applies:
 
-| Icona | Quando |
+| Icon | When |
 | --- | --- |
-| `volume-network` | mount di rete: tipo di file system `nfs`, `nfs4`, `cifs`, `smb3`, `9p`, `fuse.sshfs`, `fuse.rclone`, `davfs`; oppure un mount GVfs con schema `smb`, `sftp`, `ftp`, `ftps`, `dav`, `davs`, `nfs`, `afp`; vale anche per un server nella barra laterale non ancora montato |
-| `volume-disk-image` | dispositivo loop con un file dietro (`/dev/loop*`, interfaccia `org.freedesktop.UDisks2.Loop` con `BackingFile`): un'immagine montata, anche se è un ISO |
-| `volume-optical` | unità ottica: `Drive.Optical` vero in UDisks2, oppure supporto `optical_*` in `Drive.MediaCompatibility` o dispositivo `/dev/sr*` |
-| `volume-external` | unità rimovibile o esterna: `Drive.Removable` o `Drive.MediaRemovable` veri, oppure `Drive.ConnectionBus` `usb`, `sdio` o `ieee1394`; schede SD e chiavette comprese |
-| `volume-internal` | tutto il resto: la radice `/`, le altre partizioni dei dischi interni (`ConnectionBus` vuoto, NVMe e SATA) e un volume di cui non si sa niente |
+| `volume-network` | network mount: file system type `nfs`, `nfs4`, `cifs`, `smb3`, `9p`, `fuse.sshfs`, `fuse.rclone`, `davfs`; or a GVfs mount with scheme `smb`, `sftp`, `ftp`, `ftps`, `dav`, `davs`, `nfs`, `afp`; also applies to a server in the sidebar not yet mounted |
+| `volume-disk-image` | loop device with a file behind it (`/dev/loop*`, interface `org.freedesktop.UDisks2.Loop` with `BackingFile`): a mounted image, even if it is an ISO |
+| `volume-optical` | optical drive: `Drive.Optical` true in UDisks2, or `optical_*` media in `Drive.MediaCompatibility` or a `/dev/sr*` device |
+| `volume-external` | removable or external drive: `Drive.Removable` or `Drive.MediaRemovable` true, or `Drive.ConnectionBus` `usb`, `sdio` or `ieee1394`; SD cards and flash drives included |
+| `volume-internal` | everything else: the root `/`, the other partitions of internal disks (`ConnectionBus` empty, NVMe and SATA) and a volume about which nothing is known |
 
-Senza UDisks2 (o per un mount che UDisks2 non conosce) si usano `/proc/self/mountinfo` (tipo di
-file system e dispositivo) e `/sys/block/<disco>/removable`. Il nome è quello del volume
-(`IdLabel`), non l'icona. La cartella `NETWORK` della cartella generica resta per le *cartelle*
-di rete dentro un volume; il volume stesso è `volume-network`.
+Without UDisks2 (or for a mount that UDisks2 does not know) `/proc/self/mountinfo` (file system
+type and device) and `/sys/block/<disk>/removable` are used. The name is the volume's
+(`IdLabel`), not the icon's. The `NETWORK` folder of the generic folder remains for network
+*folders* inside a volume; the volume itself is `volume-network`.
 
-### Badge
+### Badges
 
-`badges/` contiene i badge che la shell sovrappone a un'icona di file o di cartella già
-composta. Non sono icone con un manifest: ogni badge è un SVG chiaro e uno scuro
-(`alias.svg`, `alias-dark.svg`…) sulla tela 1024, disegnato come un disco Ø 824 centrato
-(il corpo) con il simbolo nelle keyline 600 e 424. `badges/badges.json` riassume le regole sotto
-per chi le implementa.
+`badges/` contains the badges that the shell overlays on an already composed file or folder
+icon. They are not icons with a manifest: each badge is a light and a dark SVG
+(`alias.svg`, `alias-dark.svg`…) on the 1024 canvas, drawn as a centered Ø 824 disc (the body)
+with the symbol in the 600 and 424 keylines. `badges/badges.json` summarizes the rules below
+for implementers.
 
-| Badge | Disegno | Angolo | Quando |
+| Badge | Drawing | Corner | When |
 | --- | --- | --- | --- |
-| `alias` | freccia curva su disco bianco (grafite in scuro) | basso a sinistra | il file è un collegamento simbolico (`lstat`); un collegamento rotto prende in più `unreadable` |
-| `unreadable` | divieto (barra bianca su disco rosso) | basso a destra | l'utente non può leggerlo: `access(R_OK)` falso, per le cartelle `R_OK` o `X_OK` falso |
-| `locked` | lucchetto su disco bianco (grafite in scuro) | basso a destra | il file è bloccato: attributo immutabile o solo aggiunta (`STATX_ATTR_IMMUTABLE`, `STATX_ATTR_APPEND`, `chattr +i`/`+a`); non basta che manchi il permesso di scrittura, sennò mezzo sistema avrebbe il lucchetto |
-| `cloud` | nuvola blu con freccia in giù | basso a destra | il contenuto non è sul disco: lo dice chi elenca i file (un fornitore di sincronizzazione, un mount GVfs o rclone con file solo in rete). Non c'è uno standard freedesktop: Mustache lo mostra solo quando la sorgente lo riporta |
+| `alias` | curved arrow on a white disc (graphite in dark) | bottom left | the file is a symbolic link (`lstat`); a broken link additionally gets `unreadable` |
+| `unreadable` | prohibition sign (white bar on a red disc) | bottom right | the user cannot read it: `access(R_OK)` false, for folders `R_OK` or `X_OK` false |
+| `locked` | padlock on a white disc (graphite in dark) | bottom right | the file is locked: immutable or append-only attribute (`STATX_ATTR_IMMUTABLE`, `STATX_ATTR_APPEND`, `chattr +i`/`+a`); a missing write permission is not enough, otherwise half the system would have the padlock |
+| `cloud` | blue cloud with a down arrow | bottom right | the content is not on disk: stated by whoever lists the files (a sync provider, a GVfs or rclone mount with network-only files). There is no freedesktop standard: Mustache shows it only when the source reports it |
 
-Posizione e dimensione (tela 1024 dell'icona; lato dell'icona in pt, cioè la tela intera come
-per la cartella generica e l'etichetta, vedi Principio):
+Position and size (icon 1024 canvas; icon side in pt, that is the full canvas, as for the
+generic folder and the label, see Principle):
 
-| Lato dell'icona | Lato del badge | Riquadro, basso a sinistra | Riquadro, basso a destra | Quanti |
+| Icon side | Badge side | Box, bottom left | Box, bottom right | How many |
 | --- | --- | --- | --- | --- |
-| da 32 pt | 315 = 824 / φ² | x 100…415, y 609…924 | x 609…924, y 609…924 | uno per angolo |
-| 16–31 pt | 509 = 824 / φ | x 100…609, y 415…924 | x 415…924, y 415…924 | uno solo |
-| sotto 16 pt | — | — | — | nessuno |
+| from 32 pt | 315 = 824 / φ² | x 100…415, y 609…924 | x 609…924, y 609…924 | one per corner |
+| 16–31 pt | 509 = 824 / φ | x 100…609, y 415…924 | x 415…924, y 415…924 | only one |
+| below 16 pt | — | — | — | none |
 
-- Il riquadro va dal bordo del corpo delle app (100…924) alla linea aurea: il badge è appoggiato
-  a quell'angolo, non al disegno. Il foglio (x 170…854, y 60…964) è più stretto e più alto del
-  corpo, quindi il badge ne esce un poco a sinistra e sta sopra il fondo del foglio; cartelle
-  (x 40…984) e volumi sono più larghi del corpo, quindi il badge sta dentro il disegno.
-- Da verificare con la nuova regola del lato: nel Finder a icone da 128 pt il badge dell'alias
-  misura Ø ≈ 34 (0,27 della tela, da x ≈ 0,08 e fino a ≈ 1 pt dal fondo della tela), qui Ø 315 /
-  1024 = 0,31. Prima Mustache disegnava le icone dei file al 92 %, quindi il badge resa era 0,28;
-  la geometria non è cambiata in questa versione.
-- Composizione: la tela 1024 del badge si scala di k = lato / 824 e si sposta perché il suo
-  corpo (100, 100, 824, 824) coincida con il riquadro: origine della tela del badge =
-  (x₀ − 100 k, y₀ − 100 k). Si disegna dopo l'icona, dopo la tinta della cartella e dopo la
-  mappatura del tema: il badge non si tinge e non passa per Clear o Tinted.
-- Varianti: `-dark` nei temi Dark, Clear Dark e Tinted Dark; la chiara negli altri.
-- Precedenze: in basso a destra vince `unreadable`, poi `locked`, poi `cloud` (gli altri non
-  si mostrano). Sotto 32 pt resta un solo badge, il primo di `order`: `unreadable`, `alias`,
-  `locked`, `cloud`.
-- Nessuna ombra né bordo luminoso dalla shell: il disco ha già il suo filo di contorno (nero
-  15 % in chiaro, bianco 20 % in scuro, bianco pieno attorno al divieto).
-- Il badge segue lo stato dell'icona (selezione, trascinamento, ombra della cella): fa parte
-  dell'icona composta. Nel Dock e in Faro non si mostra.
+- The box goes from the edge of the app body (100…924) to the golden line: the badge rests
+  on that corner, not on the drawing. The sheet (x 170…854, y 60…964) is narrower and taller
+  than the body, so the badge sticks out a little to the left and sits above the bottom of the
+  sheet; folders (x 40…984) and volumes are wider than the body, so the badge sits inside the
+  drawing.
+- To be verified with the new side rule: in Finder at 128 pt icons the alias badge measures
+  Ø ≈ 34 (0.27 of the canvas, from x ≈ 0.08 and up to ≈ 1 pt from the bottom of the canvas),
+  here Ø 315 / 1024 = 0.31. Before, Mustache drew file icons at 92 %, so the rendered badge was
+  0.28; the geometry has not changed in this version.
+- Composition: the badge's 1024 canvas is scaled by k = side / 824 and shifted so that its body
+  (100, 100, 824, 824) coincides with the box: origin of the badge canvas =
+  (x₀ − 100 k, y₀ − 100 k). It is drawn after the icon, after the folder tint and after the
+  theme mapping: the badge is not tinted and does not go through Clear or Tinted.
+- Variants: `-dark` in the Dark, Clear Dark and Tinted Dark themes; the light one in the others.
+- Precedence: at the bottom right `unreadable` wins, then `locked`, then `cloud` (the others
+  are not shown). Below 32 pt only one badge remains, the first of `order`: `unreadable`,
+  `alias`, `locked`, `cloud`.
+- No shadow or luminous border from the shell: the disc already has its thin outline (black
+  15 % in light, white 20 % in dark, solid white around the prohibition sign).
+- The badge follows the state of the icon (selection, dragging, cell shadow): it is part of
+  the composed icon. In the Dock and in Faro it is not shown.
 
-Riferimento: `tools/compose.py`, `compose_badges(icona, nomi, scuro)`.
+Reference: `tools/compose.py`, `compose_badges(icon, names, dark)`.
 
-`design/app-icons.sketch`: i tipi di file, i volumi e i badge sono nella pagina Icons (righe da
-y 15280: file, volumi, badge), in Grid Check con le griglie e in Showcase Files in chiaro e
-scuro (da y 19200, una riga per icona).
+`design/app-icons.sketch`: the file types, volumes and badges are in the Icons page (rows from
+y 15280: files, volumes, badges), in Grid Check with the grids and in Showcase Files in light
+and dark (from y 19200, one row per icon).
 
-### Cartella generica
+### Generic folder
 
-`files/folder-generic` è la cartella su cui la shell (e Mustache) incide un simbolo di
-`symbols/`: le cartelle speciali (Documenti, Download, Immagini, Home…) e le cartelle con una
-tinta. I livelli sono quelli della cartella (`files/folder`), senza simbolo.
+`files/folder-generic` is the folder on which the shell (and Mustache) engraves a symbol from
+`symbols/`: the special folders (Documents, Downloads, Pictures, Home…) and folders with a
+tint. The layers are those of the folder (`files/folder`), without the symbol.
 
 ```json
 "dynamic": {
@@ -558,54 +563,55 @@ tinta. I livelli sono quelli della cartella (`files/folder`), senza simbolo.
 }
 ```
 
-Proporzioni (tela 1024, keyline cartella):
+Proportions (1024 canvas, folder keyline):
 
-| Misura | Valore | Da dove viene |
+| Measure | Value | Where it comes from |
 | --- | --- | --- |
-| Pannello anteriore | 944 × 619 da (40, 273,1), centro (512, 582,5) | la cartella: 0,815 dell'altezza 760 |
-| Area viva del simbolo (Ø 20 u) | 263,5 | 230 (serie A, 600 / φ²) sulla cartella da 824, × 1,1456 |
-| Tela del simbolo (24 u), `box` | 316,2 × 316,2 a (353,9, 424,4), centrata sul pannello: 1 u = 13,2 px | area viva × 24 / 20 |
-| Tratto | Light 15,6 · Regular 19,8 · Semibold 28,3 | 1,18 · 1,5 · 2,15 u: sulla cartella da 824 erano 13,6 · 17,3 · 24,7, gli spessori 13,5 e 17 della serie |
-| Simbolo piccolo (`scale` 1,272) | tela 402, area viva 335 | × √φ |
-| Scavo (`offset`) | 4 px, almeno mezzo pixel reso | ≈ tratto Light / φ³ |
+| Front panel | 944 × 619 from (40, 273.1), center (512, 582.5) | the folder: 0.815 of the height 760 |
+| Symbol live area (Ø 20 u) | 263.5 | 230 (series A, 600 / φ²) on the 824 folder, × 1.1456 |
+| Symbol canvas (24 u), `box` | 316.2 × 316.2 at (353.9, 424.4), centered on the panel: 1 u = 13.2 px | live area × 24 / 20 |
+| Stroke | Light 15.6 · Regular 19.8 · Semibold 28.3 | 1.18 · 1.5 · 2.15 u: on the 824 folder they were 13.6 · 17.3 · 24.7, the thicknesses 13.5 and 17 of the series |
+| Small symbol (`scale` 1.272) | canvas 402, live area 335 | × √φ |
+| Engraving (`offset`) | 4 px, at least half a rendered pixel | ≈ Light stroke / φ³ |
 
-- **Simbolo**: `symbols/<weight>/<nome>.svg` dello stesso repo, colorato al posto di
-  `currentColor`, centrato in `box` e scalato di `scale` attorno al centro. La fascia è la prima
-  di `sizes` con `min_size` ≤ lato dell'icona in pt (la tela intera, vedi Principio);
-  sotto l'ultima (16 pt) il simbolo non si disegna. Il peso cresce mentre l'icona rimpicciolisce
-  perché il tratto reso resti fra 1 e 4 px circa: Light da 128, Regular da 64, Semibold sotto,
-  e sotto 32 anche più grande (× √φ).
-- **Effetto inciso** (`effect`, per tema): prima la copia del simbolo in `highlight` con
-  `highlight_opacity`, spostata in basso di `offset` (il bordo inferiore dello scavo prende luce),
-  poi il simbolo in `color` con `opacity`. Sotto 64 pt (`"highlight": false`) solo il simbolo:
-  il riflesso di mezzo pixel lo impasterebbe.
-- **Cartelle speciali** (`folders`): le chiavi sono quelle di `xdg-user-dirs`
-  (`XDG_<CHIAVE>_DIR` in `~/.config/user-dirs.dirs`: DESKTOP, DOCUMENTS, DOWNLOAD, MUSIC,
-  PICTURES, VIDEOS, TEMPLATES, PUBLICSHARE) più cinque chiavi di Silica: `HOME` (la cartella
-  dell'utente), `APPLICATIONS` (`~/Applications` e le cartelle `applications` dei dati XDG),
-  `LIBRARY` (`~/.local/share`, la libreria dell'utente), `SHARED` (cartella condivisa) e
-  `NETWORK` (cartella di rete). Le ultime due non hanno un percorso fisso: le dà chi conosce la
-  cartella (Mustache sa se è un mount di rete o una condivisione). Una cartella che non è fra
-  queste, o un simbolo che non esiste in `symbols/`, prende `fallback` (la cartella semplice).
-  Il Cestino ha un'icona propria. Mustache può anche passare un simbolo qualsiasi di `symbols/`.
-- **Tinta** (`tint`): un colore `#rrggbb` personalizzato o il nome di un'etichetta di `labels`.
-  La cartella composta (base e simbolo) passa per una rampa sulla luminanza: L = 0,2126 R +
-  0,7152 G + 0,0722 B (sRGB, 0–1); da `luminance[0]` a `luminance[1]` il colore va da
-  tinta × `shade` a tinta schiarita verso il bianco di `glow` (fuori dall'intervallo si ferma
-  agli estremi). È lineare, quindi è una matrice di colore 4 × 5 (`ColorFilter.matrix`): il
-  simbolo resta più scuro del pannello e il riflesso più chiaro, con lo stesso colore. Senza
-  tinta la cartella resta il disegno blu, senza rampa.
-- **Altri temi**: Clear e Tinted (Light e Dark) applicano la loro regola alla cartella già
-  composta con il simbolo (luminanza mappata, vedi Temi), quindi il simbolo resta lo scavo più
-  scuro del pannello; nei temi Clear il riflesso dello scavo si toglie (`highlight_opacity` 0),
-  perché il vetro ha già il suo bordo. La tinta personale vale solo in Default e Dark: Tinted
-  usa la tinta del tema per tutte le cartelle.
+- **Symbol**: `symbols/<weight>/<name>.svg` from the same repo, colored in place of
+  `currentColor`, centered in `box` and scaled by `scale` around the center. The band is the
+  first of `sizes` with `min_size` ≤ icon side in pt (the full canvas, see Principle);
+  below the last one (16 pt) the symbol is not drawn. The weight grows as the icon shrinks so
+  that the rendered stroke stays between 1 and 4 px or so: Light from 128, Regular from 64,
+  Semibold below, and below 32 even larger (× √φ).
+- **Engraved effect** (`effect`, per theme): first the copy of the symbol in `highlight` with
+  `highlight_opacity`, shifted down by `offset` (the lower edge of the engraving catches the
+  light), then the symbol in `color` with `opacity`. Below 64 pt (`"highlight": false`) only
+  the symbol: the half-pixel reflection would smear it.
+- **Special folders** (`folders`): the keys are those of `xdg-user-dirs`
+  (`XDG_<KEY>_DIR` in `~/.config/user-dirs.dirs`: DESKTOP, DOCUMENTS, DOWNLOAD, MUSIC,
+  PICTURES, VIDEOS, TEMPLATES, PUBLICSHARE) plus five Silica keys: `HOME` (the user's
+  folder), `APPLICATIONS` (`~/Applications` and the `applications` folders of the XDG data),
+  `LIBRARY` (`~/.local/share`, the user's library), `SHARED` (shared folder) and
+  `NETWORK` (network folder). The last two have no fixed path: they are given by whoever knows
+  the folder (Mustache knows whether it is a network mount or a share). A folder that is not
+  among these, or a symbol that does not exist in `symbols/`, gets `fallback` (the plain
+  folder). The Trash has an icon of its own. Mustache can also pass any symbol from `symbols/`.
+- **Tint** (`tint`): a custom `#rrggbb` color or the name of a label in `labels`.
+  The composed folder (base and symbol) goes through a ramp on luminance: L = 0.2126 R +
+  0.7152 G + 0.0722 B (sRGB, 0–1); from `luminance[0]` to `luminance[1]` the color goes from
+  tint × `shade` to the tint lightened toward white by `glow` (outside the interval it stops
+  at the extremes). It is linear, so it is a 4 × 5 color matrix (`ColorFilter.matrix`): the
+  symbol stays darker than the panel and the reflection lighter, with the same color. Without
+  a tint the folder stays the blue drawing, with no ramp.
+- **Other themes**: Clear and Tinted (Light and Dark) apply their rule to the folder already
+  composed with the symbol (luminance mapped, see Themes), so the symbol stays the engraving
+  darker than the panel; in the Clear themes the engraving reflection is removed
+  (`highlight_opacity` 0), because the glass already has its border. The custom tint applies
+  only in Default and Dark: Tinted uses the theme tint for all folders.
 
-`design/app-icons.sketch`: Folder Generic (pagina Icons, accanto a File Generic) con gli esempi
-Documents, Downloads e Music con tinta #e8336d, e sotto una cartella per ogni chiave di `folders`; in Grid Check i riquadri del simbolo (276 e 351)
-e l'area viva; in Showcase Files le stesse cartelle in Default e Dark.
+`design/app-icons.sketch`: Folder Generic (Icons page, next to File Generic) with the examples
+Documents, Downloads and Music with tint #e8336d, and below a folder for each key of `folders`;
+in Grid Check the symbol boxes (276 and 351) and the live area; in Showcase Files the same
+folders in Default and Dark.
 
-## Icone senza livelli
+## Icons without layers
 
-Un'app che ha solo un'icona freedesktop (PNG o SVG già composto) viene ridotta al keyline
-quadrato e appoggiata su un fondo neutro (bianco in chiaro, grafite in scuro).
+An app that has only a freedesktop icon (an already composed PNG or SVG) is reduced to the
+square keyline and placed on a neutral background (white in light, graphite in dark).
