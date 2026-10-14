@@ -1,3 +1,5 @@
+![silica-icons](.github/banner.png)
+
 # silica-icons
 
 Icone di Silica: app, cartelle e file, simboli di sistema. Tutte originali, disegnate
