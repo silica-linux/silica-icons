@@ -96,11 +96,14 @@ Eccezioni volute:
   foglio; resta finché i fogli non si ridisegnano;
 - il Cestino non è né foglio né cartella: ha la sua keyline, misurata nel Dock;
 - Stack Close (il pulsante che prende il posto della cartella nel Dock a pila aperta) è un'icona
-  `file` a forma libera, misurata su una cattura a 1×: quadrato arrotondato di 52 pt contro 49 pt
-  del corpo delle app (874 su tela 1024, a 16,8 px/pt), angoli 11 pt (185), centro a (512, 470),
-  cioè 2,5 pt sopra il centro delle icone vicine; fondo bianco traslucido da 0,35 (alto) a 0,08
+  `file` a forma libera che segue la **griglia delle app**: quadrato arrotondato 824 × 824 a
+  (100, 100), centro (512, 512), angoli 174,42. Nella cattura a 1× il pulsante è 52 pt contro
+  49 pt del corpo delle app, con il centro 2,5 pt più in alto; per scelta di progetto sta nella
+  griglia come le icone vicine, e la geometria misurata (874, angoli 185, centro a 470) è scalata
+  di 824/874 e ricentrata. Fondo bianco traslucido da 0,35 (alto) a 0,08
   (basso) sul Dock (129, 130, 137), che dà 173 in alto e 139 in basso; chevron in giù #1B1B1D
-  largo 19 pt e alto 10, tratto 2,5 pt (42) con estremi tondi, centrato sul pulsante. Il tema
+  largo 19 pt e alto 10, tratto 2,5 pt (39,6 dopo la scala) con estremi tondi, centrato sul
+  pulsante (punti (381,42, 452,6), (512, 571,4), (642,58, 452,6)). Il tema
   scuro è misurato (sessione M6, `dock-stacks.md`): stesso quadrato 51 × 52 pt, ma **più scuro**
   del Dock (104, 105, 110): fondo **nero traslucido** da 0,12 (alto, dà 92) a 0,56 (basso, dà 48),
   coerente sui tre canali entro ±0,02 (a differenza di un opaco, segue il Dock); chevron

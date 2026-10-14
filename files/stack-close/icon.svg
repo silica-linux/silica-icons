@@ -8,7 +8,7 @@
         </linearGradient>
     </defs>
     <g id="icon" stroke="none" fill="none" fill-rule="evenodd">
-        <rect id="Button" fill="url(#fill)" x="75" y="33" width="874" height="874" rx="185" ry="185"></rect>
-        <path id="Chevron" d="M373.5,407 L512,533 L650.5,407" stroke="#1B1B1D" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"></path>
+        <rect id="Button" fill="url(#fill)" x="100" y="100" width="824" height="824" rx="174.42" ry="174.42"></rect>
+        <path id="Chevron" d="M381.42,452.6 L512,571.4 L642.58,452.6" stroke="#1B1B1D" stroke-width="39.6" stroke-linecap="round" stroke-linejoin="round"></path>
     </g>
 </svg>
