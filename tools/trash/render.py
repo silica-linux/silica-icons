@@ -55,9 +55,18 @@ def build(dark=False):
         return mix(C['inner_lo'], C['inner_hi'], 0.2 + 0.8 * lit), 1
     defs.append(horiz_gradient('inner', back, [P(xi[i], yi[i], H)[0] for i in back], inner_col))
     defs.append(f'<linearGradient id="deep" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="{0.35 if dark else 0.18}"/></linearGradient>')
+    # the back of the bin (outer back wall), seen through the glass: the whole silhouette,
+    # so nothing behind the front shows the background
+    shell = hull([P(xo[i], yo[i], H) for i in range(n)] + [P(xb[i], yb[i], 0) for i in range(n)])
+    out.append(poly(shell, fill='url(#inner)'))
+    out.append(poly(shell, fill='url(#deep)'))
     out.append(poly([P(xf[i], yf[i], WALL) for i in range(n)], fill=C['floor']))
-    out.append(poly(inner, fill='url(#inner)'))
-    out.append(poly(inner, fill='url(#deep)'))
+    # the opening is entirely inner wall seen from above: fill the whole inner ring too,
+    # so the side walls reach the front rim instead of stopping at the back half
+    opening = [P(xi[i], yi[i], H) for i in range(n)]
+    for shape_ in (inner, opening):
+        out.append(poly(shape_, fill='url(#inner)'))
+        out.append(poly(shape_, fill='url(#deep)'))
     # rim, whole ring, behind the contents
     ring_d = lambda xs_, ys_: 'M' + ' L'.join(f'{P(xs_[i], ys_[i], H)[0]:.1f},{P(xs_[i], ys_[i], H)[1]:.1f}' for i in range(n)) + ' Z'
     ry0, ry1 = P(0, TOP, H)[1], P(0, -TOP, H)[1]
