@@ -189,8 +189,8 @@ strokes of the corner outline (widths 84, 64, 46, 30, 16, round joins, black at 
 (`icon-full.svg`, `icon-full-dark.svg`): a sheet (688 × 560 at (168, 258) in the folder's
 drawing, radius 18, white to `#F3F5F8`, dark `#E9EBEF` to `#D9DCE2`, 1 px outline) peeks between
 the back and the front panel. The shell uses them for a folder that contains at least one
-item; the symbol and the tint are applied on top as for the empty folder, and the variants
-with a symbol are not drawn.
+item; the symbol and the tint are applied on top as for the empty folder, by the shell (the
+design file has only Folder / Full and Folder Generic / Full).
 
 **Trash.** A square bin seen slightly from above: the opening, the inner back wall and a
 translucent front (white 62 % → 46 %, dark `#4A4A52` 62 % → 50 %), flat, with no ribs. In
