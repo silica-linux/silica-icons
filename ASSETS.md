@@ -81,6 +81,11 @@ for third-party assets: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `apps/photos/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
 | `apps/photos/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
 | `apps/photos/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
+| `apps/screenshot/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
+| `apps/screenshot/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
+| `apps/screenshot/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
+| `apps/screenshot/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
+| `apps/screenshot/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
 | `apps/settings/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
 | `apps/settings/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
 | `apps/settings/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
