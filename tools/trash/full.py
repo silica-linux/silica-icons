@@ -24,8 +24,8 @@ def heap(dark, dy, deep=True):
     layout = [('doc', 110, 700, 28), ('folder', 300, 720, -6), ('photo', 470, 690, 18), ('doc', 420, 600, -22),
               ('photo', 130, 560, -12), ('folder', 250, 520, 10), ('doc', 500, 470, 8), ('photo', 330, 420, -20),
               ('doc', 90, 380, -8), ('folder', 460, 330, -12), ('doc', 260, 300, 16)] if deep else []
-    place = lambda p, dx, dy_, r: f'<g transform="translate({dx},{dy_}) rotate({r} 292 300) translate(292 300) scale(1.0) translate(-292 -300)">{p}</g>'
-    top = place(doc, 34, -10, -12) + place(photo, -40, -8, 12) + place(folder, 0, 40, 0)
+    place = lambda p, dx, dy_, r, s=1.0: f'<g transform="translate({dx},{dy_}) rotate({r} 292 300) translate(315 180) scale({s}) translate(-315 -180)">{p}</g>'
+    top = place(doc, 34, -10, -12) + place(photo, -40, -8, 12) + place(folder, 0, 30, 0, 1.18)
     inner = ''.join(place(Pm[k], tx - C[k][0], ty - C[k][1], r) for k, tx, ty, r in layout) + top
     return defs, f'<g transform="translate(512,{dy}) scale(1.0) translate(-512,0)"><g transform="{M}"><g transform="translate(220,96.6083)">{inner}</g></g></g>'
 def full_svg(dark, dy=0, blur=32, op=0.3):
