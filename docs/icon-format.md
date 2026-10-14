@@ -186,7 +186,7 @@ strokes of the corner outline (widths 84, 64, 46, 30, 16, round joins, black at 
 7 %), stacked so the shadow fades outwards, clipped to the page (`Fold-shadow` group). No filter.
 
 **Full folders.** `folder` and `folder-generic` have the variants `full` and `full-dark`
-(`icon-full.svg`, `icon-full-dark.svg`): a sheet (688 × 560 at (168, 258) in the folder's
+(`icon-full.svg`, `icon-full-dark.svg`): a sheet (632 × 554 at (196, 264) in the folder's
 drawing, radius 18, white to `#F3F5F8`, dark `#E9EBEF` to `#D9DCE2`, 1 px outline) peeks between
 the back and the front panel. The shell uses them for a folder that contains at least one
 item; the symbol and the tint are applied on top as for the empty folder, by the shell (the
