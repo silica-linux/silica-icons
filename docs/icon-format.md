@@ -238,7 +238,7 @@ when it does not need to change.
 | `variants.dark` | replacement layers for Dark, Clear Dark and Tinted Dark |
 | `variants.full`, `variants.full-dark` | folders only: the folder with something inside (light and dark) |
 | `dynamic` | content updated at runtime, see below |
-| `rendered` | the whole icon as designed, with its relief, shadows and glass: `default` and `dark` PNG at 1024 (from the design file's layer styles). The shell uses it for Default and Dark; the SVG layers stay for Clear, Tinted and dynamic content |
+| `rendered` | the whole icon as designed, with its relief, shadows and glass, PNG at 1024 from the design file's layer styles, one per theme: `default`, `dark`, `clear`, `clear-dark`, `tinted`, `tinted-dark`. Clear renders have a translucent body (the shell adds the backdrop blur behind) and a grey foreground; Tinted renders use the default blue tint, so the shell recolours them only for another tint. The SVG layers stay for custom tints and dynamic content |
 
 `file` icons have a single `artwork` layer (`icon.svg`, `icon-dark.svg`) and no
 background.
