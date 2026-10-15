@@ -5,13 +5,17 @@
   "kind": "file",
   "layers": [
     {
-      "role": "artwork",
-      "file": "icon.svg"
+      "role": "page",
+      "icon": "file-generic"
+    },
+    {
+      "role": "mark",
+      "file": "mark.svg"
     }
   ],
   "variants": {
     "dark": {
-      "artwork": "icon-dark.svg"
+      "mark": "mark-dark.svg"
     }
   },
   "dynamic": {

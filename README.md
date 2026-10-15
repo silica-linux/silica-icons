@@ -67,8 +67,8 @@ sheet.
   notes, password-manager, photo-viewer, photos, reminders, screenshot, settings, terminal,
   text-editor) with dark variants and a rendered `icon.png` / `icon-dark.png`; calendar and clock
   are dynamic.
-- `files/`: folder, generic folder (symbol and tint applied by the shell), 15 file types
-  (extension written by the shell on the figure),
+- `files/`: one folder (symbol and tint applied by the shell), 15 file types (only the
+  figure: the sheet is the generic file's, the extension is written by the shell),
   generic file (extension written by the shell, type → icon map), 5 volumes (internal disk,
   external, network server, mounted disk image, optical disc), empty and full Trash, Stack
   Close. For file icons the side is the full canvas: sheets, folders, volumes and Trash

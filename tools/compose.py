@@ -49,6 +49,10 @@ def compose(icon_dir: Path, size: int, dark: bool, fonts: list[str]) -> Image.Im
     manifest = json.loads((icon_dir / "icon.json").read_text())
     out = Image.new("RGBA", (size, size), (0, 0, 0, 0))
     for layer in manifest["layers"]:
+        if "icon" in layer:
+            # A layer taken from another icon (the sheet of the file type icons): its whole artwork.
+            out.alpha_composite(compose(icon_dir.parent / layer["icon"], size, dark, fonts))
+            continue
         out.alpha_composite(render(layer_file(icon_dir, layer["file"], dark), size, fonts))
     dyn = manifest.get("dynamic") or {}
     if dyn.get("type") == "clock":

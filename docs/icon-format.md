@@ -185,12 +185,12 @@ to `#599DEA`, drop ≈ 16; back `#4497F8` to `#3589F1`, dark `#317FDF` to `#2570
 strokes of the corner outline (widths 84, 64, 46, 30, 16, round joins, black at 3 % each, dark
 7 %), stacked so the shadow fades outwards, clipped to the page (`Fold-shadow` group). No filter.
 
-**Full folders.** `folder` and `folder-generic` have the variants `full` and `full-dark`
+**Full folders.** `folder-generic` has the variants `full` and `full-dark`
 (`icon-full.svg`, `icon-full-dark.svg`): a sheet (664 wide at x 180, top at y 279.6 — halfway between the back panel and the front panel — in the folder's
 drawing, radius 18, white to `#F3F5F8`, dark `#E9EBEF` to `#D9DCE2`, 1 px outline) peeks between
 the back and the front panel. The shell uses them for a folder that contains at least one
-item; the symbol and the tint are applied on top as for the empty folder, by the shell (the
-design file has only Folder / Full and Folder Generic / Full).
+item; the symbol and the tint are applied on top as for the empty folder, by the shell (in the
+design file the symbols Folder, Folder / Full and Folder / Full / Dark).
 
 **Trash.** A rounded-square bin (superellipse, exponent 4.6) that narrows toward the base
 (base 0.86 of the rim), modelled in 3D and projected from 13° above (`tools/trash/`), on the
@@ -241,7 +241,13 @@ when it does not need to change.
 | `rendered` | the whole icon as designed, with its relief, shadows and glass, PNG at 1024 from the design file's layer styles, one per theme: `default`, `dark`, `clear`, `clear-dark`, `tinted`, `tinted-dark`. Clear renders have a translucent body (the shell adds the backdrop blur behind) and a grey foreground; Tinted renders use the default blue tint, so the shell recolours them only for another tint. The SVG layers stay for custom tints and dynamic content |
 
 `file` icons have a single `artwork` layer (`icon.svg`, `icon-dark.svg`) and no
-background.
+background, except the file type icons: they are composed from the sheet of `file-generic`
+and their own `mark` layer (see File type icons).
+
+| Layer field | Meaning |
+| --- | --- |
+| `file` | SVG in the icon folder; the dark variant is in `variants.dark.<role>` |
+| `icon` | instead of `file`: the whole artwork of another icon of `files/` (by id), with its own dark variant |
 
 ## Themes
 
@@ -417,6 +423,19 @@ extension is written by the shell, as on the generic file, because the same icon
 from `file-label`: it has no map (`icons`), no categories and no `overrides`, and the color is
 a single one.
 
+The sheet is the same for every type, so a type icon ships only its figure: the `page` layer
+is the artwork of `file-generic` (light or dark), the `mark` layer is the figure in the 1024
+canvas (`mark.svg`, `mark-dark.svg`), drawn above the whole sheet, its corner and the fold
+shadow included. No figure touches the corner.
+
+```json
+"layers": [
+  { "role": "page", "icon": "file-generic" },
+  { "role": "mark", "file": "mark.svg" }
+],
+"variants": { "dark": { "mark": "mark-dark.svg" } }
+```
+
 ```json
 "dynamic": {
   "type": "file-type-label",
@@ -473,7 +492,8 @@ Medium; 440 wide, the 648 page minus two margins of 104) and scaled with the she
   of the generic file.
 - `file-unknown` has no label: it is the sheet with the question mark.
 
-`design/app-icons.sketch`: in the Icons page (and in Showcase Files) every type still has the
+`design/app-icons.sketch`: every type is an instance of the `File / Page` symbol with the
+figure on top. In the Icons page (and in Showcase Files) every type still has the
 `Extension` text layer as an example (`PNG`, `DOCX`…), in the manifest color; it does not go
 in the export, like `JSON` of the generic file. Reference: `tools/compose.py`,
 `compose_file(icon, side, dark, extension)`.
@@ -553,7 +573,8 @@ and dark (from y 19200, one row per icon).
 
 `files/folder-generic` is the folder on which the shell (and Mustache) engraves a symbol from
 `symbols/`: the special folders (Documents, Downloads, Pictures, Home…) and folders with a
-tint. The layers are those of the folder (`files/folder`), without the symbol.
+tint. It is the only folder icon: a plain folder is the same icon without a symbol. The
+layers carry no symbol.
 
 ```json
 "dynamic": {
@@ -631,8 +652,9 @@ Proportions (1024 canvas, folder keyline):
   (`highlight_opacity` 0), because the glass already has its border. The custom tint applies
   only in Default and Dark: Tinted uses the theme tint for all folders.
 
-`design/app-icons.sketch`: Folder Generic (Icons page, next to File Generic) with the examples
-Documents, Downloads and Music with tint #e8336d, and below a folder for each key of `folders`;
+`design/app-icons.sketch`: the folders are instances of the `Folder` symbols, a folder for each
+key of `folders` (the emblem as a `Folder Emblem / <name>` symbol, preview only: the shell
+draws it from `symbols/`) and Music with tint #e8336d;
 in Grid Check the symbol boxes (276 and 351) and the live area; in Showcase Files the same
 folders in Default and Dark.
 
