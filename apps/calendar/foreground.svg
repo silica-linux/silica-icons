@@ -7,18 +7,37 @@
             <stop stop-color="#FF6B5E" offset="0%"></stop>
             <stop stop-color="#E8322A" offset="100%"></stop>
         </linearGradient>
-        <circle id="path-3" cx="512" cy="582" r="230"></circle>
-        <filter x="-0.9%" y="-0.9%" width="101.7%" height="101.7%" filterUnits="objectBoundingBox" id="filter-4">
-            <feGaussianBlur stdDeviation="2" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
-            <feOffset dx="0" dy="4" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+        <circle id="path-3" cx="230" cy="230" r="230"></circle>
+        <filter x="-5.2%" y="-3.9%" width="110.4%" height="110.4%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.160784314 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <filter x="-5.4%" y="-4.1%" width="110.9%" height="110.9%" filterUnits="objectBoundingBox" id="filter-5">
+            <feGaussianBlur stdDeviation="0.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1.5" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
             <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
-            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.349019608 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.701960784 0" type="matrix" in="shadowInnerInner1" result="shadowMatrixInner1"></feColorMatrix>
+            <feGaussianBlur stdDeviation="7" in="SourceAlpha" result="shadowBlurInner2"></feGaussianBlur>
+            <feOffset dx="0" dy="8" in="shadowBlurInner2" result="shadowOffsetInner2"></feOffset>
+            <feComposite in="shadowOffsetInner2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner2"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.250980392 0" type="matrix" in="shadowInnerInner2" result="shadowMatrixInner2"></feColorMatrix>
+            <feGaussianBlur stdDeviation="5" in="SourceAlpha" result="shadowBlurInner3"></feGaussianBlur>
+            <feOffset dx="0" dy="-5" in="shadowBlurInner3" result="shadowOffsetInner3"></feOffset>
+            <feComposite in="shadowOffsetInner3" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner3"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowInnerInner3" result="shadowMatrixInner3"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner2"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner3"></feMergeNode>
+            </feMerge>
         </filter>
     </defs>
-    <g id="foreground" stroke="none" fill="none" xlink:href="#path-1">
-        <g id="Today">
-            <use fill="url(#linearGradient-2)" fill-rule="evenodd" xlink:href="#path-3"></use>
+    <g id="Calendar" stroke="none" fill="none" xlink:href="#path-1" fill-rule="evenodd" stroke-width="1">
+        <g id="path-3" transform="translate(282, 352)">
             <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+            <use fill="url(#linearGradient-2)" fill-rule="evenodd" xlink:href="#path-3"></use>
+            <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-3"></use>
         </g>
     </g>
 </svg>

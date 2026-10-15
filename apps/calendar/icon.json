@@ -53,5 +53,9 @@
       ]
     },
     "refresh": "midnight"
+  },
+  "rendered": {
+    "default": "icon.png",
+    "dark": "icon-dark.png"
   }
 }

@@ -43,5 +43,9 @@
       512,
       512
     ]
+  },
+  "rendered": {
+    "default": "icon.png",
+    "dark": "icon-dark.png"
   }
 }

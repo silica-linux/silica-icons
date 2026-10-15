@@ -3,7 +3,7 @@
     <title>hand-second</title>
     <defs>
         <path d="M924,924 L100,924 L100,100 L924,100 Z" id="path-1"></path>
-        <rect id="path-2" x="408" y="62" width="8" height="430" rx="4"></rect>
+        <rect id="path-2" x="406" y="62" width="12" height="430" rx="6"></rect>
         <filter x="-175.0%" y="-2.3%" width="450.0%" height="106.5%" filterUnits="objectBoundingBox" id="filter-3">
             <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>

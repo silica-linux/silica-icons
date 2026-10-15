@@ -1,7 +1,7 @@
 {
   "format": 1,
-  "id": "store",
-  "name": "Store",
+  "id": "reminders",
+  "name": "Reminders",
   "kind": "app",
   "keyline": "square",
   "layers": [
@@ -21,5 +21,9 @@
       "foreground": "foreground-dark.svg"
     }
   },
-  "dynamic": null
+  "dynamic": null,
+  "rendered": {
+    "default": "icon.png",
+    "dark": "icon-dark.png"
+  }
 }

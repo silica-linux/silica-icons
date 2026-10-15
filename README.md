@@ -63,10 +63,10 @@ sheet.
 
 ## Contents
 
-- `apps/`: 18 apps (apps, calculator, calendar, clock, disks, fonts, help, mail, mustache,
-  notes, password-manager, photo-viewer, photos, screenshot, settings, store, terminal,
-  text-editor)
-  with dark variants; calendar and clock are dynamic.
+- `apps/`: 18 apps (apps, calculator, calendar, clock, disks, fonts, mail, mission-control, mustache,
+  notes, password-manager, photo-viewer, photos, reminders, screenshot, settings, terminal,
+  text-editor) with dark variants and a rendered `icon.png` / `icon-dark.png`; calendar and clock
+  are dynamic.
 - `files/`: folder, generic folder (symbol and tint applied by the shell), 15 file types
   (extension written by the shell on the figure),
   generic file (extension written by the shell, type → icon map), 5 volumes (internal disk,
