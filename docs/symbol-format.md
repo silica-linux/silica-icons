@@ -4,7 +4,10 @@ Version 1. Applies to `symbols/`: the monochrome system glyphs (menu bar, Contro
 menus, toolbars, settings). App and file icons follow
 [`icon-format.md`](icon-format.md).
 
-Design source: `design/symbols.sketch` (pages Grid, Symbols, Weights, Check, Sheet).
+Design source: `design/symbols.sketch` (pages Grid, Symbols, Symbols 1x, Weights, Check, Sheet), a copy of
+the Sketch library "Silica 1.0 Amalfi Icon Kit". Every symbol is a Sketch symbol master: `Light / <name>`,
+`Regular / <name>` and `Semibold / <name>` at 1× (24 × 24 pt, page Symbols 1x) for use in UI kits, and
+`Design 4x / <name>` (96 × 96, page Symbols) for drawing.
 All symbols are drawn from scratch: no tracing, measurements or files from other symbol
 sets (see the clean-room rules in `silica/AGENTS.md`).
 

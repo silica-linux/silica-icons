@@ -1,6 +1,6 @@
 import json, sys
 import symbols as S
-DOC='8555075F-FB9C-4177-9687-3FB1A399AAB0'
+DOC='A14E5E90-0F0B-4291-8A35-897B3221F260'
 COLW, ROWH, BAND, TOP = 144, 160, 960, 96
 CATIDX = {k:i for i,(k,_) in enumerate(S.CATS)}
 def positions():

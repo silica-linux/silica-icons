@@ -1,5 +1,5 @@
 const sketch = require('sketch')
-const doc = sketch.Document.getDocuments().find(d => d.id === '8555075F-FB9C-4177-9687-3FB1A399AAB0')
+const doc = sketch.Document.getDocuments().find(d => d.id === 'A14E5E90-0F0B-4291-8A35-897B3221F260')
 const page = doc.pages.find(p => p.name === '__PAGE__')
 const size = __SIZE__
 const items = __ITEMS__
