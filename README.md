@@ -87,7 +87,7 @@ sheet.
 - Code in `tools/`: MIT OR Apache-2.0, like the `silica` repo.
 - **Exception:** `apps/silica/` is the Silica logo. It is a trademark of the project, all rights
   reserved, and is **not** covered by CC BY-SA 4.0. It may be used unmodified to refer to Silica,
-  as described in [`silica-brand/TRADEMARKS.md`](https://github.com/silica-linux/silica-brand/blob/main/TRADEMARKS.md);
+  as described in [`silica-brand/TRADEMARKS.md`](https://github.com/silica-os/silica-brand/blob/main/TRADEMARKS.md);
   forks and derived distributions must remove it.
 
 ## Rules
