@@ -95,19 +95,8 @@ Deliberate exceptions:
   height by 904 / 824) is not on the series: changing it means redrawing the path of every
   sheet; it stays until the sheets are redrawn;
 - the Trash is neither sheet nor folder: it has its own keyline, measured in the Dock;
-- Stack Close (the button that takes the place of the folder in the Dock when the stack is open)
-  is a free-form `file` icon that follows the **app grid**: rounded square 824 × 824 at
-  (100, 100), center (512, 512), corners 174.42. In the 1× capture the button is 52 pt against
-  49 pt for the app body, with the center 2.5 pt higher; by design choice it sits in the grid
-  like the neighboring icons, and the measured geometry (874, corners 185, center at 470) is
-  scaled by 824/874 and recentered. Translucent white background from 0.35 (top) to 0.08
-  (bottom) over the Dock (129, 130, 137), giving 173 at the top and 139 at the bottom; downward
-  chevron #1B1B1D 19 pt wide and 10 tall, stroke 2.5 pt (39.6 after scaling) with round ends,
-  centered on the button (points (381.42, 452.6), (512, 571.4), (642.58, 452.6)). The dark
-  theme is measured (session M6, `dock-stacks.md`): same 51 × 52 pt square, but **darker**
-  than the Dock (104, 105, 110): **translucent black** background from 0.12 (top, gives 92) to
-  0.56 (bottom, gives 48), consistent on the three channels within ±0.02 (unlike an opaque
-  one, it follows the Dock); **white #FFFFFF** chevron, same geometry;
+- Stack Close (the Dock button that closes an open stack) is not in the pack: the shell
+  draws it itself;
 - the file types added for Mustache (spreadsheet, presentation, font, disk image, executable,
   document, web page) have the figure in the 461 × 292 box centered on
   (512, 473), like Code and Image (the width of the text lines of the sheets, 461 ≈ 472 within
@@ -181,9 +170,10 @@ steps, with half the measured drop by design choice (panel `#82C4FD` to `#68B0FA
 to `#599DEA`, drop ≈ 16; back `#4497F8` to `#3589F1`, dark `#317FDF` to `#2570D2`), against
 ≈ 31 when they followed the measure and ≈ 64 for folders and ≈ 12 for sheets before.
 
-**Fold shadow.** Under the folded corner of every sheet a soft shadow falls on the page: five
-strokes of the corner outline (widths 84, 64, 46, 30, 16, round joins, black at 3 % each, dark
-7 %), stacked so the shadow fades outwards, clipped to the page (`Fold-shadow` group). No filter.
+**Fold shadow.** Under the folded corner of the sheet a soft shadow falls on the page: one
+shape, the corner outline moved 10 left and 40 down (1024 canvas), with a vertical gradient
+that is transparent at its top, black at 13 % (dark 30 %) at the height of the corner's lower
+edge and transparent again at its bottom, clipped to the page (`Fold-shadow` group). No filter.
 
 **Full folders.** `folder-generic` has the variants `full` and `full-dark`
 (`icon-full.svg`, `icon-full-dark.svg`): a sheet (664 wide at x 180, top at y 279.6 — halfway between the back panel and the front panel — in the folder's

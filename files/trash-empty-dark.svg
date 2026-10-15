@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024" width="1024" height="1024">
-<defs><linearGradient id="tb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E2E33"/><stop offset="1" stop-color="#232327"/></linearGradient><linearGradient id="to" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#18181B"/><stop offset="1" stop-color="#26262A"/></linearGradient><linearGradient id="tg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A4A52" stop-opacity="0.62"/><stop offset="1" stop-color="#4A4A52" stop-opacity="0.5"/></linearGradient><clipPath id="above"><rect x="0" y="0" width="1024" height="214"/></clipPath><clipPath id="body"><path d="M196,214 L828,214 C836,214 841,220 840,228 L800,880 C798,905 784,924 758,924 L266,924 C240,924 226,905 224,880 L184,228 C183,220 188,214 196,214 Z"/></clipPath></defs>
-<path id="Back" d="M234,150 L790,150 C800,150 806,156 805,166 L776,862 C775,876 768,884 754,884 L270,884 C256,884 249,876 248,862 L219,166 C218,156 224,150 234,150 Z" fill="url(#tb)"/>
-<path id="Opening" d="M234,150 L790,150 C800,150 806,156 808,164 L836,214 L188,214 L216,164 C218,156 224,150 234,150 Z" fill="url(#to)"/>
-<g id="Inside" clip-path="url(#body)"></g>
-
-<path id="Front" d="M196,214 L828,214 C836,214 841,220 840,228 L800,880 C798,905 784,924 758,924 L266,924 C240,924 226,905 224,880 L184,228 C183,220 188,214 196,214 Z" fill="url(#tg)" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="2.4"/>
-<path id="Rim" d="M188,214 L836,214" stroke="#6A6A72" stroke-opacity="0.9" stroke-width="6" stroke-linecap="round"/>
-</svg>
