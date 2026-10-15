@@ -13,10 +13,6 @@
       "file": "mark.svg"
     }
   ],
-  "variants": {
-    "dark": {
-      "mark": "mark-dark.svg"
-    }
-  },
+  "variants": null,
   "dynamic": null
 }

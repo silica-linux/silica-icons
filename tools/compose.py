@@ -108,7 +108,7 @@ def compose_folder(icon_dir: Path, size: int, dark: bool, symbol: str | None = N
     band = folder_band(dyn, size)
     sym_file = ROOT / "symbols" / (band or {}).get("weight", "regular") / f"{symbol}.svg"
     if symbol and band and sym_file.exists():
-        fx = dyn["effect"]["dark" if dark else "light"]
+        fx = dyn["effect"]  # one engraving for every theme
         x, y, w, h = dyn["symbol"]["box"]
         sc = band["scale"]
         cx, cy = x + w / 2, y + h / 2
@@ -127,7 +127,7 @@ def compose_folder(icon_dir: Path, size: int, dark: bool, symbol: str | None = N
     if tint:
         colors = dyn["tint"]["labels"]
         tint = colors.get(tint, tint)
-        out = apply_tint(out, tint_matrix(tint, dyn["tint"]["dark" if dark else "light"]))
+        out = apply_tint(out, tint_matrix(tint, dyn["tint"]))
     return out
 
 
@@ -185,12 +185,12 @@ def compose_file(icon_dir: Path, size: int, dark: bool, ext: str | None,
     dyn = json.loads((icon_dir / "icon.json").read_text()).get("dynamic") or {}
     if dyn.get("type") == "file-type-label":
         label = dyn["label"]
-        color = label["dark_color" if dark else "color"]
+        color = label["color"]
     elif dyn.get("type") == "file-label":
         label = {**dyn["label"], "no_extension": None}
         cat = dyn["overrides"].get((ext or "").lower(), category or "other")
         c = cat if isinstance(cat, dict) else dyn["colors"][cat]
-        color = c.get("dark_color", c["color"]) if dark else c["color"]
+        color = c["color"]
     else:
         return out
     text = label_text(label, ext)

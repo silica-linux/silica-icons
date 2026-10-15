@@ -13,11 +13,7 @@
       "file": "mark.svg"
     }
   ],
-  "variants": {
-    "dark": {
-      "mark": "mark-dark.svg"
-    }
-  },
+  "variants": null,
   "dynamic": {
     "type": "file-type-label",
     "label": {
@@ -36,7 +32,6 @@
       "max_width": 394.95,
       "overflow": "shrink",
       "color": "#ffffff",
-      "dark_color": "#ffffff",
       "no_extension": "PDF",
       "min_size": 32
     }

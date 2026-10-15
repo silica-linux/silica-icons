@@ -10,14 +10,8 @@
     }
   ],
   "variants": {
-    "dark": {
-      "artwork": "icon-dark.svg"
-    },
     "full": {
       "artwork": "icon-full.svg"
-    },
-    "full-dark": {
-      "artwork": "icon-full-dark.svg"
     }
   },
   "dynamic": {
@@ -55,38 +49,19 @@
       ]
     },
     "effect": {
-      "light": {
-        "color": "#1a64c8",
-        "opacity": 0.78,
-        "highlight": "#ffffff",
-        "highlight_opacity": 0.5,
-        "offset": 4
-      },
-      "dark": {
-        "color": "#0b3f94",
-        "opacity": 0.8,
-        "highlight": "#ffffff",
-        "highlight_opacity": 0.2,
-        "offset": 4
-      }
+      "color": "#1a64c8",
+      "opacity": 0.78,
+      "highlight": "#ffffff",
+      "highlight_opacity": 0.5,
+      "offset": 4
     },
     "tint": {
-      "light": {
-        "luminance": [
-          0.35,
-          0.85
-        ],
-        "shade": 0.72,
-        "glow": 0.5
-      },
-      "dark": {
-        "luminance": [
-          0.28,
-          0.75
-        ],
-        "shade": 0.58,
-        "glow": 0.35
-      },
+      "luminance": [
+        0.35,
+        0.85
+      ],
+      "shade": 0.72,
+      "glow": 0.5,
       "labels": {
         "red": "#f2382e",
         "orange": "#ff8a00",
@@ -112,6 +87,6 @@
       "SHARED": "person-2",
       "NETWORK": "network"
     },
-    "fallback": "folder"
+    "fallback": null
   }
 }

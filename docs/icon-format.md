@@ -165,22 +165,27 @@ Vertical gradient of sheets and folders: measured in the reference file manager 
 luminance between 10 % and 90 % of the front panel height, away from edges and symbols), the
 folder drops by about 27 out of 255 (RGB 127 200 243 at the top, 96 174 225 at the bottom) and
 the sheet without a preview does not drop (245 uniform). The sheets therefore go from `#FFFFFF`
-to `#F8F9FB` (dark `#3A3A3E` to `#333337`, drop ≈ 4 and ≈ 5) and the folders have only two
-steps, with half the measured drop by design choice (panel `#82C4FD` to `#68B0FA`, dark `#71B1F2`
-to `#599DEA`, drop ≈ 16; back `#4497F8` to `#3589F1`, dark `#317FDF` to `#2570D2`), against
+to `#F8F9FB` (drop ≈ 4) and the folders have only two
+steps, with half the measured drop by design choice (panel `#82C4FD` to `#68B0FA`, drop ≈ 16;
+back `#4497F8` to `#3589F1`), against
 ≈ 31 when they followed the measure and ≈ 64 for folders and ≈ 12 for sheets before.
 
-**Fold shadow.** Under the folded corner of the sheet a soft shadow falls on the page: one
-shape, the corner outline moved 10 left and 40 down (1024 canvas), with a vertical gradient
-that is transparent at its top, black at 13 % (dark 30 %) at the height of the corner's lower
-edge and transparent again at its bottom, clipped to the page (`Fold-shadow` group). No filter.
+**Fold shadow.** Under the folded corner of the sheet a soft shadow falls on the page: a
+circle Ø 131.6 centered on the inner corner of the fold, (697.3, 220.2) in the 1024 canvas,
+with a radial gradient from black at 16 % in the center to transparent at the edge, drawn
+between the page and the corner and clipped to the page (`Fold-shadow` group). The corner
+hides most of it: what shows is a soft halo along the fold's lower and left edges. No filter.
 
-**Full folders.** `folder-generic` has the variants `full` and `full-dark`
-(`icon-full.svg`, `icon-full-dark.svg`): a sheet (664 wide at x 180, top at y 279.6 — halfway between the back panel and the front panel — in the folder's
-drawing, radius 18, white to `#F3F5F8`, dark `#E9EBEF` to `#D9DCE2`, 1 px outline) peeks between
+**No dark variants.** Sheets and folders are the same in every theme, as in the reference:
+there is no `-dark` artwork for `file-generic`, the type marks or `folder-generic`, and their
+labels and engraving have a single color. The volumes, the Trash and the badges keep theirs.
+
+**Full folders.** `folder-generic` has the variant `full`
+(`icon-full.svg`): a sheet (664 wide at x 180, top at y 279.6 — halfway between the back panel and the front panel — in the folder's
+drawing, radius 18, white to `#F3F5F8`, 1 px outline) peeks between
 the back and the front panel. The shell uses them for a folder that contains at least one
 item; the symbol and the tint are applied on top as for the empty folder, by the shell (in the
-design file the symbols Folder, Folder / Full and Folder / Full / Dark).
+design file the symbols Folder and Folder / Full).
 
 **Trash.** A rounded-square bin (superellipse, exponent 4.6) that narrows toward the base
 (base 0.86 of the rim), modelled in 3D and projected from 13° above (`tools/trash/`), on the
@@ -226,7 +231,7 @@ when it does not need to change.
 | `layers` | bottom to top: one `background` and 1 to 4 foreground layers |
 | `shadow` | shadow the shell draws under the layer: `neutral`, `chromatic` (taken from the layer color) or `none` |
 | `variants.dark` | replacement layers for Dark, Clear Dark and Tinted Dark |
-| `variants.full`, `variants.full-dark` | folders only: the folder with something inside (light and dark) |
+| `variants.full` | folders only: the folder with something inside |
 | `dynamic` | content updated at runtime, see below |
 | `rendered` | the whole icon as designed, with its relief, shadows and glass, PNG at 1024 from the design file's layer styles, one per theme: `default`, `dark`, `clear`, `clear-dark`, `tinted`, `tinted-dark`. Clear renders have a translucent body (the shell adds the backdrop blur behind) and a grey foreground; Tinted renders use the default blue tint, so the shell recolours them only for another tint. The SVG layers stay for custom tints and dynamic content |
 
@@ -236,8 +241,8 @@ and their own `mark` layer (see File type icons).
 
 | Layer field | Meaning |
 | --- | --- |
-| `file` | SVG in the icon folder; the dark variant is in `variants.dark.<role>` |
-| `icon` | instead of `file`: the whole artwork of another icon of `files/` (by id), with its own dark variant |
+| `file` | SVG in the icon folder; a dark variant, where there is one, is in `variants.dark.<role>` |
+| `icon` | instead of `file`: the whole artwork of another icon of `files/` (by id) |
 
 ## Themes
 
@@ -414,8 +419,8 @@ from `file-label`: it has no map (`icons`), no categories and no `overrides`, an
 a single one.
 
 The sheet is the same for every type, so a type icon ships only its figure: the `page` layer
-is the artwork of `file-generic` (light or dark), the `mark` layer is the figure in the 1024
-canvas (`mark.svg`, `mark-dark.svg`), drawn above the whole sheet, its corner and the fold
+is the artwork of `file-generic`, the `mark` layer is the figure in the 1024
+canvas (`mark.svg`), drawn above the whole sheet, its corner and the fold
 shadow included. No figure touches the corner.
 
 ```json
@@ -423,7 +428,7 @@ shadow included. No figure touches the corner.
   { "role": "page", "icon": "file-generic" },
   { "role": "mark", "file": "mark.svg" }
 ],
-"variants": { "dark": { "mark": "mark-dark.svg" } }
+"variants": null
 ```
 
 ```json
@@ -432,7 +437,7 @@ shadow included. No figure touches the corner.
   "label": { "font": "Inter", "size": 111.67, "weight": 500, "tracking": 0,
              "box": [270.64, 763.7, 482.72, 136.04], "case": "upper",
              "max_chars": 5, "max_width": 482.72, "overflow": "shrink",
-             "color": "#30b0c7", "dark_color": "#30b0c7",
+             "color": "#30b0c7",
              "no_extension": null, "min_size": 32 }
 }
 ```
@@ -445,7 +450,7 @@ shadow included. No figure touches the corner.
 | `max_chars` | beyond this number of characters the extension is not written and `no_extension` applies |
 | `max_width` | maximum text width, equal to the width of the `box` |
 | `overflow` | `shrink`: an extension within `max_chars` wider than `max_width` reduces the size proportionally, always centered in the `box`; `truncate` (not used by the icons in the repo) would cut to the first `max_chars` characters |
-| `color`, `dark_color` | color in the light themes and in Dark; Clear and Tinted pass the composed icon (figure and label) through their mapping, like the generic folder |
+| `color` | color in Default and Dark (the sheet is the same); Clear and Tinted pass the composed icon (figure and label) through their mapping, like the generic folder |
 | `no_extension` | what to write if the file has no extension or one longer than `max_chars`: `null` = no label, the figure is enough (an executable without an extension, a `README`); a string is written as is |
 | `min_size` | below this icon side in pt (the full canvas, see Principle) the label is not drawn: at 16 pt it would be less than 2 px tall |
 
@@ -456,30 +461,28 @@ Medium; 440 wide, the 648 page minus two margins of 104) and scaled with the she
 (× 1.0971 around (512, 512)): line from y 763.7, size 111.67, 482.72 wide on a 684 page
 (margins 100). `XHTML`, `WOFF2`, `QCOW2` fit at full size.
 
-| Icon | `box` | `color` | `dark_color` | `no_extension` |
-| --- | --- | --- | --- | --- |
-| `file-pdf` | 314.52, 755.73, 394.95, 136.04 (`max_chars` 4, `max_width` 394.95) | `#ffffff` | `#ffffff` | `"PDF"` |
-| `file-text` | 270.64, 763.7, 482.72, 136.04 | `#8e8e93` | `#aeaeb2` | null |
-| `file-document` | 270.64, 763.7, 482.72, 136.04 | `#2f7cf6` | `#5aa0ff` | null |
-| `file-spreadsheet` | 270.64, 763.7, 482.72, 136.04 | `#1f9d55` | `#3fd07f` | null |
-| `file-presentation` | 270.64, 763.7, 482.72, 136.04 | `#f2780c` | `#ff9f40` | null |
-| `file-code` | 270.64, 763.7, 482.72, 136.04 | `#ff6a00` | `#ff8a3d` | null |
-| `file-executable` | 270.64, 763.7, 482.72, 136.04 | `#ff6a00` | `#ff8a3d` | null |
-| `file-web` | 270.64, 763.7, 482.72, 136.04 | `#ff6a00` | `#ff8a3d` | null |
-| `file-archive` | 270.64, 763.7, 482.72, 136.04 | `#8e8e93` | `#aeaeb2` | null |
-| `file-disk-image` | 270.64, 763.7, 482.72, 136.04 | `#8e8e93` | `#aeaeb2` | null |
-| `file-image` | 270.64, 763.7, 482.72, 136.04 | `#30b0c7` | `#30b0c7` | null |
-| `file-audio` | 270.64, 763.7, 482.72, 136.04 | `#ff2d55` | `#ff2d55` | null |
-| `file-video` | 270.64, 763.7, 482.72, 136.04 | `#5e5ce6` | `#7d7aff` | null |
-| `file-font` | 270.64, 763.7, 482.72, 136.04 | `#e8336d` | `#ff5c8a` | null |
+| Icon | `box` | `color` | `no_extension` |
+| --- | --- | --- | --- |
+| `file-pdf` | 314.52, 755.73, 394.95, 136.04 (`max_chars` 4, `max_width` 394.95) | `#ffffff` | `"PDF"` |
+| `file-text` | 270.64, 763.7, 482.72, 136.04 | `#8e8e93` | null |
+| `file-document` | 270.64, 763.7, 482.72, 136.04 | `#2f7cf6` | null |
+| `file-spreadsheet` | 270.64, 763.7, 482.72, 136.04 | `#1f9d55` | null |
+| `file-presentation` | 270.64, 763.7, 482.72, 136.04 | `#f2780c` | null |
+| `file-code` | 270.64, 763.7, 482.72, 136.04 | `#ff6a00` | null |
+| `file-executable` | 270.64, 763.7, 482.72, 136.04 | `#ff6a00` | null |
+| `file-web` | 270.64, 763.7, 482.72, 136.04 | `#ff6a00` | null |
+| `file-archive` | 270.64, 763.7, 482.72, 136.04 | `#8e8e93` | null |
+| `file-disk-image` | 270.64, 763.7, 482.72, 136.04 | `#8e8e93` | null |
+| `file-image` | 270.64, 763.7, 482.72, 136.04 | `#30b0c7` | null |
+| `file-audio` | 270.64, 763.7, 482.72, 136.04 | `#ff2d55` | null |
+| `file-video` | 270.64, 763.7, 482.72, 136.04 | `#5e5ce6` | null |
+| `file-font` | 270.64, 763.7, 482.72, 136.04 | `#e8336d` | null |
 
 - **PDF**: the PDF label is also dynamic, white on the red pill (the `box` is the pill minus
   the margins). A `.pdf` writes `PDF`; a type that derives from `application/pdf` with another
   extension writes its own (`AI`); without an extension it stays `PDF`, because the empty pill
   would look like an error. This way no SVG contains text.
-- The grays (text, archive, disk image) and the purple of video lighten in Dark, because on the
-  dark sheet they had little contrast; orange for code and executables like the `code` category
-  of the generic file.
+- Orange for code and executables like the `code` category of the generic file.
 - `file-unknown` has no label: it is the sheet with the question mark.
 
 `design/app-icons.sketch`: every type is an instance of the `File / Page` symbol with the
@@ -578,15 +581,10 @@ layers carry no symbol.
       { "min_size": 16,  "weight": "semibold", "scale": 1.272, "highlight": false }
     ]
   },
-  "effect": {
-    "light": { "color": "#1a64c8", "opacity": 0.78, "highlight": "#ffffff",
-               "highlight_opacity": 0.5, "offset": 4 },
-    "dark":  { "color": "#0b3f94", "opacity": 0.8,  "highlight": "#ffffff",
-               "highlight_opacity": 0.2, "offset": 4 }
-  },
+  "effect": { "color": "#1a64c8", "opacity": 0.78, "highlight": "#ffffff",
+              "highlight_opacity": 0.5, "offset": 4 },
   "tint": {
-    "light": { "luminance": [0.35, 0.85], "shade": 0.72, "glow": 0.5 },
-    "dark":  { "luminance": [0.28, 0.75], "shade": 0.58, "glow": 0.35 },
+    "luminance": [0.35, 0.85], "shade": 0.72, "glow": 0.5,
     "labels": { "red": "#f2382e", "orange": "#ff8a00", "yellow": "#f5c400", "green": "#2fb350",
                 "blue": "#2f7cf6", "purple": "#a052e0", "gray": "#8e8e93" }
   },
@@ -595,7 +593,7 @@ layers carry no symbol.
                "VIDEOS": "film", "TEMPLATES": "doc-plus", "PUBLICSHARE": "share",
                "APPLICATIONS": "square-grid-2x2", "LIBRARY": "books-vertical", "SHARED": "person-2",
                "NETWORK": "network" },
-  "fallback": "folder"
+  "fallback": null
 }
 ```
 
@@ -616,7 +614,7 @@ Proportions (1024 canvas, folder keyline):
   below the last one (16 pt) the symbol is not drawn. The weight grows as the icon shrinks so
   that the rendered stroke stays between 1 and 4 px or so: Light from 128, Regular from 64,
   Semibold below, and below 32 even larger (× √φ).
-- **Engraved effect** (`effect`, per theme): first the copy of the symbol in `highlight` with
+- **Engraved effect** (`effect`, one for every theme): first the copy of the symbol in `highlight` with
   `highlight_opacity`, shifted down by `offset` (the lower edge of the engraving catches the
   light), then the symbol in `color` with `opacity`. Below 64 pt (`"highlight": false`) only
   the symbol: the half-pixel reflection would smear it.
@@ -627,8 +625,8 @@ Proportions (1024 canvas, folder keyline):
   `LIBRARY` (`~/.local/share`, the user's library), `SHARED` (shared folder) and
   `NETWORK` (network folder). The last two have no fixed path: they are given by whoever knows
   the folder (Mustache knows whether it is a network mount or a share). A folder that is not
-  among these, or a symbol that does not exist in `symbols/`, gets `fallback` (the plain
-  folder). The Trash has an icon of its own. Mustache can also pass any symbol from `symbols/`.
+  among these, or a symbol that does not exist in `symbols/`, gets `fallback`: `null`, the
+  folder without a symbol. The Trash has an icon of its own. Mustache can also pass any symbol from `symbols/`.
 - **Tint** (`tint`): a custom `#rrggbb` color or the name of a label in `labels`.
   The composed folder (base and symbol) goes through a ramp on luminance: L = 0.2126 R +
   0.7152 G + 0.0722 B (sRGB, 0–1); from `luminance[0]` to `luminance[1]` the color goes from
@@ -640,13 +638,14 @@ Proportions (1024 canvas, folder keyline):
   composed with the symbol (luminance mapped, see Themes), so the symbol stays the engraving
   darker than the panel; in the Clear themes the engraving reflection is removed
   (`highlight_opacity` 0), because the glass already has its border. The custom tint applies
-  only in Default and Dark: Tinted uses the theme tint for all folders.
+  only in Default and Dark: Tinted uses the theme tint for all folders. Dark uses the same
+  folder, engraving and tint ramp as Default.
 
 `design/app-icons.sketch`: the folders are instances of the `Folder` symbols, a folder for each
 key of `folders` (the emblem as a `Folder Emblem / <name>` symbol, preview only: the shell
 draws it from `symbols/`) and Music with tint #e8336d;
 in Grid Check the symbol boxes (276 and 351) and the live area; in Showcase Files the same
-folders in Default and Dark.
+folders.
 
 ## Icons without layers
 
