@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
-        <path d="M515.307366,240.026794 C624.238857,241.792952 712,330.64762 712,440 C712,550.45695 622.45695,640 512,640 C401.54305,640 312,550.45695 312,440 C312,329.54305 401.54305,240 512,240 Z" id="path-1"></path>
+        <path d="M515.307366,310.026794 C624.238857,311.792952 712,400.64762 712,510 C712,620.45695 622.45695,710 512,710 C401.54305,710 312,620.45695 312,510 C312,399.54305 401.54305,310 512,310 Z" id="path-1"></path>
         <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
             <stop stop-color="#62B1FF" offset="0%"></stop>
             <stop stop-color="#1A7AD9" offset="100%"></stop>
         </linearGradient>
-        <circle id="path-3" cx="512" cy="440" r="200"></circle>
+        <circle id="path-3" cx="512" cy="510" r="200"></circle>
         <filter x="-5.2%" y="-3.8%" width="110.5%" height="110.5%" filterUnits="objectBoundingBox" id="filter-4">
             <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
@@ -42,12 +42,12 @@
                 <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
                 <use fill="url(#linearGradient-2)" fill-rule="evenodd" xlink:href="#path-3"></use>
                 <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-3"></use>
-                <circle stroke-opacity="0.301960784" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="square" cx="512" cy="440" r="199"></circle>
+                <circle stroke-opacity="0.301960784" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="square" cx="512" cy="510" r="199"></circle>
             </g>
-            <ellipse id="Meridian" stroke-opacity="0.8" stroke="#FFFFFF" stroke-width="12" cx="512" cy="440" rx="80" ry="200"></ellipse>
-            <ellipse id="Equator-band" stroke-opacity="0.8" stroke="#FFFFFF" stroke-width="12" cx="512" cy="440" rx="200" ry="40"></ellipse>
-            <path d="M512,240 C514.256233,240 516.321731,241.265738 517.346039,243.276057 C518,244.559527 518,246.239685 518,249.6 L518,630.4 C518,633.760315 518,635.440473 517.346039,636.723943 C516.321731,638.734262 514.256233,640 512,640 C509.743767,640 507.678269,638.734262 506.653961,636.723943 C506,635.440473 506,633.760315 506,630.4 L506,249.6 C506,246.239685 506,244.559527 506.653961,243.276057 C507.678269,241.265738 509.743767,240 512,240 Z" id="Axis-V" fill="url(#linearGradient-6)"></path>
-            <path d="M321.6,434 L702.4,434 C705.760315,434 707.440473,434 708.723943,434.653961 C710.734262,435.678269 712,437.743767 712,440 C712,442.256233 710.734262,444.321731 708.723943,445.346039 C707.440473,446 705.760315,446 702.4,446 L321.6,446 C318.239685,446 316.559527,446 315.276057,445.346039 C313.265738,444.321731 312,442.256233 312,440 C312,437.743767 313.265738,435.678269 315.276057,434.653961 C316.559527,434 318.239685,434 321.6,434 Z" id="Axis-H" fill="url(#linearGradient-7)"></path>
+            <ellipse id="Meridian" stroke-opacity="0.8" stroke="#FFFFFF" stroke-width="12" cx="512" cy="510" rx="80" ry="200"></ellipse>
+            <ellipse id="Equator-band" stroke-opacity="0.8" stroke="#FFFFFF" stroke-width="12" cx="512" cy="510" rx="200" ry="40"></ellipse>
+            <path d="M512,310 C514.256233,310 516.321731,311.265738 517.346039,313.276057 C518,314.559527 518,316.239685 518,319.6 L518,700.4 C518,703.760315 518,705.440473 517.346039,706.723943 C516.321731,708.734262 514.256233,710 512,710 C509.743767,710 507.678269,708.734262 506.653961,706.723943 C506,705.440473 506,703.760315 506,700.4 L506,319.6 C506,316.239685 506,314.559527 506.653961,313.276057 C507.678269,311.265738 509.743767,310 512,310 Z" id="Axis-V" fill="url(#linearGradient-6)"></path>
+            <path d="M321.6,504 L702.4,504 C705.760315,504 707.440473,504 708.723943,504.653961 C710.734262,505.678269 712,507.743767 712,510 C712,512.256233 710.734262,514.321731 708.723943,515.346039 C707.440473,516 705.760315,516 702.4,516 L321.6,516 C318.239685,516 316.559527,516 315.276057,515.346039 C313.265738,514.321731 312,512.256233 312,510 C312,507.743767 313.265738,505.678269 315.276057,504.653961 C316.559527,504 318.239685,504 321.6,504 Z" id="Axis-H" fill="url(#linearGradient-7)"></path>
         </g>
     </g>
 </svg>
