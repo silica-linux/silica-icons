@@ -8,217 +8,217 @@ for third-party assets: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 
 | Path | Author | License | Source |
 | --- | --- | --- | --- |
-| `apps/apps/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/apps/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/apps/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/apps/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/apps/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/calculator/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/calculator/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/calculator/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/calculator/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/calculator/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/calendar/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/calendar/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/calendar/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/calendar/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/calendar/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/clock/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/clock/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/clock/cap-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/clock/cap.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/clock/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/clock/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/clock/hand-hour-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/clock/hand-hour.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/clock/hand-minute-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/clock/hand-minute.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/clock/hand-second-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/clock/hand-second.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/clock/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/disks/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/disks/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/disks/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/disks/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/disks/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/fonts/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/fonts/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/fonts/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/fonts/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/fonts/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/mail/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/mail/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/mail/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/mail/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/mail/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/mustache/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/mustache/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/mustache/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/mustache/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/mustache/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/notes/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/notes/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/notes/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/notes/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/notes/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/password-manager/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/password-manager/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/password-manager/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/password-manager/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/password-manager/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/photo-viewer/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/photo-viewer/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/photo-viewer/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/photo-viewer/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/photo-viewer/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/photos/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/photos/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/photos/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/photos/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/photos/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/screenshot/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/screenshot/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/screenshot/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/screenshot/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/screenshot/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/settings/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/settings/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/settings/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/settings/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/settings/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
+| `apps/apps/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/apps/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/apps/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/apps/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/apps/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/calculator/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/calculator/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/calculator/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/calculator/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/calculator/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/calendar/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/calendar/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/calendar/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/calendar/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/calendar/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/clock/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/clock/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/clock/cap-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/clock/cap.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/clock/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/clock/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/clock/hand-hour-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/clock/hand-hour.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/clock/hand-minute-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/clock/hand-minute.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/clock/hand-second-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/clock/hand-second.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/clock/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/disks/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/disks/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/disks/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/disks/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/disks/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/fonts/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/fonts/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/fonts/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/fonts/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/fonts/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mail/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mail/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mail/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mail/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mail/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mustache/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mustache/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mustache/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mustache/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mustache/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/notes/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/notes/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/notes/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/notes/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/notes/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/password-manager/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/password-manager/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/password-manager/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/password-manager/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/password-manager/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/photo-viewer/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/photo-viewer/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/photo-viewer/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/photo-viewer/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/photo-viewer/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/photos/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/photos/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/photos/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/photos/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/photos/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/screenshot/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/screenshot/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/screenshot/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/screenshot/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/screenshot/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/settings/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/settings/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/settings/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/settings/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/settings/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
 | `apps/silica/background-dark.svg` | Silica project | Silica trademark, all rights reserved ([silica-brand TRADEMARKS.md](https://github.com/silica-os/silica-brand/blob/main/TRADEMARKS.md)) | original, from `silica-brand` (`exports/app-icon/`, generated by `tools/build.py`) |
 | `apps/silica/background.svg` | Silica project | Silica trademark, all rights reserved ([silica-brand TRADEMARKS.md](https://github.com/silica-os/silica-brand/blob/main/TRADEMARKS.md)) | original, from `silica-brand` (`exports/app-icon/`, generated by `tools/build.py`) |
 | `apps/silica/foreground-dark.svg` | Silica project | Silica trademark, all rights reserved ([silica-brand TRADEMARKS.md](https://github.com/silica-os/silica-brand/blob/main/TRADEMARKS.md)) | original, from `silica-brand` (`exports/app-icon/`, generated by `tools/build.py`) |
 | `apps/silica/foreground.svg` | Silica project | Silica trademark, all rights reserved ([silica-brand TRADEMARKS.md](https://github.com/silica-os/silica-brand/blob/main/TRADEMARKS.md)) | original, from `silica-brand` (`exports/app-icon/`, generated by `tools/build.py`) |
 | `apps/silica/preview.png` | Silica project | Silica trademark, all rights reserved ([silica-brand TRADEMARKS.md](https://github.com/silica-os/silica-brand/blob/main/TRADEMARKS.md)) | original, from `silica-brand` (`exports/app-icon/`, generated by `tools/build.py`) |
-| `apps/terminal/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/terminal/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/terminal/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch`; the `>_` prompt is outlined from JetBrains Mono Bold (SIL OFL 1.1, the Terminal app font) |
-| `apps/terminal/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch`; the `>_` prompt is outlined from JetBrains Mono Bold (SIL OFL 1.1, the Terminal app font) |
-| `apps/terminal/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/text-editor/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/text-editor/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/text-editor/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/text-editor/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/text-editor/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `apps/apps/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/apps/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/calculator/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/calculator/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/calendar/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/calendar/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/clock/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/clock/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/disks/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/disks/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/fonts/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/fonts/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/mail/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/mail/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/mission-control/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons) |
-| `apps/mission-control/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons) |
-| `apps/mission-control/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons) |
-| `apps/mission-control/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons) |
-| `apps/mission-control/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/mission-control/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/mission-control/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons) |
-| `apps/mustache/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/mustache/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/notes/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/notes/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/password-manager/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/password-manager/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/photo-viewer/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/photo-viewer/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/photos/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/photos/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/reminders/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons) |
-| `apps/reminders/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons) |
-| `apps/reminders/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons) |
-| `apps/reminders/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons) |
-| `apps/reminders/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/reminders/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/reminders/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons) |
-| `apps/screenshot/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/screenshot/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/settings/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/settings/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/terminal/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/terminal/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/text-editor/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/text-editor/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Icons); rendered with its layer styles |
-| `apps/apps/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/apps/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/apps/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/apps/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/calculator/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/calculator/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/calculator/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/calculator/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/calendar/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/calendar/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/calendar/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/calendar/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/clock/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/clock/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/clock/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/clock/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/disks/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/disks/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/disks/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/disks/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/fonts/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/fonts/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/fonts/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/fonts/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/mail/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/mail/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/mail/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/mail/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/mission-control/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/mission-control/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/mission-control/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/mission-control/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/mustache/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/mustache/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/mustache/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/mustache/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/notes/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/notes/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/notes/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/notes/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/password-manager/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/password-manager/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/password-manager/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/password-manager/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/photo-viewer/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/photo-viewer/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/photo-viewer/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/photo-viewer/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/photos/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/photos/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/photos/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/photos/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/reminders/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/reminders/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/reminders/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/reminders/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/screenshot/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/screenshot/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/screenshot/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/screenshot/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/settings/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/settings/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/settings/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/settings/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/terminal/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/terminal/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/terminal/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/terminal/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/text-editor/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/text-editor/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/text-editor/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `apps/text-editor/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
+| `apps/terminal/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/terminal/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/terminal/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/terminal/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/terminal/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/text-editor/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/text-editor/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/text-editor/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/text-editor/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/text-editor/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/apps/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/apps/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/calculator/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/calculator/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/calendar/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/calendar/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/clock/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/clock/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/disks/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/disks/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/fonts/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/fonts/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mail/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mail/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mission-control/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mission-control/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mission-control/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mission-control/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mission-control/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mission-control/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mission-control/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mustache/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/mustache/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/notes/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/notes/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/password-manager/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/password-manager/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/photo-viewer/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/photo-viewer/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/photos/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/photos/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/reminders/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/reminders/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/reminders/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/reminders/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/reminders/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/reminders/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/reminders/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/screenshot/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/screenshot/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/settings/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/settings/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/terminal/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/terminal/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/text-editor/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/text-editor/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/apps/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/apps/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/apps/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/apps/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/calculator/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/calculator/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/calculator/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/calculator/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/calendar/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/calendar/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/calendar/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/calendar/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/clock/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/clock/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/clock/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/clock/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/disks/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/disks/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/disks/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/disks/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/fonts/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/fonts/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/fonts/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/fonts/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/mail/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/mail/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/mail/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/mail/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/mission-control/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/mission-control/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/mission-control/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/mission-control/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/mustache/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/mustache/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/mustache/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/mustache/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/notes/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/notes/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/notes/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/notes/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/password-manager/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/password-manager/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/password-manager/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/password-manager/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/photo-viewer/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/photo-viewer/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/photo-viewer/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/photo-viewer/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/photos/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/photos/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/photos/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/photos/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/reminders/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/reminders/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/reminders/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/reminders/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/screenshot/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/screenshot/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/screenshot/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/screenshot/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/settings/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/settings/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/settings/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/settings/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/terminal/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/terminal/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/terminal/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/terminal/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/text-editor/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/text-editor/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/text-editor/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/text-editor/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
 | `badges/alias-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
 | `badges/alias.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
 | `badges/cloud-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
@@ -1286,3 +1286,36 @@ for third-party assets: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `files/volume-network/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
 | `files/volume-optical/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
 | `files/volume-optical/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/camera/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/camera/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/camera/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/camera/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/camera/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/camera/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/camera/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/camera/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/camera/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/camera/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/camera/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/messages/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/messages/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/messages/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/messages/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/messages/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/messages/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/messages/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/messages/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/messages/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/messages/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/messages/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/music/background-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/music/background.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/music/foreground-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/music/foreground.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/music/icon-clear-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/music/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/music/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/music/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/music/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
+| `apps/music/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `apps/music/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
