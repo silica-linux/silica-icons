@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>background-dark</title>
-    <defs>
-        <path d="M806.6,123.4 C847,144 879.9,176.9 900.5,217.3 C924,263.3 924,323.5 924,444 L924,580 C924,700.4 924,760.6 900.5,806.6 C879.9,847 847,879.9 806.6,900.5 C760.6,924 700.4,924 580,924 L444,924 C323.5,924 263.3,924 217.3,900.5 C176.9,879.9 144,847 123.4,806.6 C100,760.6 100,700.4 100,580 L100,444 C100,323.5 100,263.3 123.4,217.3 C144,176.9 176.9,144 217.3,123.4 C263.3,100 323.5,100 444,100 L580,100 C700.4,100 760.6,100 806.6,123.4 Z" id="path-1"></path>
-        <linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="linearGradient-2">
-            <stop stop-color="#3A3A3C" offset="0%"></stop>
-            <stop stop-color="#161618" offset="100%"></stop>
-        </linearGradient>
-    </defs>
-    <g id="Mission-Control-/-Dark" stroke="none" fill="none" xlink:href="#path-1" fill-rule="evenodd">
-        <g id="Background" fill="url(#linearGradient-2)">
-            <path d="M444,100 L580,100 C700.4,100 760.6,100 806.6,123.4 C847,144 879.9,176.9 900.5,217.3 C924,263.3 924,323.5 924,444 L924,580 C924,700.4 924,760.6 900.5,806.6 C879.9,847 847,879.9 806.6,900.5 C760.6,924 700.4,924 580,924 L444,924 C323.5,924 263.3,924 217.3,900.5 C176.9,879.9 144,847 123.4,806.6 C100,760.6 100,700.4 100,580 L100,444 C100,323.5 100,263.3 123.4,217.3 C144,176.9 176.9,144 217.3,123.4 C263.3,100 323.5,100 444,100 Z" id="Path"></path>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e1f23" stop-opacity="1"/><stop offset="1" stop-color="#050506" stop-opacity="1"/></linearGradient></defs><rect width="1024" height="1024" fill="url(#g)"/></svg>

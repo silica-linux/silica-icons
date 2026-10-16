@@ -18,7 +18,11 @@
   "variants": {
     "dark": {
       "background": "background-dark.svg",
-      "foreground": "foreground-dark.svg"
+      "foreground": "foreground-dark.svg",
+      "hand-hour": "hand-hour-dark.svg",
+      "hand-minute": "hand-minute-dark.svg",
+      "hand-second": "hand-second-dark.svg",
+      "cap": "cap-dark.svg"
     }
   },
   "dynamic": {

@@ -25,31 +25,32 @@
     "type": "calendar",
     "month": {
       "font": "Inter",
-      "size": 92,
+      "size": 190,
       "weight": 900,
-      "tracking": 4,
-      "color": "#f2382e",
-      "dark_color": "#ff5248",
+      "tracking": 0,
+      "color": "#f5222f",
+      "dark_color": "#ff5a62",
       "box": [
-        100,
-        206,
-        824,
-        120
+        212,
+        144,
+        600,
+        230
       ],
       "case": "upper",
-      "max_width": 560
+      "format": "short"
     },
     "day": {
       "font": "Inter",
-      "size": 280,
+      "size": 308,
       "weight": 700,
-      "tracking": -10,
+      "tracking": 0,
       "color": "#ffffff",
+      "dark_color": "#f2f4f8",
       "box": [
-        100,
-        410,
-        824,
-        460
+        212,
+        426,
+        600,
+        372
       ]
     },
     "refresh": "midnight"

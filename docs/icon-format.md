@@ -289,17 +289,18 @@ while the icon is off screen.
 ```json
 "dynamic": {
   "type": "calendar",
-  "month": { "font": "Inter", "size": 92, "weight": 900, "tracking": 4,
-             "color": "#f2382e", "dark_color": "#ff5248",
-             "box": [100, 206, 824, 120], "case": "upper", "max_width": 560 },
-  "day":   { "font": "Inter", "size": 280, "weight": 700, "tracking": -10,
-             "color": "#ffffff", "box": [100, 410, 824, 460] }
+  "month": { "font": "Inter", "size": 190, "weight": 900, "tracking": 0,
+             "color": "#f5222f", "dark_color": "#ff5a62",
+             "box": [212, 144, 600, 230], "case": "upper", "format": "short" },
+  "day":   { "font": "Inter", "size": 308, "weight": 700, "tracking": 0,
+             "color": "#ffffff", "dark_color": "#f2f4f8", "box": [212, 426, 600, 372] },
+  "refresh": "midnight"
 }
 ```
 
-Full month name, localized; if it exceeds `max_width` the size shrinks proportionally and the
-baseline by 0.6 × the reduction. Day without a leading zero. Updates at local midnight and on
-date or time zone change.
+Month as the localized three-letter abbreviation in capitals (`OCT`, `OTT`), centred in `box`
+(Amalfi icon, 2026-10-16; the full month name is no longer used). Day without a leading zero,
+centred in the red disc. Updates at local midnight and on date or time zone change.
 
 ### Generic file
 
