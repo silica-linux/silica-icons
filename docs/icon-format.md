@@ -146,7 +146,10 @@ overlap without offsets.
 
 The shell adds these by itself; if they are present, the result doubles:
 
-- the body mask and its luminous border (the "Rim");
+- the body mask and its luminous border (the "Rim"): a reflection along the body's edge, drawn by
+  the shell at the icon's width, with a vertical alpha gradient from top to bottom: light `0x40` → `0x0D`,
+  dark `0x20` → `0x08` (user decision 2026-10-16: half of the earlier `0x80` → `0x1A` and `0x40` → `0x0F`;
+  silica-ui 3c82c30b);
 - the shadow of the foreground on the background and the shadow of the icon on the Dock;
 - the glass blur and the reflection of the Clear themes.
 
@@ -438,7 +441,7 @@ shadow included. No figure touches the corner.
   "label": { "font": "Inter", "size": 111.67, "weight": 500, "tracking": 0,
              "box": [270.64, 763.7, 482.72, 136.04], "case": "upper",
              "max_chars": 5, "max_width": 482.72, "overflow": "shrink",
-             "color": "#30b0c7",
+             "color": "#2f7cf6",
              "no_extension": null, "min_size": 32 }
 }
 ```
@@ -469,15 +472,15 @@ Medium; 440 wide, the 648 page minus two margins of 104) and scaled with the she
 | `file-document` | 270.64, 763.7, 482.72, 136.04 | `#2f7cf6` | null |
 | `file-spreadsheet` | 270.64, 763.7, 482.72, 136.04 | `#1f9d55` | null |
 | `file-presentation` | 270.64, 763.7, 482.72, 136.04 | `#f2780c` | null |
-| `file-code` | 270.64, 763.7, 482.72, 136.04 | `#ff6a00` | null |
+| `file-code` | 270.64, 763.7, 482.72, 136.04 | `#7a5af8` | null |
 | `file-executable` | 270.64, 763.7, 482.72, 136.04 | `#ff6a00` | null |
-| `file-web` | 270.64, 763.7, 482.72, 136.04 | `#ff6a00` | null |
+| `file-web` | 270.64, 763.7, 482.72, 136.04 | `#2f7cf6` | null |
 | `file-archive` | 270.64, 763.7, 482.72, 136.04 | `#8e8e93` | null |
 | `file-disk-image` | 270.64, 763.7, 482.72, 136.04 | `#8e8e93` | null |
-| `file-image` | 270.64, 763.7, 482.72, 136.04 | `#30b0c7` | null |
+| `file-image` | 270.64, 763.7, 482.72, 136.04 | `#2f7cf6` | null |
 | `file-audio` | 270.64, 763.7, 482.72, 136.04 | `#ff2d55` | null |
-| `file-video` | 270.64, 763.7, 482.72, 136.04 | `#5e5ce6` | null |
-| `file-font` | 270.64, 763.7, 482.72, 136.04 | `#e8336d` | null |
+| `file-video` | 270.64, 763.7, 482.72, 136.04 | `#8e8e93` | null |
+| `file-font` | 270.64, 763.7, 482.72, 136.04 | `#ff2d55` | null |
 
 - **PDF**: the PDF label is also dynamic, white on the red pill (the `box` is the pill minus
   the margins). A `.pdf` writes `PDF`; a type that derives from `application/pdf` with another
