@@ -35,5 +35,8 @@
       "no_extension": null,
       "min_size": 32
     }
+  },
+  "rendered": {
+    "default": "icon.png"
   }
 }

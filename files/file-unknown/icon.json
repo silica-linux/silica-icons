@@ -14,5 +14,8 @@
     }
   ],
   "variants": null,
-  "dynamic": null
+  "dynamic": null,
+  "rendered": {
+    "default": "icon.png"
+  }
 }
