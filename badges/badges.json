@@ -74,5 +74,16 @@
         "dark": "cloud-dark.png"
       }
     }
+  },
+  "dock": {
+    "stack-close": {
+      "file": "stack-close.svg",
+      "dark": "stack-close-dark.svg",
+      "rendered": {
+        "default": "stack-close.png",
+        "dark": "stack-close-dark.png"
+      },
+      "use": "Dock: shown over an open stack (e.g. Downloads) to close it; same disc and material as the file badges, drawn by the shell at the stack tile size"
+    }
   }
 }

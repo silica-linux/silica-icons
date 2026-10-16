@@ -1319,3 +1319,7 @@ for third-party assets: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `apps/music/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16; clear and tinted renders generated from the foreground |
 | `apps/music/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
 | `apps/music/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `badges/stack-close.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `badges/stack-close-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `badges/stack-close.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `badges/stack-close-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |

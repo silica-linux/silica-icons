@@ -95,8 +95,8 @@ Deliberate exceptions:
   height by 904 / 824) is not on the series: changing it means redrawing the path of every
   sheet; it stays until the sheets are redrawn;
 - the Trash is neither sheet nor folder: it has its own keyline, measured in the Dock;
-- Stack Close (the Dock button that closes an open stack) is not in the pack: the shell
-  draws it itself;
+- Stack Close (the Dock button that closes an open stack) is in `badges/` as `stack-close`
+  (badges.json → `dock`): the same disc and material as the file badges, with a cross;
 - the file types added for Mustache (spreadsheet, presentation, font, disk image, executable,
   document, web page) have the figure in the 461 × 292 box centered on
   (512, 473), like Code and Image (the width of the text lines of the sheets, 461 ≈ 472 within
