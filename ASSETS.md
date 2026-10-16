@@ -219,14 +219,14 @@ for third-party assets: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `apps/text-editor/icon-clear.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
 | `apps/text-editor/icon-tinted-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
 | `apps/text-editor/icon-tinted.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` (page Showcase); rendered with its layer styles |
-| `badges/alias-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `badges/alias.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `badges/cloud-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `badges/cloud.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `badges/locked-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `badges/locked.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `badges/unreadable-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `badges/unreadable.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
+| `badges/alias-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `badges/alias.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `badges/cloud-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `badges/cloud.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `badges/locked-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `badges/locked.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `badges/unreadable-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `badges/unreadable.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
 | `design/app-icons.sketch` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
 | `design/symbols.sketch` | Silica project | CC BY-SA 4.0 | original, design source of the system symbols |
 | `files/file-archive/mark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
@@ -243,8 +243,8 @@ for third-party assets: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `files/file-executable/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
 | `files/file-font/mark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch`; the "Aa" glyphs are outlines of Inter SemiBold (OFL 1.1, rsms/inter) |
 | `files/file-font/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch`; the "Aa" glyphs are outlines of Inter SemiBold (OFL 1.1, rsms/inter) |
-| `files/file-generic/icon.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `files/file-generic/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
+| `files/file-generic/icon.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/file-generic/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
 | `files/file-image/mark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
 | `files/file-image/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
 | `files/file-pdf/mark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
@@ -261,30 +261,30 @@ for third-party assets: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `files/file-video/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
 | `files/file-web/mark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
 | `files/file-web/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `files/folder-generic/icon-full.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `files/folder-generic/icon.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `files/folder-generic/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `files/trash-empty/icon-dark.svg` | Silica project | CC BY-SA 4.0 | original, generated by `tools/trash/full.py` (3D model, not in the design file) |
-| `files/trash-empty/icon.svg` | Silica project | CC BY-SA 4.0 | original, generated by `tools/trash/full.py` (3D model, not in the design file) |
-| `files/trash-empty/preview.png` | Silica project | CC BY-SA 4.0 | original, generated by `tools/trash/full.py` (3D model, not in the design file) |
-| `files/trash-full/icon-dark.svg` | Silica project | CC BY-SA 4.0 | original, generated by `tools/trash/full.py` (3D model, not in the design file) |
-| `files/trash-full/icon.svg` | Silica project | CC BY-SA 4.0 | original, generated by `tools/trash/full.py` (3D model, not in the design file) |
-| `files/trash-full/preview.png` | Silica project | CC BY-SA 4.0 | original, generated by `tools/trash/full.py` (3D model, not in the design file) |
-| `files/volume-disk-image/icon-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `files/volume-disk-image/icon.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `files/volume-disk-image/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `files/volume-external/icon-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `files/volume-external/icon.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `files/volume-external/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `files/volume-internal/icon-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `files/volume-internal/icon.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `files/volume-internal/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `files/volume-network/icon-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `files/volume-network/icon.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `files/volume-network/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `files/volume-optical/icon-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `files/volume-optical/icon.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
-| `files/volume-optical/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in `design/app-icons.sketch` |
+| `files/folder-generic/icon-full.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/folder-generic/icon.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/folder-generic/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/trash-empty/icon-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/trash-empty/icon.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/trash-empty/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/trash-full/icon-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/trash-full/icon.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/trash-full/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-disk-image/icon-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-disk-image/icon.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-disk-image/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-external/icon-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-external/icon.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-external/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-internal/icon-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-internal/icon.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-internal/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-network/icon-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-network/icon.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-network/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-optical/icon-dark.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-optical/icon.svg` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-optical/preview.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
 | `symbols/light/accessibility.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/symbols.sketch`, generated by `tools/symbols/export_svg.py` |
 | `symbols/light/airplane.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/symbols.sketch`, generated by `tools/symbols/export_svg.py` |
 | `symbols/light/alarm.svg` | Silica project | CC BY-SA 4.0 | original, drawn in `design/symbols.sketch`, generated by `tools/symbols/export_svg.py` |
@@ -1261,3 +1261,28 @@ for third-party assets: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `.github/silica-logo-dark.svg` | Silica project | project trademark, license to be decided (`silica-brand`) | original, `silica-brand/exports/logotype/silica-logotype-horizontal-dark.svg` |
 | `tools/trash/old-full-dark.svg` | Silica project | CC BY-SA 4.0 | original, the earlier full Trash (v0.3), source of the contents for `tools/trash/full.py` |
 | `tools/trash/old-full.svg` | Silica project | CC BY-SA 4.0 | original, the earlier full Trash (v0.3), source of the contents for `tools/trash/full.py` |
+| `badges/alias-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `badges/alias.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `badges/cloud-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `badges/cloud.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `badges/locked-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `badges/locked.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `badges/unreadable-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `badges/unreadable.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/file-generic/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/folder-generic/icon-full.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/folder-generic/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/trash-empty/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/trash-empty/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/trash-full/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/trash-full/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-disk-image/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-disk-image/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-external/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-external/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-internal/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-internal/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-network/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-network/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-optical/icon-dark.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `files/volume-optical/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |

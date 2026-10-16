@@ -523,5 +523,8 @@
       }
     },
     "fallback": "file-unknown"
+  },
+  "rendered": {
+    "default": "icon.png"
   }
 }

@@ -18,10 +18,10 @@
     "type": "folder-symbol",
     "symbol": {
       "box": [
-        353.9,
-        424.36,
-        316.19,
-        316.19
+        354,
+        434,
+        316,
+        316
       ],
       "sizes": [
         {
@@ -88,5 +88,9 @@
       "NETWORK": "network"
     },
     "fallback": null
+  },
+  "rendered": {
+    "default": "icon.png",
+    "full": "icon-full.png"
   }
 }
