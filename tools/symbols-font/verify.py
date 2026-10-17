@@ -37,7 +37,7 @@ def reference(svg_path, size):
 
 def rendered(font, ch, size):
     img = Image.new("L", (size, size), 0)
-    # ascent = 1 em, descent = 0: the baseline is the bottom edge of the box
+    # ascent = 1 em, descent ~0: the baseline is the bottom edge of the box
     ImageDraw.Draw(img).text((0, size), ch, font=font, fill=255, anchor="ls")
     return np.array(img).astype(int)
 

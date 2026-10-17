@@ -282,8 +282,10 @@ checks that every name shapes to its own glyph, and writes contact sheets.
 
 - 1 em = the 24 u canvas (units per em 2400, 100 per u). Font size N pt draws the symbol box of
   N pt, including its 2 u margin. Advance width = 1 em.
-- Ascender = 2400, descender = 0, line gap 0 (hhea, OS/2 typo and win): the baseline is the
-  bottom edge of the canvas and the line box is exactly the canvas. To centre a symbol in a
+- Ascender = 2400, descender = 1 unit (1/2400 em), line gap 0 (hhea, OS/2 typo and win): the
+  baseline is the bottom edge of the canvas and the line box is the canvas. The descender is 1, not 0,
+  because with 0 CoreText (Sketch, macOS) falls back to the glyph bounding box and draws every
+  glyph about 3 % of the size too high. To centre a symbol in a
   box, centre a line box of height 1 em (Flutter `Icon` does this).
 - To align with text instead, use the rule in "Alignment to text": canvas centre = baseline +
   0.3638 em of the text next to it.

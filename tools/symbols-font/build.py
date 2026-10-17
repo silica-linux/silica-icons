@@ -32,6 +32,7 @@ SYMBOLS = ROOT / "symbols"
 FONTS = ROOT / "fonts"
 FAMILY = "Silica Symbols"
 UPM = 2400            # 1 em = 24 u canvas, 100 font units per u
+DESCENT = 1           # 1/2400 em, see setupHorizontalHeader
 UNIT = UPM // 24
 PUA_START = 0xE000
 WEIGHTS = {  # name: (usWeightClass, stroke in u as in the SVGs)
@@ -181,10 +182,12 @@ def build_font(weight, glyphs, cps, ligature_names, vf_name=None):
     fb.setupCFF(f"SilicaSymbols-{weight}", {"FullName": f"{FAMILY} {weight}", "FamilyName": FAMILY, "Weight": weight},
                 charstrings, {})
     fb.setupHorizontalMetrics(metrics)
-    fb.setupHorizontalHeader(ascent=UPM, descent=0, lineGap=0)
+    # descent is -1, not 0: with a zero descent CoreText falls back to the glyph bounding box
+    # (descent 155 units here) and Sketch draws every glyph ~3 % of the size too high
+    fb.setupHorizontalHeader(ascent=UPM, descent=-DESCENT, lineGap=0)
     nm = name_table(weight)
     fb.setupNameTable(nm, mac=False)
-    fb.setupOS2(sTypoAscender=UPM, sTypoDescender=0, sTypoLineGap=0, usWinAscent=UPM, usWinDescent=0,
+    fb.setupOS2(sTypoAscender=UPM, sTypoDescender=-DESCENT, sTypoLineGap=0, usWinAscent=UPM, usWinDescent=DESCENT,
                 usWeightClass=WEIGHTS[weight], fsType=0, achVendID="SLCA",
                 fsSelection=(1 << 6 if weight == "Regular" else 0) | (1 << 7),  # REGULAR / USE_TYPO_METRICS
                 sxHeight=0, sCapHeight=0, version=4)
