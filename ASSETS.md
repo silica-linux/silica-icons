@@ -1338,3 +1338,12 @@ for third-party assets: CC0, CC-BY, CC BY-SA, OFL, MIT/Apache.
 | `files/file-archive/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
 | `files/file-disk-image/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
 | `files/file-unknown/icon.png` | Silica project | CC BY-SA 4.0 | original, drawn in the Silica 1.0 Amalfi Apps Kit (Sketch), 2026-10-16 |
+| `fonts/SilicaSymbols-Light.otf` | Silica project | CC BY-SA 4.0 | derived from `symbols/<weight>/*.svg` by `tools/symbols-font/build.py` (no third-party glyphs) |
+| `fonts/SilicaSymbols-Light.woff2` | Silica project | CC BY-SA 4.0 | derived from `symbols/<weight>/*.svg` by `tools/symbols-font/build.py` (no third-party glyphs) |
+| `fonts/SilicaSymbols-Regular.otf` | Silica project | CC BY-SA 4.0 | derived from `symbols/<weight>/*.svg` by `tools/symbols-font/build.py` (no third-party glyphs) |
+| `fonts/SilicaSymbols-Regular.woff2` | Silica project | CC BY-SA 4.0 | derived from `symbols/<weight>/*.svg` by `tools/symbols-font/build.py` (no third-party glyphs) |
+| `fonts/SilicaSymbols-Semibold.otf` | Silica project | CC BY-SA 4.0 | derived from `symbols/<weight>/*.svg` by `tools/symbols-font/build.py` (no third-party glyphs) |
+| `fonts/SilicaSymbols-Semibold.woff2` | Silica project | CC BY-SA 4.0 | derived from `symbols/<weight>/*.svg` by `tools/symbols-font/build.py` (no third-party glyphs) |
+| `fonts/codepoints.json` | Silica project | CC BY-SA 4.0 | derived from `symbols/<weight>/*.svg` by `tools/symbols-font/build.py` (no third-party glyphs) |
+| `fonts/flutter/silica_symbols.dart` | Silica project | CC BY-SA 4.0 | derived from `symbols/<weight>/*.svg` by `tools/symbols-font/build.py` (no third-party glyphs) |
+| `fonts/build-report.json` | Silica project | CC BY-SA 4.0 | build log of `tools/symbols-font/build.py` |

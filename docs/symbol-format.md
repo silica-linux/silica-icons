@@ -247,6 +247,119 @@ the categories).
 - The cuts are computed in `symbols.py` (functions `cut`, `slashed`, `outside_shape`), never
   by hand.
 
+## Font
+
+The three weights are also built as an icon font, so the same glyphs work in Sketch (installed
+font) and in Flutter (`IconData`). The font is derived from `symbols/` and has the same licence
+(CC BY-SA 4.0); it contains no third-party glyphs.
+
+```
+fonts/SilicaSymbols-Light.otf     weight 300    (+ .woff2)
+fonts/SilicaSymbols-Regular.otf   weight 400    (+ .woff2)
+fonts/SilicaSymbols-Semibold.otf  weight 600    (+ .woff2)
+fonts/codepoints.json             name -> hex codepoint, stable
+fonts/flutter/silica_symbols.dart generated IconData constants
+fonts/build-report.json           dropped secondary layers, weight compatibility
+```
+
+Family "Silica Symbols" (name IDs 16/17 group the three weights in Sketch and macOS; IDs 1/2
+give Light and Semibold their own legacy family names).
+
+### Build
+
+```
+tools/symbols-font/build.sh                   # venv in tools/symbols-font/.venv, deps pinned in requirements.txt
+tools/symbols-font/build.sh --verify OUTDIR   # also renders every glyph against the SVG (resvg)
+```
+
+`build.py` outlines every stroke with Skia (`skia-pathops`: round caps and joins, as in the
+SVGs), keeps fills, unions all layers of a symbol and removes overlaps (nonzero winding), and
+writes CFF OpenType. `verify.py` renders each glyph with FreeType and the SVG with resvg at 24
+and 96 px, lists glyphs whose alpha differs by more than 50 % on more than 0.4 % of the pixels,
+checks that every name shapes to its own glyph, and writes contact sheets.
+
+### Metrics
+
+- 1 em = the 24 u canvas (units per em 2400, 100 per u). Font size N pt draws the symbol box of
+  N pt, including its 2 u margin. Advance width = 1 em.
+- Ascender = 2400, descender = 0, line gap 0 (hhea, OS/2 typo and win): the baseline is the
+  bottom edge of the canvas and the line box is exactly the canvas. To centre a symbol in a
+  box, centre a line box of height 1 em (Flutter `Icon` does this).
+- To align with text instead, use the rule in "Alignment to text": canvas centre = baseline +
+  0.3638 em of the text next to it.
+
+### Secondary layers
+
+A font cannot carry opacity. Layers with `opacity="0.35"` are dropped from the glyph:
+`wifi-1`, `wifi-2`, `signal-1`, `signal-2`, `signal-3`, `volume-0`, `volume-1`, `volume-2` and
+`progress` show only their active part. Symbols made only of secondary layers (`wifi-0`) keep
+them at full ink, otherwise the glyph would be empty. Use the SVGs when the faded ghost is needed.
+
+### Codepoints
+
+BMP Private Use Area from U+E000, assigned in name order the first time and then never changed:
+`build.py` reads `fonts/codepoints.json`, keeps existing assignments and appends new names after
+the highest one. A removed symbol keeps its entry (its codepoint is never reused) but gets no
+glyph. Commit `codepoints.json` with every new symbol. Light, Regular and Semibold share the
+codepoints.
+
+### Ligatures (Sketch and any text engine)
+
+Type the symbol name in a text layer set in Silica Symbols and the `liga` feature turns it into
+the glyph: `wifi`, `arrow-down-circle`, `wifi-slash`. The letters a-z, digits and the hyphen exist
+as zero-width, empty glyphs (capital letters map to the same glyphs, so `WiFi` works too), so
+unmatched text draws nothing. The longest name wins (`wifi-1` before `wifi`); while typing
+`wifi-1`, the intermediate `wifi` glyph appears and is replaced when the name is complete.
+Alternatively paste the PUA character from `codepoints.json`.
+
+### Sketch
+
+Install the three `.otf` files (double click, Font Book, or copy to `~/Library/Fonts`) and restart
+Sketch. "Silica Symbols" appears with Light, Regular and Semibold. Set the font size to the
+symbol size in pt (24 for the 24 u canvas); the text colour is the symbol colour.
+
+### Variable font
+
+Not built. The outlines are outlined strokes with overlaps removed, and the three weights are
+not point-compatible (308 of 324 glyphs differ in segment structure; a union changes topology
+between 1.18 u and 2.15 u strokes), so a `wght` axis would need manual redrawing of the masters.
+
+### Flutter
+
+Weights are static files. Flutter's `Icon(..., weight:)` only sets the `wght` variation, which a
+static font ignores, and `Icon` does not use `fontWeight` of its style to choose a file. So each
+weight is declared as its own family, and `silica_symbols.dart` has one class per weight with
+the same names and codepoints:
+
+```yaml
+# pubspec.yaml
+flutter:
+  fonts:
+    - family: SilicaSymbolsLight
+      fonts:
+        - asset: fonts/SilicaSymbols-Light.otf
+    - family: SilicaSymbols
+      fonts:
+        - asset: fonts/SilicaSymbols-Regular.otf
+    - family: SilicaSymbolsSemibold
+      fonts:
+        - asset: fonts/SilicaSymbols-Semibold.otf
+```
+
+```dart
+Icon(SilicaSymbols.wifi, size: 18)               // Regular
+Icon(SilicaSymbolsLight.arrowDownCircle)         // Light
+Icon(SilicaSymbolsSemibold.gear, color: c)       // Semibold
+```
+
+When the fonts live in a package, pass its name by setting `kSilicaSymbolsPackage` at the top of
+the file and prefix the asset paths with `packages/<package>/` in the consumer's pubspec if
+needed. Dart names are camelCase of the symbol name (`arrow-down-circle` -> `arrowDownCircle`,
+`wifi-0` -> `wifi0`); names that are Dart keywords get a `Symbol` suffix (`returnSymbol`,
+`switchSymbol`). Text works too: `Text(String.fromCharCode(SilicaSymbols.wifi.codePoint), style: TextStyle(fontFamily:
+'SilicaSymbols'))`. A weight that follows the surrounding text is chosen in code by mapping
+`FontWeight` to the class.
+
 ## Catalog
 
 324 symbols in 11 categories, in the order of the sections of the Symbols page (12 columns,

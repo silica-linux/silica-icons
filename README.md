@@ -28,9 +28,13 @@ files/     folders, file types, Trash, Dock controls: layered, free-form
 badges/    badges overlaid on file icons (alias, locked, unreadable, cloud)
 symbols/   system glyphs (Control Center, menu bar, settings, toolbars): monochrome,
            vector, multiple weights, colored by the theme
-tools/     export from the design file and package build
+fonts/     Silica Symbols icon font (Light, Regular, Semibold), codepoints, Flutter IconData
+tools/     export from the design file, icon font build (tools/symbols-font), package build
 docs/      specifications: icon format, grid, themes
 ```
+
+The system symbols are also an icon font for Sketch and Flutter: see the Font section of
+[`docs/symbol-format.md`](docs/symbol-format.md).
 
 ## Model
 
